@@ -4,6 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@common/*": ["src/common/*"]
+  },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+<div class="home-area">
+  <div class="home-child">
+    <div class="row">
+      <div class="col-lg-3">
+        <mat-card class="home-panel mat-elevation-z0">
+          <img
+            class="profile-background"
+            src="https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000"
+            alt=""
+          />
+          <div class="profile-image-container">
+            <img
+              class="profile-image"
+              src="https://media-exp1.licdn.com/dms/image/D5603AQFtP_dfYdG11Q/profile-displayphoto-shrink_100_100/0/1667247190015?e=1674086400&v=beta&t=zbSEk5iLJQeJF8tVExLgwjYUOfBGTdGEw2MEqsX6gJk"
+              alt=""
+            />
+          </div>
+          <h2 class="profile-name">Emirhan Eyidoğan</h2>
+          <p class="profile-details">TED Üniversitesi, Yazılım Mühendisliği</p>
+          <hr class="profile-hr" />
+          <mat-action-list role="list">
+            <button mat-list-item (click)="testClick()">
+              <mat-icon mat-list-icon>people</mat-icon>
+              <div mat-line>Arkadaşlarım</div>
+              <div mat-line>12 Tane</div>
+            </button>
+            <button mat-list-item (click)="testClick()">
+              <mat-icon mat-list-icon>newspaper</mat-icon>
+              <div mat-line>Paylaşımlarım</div>
+
+            </button>
+            <button mat-list-item (click)="testClick()">
+              <mat-icon mat-list-icon>rocket_launch</mat-icon>
+              <div mat-line>Projeler</div>
+
+            </button>
+          </mat-action-list>
+        </mat-card>
+      </div>
+      <div class="col-lg-6">
+        <mat-card class="home-panel mat-elevation-z0">
+          <div class="write-post-container">
+            <img
+              class="profile-image"
+              src="https://media-exp1.licdn.com/dms/image/D5603AQFtP_dfYdG11Q/profile-displayphoto-shrink_100_100/0/1667247190015?e=1674086400&v=beta&t=zbSEk5iLJQeJF8tVExLgwjYUOfBGTdGEw2MEqsX6gJk"
+              alt=""
+            />
+            <mat-form-field appearance="outline">
+              <mat-label>Bir paylaşım yapın...</mat-label>
+              <input matInput placeholder="Bir şeyler yaz...">
+              <mat-icon matSuffix>send</mat-icon>
+
+            </mat-form-field>
+
+          </div>
+          <div class="d-flex justify-content-center">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle value="bold"><mat-icon>camera</mat-icon> Fotoğraf</mat-button-toggle>
+              <mat-button-toggle value="italic"><mat-icon>movie</mat-icon> Video</mat-button-toggle>
+              <mat-button-toggle value="underline"><mat-icon>event</mat-icon> Etkinik</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+          <br><br>
+        </mat-card>
+        <br>
+        <hr>
+      </div>
+      <div class="col-lg-3">
+        <mat-card class="home-panel mat-elevation-z0">
+          <div class="right-panel">
+            <h2>Tanıyor olabilirsin</h2>
+          </div>
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>
