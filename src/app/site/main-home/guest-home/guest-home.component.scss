@@ -1,0 +1,166 @@
+.ill {
+  width: 100%;
+}
+
+.main-panel {
+
+}
+
+.panel {
+  display: block;
+}
+
+.center {
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-panel {
+  h1 {
+    text-align: center;
+    font-size: 56px;
+    line-height: 56px;
+    color: #b75742;
+    font-family: 'Quicksand';
+  }
+}
+
+.mid-panel-1 {
+  margin-top: 4%;
+  background-color:  whitesmoke;
+  padding: 4%;
+
+  .col-sm-6:nth-child(1) {
+    border-right: 0.5px;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-color: #355389;
+    border-style:groove;
+  }
+
+  .col-sm-6 {
+
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Quicksand';
+    text-align: center;
+    color:#355389;
+  }
+}
+
+.bottom-panel {
+  margin-top: 4%;
+  padding: 4%;
+  background-color: #32127A;
+
+  img {
+    border-radius: 15px;
+
+  }
+
+
+  .for-whom {
+    margin-top: 5%;
+
+
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin: 2%;
+      background-color: rgba(255,255,255,0.6);
+      border-style: none;
+      border-radius: 10px;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-right: 2%;
+      padding-left: 2%;
+      font-size: 25px;
+      line-height: 25px;
+      cursor: pointer;
+      font-family: 'Quicksand';
+
+      mat-icon {
+        font-size: 25px;
+      }
+    }
+
+    .item:hover {
+      background-color: rgba(255,255,255,1);
+    }
+  }
+
+  h1 {
+    margin-left: 2%;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Quicksand';
+    text-align: left;
+    color:white;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Quicksand';
+    text-align: left;
+    margin-left: 2%;
+    color: rgba(255,255,255,0.8);
+
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mid-panel-2 {
+  margin-top: 4%;
+  background-color:  white;
+  padding: 4%;
+
+  h1 {
+    color: #b75742;
+  }
+}
+
+
+.login-button {
+  margin-top: 4%;
+  background-color: #355389;
+  border-radius: 30px;
+  font-size: 35px;
+  color: white;
+  border-style: none;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  cursor: pointer;
+  font-family: 'Quicksand';
+
+
+}
+
+.animate {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.animationActive {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.login-button:hover {
+  background-color: #001333;
+}
+

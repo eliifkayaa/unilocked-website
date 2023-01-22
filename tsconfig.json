@@ -4,9 +4,6 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "paths": {
-      "@common/*": ["src/common/*"]
-  },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -25,11 +22,16 @@
       "es2020",
       "dom"
     ]
+    ,"paths": {
+      "@common/*": ["src/common/*"],
+    },
   },
+
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+
 }
