@@ -33,11 +33,9 @@ $unista-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($unista-theme);
 
-$app-secondary :  mat.get-color-from-palette($unista-primary, 'secondary');
-
 /* You can add global styles to this file, and also import other style files */
 
-@import url('./assets/css/bootstrap-grid.min.css');
+@import url('assets/css/bootstrap-grid.min.css');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: whitesmoke; height: 100%;}
+html, body { height: 100%; width: 100%; overflow-x: hidden; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
