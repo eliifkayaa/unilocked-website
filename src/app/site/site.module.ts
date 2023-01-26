@@ -7,21 +7,26 @@ import { SiteRoutingModule } from './site.routing.module';
 import { AppCommonModule } from '@common/common.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
-  declarations: [
-    MainHomeComponent,
-    GuestHomeComponent,
-    UserHomeComponent,
-
-  ],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent],
   imports: [
     CommonModule,
     SiteRoutingModule,
     AppCommonModule,
     MatButtonModule,
-    MatIconModule
-  ]
+    MatIconModule,
+    MatCardModule,
+    MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatButtonToggleModule
+  ],
 })
-export class SiteModule { }
+export class SiteModule {}

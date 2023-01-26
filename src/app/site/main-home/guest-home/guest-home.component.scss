@@ -3,7 +3,6 @@
 }
 
 .main-panel {
-
 }
 
 .panel {
@@ -23,13 +22,13 @@
     font-size: 56px;
     line-height: 56px;
     color: #b75742;
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
   }
 }
 
 .mid-panel-1 {
   margin-top: 4%;
-  background-color:  whitesmoke;
+  background-color: whitesmoke;
   padding: 4%;
 
   .col-sm-6:nth-child(1) {
@@ -38,43 +37,38 @@
     border-top: 0;
     border-bottom: 0;
     border-color: #355389;
-    border-style:groove;
+    border-style: groove;
   }
 
   .col-sm-6 {
-
   }
 
   h1 {
     font-size: 40px;
     line-height: 40px;
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     text-align: center;
-    color:#355389;
+    color: #355389;
   }
 }
 
 .bottom-panel {
   margin-top: 4%;
   padding: 4%;
-  background-color: #32127A;
+  background-color: #32127a;
 
   img {
     border-radius: 15px;
-
   }
-
 
   .for-whom {
     margin-top: 5%;
-
-
 
     .item {
       display: flex;
       align-items: center;
       margin: 2%;
-      background-color: rgba(255,255,255,0.6);
+      background-color: rgba(255, 255, 255, 0.6);
       border-style: none;
       border-radius: 10px;
       padding-top: 2%;
@@ -84,7 +78,7 @@
       font-size: 25px;
       line-height: 25px;
       cursor: pointer;
-      font-family: 'Quicksand';
+      font-family: "Quicksand";
 
       mat-icon {
         font-size: 25px;
@@ -92,7 +86,7 @@
     }
 
     .item:hover {
-      background-color: rgba(255,255,255,1);
+      background-color: rgba(255, 255, 255, 1);
     }
   }
 
@@ -100,19 +94,18 @@
     margin-left: 2%;
     font-size: 40px;
     line-height: 40px;
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     text-align: left;
-    color:white;
+    color: white;
   }
 
   h3 {
     font-size: 30px;
     line-height: 30px;
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     text-align: left;
     margin-left: 2%;
-    color: rgba(255,255,255,0.8);
-
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -122,14 +115,13 @@
 
 .mid-panel-2 {
   margin-top: 4%;
-  background-color:  white;
+  background-color: white;
   padding: 4%;
 
   h1 {
     color: #b75742;
   }
 }
-
 
 .login-button {
   margin-top: 4%;
@@ -143,9 +135,7 @@
   padding-left: 10%;
   padding-right: 10%;
   cursor: pointer;
-  font-family: 'Quicksand';
-
-
+  font-family: "Quicksand";
 }
 
 .animate {
@@ -164,3 +154,17 @@
   background-color: #001333;
 }
 
+.mid-panel-3 {
+  display: flex;
+  scroll-behavior: smooth;
+  height: 600px;
+  background-color: whitesmoke;
+  width: 100%;
+  overflow-x: hidden;
+
+  .slider-item {
+    flex: 0 0 auto;
+    width: 100vw;
+    display: block;
+  }
+}

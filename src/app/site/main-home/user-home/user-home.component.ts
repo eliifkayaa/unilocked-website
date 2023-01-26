@@ -12,4 +12,7 @@ export class UserHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public testClick() {
+
+  }
 }
