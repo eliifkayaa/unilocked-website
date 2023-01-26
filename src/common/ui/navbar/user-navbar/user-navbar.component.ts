@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'user-navbar',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-navbar.component.scss']
 })
 export class UserNavbarComponent implements OnInit {
+
+  @Input('drawer') public drawer
 
   constructor() { }
 

@@ -21,30 +21,6 @@
 
       .right-panel {
         padding: 12px;
-
-      }
-
-
-      .profile-name {
-        margin: 12px;
-        text-align: center;
-      }
-
-      .profile-details {
-        text-align: center;
-        color: gray;
-        font-size: 12px;
-      }
-
-      .profile-hr {
-        margin: 2% 4% 2% 4%;
-      }
-
-      .profile-image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin: 12px;
       }
 
       .write-post-container {
@@ -53,11 +29,12 @@
         padding: 12px;
 
         mat-form-field {
-
           width: 100%;
-
         }
 
+        .profile-image {
+          margin-top: 0px;
+        }
       }
 
       .profile-image-container {
@@ -73,3 +50,49 @@
   }
 }
 
+mat-drawer {
+  padding: 20px;
+  height: 100vh;
+  background-color: #fafafa;
+
+  .profile-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .profile-image {
+      margin: 0;
+    }
+  }
+
+  .sub-header {
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+
+  .profile-name {
+    margin: 12px;
+    text-align: center;
+  }
+
+  .profile-details {
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+  }
+
+  .profile-hr {
+    margin: 0;
+  }
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 12px;
+}
+
+mat-drawer-content {
+  height: 100vh;
+}

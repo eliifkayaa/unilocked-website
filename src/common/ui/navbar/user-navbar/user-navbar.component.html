@@ -1,29 +1,55 @@
-<div  class="toolbar-parent ">
-  <mat-toolbar  color="secondary">
-    <img src="assets/images/unilockedlogopgn-08.png" class="logo" alt="UniLocked">
-    <a class="navbar-button" mat-button>Ana Sayfa</a>
-    <a class="navbar-button" mat-button>Ağım</a>
-    <a class="navbar-button" mat-button>Topluluklar</a>
-    <a class="navbar-button" mat-button>Projeler</a>
-    <span class="spacer"></span>
-    <div class="navbar-search">
-      <input placeholder="Ara..." class="navbar-input" type="text" />
-      <mat-icon class="navbar-icon">search</mat-icon>
-    </div>
-    <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-    >
-      <mat-icon matBadge="1" matBadgeColor="primary">messages</mat-icon>
-    </button>
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with share icon"
-    >
-      <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
-    </button>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <img
+    src="assets/images/unilockedlogopgn-08.png"
+    class="logo"
+    alt="UniLocked"
+  />
+  <button class="menu-button" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-</div>
+
+  <span class="spacer"></span>
+  <button class="icon-button">
+    <mat-icon>explore</mat-icon><br />
+
+  </button>
+  <button class="icon-button">
+    <mat-icon>newspaper</mat-icon><br />
+
+  </button>
+  <button class="icon-button">
+    <mat-icon>rocket</mat-icon><br />
+
+  </button>
+  <div class="navbar-search">
+    <input placeholder="Ara..." class="navbar-input" type="text" />
+    <mat-icon class="navbar-icon">search</mat-icon>
+  </div>
+
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon matBadge="1" matBadgeColor="primary">messages</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+  </button>
+  <div class="user-area">
+    <img
+      class="profile-image"
+      src="https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Rachel-Montan%CC%83ez.jpeg"
+      alt=""
+    />
+    <div class="profile-texts">
+      <div class="username">Emirhan Eyidoğan</div>
+      <div class="school">TED Üniversitesi</div>
+    </div>
+  </div>
+</mat-toolbar>

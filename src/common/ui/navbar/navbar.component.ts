@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '@common/auth/auth.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { AuthService } from '@common/auth/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input('drawer') public drawer
 
   constructor(public authService:AuthService) { }
 

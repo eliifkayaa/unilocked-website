@@ -1,4 +1,4 @@
-<user-navbar *ngIf="authService.loggedIn else guestNavbar"></user-navbar>
+<user-navbar [drawer]="drawer" *ngIf="authService.loggedIn else guestNavbar"></user-navbar>
 <ng-template #guestNavbar>
 <guest-navbar></guest-navbar>
 </ng-template>
