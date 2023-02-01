@@ -14,6 +14,10 @@ import {
 export class GuestHomeComponent implements OnInit, AfterViewInit {
   @ViewChild('slider', { static: false }) slider: ElementRef<HTMLDivElement>;
 
+  private counts = [150000, 60, 200, 1500];
+  public animatedCounts = [0, 0, 0, 0];
+  intervals: any[] = [null,null,null,null];
+
   constructor() {}
 
   ngOnInit(): void {
@@ -43,7 +47,6 @@ export class GuestHomeComponent implements OnInit, AfterViewInit {
     this.slideCount--;
     this.slider.nativeElement.scrollTo(window.innerWidth * this.slideCount, 0);
 
-
     if (this.slideCount < 0) {
       this.slideCount = 4;
     }
@@ -60,5 +63,26 @@ export class GuestHomeComponent implements OnInit, AfterViewInit {
         reveals[i].classList.remove('animationActive');
       }
     }
+
+
+
+  }
+
+  public getCount(index: number) {
+    return (this.animatedCounts[index]);
+  }
+
+  private intToString(value) {
+    var suffixes = ['', 'k', 'm', 'b', 't'];
+    var suffixNum = Math.floor(('' + value).length / 3);
+    var shortValue: any = parseFloat(
+      (suffixNum != 0 ? value / Math.pow(1000, suffixNum) : value).toPrecision(
+        2
+      )
+    );
+    if (shortValue % 1 != 0) {
+      shortValue = shortValue.toFixed(1);
+    }
+    return shortValue + suffixes[suffixNum];
   }
 }
