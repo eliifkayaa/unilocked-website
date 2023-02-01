@@ -1,1 +1,4 @@
-<guest-home></guest-home>
+<user-home *ngIf="authService.loggedIn else guestHome"></user-home>
+<ng-template #guestHome>
+  <guest-home></guest-home>
+</ng-template>

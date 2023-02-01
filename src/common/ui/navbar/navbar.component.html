@@ -1,15 +1,4 @@
-<div class="toolbar-parent">
-  <mat-toolbar>
-    <img class="logo" src="../../../assets/img/logo.png" />
-    <span class="spacer"></span>
-
-
-
-      <button class="icon-button"> <mat-icon>explore</mat-icon><br> <span>Keşfet</span></button>
-      <button class="icon-button"> <mat-icon>people</mat-icon><br> <span>Kişiler</span></button>
-      <button class="icon-button"> <mat-icon>newspaper</mat-icon><br> <span>İlanlar</span></button>
-      <button class="icon-button"> <mat-icon>rocket</mat-icon><br> <span>Programlar</span></button>
-
-
-  </mat-toolbar>
-</div>
+<user-navbar [drawer]="drawer" *ngIf="authService.loggedIn else guestNavbar"></user-navbar>
+<ng-template #guestNavbar>
+<guest-navbar></guest-navbar>
+</ng-template>
