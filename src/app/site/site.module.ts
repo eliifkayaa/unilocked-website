@@ -13,9 +13,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ExploreComponent } from './explore/explore.component';
+import { AnimatedCounterDirective } from './main-home/guest-home/animated-counter.directive';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective],
   imports: [
     CommonModule,
     SiteRoutingModule,

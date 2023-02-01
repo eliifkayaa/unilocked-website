@@ -5,6 +5,9 @@
 .logo {
   width: 120px;
   height: 20px;
+  margin-top: 1%;
+  margin-left: 1%;
+
   transition-property: width, height object-position;
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -27,7 +30,7 @@
 
 .mat-toolbar {
   background-color: white;
-  max-width: 1200px;
+
   justify-content: center;
 }
 
@@ -57,7 +60,7 @@
 .toolbar-child {
   width: 100%;
   display: flex;
-  max-width: 1200px;
+
 
 }
 

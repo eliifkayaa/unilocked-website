@@ -1,0 +1,55 @@
+<img class="logo" src="assets/img/logo.png" alt="">
+<div class="row">
+  <div class="col-sm d-flex justify-content-center align-items-center form-panel" [class.reverse] = "reversed">
+    <mat-horizontal-stepper style="width: 100%;" [linear]="false" #stepper>
+      <mat-step [stepControl]="firstFormGroup" label="E-Posta" style="width: 100%;">
+        <form class="d-flex justify-content-center align-items-center" [formGroup]="firstFormGroup">
+
+          <div style="width: 60%; display: block;">
+
+            <div><h1 style="text-align: left; margin-top: 4%;">Hoş geldin,</h1></div>
+            <div style="margin-top: 4%;">
+              <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>E-posta adresinizi girin</mat-label>
+                <input  matInput placeholder="Placeholder">
+                <mat-icon matSuffix>email</mat-icon>
+
+              </mat-form-field>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button style="width: 100%; margin-top: 4%;" mat-flat-button color="primary" (click)="reverse()" matStepperNext>Devam et</button>
+
+            </div>
+            <div class="seperator">
+              <span class="seperator-text">veya</span>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button style="width: 100%; margin-top: 4%;" mat-stroked-button ><mat-icon svgIcon="google"></mat-icon> Google ile giriş yap</button>
+
+            </div>
+          </div>
+
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Fill out your address</ng-template>
+
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+  </div>
+  <div class="col-sm d-flex justify-content-center align-items-center image-panel" [class.reverse] = "reversed">
+    <img src="assets/img/ill-02.svg" alt="">
+  </div>
+
+</div>
