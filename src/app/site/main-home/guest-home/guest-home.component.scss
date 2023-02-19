@@ -1,8 +1,17 @@
+@import url("../../../../common/animations.scss");
+
 .ill {
   width: 100%;
 }
 
 .main-panel {
+  .top-panel-1 {
+    .ill {
+      width: 100%;
+    }
+
+    position: relative;
+  }
 }
 
 .panel {
@@ -20,39 +29,171 @@
   h1 {
     text-align: center;
     font-size: 56px;
-    line-height: 56px;
+    line-height: 1.2em;
+    font-family: "Quicksand";
     color: #b75742;
+  }
+}
+
+.mid-panel {
+  margin-top: 4%;
+
+  padding: 4%;
+
+  h1 {
+    font-size: 56px;
+    line-height: 1.2em;
+    font-family: "Quicksand";
+    text-align: center;
+    color: #355389;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.2em;
     font-family: "Quicksand";
   }
 }
 
 .mid-panel-1 {
-  margin-top: 4%;
   background-color: whitesmoke;
+}
+
+.mid-panel-2 {
+  background-color: white;
+}
+
+.mid-panel-3 {
+  background-color: whitesmoke;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mid-panel-4 {
+  margin-top: 4%;
+  background-color: white;
   padding: 4%;
 
-  .col-sm-6:nth-child(1) {
-    border-right: 0.5px;
-    border-left: 0;
-    border-top: 0;
-    border-bottom: 0;
-    border-color: #355389;
-    border-style: groove;
-  }
-
-  .col-sm-6 {
-  }
-
   h1 {
-    font-size: 40px;
-    line-height: 40px;
     font-family: "Quicksand";
-    text-align: center;
+    line-height: 1.2em;
+    font-size: 56px;
     color: #355389;
+  }
+
+  h2 {
+    font-family: "Quicksand";
+    line-height: 1.2em;
+    font-size: 30px;
+  }
+
+  .row {
+    margin-top: 4%;
   }
 }
 
+.login-button {
+  margin-top: 4%;
+  background-color: #355389;
+  border-radius: 30px;
+  font-size: 35px;
+  color: white;
+  border-style: none;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  cursor: pointer;
+  font-family: "Quicksand";
+}
+
+.animate {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.animationActive {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.login-button:hover {
+  background-color: #001333;
+}
+
+.mid-panel-5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+
+  mat-icon {
+    transform: scale(2);
+  }
+
+  .content {
+    display: flex;
+    scroll-behavior: smooth;
+    height: 300px;
+
+    width: 100%;
+    overflow-x: hidden;
+
+    .slider-item {
+      flex: 0 0 auto;
+      width: 100vw;
+      display: block;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
 .bottom-panel {
+  margin-top: 4%;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Quicksand";
+      margin: 6%;
+      font-size: 25px;
+    }
+
+    .circle-2 {
+      img {
+        background-size: contain;
+        background-size: 70%;
+        background-position: 50%;
+        background-image: url("/assets/img/community-2.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.bottom-panel-2 {
   margin-top: 4%;
   padding: 4%;
   background-color: #32127a;
@@ -107,68 +248,4 @@
     margin-left: 2%;
     color: rgba(255, 255, 255, 0.8);
   }
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-.mid-panel-2 {
-  margin-top: 4%;
-  background-color: white;
-  padding: 4%;
-
-  h1 {
-    color: #b75742;
-  }
-}
-
-.login-button {
-  margin-top: 4%;
-  background-color: #355389;
-  border-radius: 30px;
-  font-size: 35px;
-  color: white;
-  border-style: none;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-left: 10%;
-  padding-right: 10%;
-  cursor: pointer;
-  font-family: "Quicksand";
-}
-
-.animate {
-  position: relative;
-  transform: translateY(100px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.animationActive {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.login-button:hover {
-  background-color: #001333;
-}
-
-.mid-panel-3 {
-  display: flex;
-  scroll-behavior: smooth;
-  height: 600px;
-  background-color: whitesmoke;
-  width: 100%;
-  overflow-x: hidden;
-
-  .slider-item {
-    flex: 0 0 auto;
-    width: 100vw;
-    display: block;
-  }
-}
-
-.text-center {
-  text-align: center;
 }

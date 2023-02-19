@@ -15,11 +15,11 @@
   object-fit: cover;
 }
 
-.logo:hover {
+/*.logo:hover {
   width: 50px;
   object-position: 52% 0;
   height: 50px;
-}
+}*/
 
 .toolbar-parent {
   @include mat.elevation(8);

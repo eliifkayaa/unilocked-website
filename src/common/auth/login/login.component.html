@@ -1,55 +1,119 @@
-<img class="logo" src="assets/img/logo.png" alt="">
-<div class="row">
-  <div class="col-sm d-flex justify-content-center align-items-center form-panel" [class.reverse] = "reversed">
-    <mat-horizontal-stepper style="width: 100%;" [linear]="false" #stepper>
-      <mat-step [stepControl]="firstFormGroup" label="E-Posta" style="width: 100%;">
-        <form class="d-flex justify-content-center align-items-center" [formGroup]="firstFormGroup">
-
-          <div style="width: 60%; display: block;">
-
-            <div><h1 style="text-align: left; margin-top: 4%;">Hoş geldin,</h1></div>
-            <div style="margin-top: 4%;">
-              <mat-form-field appearance="fill" style="width: 100%;">
+<a class="logo" routerLink="/home"><img src="assets/img/logo.png" alt="" /> </a
+>
+<mat-progress-bar
+  *ngIf="auth.loading$ | async"
+  mode="indeterminate"
+></mat-progress-bar>
+<div class="row reversable">
+  <div class="col-sm center form-panel" [class.reverse]="reversed">
+    <mat-horizontal-stepper style="width: 100%" [linear]="false" #stepper>
+      <mat-step
+        [stepControl]="firstFormGroup"
+        label="E-Posta"
+        style="width: 100%"
+        #stepper
+      >
+        <form style="width: 100%" class="center" [formGroup]="firstFormGroup">
+          <div class="formContainer">
+            <div><h1 class="header">Hoş geldin,</h1></div>
+            <div class="mt-4">
+              <mat-form-field class="field" appearance="fill">
                 <mat-label>E-posta adresinizi girin</mat-label>
-                <input  matInput placeholder="Placeholder">
+                <input formControlName="email" matInput placeholder="E-Posta" />
                 <mat-icon matSuffix>email</mat-icon>
-
               </mat-form-field>
             </div>
-            <div class="d-flex justify-content-end">
-              <button style="width: 100%; margin-top: 4%;" mat-flat-button color="primary" (click)="reverse()" matStepperNext>Devam et</button>
-
+            <div class="row">
+              <div class="col-sm">
+                <a
+                  mat-stroked-button
+                  routerLink="/register"
+                  color="primary"
+                  matStepperPrevious
+                  >Bir hesap oluşturun</a
+                >
+              </div>
+              <div class="col-sm">
+                <div class="d-flex justify-content-end">
+                  <button
+                    [disabled]="!firstFormGroup.valid"
+                    mat-flat-button
+                    color="primary"
+                    matStepperNext
+                    (click)="saveEmail()"
+                  >
+                    Devam et
+                  </button>
+                </div>
+              </div>
             </div>
+
             <div class="seperator">
               <span class="seperator-text">veya</span>
             </div>
             <div class="d-flex justify-content-end">
-              <button style="width: 100%; margin-top: 4%;" mat-stroked-button ><mat-icon svgIcon="google"></mat-icon> Google ile giriş yap</button>
-
+              <button style="width: 100%; margin-top: 4%" mat-stroked-button>
+                <mat-icon svgIcon="google"></mat-icon> Google ile giriş yap
+              </button>
             </div>
           </div>
-
         </form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Fill out your address</ng-template>
+        <form
+          (ngSubmit)="submit()"
+          class="center"
+          [formGroup]="secondFormGroup"
+        >
+          <div class="formContainer">
+            <div>
+              <h1 class="header">Hoş geldin,</h1>
+              <mat-chip-list aria-label="Fish selection">
+                <mat-chip (click)="stepper.previous()">
+                  <mat-icon matChipTrailingIcon>account_circle</mat-icon
+                  >&nbsp;&nbsp;
+                  {{ firstFormGroup.value.email }}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
 
+            <div class="mt-4">
+              <mat-form-field class="field" appearance="fill">
+                <mat-label>Parolanız ile devam edin,</mat-label>
+                <input
+                  formControlName="password"
+                  type="password"
+                  matInput
+                  placeholder="Parola"
+                />
+                <mat-icon matSuffix>password</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button
+                type="submit"
+                [disabled]="!secondFormGroup.valid || (auth.loading$ | async)"
+                style="width: 100%; margin-top: 4%"
+                mat-flat-button
+                color="accent"
+              >
+                Devam et
+              </button>
+
+            </div>
+            <div *ngIf="auth.error" class="error mt-4">
+              <p>{{auth.error}}</p>
+            </div>
+          </div>
         </form>
       </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-      </mat-step>
+      <mat-step> </mat-step>
     </mat-horizontal-stepper>
-
   </div>
-  <div class="col-sm d-flex justify-content-center align-items-center image-panel" [class.reverse] = "reversed">
-    <img src="assets/img/ill-02.svg" alt="">
+  <div
+    class="col-sm d-flex justify-content-center align-items-center image-panel"
+    [class.reverse]="reversed"
+  >
+    <img src="assets/img/ill-02.svg" alt="" />
   </div>
-
 </div>

@@ -4,34 +4,47 @@ import {
   ViewChild,
   AfterViewInit,
   ElementRef,
+  OnChanges,
 } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'guest-home',
   templateUrl: './guest-home.component.html',
   styleUrls: ['./guest-home.component.scss'],
 })
-export class GuestHomeComponent implements OnInit, AfterViewInit {
+export class GuestHomeComponent implements OnInit, AfterViewInit , OnChanges{
   @ViewChild('slider', { static: false }) slider: ElementRef<HTMLDivElement>;
 
   private counts = [150000, 60, 200, 1500];
   public animatedCounts = [0, 0, 0, 0];
   intervals: any[] = [null,null,null,null];
 
-  constructor() {}
+  constructor(private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.animate(document.querySelectorAll('.animate'));
+
+
     document.body.addEventListener('scroll', () => {
       this.animate(document.querySelectorAll('.animate'));
     });
+
   }
 
   private slideCount = 0;
   ngAfterViewInit(): void {
+
+    setTimeout(() => {
+      this.animate(document.querySelectorAll('.animate'));
+    })
+
     setInterval(() => {
       this.nextSlide();
     }, 5000);
+  }
+
+  ngOnChanges(): void {
+
   }
 
   nextSlide() {

@@ -1,17 +1,16 @@
 <navbar></navbar>
 
 <div class="main-panel">
-  <div class="row">
+  <div class="row top-panel-1">
     <div class="col-sm-6">
-      <img class="ill" src="assets/img/ill-02.svg" />
+      <img class="ill" src="assets/img/home-top-1.gif" />
     </div>
 
     <div class="col-sm-6 panel center">
       <div style="display: block">
         <div class="container right-panel">
           <h1 class="animate">
-            Üniversiteliler<br />ve Girişimciler<br />
-            burada!
+            Yeni bir kariyerin kilidini açmaya hazır mısın?
           </h1>
 
           <div class="center">
@@ -27,65 +26,157 @@
       </div>
     </div>
   </div>
-  <div class="row mid-panel-1">
+  <div class="row mid-panel mid-panel-1">
     <div class="col-sm-6">
-      <h1 class="animate">Sizin için en uygun topluluğu bulun.</h1>
+      <img class="ill" src="assets/img/community-3.png" />
     </div>
-    <div class="col-sm-6">
-      <h1 class="animate">Tüm girişim ve projeleri kolayca takip edin.</h1>
+    <div
+      class="col-sm-6 content"
+      style="
+        text-align: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      "
+    >
+      <div>
+        <h1 class="animate">Sizin için en uygun topluluğu bulun</h1>
+        <p>
+          Şu anda üniversite öğrencilerinin en büyük sorunlarından biri olan
+          ileride hangi alanda çalışmaya karar verememe sorunu artık bir sorun
+          değil. Hangi üniversite veya hangi bölümde okuduğunuz fark etmeden siz
+          de kendinizi geliştirmek için istediğiniz okul topluluklarına
+          katılabilir, takip edebilir ve istediğiniz projelere katkı
+          sağlayabilirsiniz.
+        </p>
+      </div>
     </div>
   </div>
-  <div class="row mid-panel-2 justify-content-center">
-    <div class="text-center col-sm-3 animate" #midPanel>
-      <h1 class="animate" [animatedCounter]="150000" [animationStarted]="midPanel.className.includes('animationActive')"></h1>
-      <p class="animate">Üye</p>
-    </div>
-    <div class="col-sm-3 text-center">
-      <h1 class="animate" [animatedCounter]="2000" [animationStarted]="midPanel.className.includes('animationActive')"></h1>
-      <p class="animate">Şirket</p>
-    </div>
-    <div class="col-sm-3 text-center ">
-      <h1 class="animate" [animatedCounter]="1500" [animationStarted]="midPanel.className.includes('animationActive')"></h1>
-      <p class="animate">Topluluk</p>
-    </div>
-    <div class="col-sm-3 text-center ">
-      <h1 class="animate" [animatedCounter]="150" [animationStarted]="midPanel.className.includes('animationActive')"></h1>
-      <p class="animate">Teknopark</p>
-    </div>
-  </div>
-  <div #slider class="mid-panel-3">
-    <div class="slider-item">a</div>
-    <div class="slider-item">b</div>
-    <div class="slider-item">c</div>
-    <div class="slider-item">d</div>
-    <div class="slider-item">e</div>
-  </div>
-  <div class="row bottom-panel">
-    <div class="col-sm-6">
-      <h1 class="animate">Unilocked Kimler İçin</h1>
-      <h3 class="animate">
-        Öğrenci hayatını dolu dolu yaşamak isteyen herkes.
-      </h3>
-      <div class="for-whom">
-        <div routerLink="/explore" class="item">
-          <span>Üniversite topluluklarını keşfedin</span>
-          <div class="spacer"></div>
-          <mat-icon>chevron_right</mat-icon>
-        </div>
-        <div class="item">
-          <span> Projeleri bulun ve katılın</span>
-          <div class="spacer"></div>
-          <mat-icon>chevron_right</mat-icon>
-        </div>
-        <div class="item">
-          <span>Projeniz için ortaklar bulun</span>
-          <div class="spacer"></div>
-          <mat-icon>chevron_right</mat-icon>
-        </div>
+  <div class="row mid-panel mid-panel-2">
+    <div
+      class="col-sm-6 content"
+      style="
+        text-align: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      "
+    >
+      <div>
+        <h1 class="animate">Tüm girişim ve projeleri kolayca takip edin</h1>
+        <p>
+          Unilocked platfomu bünyesinde binlerce okul topluluğu, projeler ve
+          startup'lar bulunmaktadır. Siz de ilerde geleceğinizi şekillendirmek
+          için ilgili olduğunuz projeleri takip edip, katılabilir ve ilerde
+          kendinizi mutlu hissettiğiniz alanlarda çalışma fırsatı yaratarak
+          kendinizi ve yeteneklerinizi keşfedebilirsiniz.
+        </p>
       </div>
     </div>
     <div class="col-sm-6">
-      <img class="ill" src="assets/img/img-1.jpg" alt="" />
+      <img class="ill" src="assets/img/projects.png" />
+    </div>
+  </div>
+  <div class="row mid-panel mid-panel-3">
+    <div class="col-sm-6">
+      <img class="ill" src="assets/img/ilanlar.png" />
+    </div>
+    <div
+      class="col-sm-6 content"
+      style="
+        text-align: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      "
+    >
+      <div>
+        <h1 class="animate">
+          İlanlara ve daha önce erişemediğiniz fırsatlara erişin
+        </h1>
+        <p>
+          Günümüzde gençlerin kendini geliştirmesi için çeşitli platformlar ve
+          staj imkanları var. UniLocked olarak biz bu çeşitli programları tek
+          çatı altında toplayarak sizlere sunuyoruz. Teknoparklar, şirketler ve
+          kariyer merkezleri gibi bir çok çeşitli programları kolayca takip
+          edebilirsiniz.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mid-panel-4">
+    <h1 style="text-align: center">Sayılarla UniLocked</h1>
+    <div class="row justify-content-center">
+      <div class="text-center col-sm-3 animate" #midPanel>
+        <h2
+          class="animate"
+          [animatedCounter]="150000"
+          [animationStarted]="midPanel.className.includes('animationActive')"
+        ></h2>
+        <p class="animate">Üye</p>
+      </div>
+      <div class="col-sm-3 text-center">
+        <h2
+          class="animate"
+          [animatedCounter]="2000"
+          [animationStarted]="midPanel.className.includes('animationActive')"
+        ></h2>
+        <p class="animate">Şirket</p>
+      </div>
+      <div class="col-sm-3 text-center">
+        <h2
+          class="animate"
+          [animatedCounter]="1500"
+          [animationStarted]="midPanel.className.includes('animationActive')"
+        ></h2>
+        <p class="animate">Topluluk</p>
+      </div>
+      <div class="col-sm-3 text-center">
+        <h2
+          class="animate"
+          [animatedCounter]="150"
+          [animationStarted]="midPanel.className.includes('animationActive')"
+        ></h2>
+        <p class="animate">Teknopark</p>
+      </div>
+    </div>
+  </div>
+  <div class="mid-panel-5">
+    <button mat-icon-button (click)="prevSlide()">
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+    <div #slider class="content">
+      <div class="slider-item">a</div>
+      <div class="slider-item">b</div>
+      <div class="slider-item">c</div>
+      <div class="slider-item">d</div>
+      <div class="slider-item">e</div>
+    </div>
+    <button mat-icon-button (click)="nextSlide()">
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+  </div>
+  <div class="bottom-panel">
+    <div class="content">
+      <div class="circle">
+        <div class="image">
+          <img src="assets/img/halka-1.png" alt="Halka 1" />
+        </div>
+        <h1>Yeni üniversite topluluklarını keşfetmek istiyorsan</h1>
+      </div>
+      <div class="circle circle-2">
+        <div class="image">
+          <img src="assets/img/halka-2.png" alt="Halka 1" />
+        </div>
+
+        <h1>Hayallerini gerçeği döndürmek için takım arkadaşları arıyorsan</h1>
+      </div>
+      <div class="circle">
+        <div class="image">
+          <img src="assets/img/halka-3.png" alt="Halka 1" />
+        </div>
+        <h1>Geleceğe yön veren bir projenin parçası olmak istiyorsan</h1>
+      </div>
     </div>
   </div>
 </div>

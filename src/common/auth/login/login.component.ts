@@ -1,40 +1,68 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '@common/auth/auth.service';
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit ,AfterViewInit{
-
-  public reversed = false
+export class LoginComponent implements OnInit, AfterContentInit {
+  @ViewChild('stepper') stepper: MatStepper;
+  public reversed = false;
   public firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    email: ['', Validators.required],
   });
   public secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    password: [
+      '',
+      [Validators.required, Validators.minLength(6), Validators.maxLength(30)],
+    ],
   });
 
-  constructor(private _formBuilder: FormBuilder,private activeRoute:ActivatedRoute) {
 
-  }
-
+  constructor(
+    public auth:AuthService,
+    private _formBuilder: FormBuilder,
+    private activeRoute: ActivatedRoute
+  ) {}
   ngOnInit(): void {
-
-
-
+    this.reverseByRegister();
   }
 
-  ngAfterViewInit(): void {
-    this.reversed = this.activeRoute.snapshot.queryParams['from'] == 'home'
+  ngAfterViewChecked(): void {}
+
+  ngAfterContentInit(): void {
+    setTimeout(() => {
+      this.reverseByHome();
+    }, 100);
   }
 
+  public saveEmail() {}
 
+  ngAfterViewInit(): void {}
 
-  reverse() {
-    this.reversed = true
+  public submit() {
+    const data = { ...this.firstFormGroup.value, ...this.secondFormGroup.value }
+    this.auth.login(data.email, data.password)
   }
 
+  reverseByHome() {
+    this.reversed =
+      this.activeRoute.snapshot.queryParams['from'] == 'home' ||
+      this.activeRoute.snapshot.queryParams['from'] == 'register';
+  }
+
+  reverseByRegister() {
+    this.reversed = this.activeRoute.snapshot.queryParams['from'] == 'register';
+  }
 }

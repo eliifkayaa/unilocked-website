@@ -8,6 +8,7 @@ import { SiteModule } from './site/site.module';
 import { AppCommonModule } from '@common/common.module';
 import { AuthModule } from '@common/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastModule } from '@common/core/toast/toast/toast.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     SiteModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

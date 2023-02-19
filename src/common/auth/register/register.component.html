@@ -1,0 +1,147 @@
+<a class="logo" routerLink="/home"><img src="assets/img/logo.png" alt="" /></a>
+<mat-progress-bar
+  *ngIf="auth.loading$ | async"
+  mode="indeterminate"
+></mat-progress-bar>
+<div class="row reversable">
+  <div class="col-sm center form-panel reverse">
+    <mat-horizontal-stepper style="width: 100%" [linear]="false" #stepper>
+      <mat-step
+        [stepControl]="firstFormGroup"
+        label="E-Posta"
+        style="width: 100%"
+        #stepper
+      >
+        <form style="width: 100%" class="center" [formGroup]="firstFormGroup">
+          <div class="formContainer">
+            <div>
+              <h1 class="header">
+                Hoş geldin, {{ firstFormGroup.value.firstname }}
+              </h1>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <mat-form-field class="field" appearance="fill">
+                  <mat-label>İsminiz</mat-label>
+                  <input
+                    formControlName="firstname"
+                    matInput
+                    placeholder="İsim"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6">
+                <mat-form-field class="field" appearance="fill">
+                  <mat-label>Soy isminiz</mat-label>
+                  <input
+                    formControlName="lastname"
+                    matInput
+                    placeholder="Soyisim"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="mt-4">
+              <mat-form-field class="field" appearance="fill">
+                <mat-label>E-posta adresinizi girin</mat-label>
+                <input formControlName="email" matInput placeholder="E-Posta" />
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <a
+                  routerLink="/login"
+                  [queryParams]="{ from: 'register' }"
+                  mat-stroked-button
+                  color="primary"
+                  matStepperPrevious
+                  >Giriş yapın</a
+                >
+              </div>
+              <div class="col-sm">
+                <div class="d-flex justify-content-end">
+                  <button
+                    [disabled]="!firstFormGroup.valid"
+                    mat-flat-button
+                    color="primary"
+                    matStepperNext
+                  >
+                    Devam et
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form
+          (ngSubmit)="submit()"
+          class="center"
+          [formGroup]="secondFormGroup"
+        >
+          <div class="formContainer">
+            <div>
+              <h1 class="header">
+                Hoş geldin, {{ firstFormGroup.value.firstname }}
+              </h1>
+              <mat-chip-list aria-label="Fish selection">
+                <mat-chip>
+                  <mat-icon matChipTrailingIcon>account_circle</mat-icon
+                  >&nbsp;&nbsp;
+                  {{ firstFormGroup.value.email }}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+
+            <div class="mt-4 row">
+              <mat-form-field class="field" appearance="fill">
+                <mat-label>Parolanızı girin,</mat-label>
+                <input
+                  formControlName="password"
+                  type="password"
+                  matInput
+                  placeholder="Parola"
+                />
+                <mat-icon matSuffix>password</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="mt-4 row">
+              <mat-form-field class="field" appearance="fill">
+                <mat-label>Parolanızı onaylayın,</mat-label>
+                <input
+                  formControlName="password2"
+                  type="password"
+                  matInput
+                  placeholder="Parola"
+                />
+                <mat-icon matSuffix>password</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button
+                type="submit"
+                [disabled]="secondFormGroup.invalid || (auth.loading$ | async)"
+                style="width: 100%; margin-top: 4%"
+                mat-flat-button
+                color="accent"
+
+              >
+                Devam et
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        Kayıt olma başarılı.
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+  <div
+    class="col-sm d-flex justify-content-center align-items-center image-panel reverse"
+  >
+    <img src="assets/img/ill-02.svg" alt="" />
+  </div>
+</div>
