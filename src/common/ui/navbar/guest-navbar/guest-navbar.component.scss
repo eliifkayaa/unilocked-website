@@ -7,13 +7,13 @@
   height: 20px;
   margin-top: 1%;
   margin-left: 1%;
+  display: block;
 
-  transition-property: width, height object-position;
-  transition-duration: 2s;
-  transition-timing-function: linear;
 
   object-fit: cover;
 }
+
+
 
 .logo:hover {
   width: 50px;
@@ -25,11 +25,11 @@
   display: flex;
   justify-content: center;
 
-  background-color: white;
+  background-color: #fff;
 }
 
 .mat-toolbar {
-  background-color: white;
+  background-color: #fff;
 
   justify-content: center;
 }
@@ -45,8 +45,10 @@
   margin-left: 4px;
 
 
+
  span {
   display: block;
+
  }
 }
 

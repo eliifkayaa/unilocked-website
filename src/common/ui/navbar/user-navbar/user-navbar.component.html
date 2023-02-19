@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
-  <img
+  <a [routerLink]="['/homee']" ><img
     src="assets/images/unilockedlogopgn-08.png"
     class="logo"
     alt="UniLocked"
-  />
+  /></a>
   <button class="menu-button" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
@@ -44,12 +44,19 @@
   <div class="user-area">
     <img
       class="profile-image"
-      src="https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Rachel-Montan%CC%83ez.jpeg"
+      [src]="auth.user.avatar"
       alt=""
     />
-    <div class="profile-texts">
-      <div class="username">Emirhan Eyidoğan</div>
+    <div class="profile-texts" [matMenuTriggerFor]="menu">
+      <div class="username">{{auth.user.first_name}} {{auth.user.last_name}}</div>
       <div class="school">TED Üniversitesi</div>
     </div>
+    <mat-menu #menu="matMenu">
+      <button [disabled]="auth.loading$ | async" (click)="logout()" mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Çıkış Yap</span>
+      </button>
+
+    </mat-menu>
   </div>
 </mat-toolbar>

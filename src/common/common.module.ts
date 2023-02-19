@@ -10,6 +10,9 @@ import { GuestNavbarComponent } from './ui/navbar/guest-navbar/guest-navbar.comp
 import { UserNavbarComponent } from './ui/navbar/user-navbar/user-navbar.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
+import { LogoComponent } from './ui/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     LoginBoxComponent,
     UserNavbarComponent,
     NavbarComponent,
+    LogoComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +29,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatButtonModule,
     MatBadgeModule,
     MatTooltipModule,
+    MatMenuModule,
+    RouterModule
   ],
   exports: [NavbarComponent],
 })

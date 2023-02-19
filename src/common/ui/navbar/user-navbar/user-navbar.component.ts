@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '@common/auth/auth.service';
 
 @Component({
   selector: 'user-navbar',
@@ -9,9 +10,13 @@ export class UserNavbarComponent implements OnInit {
 
   @Input('drawer') public drawer
 
-  constructor() { }
+  constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  public logout() {
+    this.auth.logout();
   }
 
 }

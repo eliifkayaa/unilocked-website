@@ -8,12 +8,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { MatChipsModule } from '@angular/material/chips';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
+import {  MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslationsModule } from '@common/core/translations/translations.module';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +31,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatChipsModule,
+    RouterModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    TranslationsModule
   ],
   exports: [
     LoginComponent
