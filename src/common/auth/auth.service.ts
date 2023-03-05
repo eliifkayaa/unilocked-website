@@ -77,9 +77,9 @@ export class AuthService {
     } else {
       this.error = response.error;
     }
-    if (this.activatedRoute.component === LoginComponent) {
+    
       this.router.navigate([this.redirect ? this.redirect : '/home']);
-    }
+    
   }
 }
 
