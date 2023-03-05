@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginComponent } from '@common/auth/login/login.component';
 import { User } from '@common/auth/types/user';
 import { AppHttpClient } from '@common/core/http/http.service';
 import { BehaviorSubject, finalize } from 'rxjs';
@@ -14,7 +15,7 @@ export class AuthService {
   public user?: User;
   public error?: string;
 
-  constructor(private router:Router,private http: AppHttpClient) {}
+  constructor(private router:Router,private http: AppHttpClient,private activatedRoute:ActivatedRoute) {}
 
   public init() {
     this.http.get<UserResponse>('auth/me').subscribe(data => {
@@ -76,7 +77,9 @@ export class AuthService {
     } else {
       this.error = response.error;
     }
-    this.router.navigate([this.redirect ? this.redirect : '/home']);
+    if (this.activatedRoute.component === LoginComponent) {
+      this.router.navigate([this.redirect ? this.redirect : '/home']);
+    }
   }
 }
 
