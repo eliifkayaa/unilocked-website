@@ -17,7 +17,7 @@ $app-typography: mat.define-typography-config(
   $subheading-2: mat.define-typography-level(16px, 28px, 400),
   $subheading-1: mat.define-typography-level(15px, 24px, 400),
   $body-2: mat.define-typography-level(14px, 24px, 500),
-  $body-1: mat.define-typography-level(14px, 20px, 400),
+  $body-1: mat.define-typography-level(14px, 1em, 400),
   $caption: mat.define-typography-level(12px, 20px, 400),
   $button: mat.define-typography-level(14px, 14px, 500),
   $input: mat.define-typography-level(inherit, 1.125, 400),
@@ -83,6 +83,7 @@ body {
 body {
   margin: 0;
   font-family: "Prostir sans Display";
+  background-color: #fafafa;
   //font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
