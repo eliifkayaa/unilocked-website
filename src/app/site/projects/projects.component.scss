@@ -1,0 +1,10 @@
+
+.header {
+  border-bottom: 0.1px solid #dee2e6;
+  margin-top: 4%;
+}
+
+::ng-deep.mat-tab-label {
+  min-width: 0px !important;
+}
+

@@ -57,12 +57,12 @@ export class LoginComponent implements OnInit, AfterContentInit {
   }
 
   reverseByHome() {
-    this.reversed =
+    this.reversed = this.reversed ||
       this.activeRoute.snapshot.queryParams['from'] == 'home' ||
       this.activeRoute.snapshot.queryParams['from'] == 'register';
   }
 
   reverseByRegister() {
-    this.reversed = this.activeRoute.snapshot.queryParams['from'] == 'register';
+    this.reversed = this.activeRoute.snapshot.queryParams['from'] != 'home';
   }
 }

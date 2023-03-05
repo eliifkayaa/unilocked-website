@@ -15,9 +15,13 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ExploreComponent } from './explore/explore.component';
 import { AnimatedCounterDirective } from './main-home/guest-home/animated-counter.directive';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent],
   imports: [
     CommonModule,
     SiteRoutingModule,
@@ -30,7 +34,8 @@ import { AnimatedCounterDirective } from './main-home/guest-home/animated-counte
     MatFormFieldModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTabsModule
   ],
 })
 export class SiteModule {}

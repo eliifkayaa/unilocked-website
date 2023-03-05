@@ -6,10 +6,27 @@
 
 // Plus imports for other components in your app.
 
+$app-typography: mat.define-typography-config(
+  $font-family: "indivisible",
+  $display-4: mat.define-typography-level(112px, 112px, 300, 0.05em),
+  $display-3: mat.define-typography-level(56px, 56px, 400, -0.02em),
+  $display-2: mat.define-typography-level(45px, 48px, 400, -0.005em),
+  $display-1: mat.define-typography-level(34px, 40px, 400),
+  $headline: mat.define-typography-level(24px, 32px, 700),
+  $title: mat.define-typography-level(20px, 32px, 500),
+  $subheading-2: mat.define-typography-level(16px, 28px, 400),
+  $subheading-1: mat.define-typography-level(15px, 24px, 400),
+  $body-2: mat.define-typography-level(14px, 24px, 500),
+  $body-1: mat.define-typography-level(14px, 20px, 400),
+  $caption: mat.define-typography-level(12px, 20px, 400),
+  $button: mat.define-typography-level(14px, 14px, 500),
+  $input: mat.define-typography-level(inherit, 1.125, 400),
+);
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+@include mat.core($app-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -22,6 +39,7 @@ $unista-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
+
 $unista-theme: mat.define-light-theme(
   (
     color: (
@@ -29,6 +47,7 @@ $unista-theme: mat.define-light-theme(
       accent: $unista-accent,
       warn: $unista-warn,
     ),
+    typography: $app-typography,
   )
 );
 
@@ -41,6 +60,7 @@ $unista-toolbar-theme: mat.define-light-theme(
       accent: $unista-accent,
       warn: $unista-warn,
     ),
+    typography: $app-typography,
   )
 );
 
@@ -62,9 +82,21 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Prostir sans Display";
+  //font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .mt-4 {
   margin-top: 4%;
+}
+
+.mainMenu {
+  background-color: #fafafa;
+  padding: 20px;
+}
+
+mat-card {
+  border: 1px solid #dee2e6;
+  border-radius: 7px;
+  box-shadow: none;
 }

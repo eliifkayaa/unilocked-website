@@ -1,51 +1,9 @@
 <navbar [drawer]="drawer"></navbar>
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer style="width: 250px;" mode="side" opened>
+  <mat-drawer class="mainMenu" #drawer style="width: 250px;" mode="side" opened>
 
-    <div class="profile-image-container">
-      <img
-        class="profile-image"
-        [src]="auth.user.avatar"
-        alt=""
-      />
-    </div>
-    <h2 class="profile-name">{{auth.user.first_name}} {{auth.user.last_name}}</h2>
-    <p class="profile-details">TED Üniversitesi, Yazılım Mühendisliği</p>
-    <hr class="profile-hr" />
-    <mat-action-list role="list">
-      <button routerLink="/friends" mat-list-item>
-        <mat-icon mat-list-icon>people</mat-icon>
-        <div mat-line>Arkadaşlarım</div>
-        <div mat-line>12 Tane</div>
-      </button>
-      <button routerLink="/posts" mat-list-item >
-        <mat-icon mat-list-icon>newspaper</mat-icon>
-        <div mat-line>Paylaşımlarım</div>
-      </button>
+    <main-menu></main-menu>
 
-    </mat-action-list>
-    <hr class="profile-hr" />
-    <div class="sub-header">Takip ettiklerin</div>
-    <mat-action-list role="list">
-
-      <button routerLink="/communities" mat-list-item (click)="testClick()">
-        <mat-icon mat-list-icon>diversity_1</mat-icon>
-        <div mat-line>Topluluklar</div>
-        <div mat-line>12 Tane</div>
-    </button>
-      <button routerLink="/projects" mat-list-item (click)="testClick()">
-        <mat-icon mat-list-icon>rocket_launch</mat-icon>
-        <div mat-line>Projeler</div>
-      </button>
-      <button routerLink="/people" mat-list-item (click)="testClick()">
-        <mat-icon mat-list-icon>people</mat-icon>
-        <div mat-line>Kişiler</div>
-      </button>
-      <button routerLink="/companies" mat-list-item (click)="testClick()">
-        <mat-icon mat-list-icon>apartment</mat-icon>
-        <div mat-line>Şirketler</div>
-      </button>
-    </mat-action-list>
   </mat-drawer>
   <mat-drawer-content>
     <div class="home-area">
