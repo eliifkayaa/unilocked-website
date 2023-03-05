@@ -19,9 +19,11 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component';
+import { CommunitiesComponent } from './communities/communities.component';
+import { InfoCardComponent } from './components/info-card/info-card.component';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, InfoCardComponent],
   imports: [
     CommonModule,
     SiteRoutingModule,

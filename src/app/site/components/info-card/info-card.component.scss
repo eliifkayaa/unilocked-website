@@ -1,0 +1,46 @@
+.find-box {
+  margin: 8px;
+  box-shadow: none;
+
+  color: #495057;
+
+  mat-card {
+    background-color: #fbfbfc;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    .panel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      
+    }
+  }
+
+  .action-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 40px 40px 8px
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 8px;
+  }
+
+  mat-icon {
+    background: #edeefe;
+    border-radius: 50%;
+    color: #4b53f2;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 8px 8px;
+  }
+}
