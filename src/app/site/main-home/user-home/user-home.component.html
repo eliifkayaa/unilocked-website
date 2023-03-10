@@ -12,43 +12,93 @@
 
           <div class="col-lg-8">
             <mat-card class="home-panel mat-elevation-z0">
-              <div class="write-post-container">
+              <div class="post-container">
                 <img
                   class="profile-image"
                   [src]="auth.user.avatar"
                   alt=""
                 />
                 <mat-form-field appearance="outline">
-                  <mat-label>Bir paylaşım yapın...</mat-label>
+                  <mat-label>Bu gün aklında neler var?</mat-label>
                   <input matInput placeholder="Bir şeyler yaz..." />
                   <mat-icon matSuffix>send</mat-icon>
                 </mat-form-field>
               </div>
-              <div class="d-flex justify-content-center">
-                <mat-button-toggle-group
-                  name="fontStyle"
-                  aria-label="Font Style"
-                >
-                  <mat-button-toggle value="bold"
-                    ><mat-icon>camera</mat-icon> Fotoğraf</mat-button-toggle
-                  >
-                  <mat-button-toggle value="italic"
-                    ><mat-icon>movie</mat-icon> Video</mat-button-toggle
-                  >
-                  <mat-button-toggle value="underline"
-                    ><mat-icon>event</mat-icon> Etkinik</mat-button-toggle
-                  >
-                </mat-button-toggle-group>
+              <div class="row" style="margin: 2px;">
+                <div class="col-sm-9 d-flex" style="align-items: center; justify-content: flex-start;">
+                  <button mat-button color="primary" class="attachment-button"><mat-icon>image</mat-icon> Fotoğraf</button>
+                  <button mat-button color="primary" class="attachment-button"><mat-icon>videocam</mat-icon> Video</button>
+                  <button mat-button color="primary" class="attachment-button"><mat-icon>event</mat-icon> Etkinlik</button>
+                  <button mat-button color="primary" class="attachment-button"><mat-icon>poll</mat-icon> Anket</button>
+
+
+                </div>
+                <div class="col-sm-3" style="display: flex; justify-content: flex-end;">
+                  <button mat-flat-button color="primary"><span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon></button>
+                </div>
               </div>
-              <br /><br />
+             <br>
             </mat-card>
             <br />
-            <hr />
+            
+            <mat-card class="home-panel mat-elevation-z0" >
+              <div class="post-container">
+                <img
+                  class="profile-image"
+                  [src]="account4.image"
+                  alt=""
+                />
+                <div>
+                  <div class="post-top">
+                    <h4>Ferman Uludağ</h4>
+                    <p class="user-info">TED Üniversitesi - Makine Mühendisliği</p>
+                    <p class="post-info">13 Saat • Düzenlendi •&nbsp;<mat-icon>public</mat-icon>&nbsp;Herkese Açık</p>
+                  </div>
+                  <div class="post-content">
+                    <p>Mimarlık Bölümü öğrencilerimizden @Umut Er, geçtiğimiz bahar döneminde 1.sınıf stüdyosunda yaptığı projesiyle bu sene yirmi birincisi düzenlenen Mimarlık Eğitimi Derneği Mimarlık Öğrencileri Ödülleri 1. Sınıf kategorisinde Jüri Özel Ödülü'ne layık görüldü. <br><br><span class="tag">#mimarlık</span></p>
+                  </div>
+                  <div class="post-image">
+                    <img src="assets/img/post-image.png" alt="">
+                  </div>
+                  <div class="row" style="margin: 2px 2px 2px 2px;">
+                    <div class="col-sm-9 d-flex" style="align-items: center; justify-content: flex-start; margin-left: -5%; margin-right: 5%;">
+                      <button mat-button color="primary" class="attachment-button"><mat-icon>image</mat-icon> Fotoğraf</button>
+                      <button mat-button color="primary" class="attachment-button"><mat-icon>videocam</mat-icon> Video</button>
+                      <button mat-button color="primary" class="attachment-button"><mat-icon>event</mat-icon> Etkinlik</button>
+                      <button mat-button color="primary" class="attachment-button"><mat-icon>poll</mat-icon> Anket</button>
+    
+    
+                    </div>
+                    <div class="col-sm-3" style="display: flex; justify-content: flex-end;">
+                      <button mat-flat-button color="primary"><span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon></button>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+             <br>
+            </mat-card>
+
           </div>
           <div class="col-lg-4">
             <mat-card class="home-panel mat-elevation-z0">
               <div class="right-panel">
                 <h2>Tanıyor olabilirsin</h2>
+                <div class="d-flex" *ngFor="let user of users">
+                  <img class="profile-image" [src]="user.image" alt="">
+                  <div style="width: 100%;">
+                    <div class="top">
+                      <h4 class="name">{{user.name}}</h4>
+                      <button class="follow">Takip Et <mat-icon>add</mat-icon></button>
+                    </div>
+                    <p class="info">{{user.info}}</p>
+                    
+                  </div>
+                </div>
+                <div class="see-more">
+                  <button mat-button>Daha fazlasını gör <mat-icon>chevron_right</mat-icon></button>
+                </div>
               </div>
             </mat-card>
           </div>

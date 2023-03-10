@@ -126,7 +126,6 @@
                 style="width: 100%; margin-top: 4%"
                 mat-flat-button
                 color="accent"
-
               >
                 Devam et
               </button>
@@ -135,7 +134,24 @@
         </form>
       </mat-step>
       <mat-step>
-
+        <h1 class="header">
+          Nerdeyse hazırsın, {{ firstFormGroup.value.firstname }}!
+        </h1>
+        <br />
+        <p>
+          Bu yeni diyarın kilidini açman için yalnızca bir kaç adım kaldı!
+          Detayları kayıt olduğun e-posta adresine gönderdik. Hesabın sana ait
+          olduğunu anlayabilmemiz için lütfen bu adımları uygulamayı unutma!
+        </p>
+        <br />
+        <a
+          routerLink="/login"
+          style="width: 100%; margin-top: 4%"
+          mat-flat-button
+          color="accent"
+        >
+          Şimdi Giriş Yap
+        </a>
       </mat-step>
     </mat-horizontal-stepper>
   </div>
