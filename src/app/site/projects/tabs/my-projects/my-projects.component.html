@@ -1,0 +1,31 @@
+<div class="content container">
+  <div class="d-flex justify-content-between">
+    <h2>Aktif Projeler</h2>
+    <button mat-button color="primary">Hepsini gör</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let project of projects">
+      <project-card [project]="project"></project-card>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <h2>Geçmiş projeler</h2>
+    <button mat-button color="primary">Hepsini gör</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let project of projects">
+      <project-card [project]="project"></project-card>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <h2>İstekler</h2>
+    <button mat-button color="primary">Hepsini gör</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let project of projects">
+      <project-card [project]="project"></project-card>
+    </div>
+  </div>
+</div>

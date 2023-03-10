@@ -18,12 +18,16 @@ import { AnimatedCounterDirective } from './main-home/guest-home/animated-counte
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component';
+import { ProjectsHomeComponent } from './projects/tabs/projects-home/projects-home.component';
 import { CommunitiesComponent } from './communities/communities.component';
 import { InfoCardComponent } from './components/info-card/info-card.component';
+import { ProjectCardComponent } from './projects/components/project-card/project-card.component';
+import { ProjectsFromCommunitiesComponent } from './projects/tabs/projects-from-communities/projects-from-communities.component';
+import { ProjectsFromFriendsComponent } from './projects/tabs/projects-from-friends/projects-from-friends.component';
+import { MyProjectsComponent } from './projects/tabs/my-projects/my-projects.component';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, InfoCardComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, InfoCardComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent],
   imports: [
     CommonModule,
     SiteRoutingModule,

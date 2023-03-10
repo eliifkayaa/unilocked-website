@@ -21,12 +21,93 @@
 
       .right-panel {
         padding: 12px;
+
+        .see-more {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 12px 2px 4px 2px;
+          
+
+          h4 {
+            font-weight: 500;
+            margin: 0;
+            
+          }
+
+          .follow {
+            color: #472183;
+            background-color: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+
+            cursor: pointer;
+
+            mat-icon {
+              font-size: 18px;
+              height: 18px;
+            }
+          }
+        }
+
+        p {
+          margin: 2px 2px 2px 2px;
+        }
       }
 
-      .write-post-container {
+      .post-container {
         display: flex;
-        align-items: center;
         padding: 12px;
+
+        .post-top {
+          color: #343a40;
+
+          h4 {
+            font-weight: 500;
+            margin: 2px;
+          }
+
+          .user-info {
+            margin: 2px;
+          }
+
+          .post-info {
+            margin: 2px;
+            display: flex;
+            align-items: center;
+
+            font-size: 12px;
+
+            color: #868e96;
+            mat-icon {
+              font-size: 14px;
+              height: 14px;
+              width: 14px;
+            }
+          }
+        }
+
+        .post-content {
+          margin: 12px 2px 4px 2px;
+
+          .tag {
+            color: #5d64f3;
+            font-weight: 500;
+          }
+        }
+
+        .post-image {
+          margin: 12px 4px 4px 4px;
+          img {
+            width: 100%;
+          }
+        }
 
         mat-form-field {
           width: 100%;
@@ -36,13 +117,22 @@
           margin-top: 0px;
         }
       }
-
-
     }
   }
 }
 
-
+.attachment-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  mat-icon {
+    height: 18px;
+    font-size: 18px;
+  }
+}
 
 .profile-image {
   width: 50px;
