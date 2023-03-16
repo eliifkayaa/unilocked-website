@@ -1,0 +1,503 @@
+<div class="content">
+  <form [formGroup]="notificationForm">
+    <mat-card>
+      <h3 class="panel-header">
+        <mat-icon>send</mat-icon>&nbsp; Gönderi Bildirimleri
+      </h3>
+
+      <h4 class="panel-sub-header">Yanıtlar ve Tepkiler</h4>
+      <p class="panel-description">
+        Biri gönderinizi/bulunduğunuz gönderiyi yanıtladığında veya gönderiye
+        tepki verdiğinde gönderilen bildirimler.
+      </p>
+
+      <div formGroupName="post" class="row group">
+        <mat-slide-toggle class="col-sm" formControlName="site"
+          >Site İçi Bildirimi</mat-slide-toggle
+        >
+        <mat-slide-toggle class="col-sm" formControlName="email"
+          >Eposta Bildirimi</mat-slide-toggle
+        >
+      </div>
+      <hr />
+
+      <div>
+        <h4 class="panel-sub-header">Alıntılar ve Paylaşımlar</h4>
+        <p class="panel-description">
+          Biri gönderinizi/bulunduğunuz gönderiyi alıntıladığında veya
+          paylaştığında gönderilen bildirimler.
+        </p>
+        <div formGroupName="quotes" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Etiketlemeler</h4>
+        <p class="panel-description">
+          Biri gönderisinde veya mesajında sizi etiketlediğinde gönderilen
+          bildirimler.
+        </p>
+        <div formGroupName="quotes" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+    </mat-card>
+    <mat-card class="mt-4">
+      <h3 class="panel-header">
+        <mat-icon>message</mat-icon>&nbsp; Mesajlaşma Bildirimleri
+      </h3>
+
+      <h4 class="panel-sub-header">Mesajlar</h4>
+      <p class="panel-description">
+        Biri size mesaj gönderdiğinde gönderilen bildirimler.
+      </p>
+
+      <div formGroupName="messages" class="row group">
+        <mat-slide-toggle class="col-sm" formControlName="site"
+          >Site İçi Bildirimi</mat-slide-toggle
+        >
+        <mat-slide-toggle class="col-sm" formControlName="email"
+          >Eposta Bildirimi</mat-slide-toggle
+        >
+      </div>
+      <hr />
+
+      <div>
+        <h4 class="panel-sub-header">Okunmayan Mesaj Hatırlatmaları</h4>
+        <p class="panel-description">
+          Okunmayan mesaj olduğunda gönderilen bildirimler.
+        </p>
+        <div formGroupName="unread_messages" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </mat-card>
+    <mat-card class="mt-4">
+      <h3 class="panel-header">
+        <mat-icon>people</mat-icon>&nbsp; Kişiler ve Arkadaş Bildirimleri
+      </h3>
+
+      <h4 class="panel-sub-header">
+        Arkadaş ve Takip Edilenlerin Faaliyetleri
+      </h4>
+      <p class="panel-description">
+        Arkadaşlarınız ve takip ettiğiniz kişiler gönderi paylaştığında, bir
+        faaliyette bulunduğunda gönderilen bildirimler. • Eposta bildirimleri
+        belirlediğiniz sıklık aralığında paylaşılmış gönderilerin derlemesi
+        olarak gönderilir.
+      </p>
+
+      <div formGroupName="following_activities" class="row group">
+        <mat-slide-toggle class="col-sm" formControlName="site"
+          >Site İçi Bildirimi</mat-slide-toggle
+        >
+        <mat-slide-toggle class="col-sm" formControlName="email"
+          >Eposta Bildirimi</mat-slide-toggle
+        >
+      </div>
+      <hr />
+
+      <div>
+        <h4 class="panel-sub-header">Bağlantı Kurma</h4>
+        <p class="panel-description">
+          Bir Unilocked üyesi size bağlantı isteği gönderdiğinde veya bağlantı
+          isteğiniz kabul edildiğinde gönderilen bildirimler.
+        </p>
+        <div formGroupName="connections" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Takip Etme</h4>
+        <p class="panel-description">
+          Bir Unilocked üyesi sizi takip ettiğinde veya başka üyeler birbirini
+          takip ettiğinde gönderilen bildirimler.
+        </p>
+        <div formGroupName="follows" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Yıl Dönümleri ve Başarılar</h4>
+        <p class="panel-description">
+          Takip ettiğiniz veya bağlantı kurduğunuz üyelerin doğum günleri,
+          üniversiteye giriş yıl dönümleri; üniversiteden mezun olmaları, işte
+          terfi etmeleri gibi başarıların sonucu gönderilen bildirimler.
+        </p>
+        <div formGroupName="achivements" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+
+          <mat-slide-toggle class="col-sm" formControlName="sms"
+            >SMS Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Profil Görüntülenmeleri</h4>
+        <p class="panel-description">
+          Bir Unilocked üyesi profilinizi görüntülediğinde gönderilen
+          bildirimler.
+        </p>
+        <div formGroupName="profile_views" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Takip ve Bağlantı Önerileri</h4>
+        <p class="panel-description">
+          Takip edebileceğiniz ve bağlantı kurabileceğiniz kişi önerileri
+          hakkında gönderilen bildirimler.
+        </p>
+        <div formGroupName="folllow_suggestions" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="mt-4">
+      <h3 class="panel-header">
+        <mat-icon>group</mat-icon>&nbsp; Topluluk Bildirimleri
+      </h3>
+
+      <div>
+        <h4 class="panel-sub-header">Topluluk Faaliyetleri</h4>
+        <p class="panel-description">
+          Topluluklarınız gönderi paylaştığında, bir faaliyette bulunduğunda
+          gönderilen bildirimler. • Eposta bildirimleri belirlediğiniz sıklık
+          aralığında paylaşılmış gönderilerin derlemesi olarak gönderilir.
+        </p>
+
+        <div formGroupName="community_activities" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Topluluk Önerileri</h4>
+        <p class="panel-description">
+          Size uygun olacağını düşündüğümüz topluluklar hakkında gönderilen
+          bildirimler.
+        </p>
+        <div formGroupName="community_suggestions" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="mt-4">
+      <h3 class="panel-header">
+        <mat-icon>event</mat-icon>&nbsp; Etkinlik Bildirimleri
+      </h3>
+
+      <div>
+        <h4 class="panel-sub-header">Etkinlik Güncellemeleri</h4>
+        <p class="panel-description">
+          Katıldığınız etkinlikler için yapılan güncellemeler sonucu gönderilen
+          bildirimler.
+        </p>
+
+        <div formGroupName="event_updates" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Etkinlik Anımsıtıcıları</h4>
+        <p class="panel-description">
+          Katıldığınız etkinlikler hakkında hatırlatma amacıyla gönderilen
+          bildirimler.
+        </p>
+
+        <div formGroupName="event_reminders" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Etkinlik Davetleri</h4>
+        <p class="panel-description">
+          Bir üye veya topluluk sizi bir etkinliğe davet ettiğinde gönderilen
+          bildirimler.
+        </p>
+        <div formGroupName="event_invites" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Etkinlik Önerileri</h4>
+        <p class="panel-description">
+          Size uygun olacağını düşündüğümüz etkinlikler hakkında gönderilen
+          bildirimler.
+        </p>
+
+        <div formGroupName="event_updates" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="mt-4">
+      <h3 class="panel-header">
+        <mat-icon>rocket_launch</mat-icon>&nbsp; Proje Bildirimleri
+      </h3>
+
+      <div>
+        <h4 class="panel-sub-header">Proje Faaliyetleri ve Güncellemeleri</h4>
+        <p class="panel-description">
+          Katıldığınız/takipçisi olduğunuz proje ile ilgili bir faaliyette veya
+          güncellemede bulunulduğunda gönderilen bildirimler. • Eposta
+          bildirimleri faaliyet ve güncellemenin ciddiyetine göre belirlediğiniz
+          sıklık aralığında paylaşılmış gönderilerin derlemesi olarak veya
+          direkt olarak gönderilir.
+        </p>
+
+        <div formGroupName="project_activities" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Proje Katılım İstek Sonuçları</h4>
+        <p class="panel-description">
+          Katılmak istediğiniz proje için isteğiniz kabul edildiğinde veya
+          reddedildiğinde gönderilen bildirimler.
+        </p>
+
+        <div formGroupName="project_requests" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Proje Önerileri</h4>
+        <p class="panel-description">
+          Size uygun olacağını düşündüğümüz topluluklar hakkında gönderilen
+          bildirimler.
+        </p>
+        <div formGroupName="project_suggestions" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="mt-4">
+      <h3 class="panel-header">
+        <mat-icon>newspaper</mat-icon>&nbsp; İş ve Staj Bildirimleri •
+        Öğrenciler
+      </h3>
+
+      <div>
+        <h4 class="panel-sub-header">İş ve Staj Önerileri</h4>
+        <p class="panel-description">
+          Size uygun olacağını düşündüğümüz işler ve stajlar hakkında gönderilen
+          bildirimler.
+        </p>
+
+        <div formGroupName="internship_suggestions" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Kayıtlı İş ve Staj İlanları</h4>
+        <p class="panel-description">
+          Kaydettiğiniz iş ve staj ilanlarıyla alakalı (yüksek başvuru sayısı,
+          unutulan ilan vb.) gönderilen bildirimler.
+        </p>
+
+        <div formGroupName="saved_internships" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Başvuru Güncellemeleri</h4>
+        <p class="panel-description">
+          İş veya staj başvurunuzda yaşanan güncellemeler sonucu gönderilen
+          bildirimler.
+        </p>
+
+        <div formGroupName="internship_requests_updates" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Başvuru Sonucu</h4>
+        <p class="panel-description">
+          İş veya staj başvurunuzun sonuçlandırılması ile gönderilen
+          bildirimler.
+        </p>
+
+        <div formGroupName="internship_request_results" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <h4 class="panel-sub-header">Kariyer Tavsiyeleri</h4>
+        <p class="panel-description">
+            Size benzer yeteneklere, eğitime, ilgilere vb. sahip olan öğrenci ve profesyoneller tarafından önerilen meslekler hakkında bilgi vermesi amacıyla gönderilen bildirimler.
+        </p>
+        <div formGroupName="career_suggestions" class="row group">
+          <mat-slide-toggle class="col-sm" formControlName="site"
+            >Site İçi Bildirimi</mat-slide-toggle
+          >
+          <mat-slide-toggle class="col-sm" formControlName="email"
+            >Eposta Bildirimi</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="mt-4">
+        <h3 class="panel-header">
+            <mat-icon>more</mat-icon>&nbsp; Diğer Bildirimler
+          </h3>
+    
+          <div>
+            <h4 class="panel-sub-header">Diğer</h4>
+            <p class="panel-description">
+                Unilocked site içinden veya eposta yoluyla çeşitli yenilikler, tanıtımlar ve yukarıda sınıflandırılmayan şeyler hakkında bildirimler gönderebilir.
+            </p>
+    
+            <div formGroupName="event_updates" class="row group">
+              <mat-slide-toggle class="col-sm" formControlName="site"
+                >Site İçi Bildirimi</mat-slide-toggle
+              >
+              <mat-slide-toggle class="col-sm" formControlName="email"
+                >Eposta Bildirimi</mat-slide-toggle
+              >
+            </div>
+          
+          </div>
+    
+    </mat-card>
+  </form>
+</div>

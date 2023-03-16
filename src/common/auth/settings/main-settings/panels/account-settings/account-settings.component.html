@@ -1,0 +1,161 @@
+<div class="content">
+  <mat-card>
+    <h3 class="panel-header">Kişisel Bilgiler</h3>
+    <p class="panel-description">İsim, cinsiyet gibi genel bilgileriniz.</p>
+    <form [formGroup]="personalInfoForm" (ngSubmit)="submitPersonalInfo()">
+      <div class="row">
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>İsim</mat-label>
+          <input
+            formControlName="first_name"
+            type="text"
+            matInput
+            placeholder="Bir isim girin"
+          />
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Soyisim</mat-label>
+          <input
+            formControlName="last_name"
+            type="text"
+            matInput
+            placeholder="Bir soyisim girin"
+          />
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Cinsiyet</mat-label>
+          <mat-select formControlName="gender" placeholder="Bir soyisim girin">
+            <mat-option value="male">Erkek</mat-option>
+            <mat-option value="female">Kadın</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Konum - Ülke</mat-label>
+          <input
+            formControlName="country"
+            type="text"
+            matInput
+            placeholder="Yaşadığınız ülkeyi seçiniz"
+          />
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Konum - Şehir</mat-label>
+          <input
+            formControlName="country"
+            type="text"
+            matInput
+            placeholder="Yaşadığınız şehri seçiniz"
+          />
+        </mat-form-field>
+      </div>
+      <button
+        mat-flat-button
+        type="submit"
+        [disabled]="!personalInfoForm.valid || !personalInfoForm.dirty"
+      >
+        Kaydet
+      </button>
+    </form>
+  </mat-card>
+
+  <mat-card class="mt-4">
+    <h3 class="panel-header">İletişim Bilgileri</h3>
+    <p class="panel-description">
+      Eposta, telefon numaranız gibi iletişim ve giriş bilgileriniz.
+    </p>
+    <form [formGroup]="personalInfoForm" (ngSubmit)="submitAccountInfo()">
+      <div class="row">
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Ana Eposta</mat-label>
+          <input
+            value="19982002ke@gmail.com"
+            type="text"
+            matInput
+            placeholder="Bir eposta girin"
+            [disabled]="true"
+          />
+          <mat-icon matTooltip="Onaylandı" matSuffix>verified</mat-icon>
+
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="outline">
+          <mat-label>İş veya Okul Eposta</mat-label>
+          <input
+            value="ozkan.er@tedu.edu.tr"
+            type="text"
+            matInput
+            placeholder="Bir eposta girin"
+            [disabled]="false"
+          />
+          <mat-icon matTooltip="Onaylandı" matSuffix>verified</mat-icon>
+
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Telefon Numarası</mat-label>
+          <input
+            value="+90 544 467 26 67"
+            type="tel"
+            matInput
+            placeholder="Bir telefon numarası girin"
+            [disabled]="false"
+          />
+          <mat-icon matTooltip="Onaylandı" matSuffix>verified</mat-icon>
+
+        </mat-form-field>
+      </div>
+      <button
+        mat-flat-button
+        type="submit"
+        [disabled]="!accountInfoForm.valid || !accountInfoForm.dirty"
+      >
+        Kaydet
+      </button>
+    </form>
+  </mat-card>
+  <mat-card class="mt-4">
+    <h3 class="panel-header">Şifre Seçenekleri</h3>
+    <p class="panel-description">
+      Şifrenizi güncelleyin
+    </p>
+    <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+      <div class="row">
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Güncel Şifreniz</mat-label>
+          <input
+            formControlName="old_password"
+            type="password"
+            matInput
+            placeholder="Önceki şifrenizi girin"
+            [disabled]="true"
+          />
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Yeni Şifreniz</mat-label>
+          <input
+            formControlName="new_password"
+            type="password"
+            matInput
+            placeholder="Yeni şifrenizi girin"
+            [disabled]="true"
+          />
+        </mat-form-field>
+        <mat-form-field class="field col-sm-4" appearance="fill">
+          <mat-label>Yeni Şifreyi Onaylayın</mat-label>
+          <input
+            formControlName="new_password_confirm"
+            type="password"
+            matInput
+            placeholder="Yeni şifrenizi tekrar girin"
+            [disabled]="true"
+          />
+        </mat-form-field>
+      </div>
+      <button
+        mat-flat-button
+        type="submit"
+        [disabled]="!passwordForm.valid || !passwordForm.dirty"
+      >
+        Şifreyi değiştir
+      </button>
+    </form>
+  </mat-card>
+</div>

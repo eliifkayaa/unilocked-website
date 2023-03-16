@@ -13,6 +13,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from './ui/logo/logo.component';
+import { InfoCardComponent } from './ui/info-card/info-card.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { LogoComponent } from './ui/logo/logo.component';
     UserNavbarComponent,
     NavbarComponent,
     LogoComponent,
+    InfoCardComponent
   ],
   imports: [
+    MatCardModule,
     CommonModule,
     MatToolbarModule,
     MatIconModule,
@@ -32,6 +36,6 @@ import { LogoComponent } from './ui/logo/logo.component';
     MatMenuModule,
     RouterModule
   ],
-  exports: [NavbarComponent],
+  exports: [NavbarComponent,InfoCardComponent],
 })
 export class AppCommonModule {}

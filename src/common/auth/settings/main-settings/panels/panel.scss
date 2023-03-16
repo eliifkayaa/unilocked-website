@@ -1,0 +1,27 @@
+.content {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+mat-card {
+  border-radius: 8px;
+
+  .panel-header {
+    color: #343a40;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  .panel-sub-header {
+    color: #495057;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+
+  .panel-description {
+    color: #495057;
+    font-weight: 400;
+  }
+}

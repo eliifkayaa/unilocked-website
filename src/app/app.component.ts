@@ -11,7 +11,7 @@ import { AuthService } from '@common/auth/auth.service';
 export class AppComponent {
   title = 'unista';
 
-  constructor(private auth:AuthService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(public auth:AuthService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('google', sanitizer.bypassSecurityTrustResourceUrl('assets/img/google-logo.svg'));
     auth.init()
   }
