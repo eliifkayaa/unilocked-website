@@ -57,6 +57,11 @@
         <span>Çıkış Yap</span>
       </button>
 
+      <button routerLink="/settings" [disabled]="auth.loading$ | async" mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Seçenekler</span>
+      </button>
+
     </mat-menu>
   </div>
 </mat-toolbar>

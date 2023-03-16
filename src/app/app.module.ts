@@ -9,6 +9,7 @@ import { AppCommonModule } from '@common/common.module';
 import { AuthModule } from '@common/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from '@common/core/toast/toast/toast.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ToastModule } from '@common/core/toast/toast/toast.module';
     SiteModule,
     AuthModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

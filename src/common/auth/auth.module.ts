@@ -14,15 +14,33 @@ import { RouterModule } from '@angular/router';
 import {  MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslationsModule } from '@common/core/translations/translations.module';
+import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
+import { AccountSettingsComponent } from './settings/main-settings/panels/account-settings/account-settings.component';
+import { SecuritySettingsComponent } from './settings/main-settings/panels/security-settings/security-settings.component';
+import { NotificationSettingsComponent } from './settings/main-settings/panels/notification-settings/notification-settings.component';
+import { PrivacySettingsComponent } from './settings/main-settings/panels/privacy-settings/privacy-settings.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { AppCommonModule } from '@common/common.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MainSettingsComponent,
+    AccountSettingsComponent,
+    SecuritySettingsComponent,
+    NotificationSettingsComponent,
+    PrivacySettingsComponent
   ],
   imports: [
+    AppCommonModule,
     CommonModule,
     MatStepperModule,
     FormsModule,
@@ -36,7 +54,13 @@ import { TranslationsModule } from '@common/core/translations/translations.modul
     RouterModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    TranslationsModule
+    TranslationsModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatTooltipModule,
+    MatRadioModule,
+    MatSlideToggleModule
   ],
   exports: [
     LoginComponent

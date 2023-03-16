@@ -13,7 +13,7 @@ export class MyProjectsComponent implements OnInit {
   public projects = [
     {
       image: 'assets/img/placeholder.png',
-      name: 'Alekted Otonom Araç Projesi',
+      name: 'AlecTED Otonom Araç Projesi',
       workers: [
         {
           image: 'assets/img/placeholder.png',
@@ -31,7 +31,7 @@ export class MyProjectsComponent implements OnInit {
     },
     {
       image: 'assets/img/placeholder.png',
-      name: 'Alekted Otonom Araç Projesi',
+      name: 'AlecTED Otonom Araç Projesi',
       workers: [
         {
           image: 'assets/img/placeholder.png',

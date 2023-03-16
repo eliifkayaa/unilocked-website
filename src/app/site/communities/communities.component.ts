@@ -11,17 +11,18 @@ export class CommunitiesComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   public community = {
-    name:"Alekted",
-    backdrop:"assets/img/placeholder.png",
-    avatar:"http://www.gravatar.com/avatar/be89e06e167a9243cf69e018202c022d",
+    name:"AlecTED",
+    backdrop:"assets/img/alekted.png",
+    avatar:"assets/img/alekted-avatar.jpeg",
     shortDesc:"TED University Alternative Energy Car Team"
   }
 
   public communities = [
     this.community,
     this.community,
+    this.community,
     this.community
-  ]
+    ]
 
   ngOnInit(): void {
   }

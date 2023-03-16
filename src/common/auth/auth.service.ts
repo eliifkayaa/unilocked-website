@@ -22,8 +22,14 @@ export class AuthService {
   ) {}
 
   public init() {
-    this.http.get<UserResponse>('auth/me').subscribe((data) => {
-      this.handleLogin(data, false);
+    this.loading$.next(true)
+    this.http.get<UserResponse>('auth/me').subscribe({
+      next: (data) => {
+        this.handleLogin(data, false);
+      },
+      error: (err) => {
+        this.loading$.next(false)
+      },
     });
   }
 
@@ -88,6 +94,8 @@ export class AuthService {
     } else {
       this.error = response.error;
     }
+
+    this.loading$.next(false)
 
     if (redirect) {
       this.router.navigate([this.redirect ? this.redirect : '/home']);

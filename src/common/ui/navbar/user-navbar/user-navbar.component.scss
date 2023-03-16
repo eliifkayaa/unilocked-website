@@ -30,7 +30,7 @@
 
 mat-toolbar {
   //max-width: 1200px;
-  @include mat.elevation(8);
+  @include mat.elevation(0);
   padding-left: 40px;
   justify-content: center;
 
