@@ -1,26 +1,26 @@
 <div class="content container">
-    <div class="d-flex justify-content-between">
-      <h2>Katılımcı olduklarım</h2>
-      <button mat-button color="primary">Hepsini gör</button>
-    </div>
-    <div class="row">
-      <div class="col-sm-6" *ngFor="let project of projects">
-        <project-card [project]="project"></project-card>
-      </div>
-    </div>
-    <info-card
-      icon="people"
-      title="Yeni Topluluklar Bulun"
-      text="Farklı projeler yapan, yetenekli öğrencilerin bulunduğu toplulukları keşfedin, bir parçası olun ve devrim yaratacak yeni bir projenin öncüsü olun."
-    ></info-card>
-    <div class="d-flex justify-content-between mt-4">
-      <h2>Topluluklarımdan Önerilen Projeler</h2>
-      <button mat-button color="primary">Hepsini gör</button>
-    </div>
-    <div class="row">
-      <div class="col-sm-6" *ngFor="let project of projects">
-        <project-card [project]="project"></project-card>
-      </div>
+  <div class="d-flex justify-content-between">
+    <h2>Katılımcı olduklarım</h2>
+    <button mat-button color="primary">Hepsini gör</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let project of projects">
+      <project-card [project]="project"></project-card>
     </div>
   </div>
-  
+  <info-card
+    icon="people"
+    title="Yeni Topluluklar Bulun"
+    text="Farklı projeler yapan, yetenekli öğrencilerin bulunduğu toplulukları keşfedin, bir parçası olun ve devrim yaratacak yeni bir projenin öncüsü olun."
+    buttonText="Toplukuları Keşşfet"
+  ></info-card>
+  <div class="d-flex justify-content-between mt-4">
+    <h2>Topluluklarımdan Önerilen Projeler</h2>
+    <button mat-button color="primary">Hepsini gör</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let project of projects">
+      <project-card [project]="project"></project-card>
+    </div>
+  </div>
+</div>

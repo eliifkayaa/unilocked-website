@@ -1,0 +1,150 @@
+<ng-container *ngIf="auth.loggedIn">
+  <navbar [drawer]="drawer"></navbar>
+  <mat-drawer-container class="example-container">
+    <mat-drawer
+      class="mainMenu"
+      #drawer
+      style="width: 250px"
+      mode="side"
+      opened
+    >
+      <main-menu></main-menu>
+    </mat-drawer>
+    <mat-drawer-content style="min-height: 100vh">
+      <div class="header">
+        <div class="container">
+          <h1 style="font-size: 32px; color: #343a40">Şirketler</h1>
+          <div class="content">
+            <div class="d-flex justify-content-between">
+              <h2>Takip Ettiklerim</h2>
+              <button mat-button color="primary">Hepsini gör</button>
+            </div>
+            <div class="joined">
+              <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+              <mat-card
+                class="company mat-elevation-z0"
+                *ngFor="let company of companies"
+              >
+                <div
+                  class="backdrop-area"
+                  style="position: relative; height: 120px"
+                >
+                  <div
+                    style="position: absolute"
+                    class="backdrop"
+                    [style.backgroundImage]="'url(' + company.backdrop + ')'"
+                  ></div>
+                  <div
+                    style="
+                      width: 100%;
+                      height: 120px;
+                      position: absolute;
+                      background-color: rgba(0, 0, 0, 0.3);
+                      border-radius: 12px 12px 0 0;
+                    "
+                  ></div>
+                  <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                </div>
+                <h3 class="name">{{ company.name }}</h3>
+                <p class="short-desc">{{ company.shortDesc }}</p>
+                <p class="role">Katılımcı üye</p>
+              </mat-card>
+              <button mat-icon-button>
+                <mat-icon>chevron_right</mat-icon>
+              </button>
+            </div>
+            <info-card
+              title="Yeni bağlantılar kurun"
+              icon="person_add"
+              text="Kişiler sayfasında ortak kurumlarda okuduğunuz, çalıştığınız, ilgi alanlarına sahip olduğunuz insanları bulun, bağlantı kurun."
+              buttonText="Kişileri Keşfet"
+            ></info-card>
+            <div class="following-area">
+              <h2>En çok takip edilenler</h2>
+              <div class="followed row">
+                <div class="d-flex community" *ngFor="let company of companies">
+                  <img [src]="company.avatar" alt="" class="avatar" />
+                  <div>
+                    <h3 class="name">{{ company.name }}</h3>
+                    <p class="short-desc">{{ company.shortDesc }}</p>
+                    <p class="details">35.701 Takipçi • Eğlence Sektörü Şirketi</p>
+                    <button
+                      style="
+                        border-style: none;
+                        background-color: #c9cbfb;
+                        color: #4b53f2;
+                      "
+                      mat-raised-button
+                      color="accent"
+                      class="action mat-elevation-z0"
+                    >
+                      Takip Ediliyor&nbsp;<mat-icon>check</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="following-area">
+              <h2>Takip edilmeye değer</h2>
+              <div class="followed row">
+                <div class="d-flex community" *ngFor="let company of companies">
+                  <img [src]="company.avatar" alt="" class="avatar" />
+                  <div>
+                    <h3 class="name">{{ company.name }}</h3>
+                    <p class="short-desc">{{ company.shortDesc }}</p>
+                    <p class="details">35.701 Takipçi • Eğlence Sektörü Şirketi</p>
+                    
+                    <button
+                      style="
+                        border-style: none;
+                        background-color: #4b53f2;
+                        color: white;
+                      "
+                      mat-raised-button
+                      color="accent"
+                      class="action mat-elevation-z0"
+                    >
+                      Takip Et&nbsp;<mat-icon>add</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <info-card
+            icon="group"
+            title="Yeni Topluluklar Bulun"
+            text="Farklı projeler yapan, yetenekli öğrencilerin bulunduğu toplulukları keşfedin, bir parçası olun ve devrim yaratacak yeni bir projenin öncüsü olun."
+            buttonText="Toplulukları Keşfet"
+            ></info-card>
+            <div class="following-area">
+              <h2>Çevrendekiler</h2>
+              <div class="followed row">
+                <div class="d-flex community" *ngFor="let company of companies">
+                  <img [src]="company.avatar" alt="" class="avatar" />
+                  <div>
+                    <h3 class="name">{{ company.name }}</h3>
+                    <p class="short-desc">{{ company.shortDesc }}</p>
+                    <p class="details">35.701 Takipçi • Eğlence Sektörü Şirketi</p>
+                    
+                    <button
+                      style="
+                        border-style: none;
+                        background-color: #4b53f2;
+                        color: white;
+                      "
+                      mat-raised-button
+                      color="accent"
+                      class="action mat-elevation-z0"
+                    >
+                      Takip Et&nbsp;<mat-icon>add</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</ng-container>
