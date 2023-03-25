@@ -24,9 +24,15 @@ import { ProjectCardComponent } from './projects/components/project-card/project
 import { ProjectsFromCommunitiesComponent } from './projects/tabs/projects-from-communities/projects-from-communities.component';
 import { ProjectsFromFriendsComponent } from './projects/tabs/projects-from-friends/projects-from-friends.component';
 import { MyProjectsComponent } from './projects/tabs/my-projects/my-projects.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { PeopleComponent } from './people/people.component';
+import { PeopleHomeComponent } from './people/panels/people-home/people-home.component';
+import { PeopleStudentsComponent } from './people/panels/people-students/people-students.component';
+import { PeopleProfessionalsComponent } from './people/panels/people-professionals/people-professionals.component';
+import { FriendsComponent } from './friends/friends.component';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent],
   imports: [
     CommonModule,
     SiteRoutingModule,
