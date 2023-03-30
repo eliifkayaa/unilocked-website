@@ -10,6 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@common/auth/auth.service';
+import { AppThemeService } from '@common/ui/theming/app-theme.service';
 
 @Component({
   selector: 'login',
@@ -33,7 +34,8 @@ export class LoginComponent implements OnInit, AfterContentInit {
   constructor(
     public auth:AuthService,
     private _formBuilder: FormBuilder,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    public theme:AppThemeService
   ) {}
   ngOnInit(): void {
     this.reverseByRegister();

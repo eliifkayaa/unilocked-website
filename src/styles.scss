@@ -4,11 +4,17 @@
 
 @use "./common/variables" as app;
 
+// include dark colors
+@use "./common/scss/dark-vars" as dark;
+
+// include light colors
+@use "./common/scss/light-vars" as light;
+
 // Plus imports for other components in your app.
 
 $app-typography: mat.define-typography-config(
   $font-family: "indivisible",
-  
+  $headline: mat.define-typography-level(32px, 32px, 500),
 );
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,8 +25,9 @@ $app-typography: mat.define-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$unista-primary: mat.define-palette(app.$purple-palette);
-$unista-accent: mat.define-palette(app.$blue-palette, A200, A100, A400);
+$unista-primary: mat.define-palette(app.$blue-palette,300);
+$unista-primary-dark: mat.define-palette(app.$blue-palette);
+$unista-accent: mat.define-palette(app.$purple-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $unista-warn: mat.define-palette(mat.$red-palette);
@@ -28,7 +35,18 @@ $unista-warn: mat.define-palette(mat.$red-palette);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 
-$unista-theme: mat.define-light-theme(
+$unista-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $unista-primary-dark,
+      accent: $unista-accent,
+      warn: $unista-warn,
+    ),
+    typography: $app-typography,
+  )
+);
+
+$unista-dark-theme: mat.define-dark-theme(
   (
     color: (
       primary: $unista-primary,
@@ -41,7 +59,9 @@ $unista-theme: mat.define-light-theme(
 
 $primary-white: mat.define-palette(app.$white-palette, A100);
 
-$unista-toolbar-theme: mat.define-light-theme(
+$primary-dark: mat.define-palette(app.$dark-palette, A200);
+
+$unista-light-toolbar-theme: mat.define-light-theme(
   (
     color: (
       primary: $primary-white,
@@ -52,11 +72,77 @@ $unista-toolbar-theme: mat.define-light-theme(
   )
 );
 
+$unista-dark-toolbar-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-dark,
+      accent: $unista-accent,
+      warn: $unista-warn,
+    ),
+    typography: $app-typography,
+  )
+);
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($unista-theme);
-@include mat.toolbar-theme($unista-toolbar-theme);
+
+@include mat.all-component-themes($unista-light-theme);
+
+.light-theme {
+  @include mat.toolbar-color($unista-light-toolbar-theme);
+  color: #343a40;
+  background-color: #fafafa;
+
+  @include light.colors();
+
+  h1 {
+    color: #343a40;
+  }
+
+  .mainMenu {
+    background-color: #fafafa;
+    padding: 20px;
+  }
+
+  mat-card {
+    border: 1px solid #dee2e6;
+  }
+
+  .mat-drawer-container {
+    background-color: var(--surface-1) !important;
+  }
+  
+}
+
+.dark-theme {
+  @include mat.all-component-colors($unista-dark-theme);
+  @include mat.toolbar-color($unista-dark-toolbar-theme);
+
+  @include dark.colors();
+
+  color: #343a40;
+  background-color: #141414;
+
+  h1 {
+    color: #fafafa;
+  }
+
+  .mainMenu {
+    background-color: rgba(29,29,29,1);
+    padding: 20px;
+  }
+
+  mat-card {
+    border: 1px solid rgba(29,29,29,1);
+    background-color: var(--surface-2) !important;
+  }
+
+  .mat-drawer-container {
+    background-color: var(--surface-1) !important;
+  }
+  
+}
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -67,25 +153,19 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  color: #343A40;
 }
 body {
   margin: 0;
-  background-color: #fafafa;
+  
 }
 
 .mt-4 {
   margin-top: 4%;
 }
 
-.mainMenu {
-  background-color: #fafafa;
-  padding: 20px;
-}
-
 mat-card {
   @include mat.elevation(0);
-  border: 1px solid #dee2e6;
+  
   border-radius: 8px;
   box-shadow: none !important;
 }

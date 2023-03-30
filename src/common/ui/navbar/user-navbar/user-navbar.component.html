@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <a [routerLink]="['/home']" ><img
-    src="assets/images/unilockedlogopgn-08.png"
+    [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'"
     class="logo"
     alt="UniLocked"
   /></a>

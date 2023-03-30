@@ -1,4 +1,4 @@
-<a class="logo" routerLink="/home"><img src="assets/img/logo.png" alt="" /></a>
+<a class="logo" routerLink="/home"><img [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'" alt="" /> </a>
 <mat-progress-bar
   *ngIf="auth.loading$ | async"
   mode="indeterminate"
@@ -158,6 +158,6 @@
   <div
     class="col-sm d-flex justify-content-center align-items-center image-panel reverse"
   >
-    <img src="assets/img/ill-02.svg" alt="" />
+    <img src="assets/img/login-il.png" alt="" />
   </div>
 </div>

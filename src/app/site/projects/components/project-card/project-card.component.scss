@@ -3,7 +3,7 @@
     display: block;
     padding: 16px;
     margin: 8px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--surface-2);
     border-radius: 7px;
     box-shadow: none;
   
@@ -20,7 +20,7 @@
   
   
       .status {
-        color: #868E96;
+        color: var(--sub-text);
         margin: 8px 16px;
       }
   
@@ -45,7 +45,7 @@
   
         /* Gray/Dark */
   
-        color: #343a40;
+        color: var(--text);
       }
   
       .workers-area {

@@ -1,2 +1,6 @@
-<router-outlet *ngIf="!(auth.loading$ | async) else loading"></router-outlet>
-<ng-template #loading><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+<div class="bg">
+  <router-outlet *ngIf="!(auth.loading$ | async); else loading"></router-outlet>
+  <ng-template #loading
+    ><mat-progress-bar mode="indeterminate"></mat-progress-bar
+  ></ng-template>
+</div>

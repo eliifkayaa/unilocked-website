@@ -1,0 +1,17 @@
+@mixin colors() {
+    --toolbar-color : rgba(29,29,29,1);
+    --icon-color: #fafafa;
+    --surface-1 : rgba(18,18,18,1);
+   
+    --surface-2 : rgba(29,29,29,1);
+    --accent-1 : #006fde;
+
+    // Texts
+
+    --text : #fafafa;
+    --sub-text : #dddddd;
+    --info-text : #d2d7dc;
+
+    // Menu
+    --menu-hover : rgba(18,18,18,1);
+}
