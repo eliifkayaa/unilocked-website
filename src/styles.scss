@@ -112,7 +112,7 @@ $unista-dark-toolbar-theme: mat.define-light-theme(
   .mat-drawer-container {
     background-color: var(--surface-1) !important;
   }
-  
+
 }
 
 .dark-theme {
@@ -121,7 +121,7 @@ $unista-dark-toolbar-theme: mat.define-light-theme(
 
   @include dark.colors();
 
-  color: #343a40;
+  color: var(--text);
   background-color: #141414;
 
   h1 {
@@ -139,6 +139,10 @@ $unista-dark-toolbar-theme: mat.define-light-theme(
   }
 
   .mat-drawer-container {
+    background-color: var(--surface-1) !important;
+  }
+
+  mat-drawer {
     background-color: var(--surface-1) !important;
   }
   

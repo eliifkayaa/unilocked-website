@@ -14,14 +14,14 @@ mat-card {
   }
 
   .panel-sub-header {
-    color: var(--sub-text);
+    color: var(--text);
     font-weight: 500;
     display: flex;
     align-items: center;
   }
 
   .panel-description {
-    color: var(--sub-text);
+    color: var(--text);
     font-weight: 400;
   }
 }

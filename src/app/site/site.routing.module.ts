@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoggedIn } from '@common/auth/logged-in.service';
+import { LoginComponent } from '@common/auth/login/login.component';
 import { ExploreComponent } from 'src/app/site/explore/explore.component';
 import { ProjectsComponent } from 'src/app/site/projects/projects.component';
 import { CommunitiesComponent } from './communities/communities.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'people', component: PeopleComponent, canActivate: [LoggedIn] },
   { path: 'friends', component: FriendsComponent, canActivate: [LoggedIn] },
   { path: 'saved', component: SavedComponent, canActivate: [LoggedIn] },
+  
 ];
 
 @NgModule({
