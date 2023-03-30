@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <a [routerLink]="['/home']" ><img
-    src="assets/images/unilockedlogopgn-08.png"
+    [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'"
     class="logo"
     alt="UniLocked"
   /></a>
@@ -60,6 +60,11 @@
       <button routerLink="/settings" [disabled]="auth.loading$ | async" mat-menu-item>
         <mat-icon>settings</mat-icon>
         <span>Seçenekler</span>
+      </button>
+
+      <button (click)="toggleDarkMode()" mat-menu-item>
+        <mat-icon>image</mat-icon>
+        <span>{{theme.darkMode ? 'Açık Tema' : 'Koyu Tema'}}</span>
       </button>
 
     </mat-menu>

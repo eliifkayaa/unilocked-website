@@ -13,7 +13,7 @@
       <mat-drawer-content style="min-height: 100vh">
         <div class="header">
           <div class="container">
-            <h1 style="font-size: 32px; color: #343a40">Arkadaşlar</h1>
+            <h1>Arkadaşlar</h1>
             <div class="content">
                 <div class="d-flex justify-content-between">
                   <h2>Favoriler</h2>
@@ -68,6 +68,7 @@
                         <h3 class="name">{{ person.name }}</h3>
                         <p class="short-desc">{{ person.shortDesc }}</p>
                         <p class="details">35.701 Takipçi • Eğlence Sektörü Şirketi</p>
+                        <br>
                         <button
                           style="
                             border-style: none;
@@ -93,15 +94,11 @@
                         <h3 class="name">{{ person.name }}</h3>
                         <p class="short-desc">{{ person.shortDesc }}</p>
                         <p class="details">35.701 Takipçi • Eğlence Sektörü Şirketi</p>
-                        
+                        <br>
                         <button
-                          style="
-                            border-style: none;
-                            background-color: #4b53f2;
-                            color: white;
-                          "
+                          
                           mat-raised-button
-                          color="accent"
+                          color="primary"
                           class="action mat-elevation-z0"
                         >
                           Takip Et&nbsp;<mat-icon>add</mat-icon>

@@ -25,6 +25,8 @@
 
 .profile-hr {
   margin: 0;
+  margin-top: 4px;
+  border: 0.1px solid var(--text);
 }
 
 .profile-image-container {
@@ -47,7 +49,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    background-color: #EDEEFE !important;
+    background-color: var(--menu-hover) !important;
     border-radius: 12px;
   }
 }

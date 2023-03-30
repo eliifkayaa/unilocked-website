@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { LogoComponent } from './ui/logo/logo.component';
 import { InfoCardComponent } from './ui/info-card/info-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { LoggedIn } from './auth/logged-in.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatCardModule } from '@angular/material/card';
     MatMenuModule,
     RouterModule
   ],
+  providers: [LoggedIn],
   exports: [NavbarComponent,InfoCardComponent],
 })
 export class AppCommonModule {}

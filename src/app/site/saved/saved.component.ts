@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@common/auth/auth.service';
 
 @Component({
-  selector: 'user-home',
-  templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.scss']
+  selector: 'saved',
+  templateUrl: './saved.component.html',
+  styleUrls: ['./saved.component.scss']
 })
-export class UserHomeComponent implements OnInit {
+export class SavedComponent implements OnInit {
 
-  constructor(public auth:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  public testClick() {
+
+  public post = {
 
   }
-
- 
 
   public account1 = {
     image:"assets/img/acc1.jpeg",
@@ -49,13 +47,10 @@ export class UserHomeComponent implements OnInit {
     this.account3
   ]
 
-  public post = {
-    user:this.account4
-  }
-
   public posts = [
     this.post,
     this.post,
     this.post
   ]
+
 }

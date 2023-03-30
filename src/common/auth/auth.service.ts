@@ -21,7 +21,9 @@ export class AuthService {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  public init() {
+  public init(url:string = null) {
+    this.redirect = url;
+    
     this.loading$.next(true)
     this.http.get<UserResponse>('auth/me').subscribe({
       next: (data) => {

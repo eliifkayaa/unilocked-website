@@ -1,9 +1,8 @@
-@use "@angular/material" as mat;
 
 .reversable {
   height: 100%;
   flex-direction: row-reverse;
-  background-color: white;
+  background-color: var(--surface-1);
 
   .col-sm {
     img {
@@ -40,6 +39,10 @@
   display: none !important;
 }
 
+mat-horizontal-stepper {
+  background-color: var(--surface-1) !important;
+}
+
 .logo {
   position: absolute;
   margin-top: 2%;
@@ -58,19 +61,20 @@
   .seperator-text {
     margin-left: 8px;
     margin-right: 8px;
+    color: var(--sub-text);
   }
 
   &::before {
     content: "";
     width: 50%;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--seperator-background);
   }
   &::after {
     content: "";
     width: 50%;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--seperator-background);
   }
 }
 
@@ -97,4 +101,17 @@
 .error {
   color: #CD5888;
   text-align: center;
+}
+
+.mat-stroked-button {
+  color: var(--text);
+  border-color: var(--sub-text);;
+}
+
+input {
+  color: var(--text);
+}
+
+mat-icon {
+  color: var(--text);
 }
