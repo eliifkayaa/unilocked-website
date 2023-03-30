@@ -17,7 +17,7 @@ export class AppThemeService {
   }
 
   public get darkMode() : boolean {
-    return true
+    
     if (this.localStorageAvaible) {
       return localStorage.getItem('darkMode') === 'true';
     } else {

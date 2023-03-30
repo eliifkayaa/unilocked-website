@@ -20,4 +20,8 @@ export class UserNavbarComponent implements OnInit {
     this.auth.logout();
   }
 
+  public toggleDarkMode() {
+    this.theme.darkMode = !this.theme.darkMode
+  } 
+
 }

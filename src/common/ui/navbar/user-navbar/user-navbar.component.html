@@ -62,6 +62,11 @@
         <span>Seçenekler</span>
       </button>
 
+      <button (click)="toggleDarkMode()" mat-menu-item>
+        <mat-icon>image</mat-icon>
+        <span>{{theme.darkMode ? 'Açık Tema' : 'Koyu Tema'}}</span>
+      </button>
+
     </mat-menu>
   </div>
 </mat-toolbar>
