@@ -1,0 +1,78 @@
+<navbar></navbar>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer class="mainMenu" #drawer style="width: 250px" mode="side" opened>
+    <main-menu></main-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="profile-host container">
+      <mat-card class="profile-top">
+        <div class="row">
+          <div class="images col-lg-3">
+            <div class="backdrop-area">
+              <img class="backdrop" [src]="user.backdrop" alt="" />
+            </div>
+            <div class="avatar-area">
+              <img class="avatar" [src]="user.avatar" alt="" />
+            </div>
+          </div>
+          <div class="col-lg info-area">
+            <div class="info-child">
+              <h2 class="user-name">{{ user.name }}</h2>
+              <p class="user-job">{{ user.job }}</p>
+              <p class="user-info">{{ user.info }}</p>
+              <div
+                class="organizations"
+                *ngFor="let organization of user.organizations"
+              >
+                <div class="organization">
+                  <div class="organisation-image">
+                    <img [src]="organization.image" />
+                  </div>
+                  <div class="organization-info">
+                    <p class="organization-name">{{ organization.name }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg buttons-area">
+            <div>
+              <button mat-flat-button color="primary" class="follow">
+                İletişim Bilgileri
+              </button>
+              <br />
+              <button mat-stroked-button color="primary" class="message">
+                Profili Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="private-profile-warning">
+        <div class="row">
+          <div class="col-sm-3 left">
+            <div>
+              <h2>Uyarı</h2>
+              <p class="special"><mat-icon>visibility</mat-icon> Size Özel</p>
+            </div>
+
+          </div>
+          <div class="col-sm-6 mid">
+            <div class="d-flex">
+              <mat-icon style="width: 60px;" svgIcon="settings_alert"></mat-icon>
+              <p class="warning-text">
+                Profiliniz “Gizli” olarak ayarlandığı için diğer Unilocked
+                kullanıcılarına gösterilmiyor. Eğer gizlilik ayarınızı
+                değiştirmek istiyorsanız hesap ayarlarınıza gidin.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-3 d-flex justify-content-center align-items-center">
+            <button mat-stroked-button>Gizlilik Ayarları</button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

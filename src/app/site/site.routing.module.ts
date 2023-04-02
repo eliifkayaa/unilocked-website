@@ -10,6 +10,8 @@ import { FriendsComponent } from './friends/friends.component';
 import { MainHomeComponent } from './main-home/main-home.component';
 import { PeopleComponent } from './people/people.component';
 import { SavedComponent } from './saved/saved.component';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
@@ -29,7 +31,14 @@ const routes: Routes = [
   { path: 'people', component: PeopleComponent, canActivate: [LoggedIn] },
   { path: 'friends', component: FriendsComponent, canActivate: [LoggedIn] },
   { path: 'saved', component: SavedComponent, canActivate: [LoggedIn] },
+  {
+    path: 'my-profile',
+    component: UserProfileComponent,
+    canActivate: [LoggedIn],
+  },
+  { path: 'events', component: EventsComponent, canActivate: [LoggedIn] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [LoggedIn] },
+
 ];
 
 @NgModule({

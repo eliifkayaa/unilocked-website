@@ -13,14 +13,14 @@
       <mat-drawer-content style="min-height: 100vh">
         <div class="header">
           <div class="container">
-            <h1 style="font-size: 32px; color: #343a40">Bildirimler</h1>
+            <h1>Bildirimler</h1>
           </div>
         </div>
         <mat-tab-group class="full-width-tabs">
             <mat-tab label="Hepsi"> 
                 <div class="container content" style="padding-top: 2%;">
                   <h2>Geçmiş Başvurular</h2>
-                  <mat-card class="example-card" *ngFor="let notification of notifications">
+                  <mat-card class="notification-card" *ngFor="let notification of notifications">
                     <div class="card-header">
                       <img [src]="notification.icon" alt="icon">
                       <div class="header-content">

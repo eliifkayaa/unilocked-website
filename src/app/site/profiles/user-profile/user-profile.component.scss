@@ -1,0 +1,146 @@
+.profile-host {
+    min-height: 100vh;
+  .profile-top {
+    margin-top: 4%;
+    padding: 0px;
+    .images {
+      position: relative;
+      display: block;
+
+      width: 300px;
+      aspect-ratio: 1 / 1;
+
+      .backdrop-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+
+        .backdrop {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+        }
+      }
+
+      .avatar-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .avatar {
+          border-radius: 50%;
+          width: 128px;
+          height: 128px;
+        }
+      }
+    }
+
+    .info-area {
+      display: flex;
+      align-items: center;
+      margin: 16px;
+      .info-child {
+
+        .user-name {
+            margin: 2px;
+        }
+
+        .user-job {
+            margin: 2px;
+            
+        }
+
+        .user-info {
+            margin: 2px;
+            color: var(--info-text);
+           padding-bottom: 32px;
+        }
+
+        .organizations {
+          
+          
+          .organization {
+            display: flex;
+            align-items: center;
+            margin: 4px;
+            // space between
+
+            .organisation-image {
+              width: 24px;
+              height: 24px;
+
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+              }
+            }
+
+            .organization-info {
+              margin-left: 8px;
+              height: max-content;
+              display: flex;
+              align-items: center;
+
+              height: 100%;
+              .organization-name {
+                font-size: 12px;
+                margin: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .buttons-area {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 16px;
+
+      button {
+        margin-top: 16px;
+        width: 100%;
+      }
+    }
+  }
+
+
+  .private-profile-warning {
+    margin-top: 4%;
+    background-color: #FFE3E3 !important;
+    color: #343A40;
+
+    .left {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .mid {
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+            color: #F03E3E;
+        }
+    }
+
+    .special {
+        display: flex;
+        align-items: center;
+        color:#5D64F3;
+        
+    }
+  }
+}

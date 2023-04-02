@@ -107,9 +107,14 @@ $unista-dark-toolbar-theme: mat.define-light-theme(
 
   mat-card {
     border: 1px solid #dee2e6;
+    
   }
 
   .mat-drawer-container {
+    background-color: var(--surface-1) !important;
+  }
+
+  mat-drawer {
     background-color: var(--surface-1) !important;
   }
 
