@@ -25,7 +25,7 @@ import { LoggedIn } from '@common/auth/logged-in.service';
     AuthModule,
     HttpClientModule,
     ToastModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
   providers: [LoggedIn],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<mat-card class="saved-panel mat-elevation-z0">
+<mat-card class="post-card mat-elevation-z0">
     <div class="post-container">
       <img class="profile-image" [src]="post.user.image" alt="" />
       <div>
@@ -22,27 +22,22 @@
         <div class="post-image">
           <img src="assets/img/post-image.png" alt="" />
         </div>
-        <div class="row" style="margin: 2px 2px 2px 2px">
+        <div class="row" style="margin: 10px 2px 2px 2px">
           <div
-            class="col-sm-9 d-flex"
-            style="
-              align-items: center;
-              justify-content: flex-start;
-              margin-left: -5%;
-              margin-right: 5%;
-            "
+            class="col-sm-9 d-flex buttons"
+            
           >
-            <button mat-button color="primary" class="attachment-button">
-              <mat-icon>image</mat-icon> Fotoğraf
+            <button mat-button  class="attachment-button">
+              <mat-icon>thumb_up</mat-icon> 106
+            </button>
+            <button mat-button class="attachment-button">
+              <mat-icon>comment</mat-icon> 20
+            </button>
+            <button mat-icon-button class="icon-button">
+              <mat-icon>share</mat-icon>
             </button>
             <button mat-button color="primary" class="attachment-button">
-              <mat-icon>videocam</mat-icon> Video
-            </button>
-            <button mat-button color="primary" class="attachment-button">
-              <mat-icon>event</mat-icon> Etkinlik
-            </button>
-            <button mat-button color="primary" class="attachment-button">
-              <mat-icon>poll</mat-icon> Anket
+              <mat-icon>bookmark</mat-icon> Kaydedildi
             </button>
           </div>
           <div
@@ -59,5 +54,5 @@
       </div>
     </div>
 
-    <br />
+   
   </mat-card>

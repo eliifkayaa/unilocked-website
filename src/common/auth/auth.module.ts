@@ -63,7 +63,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatSlideToggleModule
   ],
   exports: [
-    LoginComponent
+    
   ]
 })
 export class AuthModule { }
