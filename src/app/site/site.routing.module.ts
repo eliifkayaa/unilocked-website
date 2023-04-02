@@ -12,6 +12,7 @@ import { PeopleComponent } from './people/people.component';
 import { SavedComponent } from './saved/saved.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,8 @@ const routes: Routes = [
     canActivate: [LoggedIn],
   },
   { path: 'events', component: EventsComponent, canActivate: [LoggedIn] },
+  { path: 'notifications', component: NotificationsComponent, canActivate: [LoggedIn] },
+
 ];
 
 @NgModule({
