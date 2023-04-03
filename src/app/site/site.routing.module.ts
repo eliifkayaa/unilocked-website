@@ -13,7 +13,6 @@ import { SavedComponent } from './saved/saved.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
   {
