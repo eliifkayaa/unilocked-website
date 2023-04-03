@@ -34,10 +34,17 @@ import { SavedComponent } from './saved/saved.component';
 import { SavedPostsComponent } from './saved/panels/saved-posts/saved-posts.component';
 import { PostComponent } from './components/post/post.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+
 import { EventsComponent } from './events/events.component';
 
+import { AuthModule } from '@common/auth/auth.module';
+import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
+import { ProfileContentComponent } from './profiles/profile-content/profile-content.component';
+import { MatChipsModule } from '@angular/material/chips';
+
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, EventsComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent],
+
   imports: [
     CommonModule,
     SiteRoutingModule,
@@ -51,7 +58,9 @@ import { EventsComponent } from './events/events.component';
     MatButtonModule,
     MatButtonToggleModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatChipsModule
   ],
+  
 })
 export class SiteModule {}

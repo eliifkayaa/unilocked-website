@@ -24,7 +24,7 @@ import { LoggedIn } from './auth/logged-in.service';
     UserNavbarComponent,
     NavbarComponent,
     LogoComponent,
-    InfoCardComponent
+    InfoCardComponent,
   ],
   imports: [
     MatCardModule,

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthService } from '@common/auth/auth.service';
+
+
 
 @Component({
   selector: 'events',
@@ -7,6 +10,7 @@ import { AuthService } from '@common/auth/auth.service';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
+
 
   constructor(public auth:AuthService) { }
 

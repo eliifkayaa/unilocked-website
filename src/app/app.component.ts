@@ -14,6 +14,8 @@ export class AppComponent {
 
   constructor(public auth:AuthService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, public appTheme:AppThemeService) {
     iconRegistry.addSvgIcon('google', sanitizer.bypassSecurityTrustResourceUrl('assets/img/google-logo.svg'));
+    iconRegistry.addSvgIcon('settings_alert', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/settings_alert.svg'));
+
     auth.init(location.pathname)
   }
 
