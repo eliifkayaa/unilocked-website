@@ -1,4 +1,4 @@
-<mat-card class="project-card z-elevation-0">
+<mat-card class="project-card z-elevation-0" [class.dark]="dark">
     <img class="project-image" [src]="project.image" alt="" />
     <div class="project-details">
       <h3>{{ project.name }}</h3>
@@ -43,15 +43,10 @@
         </div>
         <div class="col-sm">
           <button
-            style="
-              width: 100%;
-              border-style: none;
-              background-color: #c9cbfb;
-              color: #4b53f2;
-            "
+            style="width: 100%;"
             mat-raised-button
             color="accent"
-            class="action mat-elevation-z0"
+            class="action mat-elevation-z0 accent-button"
           >
             Projeden Ayrıl
           </button>

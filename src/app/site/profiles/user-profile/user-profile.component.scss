@@ -1,5 +1,7 @@
 .profile-host {
-    min-height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 4%;
+
   .profile-top {
     margin-top: 4%;
     padding: 0px;
@@ -20,7 +22,7 @@
         .backdrop {
           width: 100%;
           height: 100%;
-          border-radius: 12px;
+          border-radius: 12px 0px 0px 12px;
         }
       }
 
@@ -47,25 +49,21 @@
       align-items: center;
       margin: 16px;
       .info-child {
-
         .user-name {
-            margin: 2px;
+          margin: 2px;
         }
 
         .user-job {
-            margin: 2px;
-            
+          margin: 2px;
         }
 
         .user-info {
-            margin: 2px;
-            color: var(--info-text);
-           padding-bottom: 32px;
+          margin: 2px;
+          color: var(--info-text);
+          padding-bottom: 32px;
         }
 
         .organizations {
-          
-          
           .organization {
             display: flex;
             align-items: center;
@@ -112,35 +110,434 @@
     }
   }
 
-
   .private-profile-warning {
-    margin-top: 4%;
-    background-color: #FFE3E3 !important;
-    color: #343A40;
+    margin-top: 2%;
+    background-color: #ffe3e3 !important;
+    color: #343a40;
 
     .left {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
 
-        h2 {
-            margin: 0;
-        }
+      h2 {
+        margin: 0;
+      }
     }
 
     .mid {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
 
-        mat-icon {
-            color: #F03E3E;
-        }
+      mat-icon {
+        color: #f03e3e;
+      }
+    }
+  }
+
+  .analyzes {
+    margin-top: 2%;
+
+    .col-sm {
+      mat-icon {
+        color: #5d64f3;
+        background-color: #edeefe;
+        border-radius: 50%;
+        padding: 4px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+      }
     }
 
-    .special {
-        display: flex;
+    h4 {
+      font-weight: 500;
+      margin: 2px;
+      display: inline-flex;
+      align-items: center;
+
+      span {
+        margin-left: 6px;
+      }
+    }
+
+    .description {
+      font-weight: 400;
+      margin-left: 26px;
+    }
+  }
+
+  .about {
+    margin-top: 2%;
+
+    .keep-reading {
+      color: var(--sub-text);
+    }
+  }
+
+  .contact {
+    margin-top: 2%;
+
+    .name {
+      font-weight: 500;
+      margin: 2px;
+    }
+  }
+
+  .posts {
+    margin-top: 2%;
+  }
+
+  .featured-content {
+    margin-top: 2%;
+  }
+
+  .experience {
+    margin-top: 2%;
+
+    .experience-area  {
+      .experience-content {
+        .top {
+          display: flex;
+          align-items: flex-start;
+
+          .company-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            margin: 2px;
+          }
+
+          div {
+            margin-left: 4px;
+            .experience-title {
+              margin: 2px;
+              font-weight: 500;
+            }
+            .name {
+              margin: 2px;
+            }
+            .content {
+              margin: 2px;
+            }
+          }
+        }
+
+        .mid {
+          margin-left: 56px;
+          .description {
+            margin-top: 4px;
+          }
+        }
+
+        .talents {
+          margin-top: 8px;
+          margin-left: 56px;
+
+          .talents-header {
+            margin: 2px;
+            font-weight: 500;
+          }
+        }
+
+        .featured {
+          margin-top: 16px;
+          margin-left: 56px;
+
+          .featured-header {
+            margin: 2px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .education {
+    margin-top: 2%;
+
+    .education-area  {
+      .education-content {
+        .top {
+          display: flex;
+          align-items: flex-start;
+
+          .school-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            margin: 2px;
+          }
+
+          div {
+            margin-left: 4px;
+            .education-title {
+              margin: 2px;
+              font-weight: 500;
+            }
+            .name {
+              margin: 2px;
+            }
+            .content {
+              margin: 2px;
+              color: var(--sub-text);
+            }
+          }
+        }
+
+        .mid {
+          margin-left: 56px;
+          .description {
+            margin-top: 4px;
+          }
+        }
+
+        .communities {
+          margin-top: 8px;
+          margin-left: 56px;
+
+          .communities-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h4 {
+                font-weight: 500;
+            }
+          }
+
+          .community {
+            display: flex;
+            .community-image {
+              width: 32px;
+              height: 32px;
+              border: 1px solid var(--stroke);
+              border-radius: 50%;
+            }
+
+            .community-info {
+                margin-left: 8px;
+                .community-name {
+                    margin: 2px;
+                    font-weight: 500;
+                }
+
+                .community-role {
+                    margin: 2px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+
+                .community-date {
+                    margin: 2px;
+                    font-size: 12px;
+                    line-height: 12px;
+                    color: var(--info-text);
+                }
+
+            }
+          }
+        }
+
+        .education-info {
+            margin-top: 8px;
+            margin-left: 56px;
+    
+           h4 {
+            font-weight: 500;
+           }
+
+           .info-title {
+            font-weight: 500;
+            margin: 2px;
+           }
+
+           .gpa {
+            line-height: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            margin: 2px;
+           }
+
+           .info {
+            margin: 2px;
+            line-height: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--sub-text);
+           }
+
+           .grade {
+            line-height: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            margin: 2px;
+           }
+        }
+
+        .talents {
+          margin-top: 8px;
+          margin-left: 56px;
+
+          .talents-header {
+            margin: 2px;
+            font-weight: 500;
+          }
+        }
+
+        .featured {
+          margin-top: 16px;
+          margin-left: 56px;
+
+          .featured-header {
+            margin: 2px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .projects {
+    margin-top : 2%;
+
+    h3 {
+        font-weight: 500;
+        margin-top: 8px;
+    }
+
+    .project {
+        padding: 8px;
+        background-color: var(--surface-2);
+        border : 1px solid var(--stroke);
+        border-radius: 8px;
+        .project-image {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            border-radius: 4px;
+        }
+        .project-title {
+            font-weight: 500;
+            margin: 2px;
+        }
+
+        .project-info {
+            margin: 2px;
+            color: var(--sub-text);
+        }
+
+        .project-parent {
+            display: inline-flex;
+            align-items: center;
+            img {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                margin: 2px;
+            }
+
+            .project-parent-name {
+                margin: 2px;
+                font-weight: 400;
+
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+  }
+
+  .certificates {
+    margin-top: 2%;
+
+    .certificates-area  {
+      .certificate-content {
+        .top {
+          display: flex;
+          align-items: flex-start;
+
+          .certificate-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            margin: 2px;
+          }
+
+          div {
+            margin-left: 4px;
+            .certificate-title {
+              margin: 2px;
+              font-weight: 500;
+            }
+            .name {
+              margin: 2px;
+            }
+            .content {
+              margin: 2px;
+            }
+          }
+        }
+
+        .mid {
+          margin-left: 56px;
+          .description {
+            margin-top: 4px;
+            color: var(--sub-text);
+          }
+        }
+
+        .talents {
+          margin-top: 8px;
+          margin-left: 56px;
+
+          .talents-header {
+            margin: 2px;
+            font-weight: 500;
+          }
+        }
+
+        .featured {
+          margin-top: 16px;
+          margin-left: 56px;
+
+          .featured-header {
+            margin: 2px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.special {
+  display: flex;
+  align-items: center;
+  color: #5d64f3;
+  font-weight: 500;
+}
+
+.card {
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    h2 {
+      margin: 2px;
+    }
+    button {
+      font-size: 12px;
+
+      mat-icon {
+        font-size: 18px;
+        display: inline-flex;
+        justify-content: center;
+
         align-items: center;
-        color:#5D64F3;
-        
+      }
     }
   }
 }
