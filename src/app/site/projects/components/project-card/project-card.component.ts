@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProjectCardComponent implements OnInit {
 
   @Input('project') project : any
+  @Input('dark') dark : boolean = false
 
   constructor() { }
 

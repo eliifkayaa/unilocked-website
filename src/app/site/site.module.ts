@@ -37,9 +37,11 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { AuthModule } from '@common/auth/auth.module';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
+import { ProfileContentComponent } from './profiles/profile-content/profile-content.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent],
   imports: [
     CommonModule,
     SiteRoutingModule,
@@ -54,6 +56,7 @@ import { EventsComponent } from './events/events.component';
     MatButtonToggleModule,
     MatSidenavModule,
     MatTabsModule,
+    MatChipsModule
   ],
   
 })
