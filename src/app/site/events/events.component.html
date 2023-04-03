@@ -1,9 +1,481 @@
-<navbar></navbar>
-<mat-drawer-container class="example-container">
-  <mat-drawer class="mainMenu" #drawer style="width: 250px" mode="side" opened>
-    <main-menu></main-menu>
-  </mat-drawer>
-  <mat-drawer-content> 
-    <div class="events-host"></div>
-  </mat-drawer-content>
-</mat-drawer-container>
+<ng-container *ngIf="auth.loggedIn">
+    <navbar [drawer]="drawer"></navbar>
+    <mat-drawer-container class="example-container">
+      <mat-drawer
+        class="mainMenu"
+        #drawer
+        style="width: 250px"
+        mode="side"
+        opened
+      >
+        <main-menu></main-menu>
+      </mat-drawer>
+      <mat-drawer-content style="min-height: 100vh">
+        <div class="header">
+          <div class="container">
+            <h1>Etkinlikler</h1>
+            <div class="content">
+              <div>
+                <h2>Yaklaşan Etkinliklerimiz</h2>
+              </div>
+              <div class="joined">
+                <button mat-icon-button>
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <mat-card class="events-card blue">
+                    <div class="color">
+
+                    </div>
+                    <div class="event">
+                        <mat-card-header class="eventTitle">
+                            <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content class="eventContent">
+                            <p>
+                                Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                            </p>
+                            <div class="creater">
+                                <div class="logos">
+                                    <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                    <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                </div>
+                                <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                            </div>
+                            <div class="date">
+                                <mat-icon>calendar_month</mat-icon>
+                                <p>21 Mart</p>
+                            </div>
+                            <div class="time">
+                                <mat-icon>schedule</mat-icon>
+                                <p>10:00</p>
+                            </div>
+                            <div class="location">
+                                <mat-icon>location_on</mat-icon>
+                                <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions class="eventActions">
+                            <div class="description">
+                                <p>Unilocked Sanal Bilet</p>
+                            </div>
+                            <div class="buttons">
+                                <button mat-flat-button>
+                                    <mat-icon>done</mat-icon>
+                                    Katılıyorsunuz
+                                </button>
+                                <button mat-flat-button>Takvime Ekle</button>
+                            </div>
+                        </mat-card-actions>
+                    </div>
+                </mat-card>
+
+                <mat-card class="events-card purple">
+                    <div class="color">
+
+                    </div>
+                    <div class="container">
+                        <div class="image">
+                            <img src="https://img.freepik.com/free-photo/white-brick-wall-textures-background_1203-6587.jpg">
+                        </div>
+                        <div class="event">
+                            <mat-card-header class="eventTitle">
+                                <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content class="eventContent">
+                                <p>
+                                    Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                </p>
+                                <div class="creater">
+                                    <div class="logos">
+                                        <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                        <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                    </div>
+                                    <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                </div>
+                                <div class="date">
+                                    <mat-icon>calendar_month</mat-icon>
+                                    <p>21 Mart</p>
+                                </div>
+                                <div class="time">
+                                    <mat-icon>schedule</mat-icon>
+                                    <p>10:00</p>
+                                </div>
+                                <div class="location">
+                                    <mat-icon>location_on</mat-icon>
+                                    <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                </div>
+                            </mat-card-content>
+                            <mat-card-actions class="eventActions">
+                                <div class="description">
+                                    <p>Unilocked Sanal Bilet</p>
+                                </div>
+                                <div class="buttons">
+                                    <button mat-flat-button>
+                                        <mat-icon>done</mat-icon>
+                                        Katılıyorsunuz
+                                    </button>
+                                    <button mat-flat-button>Takvime Ekle</button>
+                                </div>
+                            </mat-card-actions>
+                        </div>
+                    </div>
+                </mat-card>
+                
+
+                <button mat-icon-button>
+                  <mat-icon>chevron_right</mat-icon>
+                </button>
+              </div>
+
+              <info-card
+                title="Toplulukların etkinliklerini keşfet"
+                icon="rocket-launch"
+                text="Üyesi olduğun toplulukların yeni etkinlikleri keşfet ve ilgini çeken etkinlikleri düzenleyen yeni toplulukları takip et."
+              buttonText="Etkinlikleri Keşfet"
+                ></info-card>
+
+              <div class="suggested-area">
+                <div class="d-flex justify-content-between">
+                    <h2>Önerilen Etkinlikler</h2>
+                    <button mat-button color="primary">Hepsini gör</button>
+                </div>
+                <div class="joined">
+                    <div class="row">
+                        <div class="col">
+
+                            <mat-card class="events-card red">
+                                <div class="color">
+            
+                                </div>
+                                <div class="container">
+                                    <div class="image">
+                                        <img src="https://img.freepik.com/free-photo/white-brick-wall-textures-background_1203-6587.jpg">
+                                    </div>
+                                    <div class="event">
+                                        <mat-card-header class="eventTitle">
+                                            <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                                        </mat-card-header>
+                                        <mat-card-content class="eventContent">
+                                            <p>
+                                                Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                            </p>
+                                            <div class="creater">
+                                                <div class="logos">
+                                                    <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                                    <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                                </div>
+                                                <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                            </div>
+                                            <div class="date">
+                                                <mat-icon>calendar_month</mat-icon>
+                                                <p>21 Mart</p>
+                                            </div>
+                                            <div class="time">
+                                                <mat-icon>schedule</mat-icon>
+                                                <p>10:00</p>
+                                            </div>
+                                            <div class="location">
+                                                <mat-icon>location_on</mat-icon>
+                                                <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                            </div>
+                                        </mat-card-content>
+                                        <mat-card-actions class="eventActions">
+                                            <div class="description">
+                                                <p>Unilocked Sanal Bilet</p>
+                                            </div>
+                                            <div class="buttons">
+                                                <button mat-flat-button>
+                                                    Katılacağım
+                                                    <mat-icon>arrow_forward</mat-icon>
+                                                </button>
+                                            </div>
+                                        </mat-card-actions>
+                                    </div>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="events-card yellow">
+                                <div class="color">
+            
+                                </div>
+                                <div class="event">
+                                    <mat-card-header class="eventTitle">
+                                        <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content class="eventContent">
+                                        <p>
+                                            Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                        </p>
+                                        <div class="creater">
+                                            <div class="logos">
+                                                <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                                <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                            </div>
+                                            <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                        </div>
+                                        <div class="date">
+                                            <mat-icon>calendar_month</mat-icon>
+                                            <p>21 Mart</p>
+                                        </div>
+                                        <div class="time">
+                                            <mat-icon>schedule</mat-icon>
+                                            <p>10:00</p>
+                                        </div>
+                                        <div class="location">
+                                            <mat-icon>location_on</mat-icon>
+                                            <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                        </div>
+                                    </mat-card-content>
+                                    <mat-card-actions class="eventActions">
+                                        <div class="description">
+                                            <p>Unilocked Sanal Bilet</p>
+                                        </div>
+                                        <div class="buttons">
+                                            <button mat-flat-button>
+                                                Katılacağım
+                                                <mat-icon>arrow_forward</mat-icon>
+                                            </button>
+                                        </div>
+                                    </mat-card-actions>
+                                </div>
+                            </mat-card>
+                            
+                            
+                        </div>
+
+                        <div class="col">
+
+                            <mat-card class="events-card orange">
+                                <div class="color">
+            
+                                </div>
+                                <div class="event">
+                                    <mat-card-header class="eventTitle">
+                                        <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content class="eventContent">
+                                        <p>
+                                            Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                        </p>
+                                        <div class="creater">
+                                            <div class="logos">
+                                                <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                                <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                            </div>
+                                            <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                        </div>
+                                        <div class="date">
+                                            <mat-icon>calendar_month</mat-icon>
+                                            <p>21 Mart</p>
+                                        </div>
+                                        <div class="time">
+                                            <mat-icon>schedule</mat-icon>
+                                            <p>10:00</p>
+                                        </div>
+                                        <div class="location">
+                                            <mat-icon>location_on</mat-icon>
+                                            <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                        </div>
+                                    </mat-card-content>
+                                    <mat-card-actions class="eventActions">
+                                        <div class="description">
+                                            <p>Unilocked Sanal Bilet</p>
+                                        </div>
+                                        <div class="buttons">
+                                            <button mat-flat-button>
+                                                Katılacağım
+                                                <mat-icon>arrow_forward</mat-icon>
+                                            </button>
+                                        </div>
+                                    </mat-card-actions>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="events-card green">
+                                <div class="color">
+            
+                                </div>
+                                <div class="container">
+                                    <div class="image">
+                                        <img src="https://img.freepik.com/free-photo/white-brick-wall-textures-background_1203-6587.jpg">
+                                    </div>
+                                    <div class="event">
+                                        <mat-card-header class="eventTitle">
+                                            <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                                        </mat-card-header>
+                                        <mat-card-content class="eventContent">
+                                            <p>
+                                                Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                            </p>
+                                            <div class="creater">
+                                                <div class="logos">
+                                                    <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                                    <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                                </div>
+                                                <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                            </div>
+                                            <div class="date">
+                                                <mat-icon>calendar_month</mat-icon>
+                                                <p>21 Mart</p>
+                                            </div>
+                                            <div class="time">
+                                                <mat-icon>schedule</mat-icon>
+                                                <p>10:00</p>
+                                            </div>
+                                            <div class="location">
+                                                <mat-icon>location_on</mat-icon>
+                                                <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                            </div>
+                                        </mat-card-content>
+                                        <mat-card-actions class="eventActions">
+                                            <div class="description">
+                                                <p>Unilocked Sanal Bilet</p>
+                                            </div>
+                                            <div class="buttons">
+                                                <button mat-flat-button>
+                                                    Katılacağım
+                                                    <mat-icon>arrow_forward</mat-icon>
+                                                </button>
+                                            </div>
+                                        </mat-card-actions>
+                                    </div>
+                                </div>
+                            </mat-card>
+
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    
+                  </div>
+              </div>
+
+              <div class="past-area">
+                <div class="d-flex justify-content-between">
+                    <h2>Geçmiş Etkinlikleriniz</h2>
+                    <button mat-button color="primary">Hepsini gör</button>
+                </div>
+                <div class="joined">
+                    <div class="row">
+                        <div class="col">
+
+                            <mat-card class="events-card red">
+                                <div class="color">
+            
+                                </div>
+                                <div class="container">
+                                    <div class="image">
+                                        <img src="https://img.freepik.com/free-photo/white-brick-wall-textures-background_1203-6587.jpg">
+                                    </div>
+                                    <div class="event">
+                                        <mat-card-header class="eventTitle">
+                                            <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                                        </mat-card-header>
+                                        <mat-card-content class="eventContent">
+                                            <p>
+                                                Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                            </p>
+                                            <p style="color: #F03E3E;">
+                                                Bu Etkinlik Gerçekleşti
+                                            </p>
+                                            <div class="creater">
+                                                <div class="logos">
+                                                    <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                                    <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                                </div>
+                                                <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                            </div>
+                                            <div class="date">
+                                                <mat-icon>calendar_month</mat-icon>
+                                                <p>21 Mart</p>
+                                            </div>
+                                            <div class="time">
+                                                <mat-icon>schedule</mat-icon>
+                                                <p>10:00</p>
+                                            </div>
+                                            <div class="location">
+                                                <mat-icon>location_on</mat-icon>
+                                                <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                            </div>
+                                        </mat-card-content>
+                                        <mat-card-actions class="eventActions">
+                                            <div class="description">
+                                                <p>Unilocked Sanal Bilet</p>
+                                            </div>
+                                            <div class="buttons">
+                                                <button mat-flat-button>
+                                                    Detaylar
+                                                </button>
+                                            </div>
+                                        </mat-card-actions>
+                                    </div>
+                                </div>
+                            </mat-card>
+
+                            <mat-card class="events-card purple">
+                                <div class="color">
+            
+                                </div>
+                                <div class="container">
+                                    <div class="image">
+                                        <img src="https://img.freepik.com/free-photo/white-brick-wall-textures-background_1203-6587.jpg">
+                                    </div>
+                                    <div class="event">
+                                        <mat-card-header class="eventTitle">
+                                            <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                                        </mat-card-header>
+                                        <mat-card-content class="eventContent">
+                                            <p>
+                                                Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                                            </p>
+                                            <p style="color: #F03E3E;">
+                                                Bu Etkinlik Gerçekleşti
+                                            </p>
+                                            <div class="creater">
+                                                <div class="logos">
+                                                    <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                                    <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                                </div>
+                                                <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                                            </div>
+                                            <div class="date">
+                                                <mat-icon>calendar_month</mat-icon>
+                                                <p>21 Mart</p>
+                                            </div>
+                                            <div class="time">
+                                                <mat-icon>schedule</mat-icon>
+                                                <p>10:00</p>
+                                            </div>
+                                            <div class="location">
+                                                <mat-icon>location_on</mat-icon>
+                                                <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                                            </div>
+                                        </mat-card-content>
+                                        <mat-card-actions class="eventActions">
+                                            <div class="description">
+                                                <p>Unilocked Sanal Bilet</p>
+                                            </div>
+                                            <div class="buttons">
+                                                <button mat-flat-button>
+                                                    Detaylar
+                                                </button>
+                                            </div>
+                                        </mat-card-actions>
+                                    </div>
+                                </div>
+                            </mat-card>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                  </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </ng-container>
