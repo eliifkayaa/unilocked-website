@@ -13,6 +13,7 @@ import { SavedComponent } from './saved/saved.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
   },
   { path: 'events', component: EventsComponent, canActivate: [LoggedIn] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [LoggedIn] },
+  { path: 'community', component: CommunityProfileComponent, canActivate: [LoggedIn] },
 
 ];
 
