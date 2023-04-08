@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoggedIn } from '@common/auth/logged-in.service';
-import { LoginComponent } from '@common/auth/login/login.component';
 import { ExploreComponent } from 'src/app/site/explore/explore.component';
 import { ProjectsComponent } from 'src/app/site/projects/projects.component';
 import { CommunitiesComponent } from './communities/communities.component';
@@ -13,6 +12,9 @@ import { SavedComponent } from './saved/saved.component';
 import { UserProfileComponent } from './profiles/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { SchoolComponent } from './school/school.component';
+import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
+
 
 const routes: Routes = [
   {
@@ -38,6 +40,11 @@ const routes: Routes = [
   },
   { path: 'events', component: EventsComponent, canActivate: [LoggedIn] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [LoggedIn] },
+
+  { path: 'school', component: SchoolComponent, canActivate: [LoggedIn] },
+
+  { path: 'community', component: CommunityProfileComponent, canActivate: [LoggedIn] },
+
 
 ];
 
