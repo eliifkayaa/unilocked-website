@@ -1,254 +1,251 @@
-
 ::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
 .header {
-    border-bottom: 0.1px solid #dee2e6;
-    margin-top: 4%;
-    overflow-y: scroll;
-    height: 100vh;
-  }
-  
-  .content {
-    margin-top: 4%;
-  }
+  border-bottom: 0.1px solid #dee2e6;
+  margin-top: 4%;
+  overflow-y: scroll;
+  height: 100vh;
+}
 
-::ng-deep {
-  
-  .joined {
+.content {
+  margin-top: 4%;
+}
+
+.joined {
+  display: flex;
+  margin-bottom: 2%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+
+  .events-card {
+    padding: 0;
     display: flex;
-    margin-bottom: 2%;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5%;
+    width: 50%;
+    height: 90vh;
+    margin: 0 2%;
+    border-radius: 7px;
 
-    .events-card {
-        padding: 0;
+    &.blue {
+      .color {
+        background-color: #4b53f2;
+      }
+      .mat-icon {
+        color: #4b53f2;
+      }
+    }
+    &.purple {
+      .color {
+        background-color: #7a59a4;
+      }
+      .mat-icon {
+        color: #7a59a4;
+      }
+    }
+    &.red {
+      .color {
+        background-color: #f03e3e;
+      }
+      .mat-icon {
+        color: #f03e3e;
+      }
+    }
+    &.yellow {
+      .color {
+        background-color: #f59f00;
+      }
+      .mat-icon {
+        color: #f59f00;
+      }
+    }
+    &.orange {
+      .color {
+        background-color: #f76707;
+      }
+      .mat-icon {
+        color: #f76707;
+      }
+    }
+    &.green {
+      .color {
+        background-color: #37b24d;
+      }
+      .mat-icon {
+        color: #37b24d;
+      }
+    }
+    &.grey {
+      .color {
+        background-color: #495057;
+      }
+      .mat-icon {
+        color: #495057;
+      }
+    }
+    .color {
+      width: 10%;
+      height: 100%;
+      border-radius: 7px 0 0 7px;
+    }
+
+    //Başlığında img bulunan
+    .container {
+      padding: 0 !important;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        width: 100%;
+        height: 20%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .eventActions {
+        position: absolute;
+        width: 85%;
+        bottom: 0;
+      }
+    }
+
+    //Bulunmayan
+    .event {
+      width: 100%;
+      padding: 6% 4% 0 4%;
+      border-radius: 0 7px 7px 0;
+
+      .eventTitle div {
+        margin: 0;
+      }
+      .eventContent {
+        margin-top: 5%;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+
+        .creater {
+          margin: 10% 0;
+          display: flex;
+          align-items: center;
+
+          .logos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+            height: 71px;
+            border: 1px solid rgba(73, 80, 87, 0.25);
+            border-radius: 2px;
+
+            img {
+              width: 100%;
+              height: 50%;
+
+              &:nth-child(1) {
+                border-bottom: 1px solid black;
+              }
+            }
+          }
+          p {
+            margin: 0 0 0 2%;
+          }
+        }
+        .date,
+        .time,
+        .location,
+        .participant {
+          display: flex;
+          align-items: center;
+          margin: 3% 0;
+
+          p {
+            width: 90%;
+            margin: 0 0 0 2%;
+          }
+        }
+      }
+      .eventActions {
+        position: absolute;
+        width: 85%;
+        bottom: 0;
         display: flex;
-        width: 50%;
-        height: 90vh;
-        margin: 0 2%;
-        border-radius: 7px;
+        justify-content: space-between;
 
-        &.blue {
-            .color {
-                background-color: #4B53F2;
-            }
+        .description {
+          display: flex;
+          align-items: end;
+          color: #868e96;
+
+          p {
+            margin: 0;
+          }
+        }
+        .buttons {
+          display: flex;
+          flex-direction: column;
+
+          button {
+            display: flex;
+            justify-content: center;
+            border-radius: 7px;
+            font-weight: 600;
+            margin: 2% 0;
+
             .mat-icon {
-                color: #4B53F2;
+              color: #fbfbfc;
             }
+
+            &:nth-child(1) {
+              background: #4b53f2;
+              border: 1px solid #444bda;
+              color: #fbfbfc;
+            }
+            &:nth-child(2) {
+              background: #dbddfc;
+              border: 1px solid #c9cbfb;
+              color: #4b53f2;
+            }
+          }
         }
-        &.purple {
-            .color {
-                background-color: #7A59A4;
-            }
-            .mat-icon {
-                color: #7A59A4;
-            }
-        }
-        &.red {
-            .color {
-                background-color: #F03E3E;
-            }
-            .mat-icon {
-                color: #F03E3E;
-            }
-        }
-        &.yellow {
-            .color {
-                background-color: #F59F00;
-            }
-            .mat-icon {
-                color: #F59F00;
-            }
-        }
-        &.orange {
-            .color {
-                background-color: #F76707;
-            }
-            .mat-icon {
-                color: #F76707;
-            }
-        }
-        &.green {
-            .color {
-                background-color: #37B24D;
-            }
-            .mat-icon {
-                color: #37B24D;
-            }
-        }
-        &.grey {
-            .color {
-                background-color: #495057;
-            }
-            .mat-icon {
-                color: #495057;
-            }
-        }
-        .color {
-            width: 10%;
-            height: 100%;
-            border-radius: 7px 0 0 7px;
-        }
-
-        //Başlığında img bulunan
-        .container {
-            padding: 0!important;
-            width: 100%;
-            height: 100%;
-
-            .image {
-                width: 100%;
-                height: 20%;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            
-            .eventActions {
-                position: absolute;
-                width: 85%;
-                bottom: 0;
-            }
-            
-        }
-
-        //Bulunmayan
-        .event {
-            width: 100%;
-            padding: 6% 4% 0 4%;
-            border-radius: 0 7px 7px 0;
-
-            .eventTitle div {
-                margin: 0;
-            }
-            .eventContent {
-                margin-top: 5%;
-                font-size: 18px;
-                letter-spacing: 0.2px;
-
-                .creater {
-                    margin: 10% 0;
-                    display: flex;
-                    align-items: center;
-
-                    .logos {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        width: 20%;
-                        height: 71px;
-                        border: 1px solid rgba(73, 80, 87, 0.25);
-                        border-radius: 2px;
-
-                        img {
-                            width: 100%;
-                            height: 50%;
-
-                            &:nth-child(1){
-                                border-bottom: 1px solid black;
-                            }
-                        }
-                    }
-                    p {
-                        margin: 0 0 0 2%;
-                    }
-                }
-                .date , .time , .location, .participant {
-                    display: flex;
-                    align-items: center;
-                    margin: 3% 0;
-
-                    p {
-                        width: 90%;
-                        margin: 0 0 0 2%;
-                    }
-                }
-            }
-            .eventActions {
-                position: absolute;
-                width: 85%;
-                bottom: 0;
-                display: flex;
-                justify-content: space-between;
-
-                .description {
-                    display: flex;
-                    align-items: end;
-                    color: #868E96;
-
-                    p {
-                        margin: 0;
-                    }
-                }
-                .buttons {
-                    display: flex;
-                    flex-direction: column;
-
-                    button {
-                        display: flex;
-                        justify-content: center;
-                        border-radius: 7px;
-                        font-weight: 600;
-                        margin: 2% 0;
-
-                        .mat-icon {
-                            color: #FBFBFC;
-                        }
-
-                        &:nth-child(1) {
-                            background: #4B53F2;
-                            border: 1px solid #444BDA;
-                            color: #FBFBFC;
-                        }
-                        &:nth-child(2) {
-                            background: #DBDDFC;
-                            border: 1px solid #C9CBFB;
-                            color: #4B53F2;
-                        }
-                    }
-                }
-            }
-
-        }
+      }
     }
   }
-  
-  .suggested-area, .upcoming-area, .past-area {
-    margin-top: 5%;
+}
 
-    .joined {
-        justify-content: start;
+.suggested-area,
+.upcoming-area,
+.past-area {
+  margin-top: 5%;
 
-        .row {
-            display: inline-block!important;
+  .joined {
+    justify-content: start;
 
-            .col {
-                display: flex;
-                justify-content: space-between;
-                padding: 0;
-    
-                .events-card {
-                    width: 50%!important;
-                    height: 80vh;
-                    margin-bottom: 3%!important;
-                
-                    .eventContent {
-                        margin-bottom: 0!important;
-    
-                        .creater {
-                            margin: 5% 0;
-                        }
-                    }
-                    
-                }
+    .row {
+      display: inline-block !important;
+
+      .col {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+
+        .events-card {
+          width: 50% !important;
+          height: 80vh;
+          margin-bottom: 3% !important;
+
+          .eventContent {
+            margin-bottom: 0 !important;
+
+            .creater {
+              margin: 5% 0;
             }
+          }
         }
-        
+      }
     }
   }
 }
