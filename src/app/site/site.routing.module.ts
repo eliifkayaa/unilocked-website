@@ -14,6 +14,7 @@ import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { SchoolComponent } from './school/school.component';
 import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
+import { CompanyComponent } from './company/company.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,8 @@ const routes: Routes = [
   { path: 'school', component: SchoolComponent, canActivate: [LoggedIn] },
 
   { path: 'community', component: CommunityProfileComponent, canActivate: [LoggedIn] },
+
+  { path: 'company', component: CompanyComponent, canActivate: [LoggedIn] },
 
 
 ];
