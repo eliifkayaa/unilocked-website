@@ -92,7 +92,7 @@
           <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
             <mat-card class="mat-elevation-z4">
               <mat-card-header>
-                  <mat-card-title>Playstation Türkiye</mat-card-title>
+                  <mat-card-title style="font-size: 16px;">Gönderi</mat-card-title>
               </mat-card-header>
               <img mat-card-image src="./../assets/img/search-playstation.jpeg">
               <mat-card-content>
@@ -111,7 +111,7 @@
           <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
             <mat-card class="mat-elevation-z4">
               <mat-card-header>
-                  <mat-card-title>Playstation Türkiye</mat-card-title>
+                  <mat-card-title style="font-size: 16px;">Gönderi</mat-card-title>
               </mat-card-header>
               <img mat-card-image src="./../assets/img/search-playstation.jpeg">
               <mat-card-content>
@@ -147,6 +147,55 @@
           </div>
         </div>
       </div> 
+    </div>
+    <div class="container">
+      <div class="highlights">
+        <div class="text-container">
+          <p>Kişiler</p> 
+        </div>
+      </div> 
+      <mat-card class="example-card">
+        <mat-card-header>
+          <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu" class="container-card-img">
+          <mat-card-title-group>
+            <mat-card-title>Hilal Nuroğlu</mat-card-title>
+            <mat-card-subtitle>
+              <mat-card-content>
+                <span><b><i>PlayStation </i></b></span>{{longText}}
+              </mat-card-content>
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+      </mat-card>
+      <br>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu" class="container-card-img">
+          <mat-card-title-group>
+            <mat-card-title>Abdullah Ustaömeroğlu</mat-card-title>
+            <mat-card-subtitle>
+              <mat-card-content>
+                <span><b><i>PlayStation </i></b></span>{{longText}}
+              </mat-card-content>
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+      </mat-card>
+      <br>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu" class="container-card-img">
+          <mat-card-title-group>
+            <mat-card-title>Felya Varol</mat-card-title>
+            <mat-card-subtitle>
+              <mat-card-content>
+                <span><b><i>PlayStation </i></b></span>{{longText}}
+              </mat-card-content>
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+      </mat-card>
+      <br>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

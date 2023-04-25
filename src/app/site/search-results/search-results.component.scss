@@ -17,6 +17,29 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 
+  .container-card-img{
+    border-radius: 100px; 
+    width: 60px; 
+    height: 60px;
+    align-items: start;
+    justify-content: left;
+  }
+  mat-card{
+    border-radius: 10px;
+  }
+  mat-card-title-group{
+    justify-content: space-between;
+    mat-card-title{
+      padding-left: 20px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+    }
+    mat-card-subtitle{
+      padding-left: 20px;
+    }
+  }
   .search-result {
     width: 100%;
     width: 1440px;

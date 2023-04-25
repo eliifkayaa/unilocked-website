@@ -46,6 +46,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { SchoolComponent } from './school/school.component';
 import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, SchoolComponent,CommunityProfileComponent, SearchResultsComponent],
@@ -53,6 +55,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 
   imports: [
     CommonModule,
+    BrowserModule,
     SiteRoutingModule,
     AppCommonModule,
     MatButtonModule,
@@ -63,6 +66,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatSidenavModule,
