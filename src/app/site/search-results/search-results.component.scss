@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif; 
+  padding: 20px;
+}
+
+/* Define styles for search results */
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container{
+  overflow-x: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .search-result {
+    width: 100%;
+    width: 1440px;
+    height: 96px;
+    padding: 20px 10px;
+    p {
+      font-weight: 600;
+      font-size: 32px;
+      color: #343A40;
+      letter-spacing: 0.2px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li{
+      display: inline-block;
+      list-style: none;
+      margin: 10px 20px;
+      color: #343A40;
+      a{
+        color: #1b4df1;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+      }
+    }
+    ul{
+      margin-left: -50px;
+      li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+        color: #343A40;
+        a{
+          color: #343A40;
+          text-decoration: none;
+          font-size: 18px;
+          position: relative;
+        }
+        a::after{
+          content: ' ';
+          width: 0;
+          height: 1px;
+          background: #1b4df1;
+          position: absolute;
+          left: 0;
+          bottom: -6px;
+          transition: 0.5s;
+        }
+        a:hover::after{
+          width: 100%;
+        }
+        .button-filter{
+          padding-left: 15rem;
+        }
+      }
+    }
+  }
+}
+
+.highlights {
+  display: block;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+  padding: 0px;
+  gap: 16px;
+  width: 100%;
+  .text-container {
+    width: 100%;
+    p {
+      font-weight: 500;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      font-size: 20px;
+      color: #343A40;
+      letter-spacing: 0.2px;
+      margin-top: 30px;
+      padding: 10px 0;
+    }
+  }  
+}
+
+.content {
+  padding: 16px;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  overflow-x: hidden;
+  .mat-button{
+    width: 300px;
+    align-items: center;
+    text-align: center;
+    justify-content: center; 
+    height: 40px;
+  }
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+  overflow-x: hidden;
+}
+

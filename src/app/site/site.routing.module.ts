@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoggedIn } from '@common/auth/logged-in.service';
 import { ExploreComponent } from 'src/app/site/explore/explore.component';
@@ -14,6 +14,7 @@ import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { SchoolComponent } from './school/school.component';
 import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,8 @@ const routes: Routes = [
   { path: 'school', component: SchoolComponent, canActivate: [LoggedIn] },
 
   { path: 'community', component: CommunityProfileComponent, canActivate: [LoggedIn] },
+  
+  { path : 'search-results', component: SearchResultsComponent, canActivate: [LoggedIn]},
 
 
 ];
