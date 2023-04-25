@@ -25,6 +25,7 @@ export class CommunitiesComponent implements OnInit {
     ]
 
   ngOnInit(): void {
+    
   }
 
 }
