@@ -14,6 +14,7 @@ import { UserProfileComponent } from './profiles/user-profile/user-profile.compo
 import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent, canActivate: [LoggedIn] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [LoggedIn] },
   { path: 'community', component: CommunityProfileComponent, canActivate: [LoggedIn] },
+  { path: 'search-results', component: SearchResultComponent, canActivate: [LoggedIn] },
 
 ];
 
