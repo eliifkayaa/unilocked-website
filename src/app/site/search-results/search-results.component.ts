@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'search-results',
@@ -13,6 +13,9 @@ export class SearchResultsComponent implements OnInit {
   }
 
   isResponsive: boolean = true;
+
+  @Input('project') project : any
+  @Input('dark') dark : boolean = false
 
   gridColumns = 3;
 

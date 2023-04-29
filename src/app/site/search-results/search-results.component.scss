@@ -401,3 +401,28 @@ body {
   }  
 }
 
+.dark {
+  background-color: var(--surface-1) !important;
+}
+
+.cursors{
+  cursor: default;
+}
+
+.project-cards{
+  mat-card-content{
+    text-align: left;
+    mat-card-header{
+      mat-card-title{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+    p{
+      span{
+        color: #37B24D;
+      }
+    }
+  }
+}
