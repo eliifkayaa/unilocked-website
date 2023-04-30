@@ -17,6 +17,19 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 
+  .posts-text{
+    height: 60px;
+    overflow-y: hidden;
+    font-size: 16px;
+    text-align: left;
+    align-items: start;
+  }
+
+  .highlight-card{
+    background-color: #fff; 
+    color: #4B53F2;
+  }
+
   .container-card-img{
     border-radius: 100px; 
     width: 60px; 
@@ -516,5 +529,40 @@ body {
         color: #37B24D;
       }
     }
+  }
+}
+
+.workers-area {
+  display: flex;
+  margin: 16px 8px;
+  width: 100%;
+  .workers {
+    display: flex;
+    margin: 0px 8px;
+    padding-right: 5px;
+
+    .worker {
+      box-sizing: border-box;
+
+      width: 24px;
+      height: 24px;
+      /* Profile Stroke */
+
+      border: 1px solid rgba(73, 80, 87, 0.25);
+      border-radius: 50%;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin: 0px -4px;
+    }
+  }
+  .workers-text {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
   }
 }
