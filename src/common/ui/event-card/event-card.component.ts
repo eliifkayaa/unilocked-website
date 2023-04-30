@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'event',
-  templateUrl: './event.component.html',
-  styleUrls: ['./event.component.scss']
+  selector: 'event-card',
+  templateUrl: './event-card.component.html',
+  styleUrls: ['./event-card.component.scss']
 })
-export class InfoCardComponent implements OnInit {
+export class EventCardComponent implements OnInit {
 
   @Input('icon') icon:string
   @Input('title') title:string

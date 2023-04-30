@@ -16,7 +16,7 @@
           <li><a href="#contact">Şirketler</a></li>
           <li><a href="#contact">Etkinlikler</a></li>
         </ul>
-        <li><a href="#filter" class="button-filter"> <button mat-icon-button><mat-icon>chevron_left</mat-icon></button> Filtre</a></li>
+        <li><a href="#filter" class="button-filter"> <button mat-icon-button><mat-icon>filter_list</mat-icon></button> Filtre</a></li>
       </nav>  
     </div>
    
@@ -239,85 +239,154 @@
         </div> 
         <div class="project-cards">
           <div fxLayout="row wrap" fxLayoutGap="16px grid">
-            <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-              <mat-card class="mat-elevation-z4">
-                <img mat-card-image src="./assets/img/ps-controller.png">
-                <mat-card-content>
-                  <mat-card-header>
-                    <mat-card-title>Tracking and Reducing CO2 Emissions from Vehicle</mat-card-title>
-                  </mat-card-header>
-                  <p>
-                    Katılımcı Aranıyor•<span>Katılım İçin Uygunsunuz</span> 
+            <div class="col-sm-4">
+              <mat-card class="project-card z-elevation-0" [class.dark]="dark">
+                <img class="project-image" src="./assets/img/ps-controller.png" alt="" />
+                <div class="project-details">
+                  <h3>Tracking and Reducing CO2 Emissions from Vehicle</h3>
+                  <div class="workers-text">
+                    Katılımcı Aranıyor•<span>Katılım İçin Uygunsunuz</span>
+                  </div>
+                  <div class="workers-area">
+                    <div class="workers">
+                      <img
+                        class="worker"
+                        *ngFor="let worker of project.workers; let i = index"
+                        [src]="worker.image"
+                        alt=""
+                        [style.z-index]="3 - i"
+                      />
+                      <div class="worker more-worker" [style.z-index]="0">+7</div>
+                    </div>
+                    <div class="workers-text">
+                      Elif Kemertaş ve 7 kişi daha bu projede çalışıyor
+                    </div>
+                  </div>
+                  <p class="status">
+                    Mart 2022 - 17 Kasım 2022
                   </p>
-                  <div>
-                    ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz
+                  <div class="description">
+                    <p>
+                      ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz
+                    </p>
                     <ul>
-                      <li>
-                        Otonom sistemlerin geliştirilmesi
-                      </li>
-                      <li>
-                        Görüntü işleme sistemlerinin optimizasyonu
-                      </li>
+                      <li>Otonom sistemlerin geliştirilmesi</li>
+                      <li>Görüntü işleme sistemlerinin optimizasyonu</li>
                     </ul>
                   </div>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button style="background-color: #4B53F2; color: #F1F3F5;">Detaylar</button>
-                </mat-card-actions>
+                  <div class="actions row">
+                    <div class="col-sm">
+                      <button
+                        style="width: 100%; background-color: #4b53f2"
+                        mat-raised-button
+                        color="primary"
+                        class="action mat-elevation-z0"
+                      >
+                        Detaylar
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </mat-card>
             </div>
-            <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-              <mat-card class="mat-elevation-z4">
-                <img mat-card-image src="./assets/img/ps-controller.png">
-                <mat-card-content>
-                  <mat-card-header>
-                    <mat-card-title>Tracking and Reducing CO2 Emissions from Vehicle</mat-card-title>
-                  </mat-card-header>
-                  <p>
-                    Katılımcı Aranıyor•<span>Katılım İçin Uygunsunuz</span> 
+            <div class="col-sm-4">
+              <mat-card class="project-card z-elevation-0" [class.dark]="dark">
+                <img class="project-image" src="./assets/img/ps-controller.png" alt="" />
+                <div class="project-details">
+                  <h3>Tracking and Reducing CO2 Emissions from Vehicle</h3>
+                  <div class="workers-text">
+                    Katılımcı Aranıyor•<span>Katılım İçin Uygunsunuz</span>
+                  </div>
+                  <div class="workers-area">
+                    <div class="workers">
+                      <img
+                        class="worker"
+                        *ngFor="let worker of project.workers; let i = index"
+                        [src]="worker.image"
+                        alt=""
+                        [style.z-index]="3 - i"
+                      />
+                      <div class="worker more-worker" [style.z-index]="0">+7</div>
+                    </div>
+                    <div class="workers-text">
+                      Elif Kemertaş ve 7 kişi daha bu projede çalışıyor
+                    </div>
+                  </div>
+                  <p class="status">
+                    Mart 2022 - 17 Kasım 2022
                   </p>
-                  <div>
-                    ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz
+                  <div class="description">
+                    <p>
+                      ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz
+                    </p>
                     <ul>
-                      <li>
-                        Otonom sistemlerin geliştirilmesi
-                      </li>
-                      <li>
-                        Görüntü işleme sistemlerinin optimizasyonu
-                      </li>
+                      <li>Otonom sistemlerin geliştirilmesi</li>
+                      <li>Görüntü işleme sistemlerinin optimizasyonu</li>
                     </ul>
                   </div>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button style="background-color: #4B53F2; color: #F1F3F5;">Detaylar</button>
-                </mat-card-actions>
+                  <div class="actions row">
+                    <div class="col-sm">
+                      <button
+                        style="width: 100%; background-color: #4b53f2"
+                        mat-raised-button
+                        color="primary"
+                        class="action mat-elevation-z0"
+                      >
+                        Detaylar
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </mat-card>
             </div>
-            <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-              <mat-card class="mat-elevation-z4">
-                <img mat-card-image src="./assets/img/ps-controller.png">
-                <mat-card-content>
-                  <mat-card-header>
-                    <mat-card-title>Tracking and Reducing CO2 Emissions from Vehicle</mat-card-title>
-                  </mat-card-header>
-                  <p>
-                    Katılımcı Aranıyor•<span>Katılım İçin Uygunsunuz</span> 
+            <div class="col-sm-4">
+              <mat-card class="project-card z-elevation-0" [class.dark]="dark">
+                <img class="project-image" src="./assets/img/ps-controller.png" alt="" />
+                <div class="project-details">
+                  <h3>Tracking and Reducing CO2 Emissions from Vehicle</h3>
+                  <div class="workers-text">
+                    Katılımcı Aranıyor•<span>Katılım İçin Uygunsunuz</span>
+                  </div>
+                  <div class="workers-area">
+                    <div class="workers">
+                      <img
+                        class="worker"
+                        *ngFor="let worker of project.workers; let i = index"
+                        [src]="worker.image"
+                        alt=""
+                        [style.z-index]="3 - i"
+                      />
+                      <div class="worker more-worker" [style.z-index]="0">+7</div>
+                    </div>
+                    <div class="workers-text">
+                      Elif Kemertaş ve 7 kişi daha bu projede çalışıyor
+                    </div>
+                  </div>
+                  <p class="status">
+                    Mart 2022 - 17 Kasım 2022
                   </p>
-                  <div>
-                    ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz
+                  <div class="description">
+                    <p>
+                      ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz
+                    </p>
                     <ul>
-                      <li>
-                        Otonom sistemlerin geliştirilmesi
-                      </li>
-                      <li>
-                        Görüntü işleme sistemlerinin optimizasyonu
-                      </li>
+                      <li>Otonom sistemlerin geliştirilmesi</li>
+                      <li>Görüntü işleme sistemlerinin optimizasyonu</li>
                     </ul>
                   </div>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button style="background-color: #4B53F2; color: #F1F3F5;">Detaylar</button>
-                </mat-card-actions>
+                  <div class="actions row">
+                    <div class="col-sm">
+                      <button
+                        style="width: 100%; background-color: #4b53f2"
+                        mat-raised-button
+                        color="primary"
+                        class="action mat-elevation-z0"
+                      >
+                        Detaylar
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </mat-card>
             </div>
           </div>
@@ -336,39 +405,39 @@
             </p> 
           </div>
         </div> 
-        <div fxLayout="row wrap" fxLayoutGap="16px grid">
-          <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-            <mat-card class="mat-elevation-z4">
-              <img mat-card-image src="./assets/img/ps3-back.png">
-              <mat-card-content>
-                <mat-card-header>
-                  <mat-card-title>Playstation Türkiye</mat-card-title>
-                </mat-card-header>
-                <p>
-                  35.701 Takipçi • Eğlence Sektörü Şirketi
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button style="background-color: #C9CBFB; color: #4B53F2;">Takibi Bırak</button>
-              </mat-card-actions>
-            </mat-card>
-          </div>
-          <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-            <mat-card class="mat-elevation-z4">
-              <img mat-card-image src="./assets/img/ps3-back.png">
-              <mat-card-content>
-                <mat-card-header>
-                  <mat-card-title>Playstation Global</mat-card-title>
-                </mat-card-header>
-                <p>
-                  35.701 Takipçi • Eğlence Sektörü Şirketi
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button style="background-color: #4B53F2; color: #F1F3F5;">Takip Et</button>
-              </mat-card-actions>
-            </mat-card>
-          </div>
+        <div class="row">
+            <div class="col-sm-4">
+              <mat-card class="mat-elevation-z4">
+                <img mat-card-image src="./assets/img/ps3-back.png">
+                <mat-card-content>
+                  <mat-card-header>
+                    <mat-card-title>Playstation Türkiye</mat-card-title>
+                  </mat-card-header>
+                  <p>
+                    35.701 Takipçi • Eğlence Sektörü Şirketi
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button style="background-color: #C9CBFB; color: #4B53F2;">Takibi Bırak</button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            <div class="col-sm-4">
+              <mat-card class="mat-elevation-z4">
+                <img mat-card-image src="./assets/img/ps3-back.png">
+                <mat-card-content>
+                  <mat-card-header>
+                    <mat-card-title>Playstation Global</mat-card-title>
+                  </mat-card-header>
+                  <p>
+                    35.701 Takipçi • Eğlence Sektörü Şirketi
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button style="background-color: #4B53F2; color: #F1F3F5;">Takip Et</button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
         </div>
       </div>
     </div>
@@ -377,163 +446,159 @@
     <!--     EVENTS      -->
     <div class="container">
       <div class="content">
-        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-          <div class="joined">
-            <mat-card class="events-card blue">
-              <div class="color">
-                  <p style="color: #4b53f2;" class="cursors">
-                    lorem.
-                  </p>
-              </div>
-              <div class="event">
-                  <mat-card-header class="eventTitle">
-                      <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
-                  </mat-card-header>
-                  <mat-card-content class="eventContent">
-                      <p>
-                          Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
-                      </p>
-                      <div class="creater">
-                          <div class="logos">
-                              <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
-                              <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
-                          </div>
-                          <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
-                      </div>
-                      <div class="date">
-                          <mat-icon>calendar_month</mat-icon>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="joined">
+              <mat-card class="events-card blue">
+                <div class="color">
+                    
+                </div>
+                <div class="event">
+                    <mat-card-header class="eventTitle">
+                        <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="eventContent">
+                        <p>
+                            Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                        </p>
+                        <div class="creater">
+                            <div class="logos">
+                                <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                            </div>
+                            <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                        </div>
+                        <div class="date">
+                          <mat-icon>calendar_today</mat-icon>
                           <p>21 Mart</p>
-                      </div>
-                      <div class="time">
+                        </div>
+                        <div class="time">
                           <mat-icon>schedule</mat-icon>
                           <p>10:00</p>
-                      </div>
-                      <div class="location">
-                          <mat-icon>location_on</mat-icon>
-                          <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
-                      </div>
-                  </mat-card-content>
-                  <mat-card-actions class="eventActions">
-                      <div class="description">
-                          <p>Unilocked Sanal Bilet</p>
-                      </div>
-                      <div class="buttons">
+                        </div>
+                        <div class="location">
+                            <mat-icon>location_on</mat-icon>
+                            <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions class="eventActions">
+                        <div class="description">
+                            <p>Unilocked Sanal Bilet</p>
+                        </div>
+                        <div class="buttons">
                           <button mat-flat-button>
-                              <mat-icon>done</mat-icon>
-                              Katılıyorsunuz
+                            <mat-icon>done</mat-icon>
+                            Katılıyorsunuz
                           </button>
                           <button mat-flat-button>Takvime Ekle</button>
-                      </div>
-                  </mat-card-actions>
-              </div>
-            </mat-card>
-          </div> 
-        </div>
-        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-          <div class="joined">
-            <mat-card class="events-card red">
-              <div class="color">
-                <p style="color: #f03e3e;" class="cursors">
-                  lorem.
-                </p>
-              </div>
-              <div class="event">
-                  <mat-card-header class="eventTitle">
-                      <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
-                  </mat-card-header>
-                  <mat-card-content class="eventContent">
-                      <p>
-                          Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
-                      </p>
-                      <div class="creater">
-                          <div class="logos">
-                              <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
-                              <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
-                          </div>
-                          <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
-                      </div>
-                      <div class="date">
-                          <mat-icon>calendar_month</mat-icon>
-                          <p>21 Mart</p>
-                      </div>
-                      <div class="time">
-                          <mat-icon>schedule</mat-icon>
-                          <p>10:00</p>
-                      </div>
-                      <div class="location">
-                          <mat-icon>location_on</mat-icon>
-                          <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
-                      </div>
-                  </mat-card-content>
-                  <mat-card-actions class="eventActions">
-                      <div class="description">
-                          <p>Unilocked Sanal Bilet</p>
-                      </div>
-                      <div class="buttons">
-                          <button mat-flat-button>
-                              <mat-icon>done</mat-icon>
-                              Katılıyorsunuz
-                          </button>
-                          <button mat-flat-button>Takvime Ekle</button>
-                      </div>
-                  </mat-card-actions>
-              </div>
-            </mat-card>
+                        </div>
+                    </mat-card-actions>
+                </div>
+              </mat-card>
+            </div> 
           </div>
-        </div> 
-        <br>
-        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
-          <div class="joined">
-            <mat-card class="events-card purple">
-              <div class="color">
-                <p style="color: #7a59a4;" class="cursors">
-                  lorem.
-                </p>
-              </div>
-              <div class="event">
-                  <mat-card-header class="eventTitle">
-                      <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
-                  </mat-card-header>
-                  <mat-card-content class="eventContent">
-                      <p>
-                          Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
-                      </p>
-                      <div class="creater">
-                          <div class="logos">
-                              <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
-                              <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
-                          </div>
-                          <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
-                      </div>
-                      <div class="date">
-                          <mat-icon>calendar_month</mat-icon>
-                          <p>21 Mart</p>
-                      </div>
-                      <div class="time">
-                          <mat-icon>schedule</mat-icon>
-                          <p>10:00</p>
-                      </div>
-                      <div class="location">
-                          <mat-icon>location_on</mat-icon>
-                          <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
-                      </div>
-                  </mat-card-content>
-                  <mat-card-actions class="eventActions">
-                      <div class="description">
-                          <p>Unilocked Sanal Bilet</p>
-                      </div>
-                      <div class="buttons">
+          <div class="col-sm-4">
+            <div class="joined">
+              <mat-card class="events-card red">
+                <div class="color">
+                  
+                </div>
+                <div class="event">
+                    <mat-card-header class="eventTitle">
+                        <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="eventContent">
+                        <p>
+                            Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                        </p>
+                        <div class="creater">
+                            <div class="logos">
+                                <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                            </div>
+                            <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                        </div>
+                        <div class="date">
+                            <mat-icon>calendar_month</mat-icon>
+                            <p>21 Mart</p>
+                        </div>
+                        <div class="time">
+                            <mat-icon>schedule</mat-icon>
+                            <p>10:00</p>
+                        </div>
+                        <div class="location">
+                            <mat-icon>location_on</mat-icon>
+                            <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions class="eventActions">
+                        <div class="description">
+                            <p>Unilocked Sanal Bilet</p>
+                        </div>
+                        <div class="buttons">
                           <button mat-flat-button>
                               <mat-icon>done</mat-icon>
                               Katılıyorsunuz
                           </button>
                           <button mat-flat-button>Takvime Ekle</button>
                       </div>
-                  </mat-card-actions>
-              </div>
-            </mat-card>
+                    </mat-card-actions>
+                </div>
+              </mat-card>
+            </div>
           </div> 
-        </div>  
+          <br>
+          <div class="col-sm-4">
+            <div class="joined">
+              <mat-card class="events-card purple">
+                <div class="color">
+                  
+                </div>
+                <div class="event">
+                    <mat-card-header class="eventTitle">
+                        <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="eventContent">
+                        <p>
+                            Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                        </p>
+                        <div class="creater">
+                            <div class="logos">
+                                <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                            </div>
+                            <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                        </div>
+                        <div class="date">
+                            <mat-icon>calendar_month</mat-icon>
+                            <p>21 Mart</p>
+                        </div>
+                        <div class="time">
+                            <mat-icon>schedule</mat-icon>
+                            <p>10:00</p>
+                        </div>
+                        <div class="location">
+                            <mat-icon>location_on</mat-icon>
+                            <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions class="eventActions">
+                        <div class="description">
+                            <p>Unilocked Sanal Bilet</p>
+                        </div>
+                        <div class="buttons">
+                            <button mat-flat-button>
+                                <mat-icon>done</mat-icon>
+                                Katılıyorsunuz
+                            </button>
+                            <button mat-flat-button>Takvime Ekle</button>
+                        </div>
+                    </mat-card-actions>
+                </div>
+              </mat-card>
+            </div> 
+          </div>  
+        </div>
       </div>
     </div>
   </mat-drawer-content>

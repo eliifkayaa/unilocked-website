@@ -12,6 +12,20 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public community = {
+    name:"AlecTED",
+    backdrop:"assets/img/alekted.png",
+    avatar:"assets/img/alekted-avatar.jpeg",
+    shortDesc:"TED University Alternative Energy Car Team"
+  }
+
+  public communities = [
+    this.community,
+    this.community,
+    this.community,
+    this.community
+    ]
+
   isResponsive: boolean = true;
 
   @Input('project') project : any

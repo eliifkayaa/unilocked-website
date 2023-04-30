@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InfoCardComponent } from './event-card.component';
 
-describe('InfoCardComponent', () => {
+describe('EventCardComponent', () => {
   let component: InfoCardComponent;
   let fixture: ComponentFixture<InfoCardComponent>;
 
