@@ -34,7 +34,6 @@ import { SavedComponent } from './saved/saved.component';
 import { SavedPostsComponent } from './saved/panels/saved-posts/saved-posts.component';
 import { PostComponent } from './components/post/post.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EventsComponent } from './events/events.component';
@@ -47,7 +46,6 @@ import { SchoolComponent } from './school/school.component';
 import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
 
 import { SearchResultsComponent } from './search-results/search-results.component';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CompanyComponent } from './company/company.component';
@@ -70,14 +68,13 @@ import { SearchResultComponent } from './search-result/search-result.component';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    HttpClientJsonpModule,
+    
     MatButtonModule,
     MatButtonToggleModule,
     MatSidenavModule,
     MatTabsModule,
     MatChipsModule,
-    FlexLayoutModule
+    
   ],
   
 })
