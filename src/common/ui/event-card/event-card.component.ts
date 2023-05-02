@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class EventCardComponent implements OnInit {
 
   @Input('icon') icon:string
+  @Input('color') color:string
+
   @Input('title') title:string
   @Input('text') text:string
   @Input('buttonText') buttonText:string

@@ -49,10 +49,17 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CompanyComponent } from './company/company.component';
+import { SearchPostsComponent } from './search-results/tabs/search-posts/search-posts.component';
+import { SearchPeopleComponent } from './search-results/tabs/search-people/search-people.component';
+import { SearchProjectsComponent } from './search-results/tabs/search-projects/search-projects.component';
+import { SearchCompaniesComponent } from './search-results/tabs/search-companies/search-companies.component';
+import { SearchEventsComponent } from './search-results/tabs/search-events/search-events.component';
+import { SearchCommunitiesComponent } from './search-results/tabs/search-communities/search-communities.component';
+import { SearchHighlightsComponent } from './search-results/tabs/search-highlights/search-highlights.component';
 
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent],
 
   imports: [
     CommonModule,

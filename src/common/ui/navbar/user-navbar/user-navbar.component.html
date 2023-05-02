@@ -1,30 +1,31 @@
 <mat-toolbar color="primary">
-  <a [routerLink]="['/home']" ><img
-    [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'"
-    class="logo"
-    alt="UniLocked"
+  <a [routerLink]="['/home']"
+    ><img
+      [src]="
+        theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'
+      "
+      class="logo"
+      alt="UniLocked"
   /></a>
   <button class="menu-button" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
 
-
   <span class="spacer"></span>
   <button matTooltip="Keşfet" class="icon-button">
     <mat-icon>explore</mat-icon><br />
-
   </button>
   <button matTooltip="İlanlar" class="icon-button">
     <mat-icon>newspaper</mat-icon><br />
-
   </button>
   <button matTooltip="Programlar" class="icon-button">
     <mat-icon>rocket</mat-icon><br />
-
   </button>
   <div class="navbar-search">
-    <input placeholder="Ara..." class="navbar-input" type="text" />
-    <mat-icon class="navbar-icon">search</mat-icon>
+    <form>
+      <input placeholder="Ara..." class="navbar-input" type="text" />
+      <mat-icon class="navbar-icon">search</mat-icon>
+    </form>
   </div>
 
   <button
@@ -43,31 +44,36 @@
     <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
   </button>
   <div class="user-area">
-    <img
-      class="profile-image"
-      [src]="auth.user.avatar"
-      alt=""
-    />
+    <img class="profile-image" [src]="auth.user.avatar" alt="" />
     <div class="profile-texts" [matMenuTriggerFor]="menu">
-      <div class="username">{{auth.user.first_name}} {{auth.user.last_name}}</div>
+      <div class="username">
+        {{ auth.user.first_name }} {{ auth.user.last_name }}
+      </div>
       <div class="school">TED Üniversitesi</div>
     </div>
     <mat-menu #menu="matMenu">
-      <button [disabled]="auth.loading$ | async" (click)="logout()" mat-menu-item>
+      <button
+        [disabled]="auth.loading$ | async"
+        (click)="logout()"
+        mat-menu-item
+      >
         <mat-icon>logout</mat-icon>
         <span>Çıkış Yap</span>
       </button>
 
-      <button routerLink="/settings" [disabled]="auth.loading$ | async" mat-menu-item>
+      <button
+        routerLink="/settings"
+        [disabled]="auth.loading$ | async"
+        mat-menu-item
+      >
         <mat-icon>settings</mat-icon>
         <span>Seçenekler</span>
       </button>
 
       <button (click)="toggleDarkMode()" mat-menu-item>
         <mat-icon>image</mat-icon>
-        <span>{{theme.darkMode ? 'Açık Tema' : 'Koyu Tema'}}</span>
+        <span>{{ theme.darkMode ? "Açık Tema" : "Koyu Tema" }}</span>
       </button>
-
     </mat-menu>
   </div>
 </mat-toolbar>

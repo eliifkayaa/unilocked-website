@@ -17,7 +17,6 @@ import { InfoCardComponent } from './ui/info-card/info-card.component';
 import { EventCardComponent } from './ui/event-card/event-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { LoggedIn } from './auth/logged-in.service';
-import { EventCardComponent } from './ui/event-card/event-card.component';
 
 @NgModule({
   declarations: [

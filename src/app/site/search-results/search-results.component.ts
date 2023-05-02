@@ -36,6 +36,5 @@ export class SearchResultsComponent implements OnInit {
   toggleGridColumns() {
     this.gridColumns = this.gridColumns === 3 ? 4 : 3;
   }
-  longText = ` Türkiye • İnsan Kaynakları Yöneticisi`;
 
 }
