@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: 'community', component: CommunityProfileComponent, canActivate: [LoggedIn] },
 
   
-  { path : 'search-results', component: SearchResultsComponent, canActivate: [LoggedIn]},
+  { path : 'search', component: SearchResultsComponent, canActivate: [LoggedIn]},
 
 
   { path: 'company', component: CompanyComponent, canActivate: [LoggedIn] },

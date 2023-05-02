@@ -22,8 +22,13 @@
     <mat-icon>rocket</mat-icon><br />
   </button>
   <div class="navbar-search">
-    <form>
-      <input placeholder="Ara..." class="navbar-input" type="text" />
+    <form [formGroup]="searchForm" (ngSubmit)="search()">
+      <input
+        formControlName="query"
+        placeholder="Ara..."
+        class="navbar-input"
+        type="text"
+      />
       <mat-icon class="navbar-icon">search</mat-icon>
     </form>
   </div>

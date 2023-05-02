@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'search-results',
@@ -7,10 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SearchResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
+
+  public query = this.activatedRoute.queryParams.pipe(map(params => params['query']))
 
   public community = {
     name:"AlecTED",
