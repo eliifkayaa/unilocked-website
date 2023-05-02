@@ -21,8 +21,9 @@
   <button matTooltip="Programlar" class="icon-button">
     <mat-icon>rocket</mat-icon><br />
   </button>
+  <form [formGroup]="searchForm" (ngSubmit)="search()">
   <div class="navbar-search">
-    <form [formGroup]="searchForm" (ngSubmit)="search()">
+   
       <input
         formControlName="query"
         placeholder="Ara..."
@@ -30,9 +31,9 @@
         type="text"
       />
       <mat-icon class="navbar-icon">search</mat-icon>
-    </form>
+  
   </div>
-
+</form>
   <button
     mat-icon-button
     class="example-icon favorite-icon"
