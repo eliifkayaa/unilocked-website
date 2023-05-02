@@ -45,13 +45,17 @@ import { ProfileContentComponent } from './profiles/profile-content/profile-cont
 import { MatChipsModule } from '@angular/material/chips';
 import { SchoolComponent } from './school/school.component';
 import { CommunityProfileComponent } from './profiles/community-profile/community-profile.component';
+
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
-@NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, SchoolComponent,CommunityProfileComponent, SearchResultsComponent],
+import { CompanyComponent } from './company/company.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
+
+@NgModule({
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, SearchResultComponent, CompanyComponent, SchoolComponent, SearchResultsComponent],
 
   imports: [
     CommonModule,
