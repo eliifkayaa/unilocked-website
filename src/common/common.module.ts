@@ -16,6 +16,7 @@ import { LogoComponent } from './ui/logo/logo.component';
 import { InfoCardComponent } from './ui/info-card/info-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { LoggedIn } from './auth/logged-in.service';
+import { EventCardComponent } from './ui/event-card/event-card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoggedIn } from './auth/logged-in.service';
     NavbarComponent,
     LogoComponent,
     InfoCardComponent,
+    EventCardComponent,
   ],
   imports: [
     MatCardModule,
@@ -38,6 +40,6 @@ import { LoggedIn } from './auth/logged-in.service';
     RouterModule
   ],
   providers: [LoggedIn],
-  exports: [NavbarComponent,InfoCardComponent],
+  exports: [NavbarComponent,InfoCardComponent,EventCardComponent],
 })
 export class AppCommonModule {}
