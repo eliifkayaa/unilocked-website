@@ -17,7 +17,6 @@ import { CommunityProfileComponent } from './profiles/community-profile/communit
 import { SearchResultsComponent } from './search-results/search-results.component';
 
 import { CompanyComponent } from './company/company.component';
-import { SearchResultComponent } from './search-result/search-result.component';
 
 
 const routes: Routes = [
