@@ -1,63 +1,59 @@
-<ng-container *ngIf="auth.loggedIn">
-    <navbar [drawer]="drawer"></navbar>
-    <mat-drawer-container class="example-container">
-      <mat-drawer
-        class="mainMenu"
-        #drawer
-        style="width: 250px"
-        mode="side"
-        opened
-      >
-        <main-menu></main-menu>
-      </mat-drawer>
-      <mat-drawer-content style="min-height: 100vh">
-        <div class="header">
-          <div class="container">
-            <h1>Bildirimler</h1>
+<main-content>
+  <div class="header">
+    <div class="container">
+      <h1>Bildirimler</h1>
+    </div>
+  </div>
+  <mat-tab-group class="full-width-tabs">
+    <mat-tab label="Hepsi">
+      <div class="container content" style="padding-top: 2%">
+        <h2>Geçmiş Başvurular</h2>
+        <mat-card
+          class="notification-card"
+          *ngFor="let notification of notifications"
+        >
+          <div class="card-header">
+            <img [src]="notification.icon" alt="icon" />
+            <div class="header-content">
+              <div class="title">{{ notification.title }}</div>
+              <div class="subtitle">
+                {{ notification.subtitle }}
+                <mat-icon>verified</mat-icon>
+              </div>
+            </div>
+            <div class="actions">
+              <button mat-button>
+                <mat-icon>bookmark_add</mat-icon>
+                Kaydet
+              </button>
+              <button mat-button>
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+              <button
+                mat-flat-button
+                style="background-color: #dbddfc; color: #4b53f2"
+              >
+                Detaylar
+              </button>
+              <button
+                mat-flat-button
+                style="background-color: #444bda; color: #f1f3f5"
+              >
+                Mesaj Gönder
+              </button>
+            </div>
           </div>
-        </div>
-        <mat-tab-group class="full-width-tabs">
-            <mat-tab label="Hepsi"> 
-                <div class="container content" style="padding-top: 2%;">
-                  <h2>Geçmiş Başvurular</h2>
-                  <mat-card class="notification-card" *ngFor="let notification of notifications">
-                    <div class="card-header">
-                      <img [src]="notification.icon" alt="icon">
-                      <div class="header-content">
-                        <div class="title">{{notification.title}}</div>
-                        <div class="subtitle">
-                          {{notification.subtitle}}
-                          <mat-icon>verified</mat-icon>
-                        </div>
-                      </div>
-                      <div class="actions">
-                        <button mat-button>
-                          <mat-icon>bookmark_add</mat-icon>
-                          Kaydet
-                        </button>
-                        <button mat-button>
-                          <mat-icon>more_horiz</mat-icon>
-                        </button>
-                        <button mat-flat-button style="background-color: #DBDDFC;color: #4B53F2;">Detaylar</button>
-                        <button mat-flat-button style="background-color: #444BDA;color: #F1F3F5;">Mesaj Gönder</button>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="location">{{notification.location}}</div>
-                      <div class="alert">
-                        <mat-icon class="alert-icon">warning</mat-icon>
-                        <span>{{notification.info}}</span>
-                      </div>
-                      <div class="date">{{notification.date}} önce yayınlandı</div>
-                    </div>
-                  </mat-card>
-                </div>
-            </mat-tab>
-            <mat-tab label="Takip Edilenler">
-                
-            </mat-tab>
-        </mat-tab-group>
-      </mat-drawer-content>
-    </mat-drawer-container>
-  </ng-container>
-  
+          <div class="card-body">
+            <div class="location">{{ notification.location }}</div>
+            <div class="alert">
+              <mat-icon class="alert-icon">warning</mat-icon>
+              <span>{{ notification.info }}</span>
+            </div>
+            <div class="date">{{ notification.date }} önce yayınlandı</div>
+          </div>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Takip Edilenler"> </mat-tab>
+  </mat-tab-group>
+</main-content>

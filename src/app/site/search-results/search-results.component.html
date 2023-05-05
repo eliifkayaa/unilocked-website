@@ -1,34 +1,32 @@
-<navbar></navbar>
-
-<mat-drawer-container class="example-container">
-  <mat-drawer-content>
-    <div class="container">
-      <div class="search-result">
-        <p>{{query | async}} ile ilgili arama sonuçları</p>
-      </div>
-      <mat-tab-group>
-        <mat-tab label="Hepsi">
-          <search-highlights></search-highlights>
-          <search-people></search-people>
-          <search-projects></search-projects>
-          <search-companies></search-companies>
-          <search-events></search-events>
-        </mat-tab>
-        <mat-tab label="Gönderiler"> <search-posts></search-posts> </mat-tab>
-        <mat-tab label="Kişiler">
-          <search-people></search-people>
-        </mat-tab>
-        <mat-tab label="Topluluklar"> <search-communities></search-communities> </mat-tab>
-        <mat-tab label="Projeler">
-          <search-projects></search-projects>
-        </mat-tab>
-        <mat-tab label="Şirketler">
-          <search-companies></search-companies>
-        </mat-tab>
-        <mat-tab label="Etkinlikler">
-          <search-events></search-events>
-        </mat-tab>
-      </mat-tab-group>
+<main-content>
+  <div class="container">
+    <div class="search-result">
+      <p>{{ query | async }} ile ilgili arama sonuçları</p>
     </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+    <mat-tab-group>
+      <mat-tab label="Hepsi">
+        <search-highlights></search-highlights>
+        <search-people></search-people>
+        <search-projects></search-projects>
+        <search-companies></search-companies>
+        <search-events></search-events>
+      </mat-tab>
+      <mat-tab label="Gönderiler"> <search-posts></search-posts> </mat-tab>
+      <mat-tab label="Kişiler">
+        <search-people></search-people>
+      </mat-tab>
+      <mat-tab label="Topluluklar">
+        <search-communities></search-communities>
+      </mat-tab>
+      <mat-tab label="Projeler">
+        <search-projects></search-projects>
+      </mat-tab>
+      <mat-tab label="Şirketler">
+        <search-companies></search-companies>
+      </mat-tab>
+      <mat-tab label="Etkinlikler">
+        <search-events></search-events>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</main-content>

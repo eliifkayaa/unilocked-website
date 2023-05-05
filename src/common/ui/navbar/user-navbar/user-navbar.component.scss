@@ -2,17 +2,36 @@
 @use "@angular/material" as mat;
 
 .spacer {
-  flex: 1 1 auto;
+  @media (min-width: 800px) {
+    flex: 1 1 auto;
+  }
 }
 
-.logo {
-  width: 120px;
-  height: 20px;
-  transition-property: width, height object-position;
-  transition-duration: 2s;
-  transition-timing-function: linear;
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
 
-  object-fit: cover;
+  @media (max-width: 800px) {
+    display: none;
+  }
+
+  .logo {
+    width: 120px;
+    height: 20px;
+
+    object-fit: cover;
+
+    // contain in mobile
+    @media (max-width: 800px) {
+      object-fit: contain;
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+  }
 }
 
 /*.logo:hover {
@@ -32,10 +51,8 @@ mat-toolbar {
   //max-width: 1200px;
   @include mat.elevation(0);
   padding-left: 40px;
-  justify-content: center;
 
   .menu-button {
-    margin-left: 24px;
     color: var(--icon-color);
   }
 
@@ -85,18 +102,29 @@ mat-toolbar {
   margin-left: 12px;
 }
 
-.navbar-search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+form {
+  @media (max-width: 800px) {
+    flex: 1 1 auto;
+  }
   margin-left: 24px;
   margin-right: 24px;
+}
+
+.navbar-search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 
   .navbar-input {
     padding: 8px;
     border-radius: 12px;
     border-style: none;
     background-color: map-get(app.$purple-palette, 50);
+    width: 100%;
   }
   .navbar-icon {
     margin-left: -30px;
@@ -115,5 +143,15 @@ mat-toolbar {
 
   span {
     display: block;
+  }
+
+  // hide buttons on mobile
+}
+
+@media (max-width: 600px) {
+  .icon-button,
+  .messages-icon,
+  .notifications-icon {
+    display: none;
   }
 }

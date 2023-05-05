@@ -2,9 +2,11 @@
   border-radius: 12px;
   .post-container {
     display: flex;
+    
     padding: 12px;
 
     .post-top {
+      display: flex;
       color: var(--text);
 
       h4 {
@@ -33,7 +35,12 @@
     }
 
     .post-content {
-      margin: 12px 2px 4px 2px;
+      margin: 12px 2px 4px 74px;
+
+      @media screen and (max-width: 600px) {
+        margin: 12px 2px 4px 2px;
+
+      }
 
       .tag {
         color: #5d64f3;
@@ -42,7 +49,11 @@
     }
 
     .post-image {
-      margin: 12px 4px 4px 4px;
+      margin: 12px 4px 4px 74px;
+      @media screen and (max-width: 600px) {
+        margin: 12px 4px 4px 4px;
+
+      }
       img {
         width: 100%;
       }
@@ -64,13 +75,22 @@
     margin: 12px;
   }
 
-  .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: -5%;
-    margin-right: 5%;
-    
+  .buttons-container {
+    margin: 10px 2px 2px 84px;
+
+    @media screen and (max-width: 600px) {
+      margin: 10px 2px 2px 2px;
+
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: -5%;
+      margin-right: 5%;
+      
+    }
   }
 
   .attachment-button {

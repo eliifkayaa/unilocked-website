@@ -12,6 +12,12 @@
     max-width: 1200px;
     width: 100%;
 
+    .col-lg-4 {
+      @media screen and (max-width: 1200px) {
+        display: none !important;
+      }
+    }
+
     .home-panel {
       border-radius: 12px;
       padding: 0;

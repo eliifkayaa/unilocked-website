@@ -18,6 +18,7 @@ import { EventCardComponent } from './ui/event-card/event-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { LoggedIn } from './auth/logged-in.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     MatCardModule,
     CommonModule,
+    LayoutModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
