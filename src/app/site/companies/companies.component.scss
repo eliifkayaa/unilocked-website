@@ -8,15 +8,10 @@
 }
 
 .joined {
-  display: flex;
+  width: 100%;
   margin-top: -2%;
-  justify-content: center;
-  align-items: center;
 
   .company {
-    margin: 4% 16px 16px 16px;
-    max-width: 300px;
-    width: 100%;
     position: relative;
     color: var(--text);
     padding: 0;

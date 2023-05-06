@@ -7,41 +7,37 @@
           <h2>Üye Olduğum Topluluklarım</h2>
           <button mat-button color="primary">Hepsini gör</button>
         </div>
+
         <div class="joined">
-          <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
-          <div class="slider">
-            <mat-card
-            class="community mat-elevation-z0"
-            *ngFor="let community of communities"
-          >
-            <div
-              class="backdrop-area"
-              style="position: relative; height: 120px"
-            >
-              <div
-                style="position: absolute"
-                class="backdrop"
-                [style.backgroundImage]="'url(' + community.backdrop + ')'"
-              ></div>
-              <div
-                style="
-                  width: 100%;
-                  height: 120px;
-                  position: absolute;
-                  background-color: rgba(0, 0, 0, 0.3);
-                  border-radius: 12px 12px 0 0;
-                "
-              ></div>
-              <img class="avatar" [src]="community.avatar" alt="Avatar" />
-            </div>
-            <h3 class="name">{{ community.name }}</h3>
-            <p class="short-desc">{{ community.shortDesc }}</p>
-            <p class="role">Katılımcı üye</p>
-          </mat-card>
-          </div>
-          <button mat-icon-button>
-            <mat-icon>chevron_right</mat-icon>
-          </button>
+          <slider>
+            <slider-item *ngFor="let community of communities">
+              <mat-card class="community mat-elevation-z0">
+                <div
+                  class="backdrop-area"
+                  style="position: relative; height: 120px"
+                >
+                  <div
+                    style="position: absolute"
+                    class="backdrop"
+                    [style.backgroundImage]="'url(' + community.backdrop + ')'"
+                  ></div>
+                  <div
+                    style="
+                      width: 100%;
+                      height: 120px;
+                      position: absolute;
+                      background-color: rgba(0, 0, 0, 0.3);
+                      border-radius: 12px 12px 0 0;
+                    "
+                  ></div>
+                  <img class="avatar" [src]="community.avatar" alt="Avatar" />
+                </div>
+                <h3 class="name">{{ community.name }}</h3>
+                <p class="short-desc">{{ community.shortDesc }}</p>
+                <p class="role">Katılımcı üye</p>
+              </mat-card>
+            </slider-item>
+          </slider>
         </div>
         <info-card
           title="Toplulukların projelerini keşfet"

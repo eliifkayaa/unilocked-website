@@ -19,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 import { LoggedIn } from './auth/logged-in.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
+import { SliderComponent } from './ui/slider/slider.component';
+import { SliderItemComponent } from './ui/slider/slider-item/slider-item.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     LogoComponent,
     InfoCardComponent,
     EventCardComponent,
+    SliderComponent,
+    SliderItemComponent,
   ],
   imports: [
     MatCardModule,
@@ -45,6 +49,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     ReactiveFormsModule
   ],
   providers: [LoggedIn],
-  exports: [NavbarComponent,InfoCardComponent,EventCardComponent],
+  exports: [NavbarComponent,InfoCardComponent,EventCardComponent,SliderComponent,SliderItemComponent],
 })
 export class AppCommonModule {}

@@ -1,0 +1,13 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 0 0 auto;
+
+  .slider-content {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+}
