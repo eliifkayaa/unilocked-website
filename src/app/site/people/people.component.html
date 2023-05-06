@@ -1,36 +1,19 @@
-<ng-container *ngIf="auth.loggedIn">
-    <navbar [drawer]="drawer"></navbar>
-    <mat-drawer-container class="example-container">
-      <mat-drawer
-        class="mainMenu"
-        #drawer
-        style="width: 250px"
-        mode="side"
-        opened
-      >
-        <main-menu></main-menu>
-      </mat-drawer>
-      <mat-drawer-content style="min-height: 100vh">
-        <div class="header">
-          <div class="container">
-            <h1>Kişiler</h1>
-            <mat-tab-group>
-                <mat-tab label="Ana sayfa">
-                    <people-home></people-home>
-                </mat-tab>
-                <mat-tab label="Öğrenciler">
-                    <people-students></people-students>
-                </mat-tab>
-                <mat-tab label="Profosyoneller">
-                    <people-professionals></people-professionals>
-                </mat-tab>
-                <mat-tab label="Arkadaşlarım">
-                    
-                </mat-tab>
-            </mat-tab-group>
-          </div>
-        </div>
-      </mat-drawer-content>
-    </mat-drawer-container>
-  </ng-container>
-  
+<main-content>
+  <div class="header">
+    <div class="container">
+      <h1>Kişiler</h1>
+      <mat-tab-group>
+        <mat-tab label="Ana sayfa">
+          <people-home></people-home>
+        </mat-tab>
+        <mat-tab label="Öğrenciler">
+          <people-students></people-students>
+        </mat-tab>
+        <mat-tab label="Profosyoneller">
+          <people-professionals></people-professionals>
+        </mat-tab>
+        <mat-tab label="Arkadaşlarım"> </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</main-content>

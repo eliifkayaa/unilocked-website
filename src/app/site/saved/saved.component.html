@@ -1,16 +1,10 @@
-<navbar [drawer]="drawer"></navbar>
-<mat-drawer-container class="example-container">
-  <mat-drawer class="mainMenu" #drawer style="width: 250px" mode="side" opened>
-    <main-menu></main-menu>
-  </mat-drawer>
-  <mat-drawer-content>
-    <div class="saved-area container">
-      <h1>Kaydedilenler</h1>
-      <mat-tab-group>
-        <mat-tab label="Kaydedilen Gönderiler">
-          <saved-posts></saved-posts>
-        </mat-tab>
-      </mat-tab-group>
-    </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+<main-content>
+  <div class="saved-area container">
+    <h1>Kaydedilenler</h1>
+    <mat-tab-group>
+      <mat-tab label="Kaydedilen Gönderiler">
+        <saved-posts></saved-posts>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</main-content>

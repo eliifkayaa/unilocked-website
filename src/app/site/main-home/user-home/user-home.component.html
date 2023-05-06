@@ -1,72 +1,75 @@
-<navbar [drawer]="drawer"></navbar>
-<mat-drawer-container class="example-container">
-  <mat-drawer class="mainMenu" #drawer style="width: 250px;" mode="side" opened>
-
-    <main-menu></main-menu>
-
-  </mat-drawer>
-  <mat-drawer-content>
-    <div class="home-area">
-      <div class="home-child">
-        <div class="row">
-
-          <div class="col-lg-8">
-            <mat-card class="home-panel mat-elevation-z0">
-              <div class="post-container">
-                <img
-                  class="profile-image"
-                  [src]="auth.user.avatar"
-                  alt=""
-                />
-                <mat-form-field appearance="outline">
-                  <mat-label>Bu gün aklında neler var?</mat-label>
-                  <input matInput placeholder="Bir şeyler yaz..." />
-                  <mat-icon matSuffix>send</mat-icon>
-                </mat-form-field>
+<main-content>
+  <div class="home-area">
+    <div class="home-child">
+      <div class="row">
+        <div class="col-lg-8">
+          <mat-card class="home-panel mat-elevation-z0">
+            <div class="post-container">
+              <img class="profile-image" [src]="auth.user.avatar" alt="" />
+              <mat-form-field appearance="outline">
+                <mat-label>Bu gün aklında neler var?</mat-label>
+                <input matInput placeholder="Bir şeyler yaz..." />
+                <mat-icon matSuffix>send</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="row" style="margin: 2px">
+              <div
+                class="col-sm-9 d-flex"
+                style="align-items: center; justify-content: flex-start"
+              >
+                <button mat-button color="primary" class="attachment-button">
+                  <mat-icon>image</mat-icon> Fotoğraf
+                </button>
+                <button mat-button color="primary" class="attachment-button">
+                  <mat-icon>videocam</mat-icon> Video
+                </button>
+                <button mat-button color="primary" class="attachment-button">
+                  <mat-icon>event</mat-icon> Etkinlik
+                </button>
+                <button mat-button color="primary" class="attachment-button">
+                  <mat-icon>poll</mat-icon> Anket
+                </button>
               </div>
-              <div class="row" style="margin: 2px;">
-                <div class="col-sm-9 d-flex" style="align-items: center; justify-content: flex-start;">
-                  <button mat-button color="primary" class="attachment-button"><mat-icon>image</mat-icon> Fotoğraf</button>
-                  <button mat-button color="primary" class="attachment-button"><mat-icon>videocam</mat-icon> Video</button>
-                  <button mat-button color="primary" class="attachment-button"><mat-icon>event</mat-icon> Etkinlik</button>
-                  <button mat-button color="primary" class="attachment-button"><mat-icon>poll</mat-icon> Anket</button>
-
-
-                </div>
-                <div class="col-sm-3" style="display: flex; justify-content: flex-end;">
-                  <button mat-flat-button color="primary"><span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon></button>
-                </div>
+              <div
+                class="col-sm-3"
+                style="display: flex; justify-content: flex-end"
+              >
+                <button mat-flat-button color="primary">
+                  <span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon>
+                </button>
               </div>
-             <br>
-            </mat-card>
+            </div>
             <br />
-            
-            <post [post]="post"></post>
+          </mat-card>
+          <br />
 
-          </div>
-          <div class="col-lg-4">
-            <mat-card class="home-panel mat-elevation-z0">
-              <div class="right-panel">
-                <h2>Tanıyor olabilirsin</h2>
-                <div class="d-flex" *ngFor="let user of users">
-                  <img class="profile-image" [src]="user.image" alt="">
-                  <div style="width: 100%;">
-                    <div class="top">
-                      <h4 class="name">{{user.name}}</h4>
-                      <button mat-button color="primary" class="follow">Takip Et <mat-icon>add</mat-icon></button>
-                    </div>
-                    <p class="info">{{user.info}}</p>
-                    
+          <post [post]="post"></post>
+        </div>
+        <div class="col-lg-4">
+          <mat-card class="home-panel mat-elevation-z0">
+            <div class="right-panel">
+              <h2>Tanıyor olabilirsin</h2>
+              <div class="d-flex" *ngFor="let user of users">
+                <img class="profile-image" [src]="user.image" alt="" />
+                <div style="width: 100%">
+                  <div class="top">
+                    <h4 class="name">{{ user.name }}</h4>
+                    <button mat-button color="primary" class="follow">
+                      Takip Et <mat-icon>add</mat-icon>
+                    </button>
                   </div>
-                </div>
-                <div class="see-more">
-                  <button mat-button>Daha fazlasını gör <mat-icon>chevron_right</mat-icon></button>
+                  <p class="info">{{ user.info }}</p>
                 </div>
               </div>
-            </mat-card>
-          </div>
+              <div class="see-more">
+                <button mat-button>
+                  Daha fazlasını gör <mat-icon>chevron_right</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card>
         </div>
       </div>
     </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </div>
+</main-content>

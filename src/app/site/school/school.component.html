@@ -1,499 +1,625 @@
-<navbar></navbar>
+<main-content>
+  <div class="school-host container">
+    <mat-card class="school-top">
+      <div class="row">
+        <div class="col images">
+          <div class="logo">
+            <img [src]="school.logo" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col school-info">
+          <div class="description">
+            <span class="name">
+              <h2>{{ school.name }}</h2>
+              <mat-icon> verified </mat-icon>
+            </span>
+            <span class="text">
+              {{ school.slogan }}
+            </span>
+            <span class="followers">
+              {{ school.info }}
+            </span>
+          </div>
+          <div class="buttons">
+            <button
+              mat-flat-button
+              style="background-color: #4b53f2; color: #fff"
+            >
+              Takip Et
+            </button>
+            <button
+              mat-flat-button
+              style="background-color: #c9cbfb; color: #4b53f2"
+            >
+              Daha Fazla
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <mat-tab-group>
+      <mat-tab label="Ana Sayfa">
+        <mat-card class="about card">
+          <div class="title">
+            <h2>Hakkında</h2>
+          </div>
+          <p>
+            {{ school.about1 }}
+          </p>
+          <p>
+            {{ school.about2 }}
+          </p>
+          <p>
+            {{ school.about3 }}
+          </p>
+          <div class="row">
+            <div class="col-6">
+              <h4>Sektör</h4>
+              <p>{{ school.sector }}</p>
+            </div>
+            <div class="col-6">
+              <h4>Öğrenci Sayısı</h4>
+              <p>{{ school.students }}</p>
+            </div>
+            <div class="col-6">
+              <h4>İnternet Sitesi</h4>
+              <p>{{ school.contact.website }}</p>
+            </div>
+          </div>
+        </mat-card>
 
-<mat-drawer-container class="example-container">
-  <mat-drawer class="mainMenu" #drawer style="width: 250px" mode="side" opened>
-    <main-menu></main-menu>
-  </mat-drawer>
-  <mat-drawer-content>
-    <div class="school-host container">
-      <mat-card class="school-top">
-        <div class="row">
-            <div class="col images">
+        <mat-card class="universityandme card">
+          <div class="title">
+            <h2>Akdeniz Üniversitesi ve Siz</h2>
+          </div>
+          <div class="subtitle">
+            <mat-icon>visibility</mat-icon>
+            <p>Size Özel</p>
+          </div>
+          <div class="notifications">
+            <div class="friends">
+              <div class="icons">
+                <img
+                  src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg"
+                />
+                <img
+                  src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q="
+                />
+                <div>+7</div>
+              </div>
+              <div class="text">
+                <h3>5 Arkadaşınız Burada Okudu</h3>
+                <span>
+                  Abdullah Ustaömeroğlu, Elif Kemertaş ve 3 arkadaşınız daha bu
+                  okulda okuyor.
+                </span>
+              </div>
+            </div>
+            <div class="event">
+              <div class="icons">
+                <img
+                  src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png"
+                />
+              </div>
+              <div class="text">
+                <h3>Takip Ettiğiniz Antalya Teknokent, Bu Okulda Yer Alıyor</h3>
+                <button
+                  mat-flat-button
+                  style="background-color: #c9cbfb; color: #4b53f2"
+                >
+                  Takip Ediliyor
+                  <mat-icon>done</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="posts card">
+          <div class="title">
+            <h2>Gönderiler</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let post of school.posts">
+              <profile-content [item]="post"></profile-content>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="featured-content card">
+          <div class="title">
+            <h2>Öne Çıkan İçerikler</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let item of school.featured">
+              <profile-content [item]="item"></profile-content>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="community card">
+          <div class="title">
+            <h2>Okul Toplulukları</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="community-area">
+            <div class="row">
+              <div class="col-6">
                 <div class="logo">
-                    <img [src]='school.logo' alt="">
+                  <img
+                    src="https://pbs.twimg.com/profile_images/1187722813840482307/UERSPXhG_400x400.jpg"
+                  />
                 </div>
+                <div class="text">
+                  <h3>Ar-Ge ve Yüksek Teknoloji Topluluğu</h3>
+                  <p>
+                    Yazılım, elektrik, elektronik, bilgisayar sistemleri,
+                    mekanik sistemleri, havacılık ve uzay sanayi sistemleri,
+                    robotik ve ...
+                  </p>
+                  <p>397 Takipçi • Okul Topluluğu</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #4b53f2; color: #fff"
+                  >
+                    Takip Et
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://pbs.twimg.com/profile_images/1219323777097572352/zEF2oxWy_400x400.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>AÜ Türk Okçuluğu Topluluğu</h3>
+                  <p>
+                    Somut olmayan kültür mirasımız olan Türk Okçuluğunu koruma
+                    ve yaşatma amacı doğrultusunda faaliyetler düzenlemek...
+                  </p>
+                  <p>121 Takipçi • Okul Topluluğu</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Takip Ediliyor
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://pbs.twimg.com/profile_images/1187722813840482307/UERSPXhG_400x400.jpg"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Ar-Ge ve Yüksek Teknoloji Topluluğu</h3>
+                  <p>
+                    Yazılım, elektrik, elektronik, bilgisayar sistemleri,
+                    mekanik sistemleri, havacılık ve uzay sanayi sistemleri,
+                    robotik ve ...
+                  </p>
+                  <p>397 Takipçi • Okul Topluluğu</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #4b53f2; color: #fff"
+                  >
+                    Takip Et
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://pbs.twimg.com/profile_images/1219323777097572352/zEF2oxWy_400x400.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>AÜ Türk Okçuluğu Topluluğu</h3>
+                  <p>
+                    Somut olmayan kültür mirasımız olan Türk Okçuluğunu koruma
+                    ve yaşatma amacı doğrultusunda faaliyetler düzenlemek...
+                  </p>
+                  <p>121 Takipçi • Okul Topluluğu</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Takip Ediliyor
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col school-info">
-                <div class="description">
-                    <span class="name">
-                        <h2>{{school.name}}</h2>
-                        <mat-icon> verified </mat-icon>
-                    </span>
-                    <span class="text">
-                        {{school.slogan}}
-                    </span>
-                    <span class="followers">
-                        {{school.info}}
-                    </span>
+          </div>
+        </mat-card>
+
+        <mat-card class="projects card">
+          <div class="title">
+            <h2>Okuldan Projeler</h2>
+          </div>
+          <div class="projects-area">
+            <div>
+              <h3>Devam Edenler</h3>
+              <div class="row justify-content-around">
+                <div
+                  class="col-sm-5"
+                  *ngFor="let project of school.projects.inProgress"
+                >
+                  <div class="project card">
+                    <img
+                      class="project-image"
+                      [src]="project.image"
+                      alt="Project Image"
+                    />
+                    <h4 class="project-title">{{ project.title }}</h4>
+                    <p class="project-info">
+                      20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor
+                    </p>
+                    <div class="project-parent">
+                      <img [src]="project.parent.image" alt="Parent Image" />
+                      <p class="project-parent-name">
+                        <span>{{ project.parent.name }}</span> Topluluğu
+                        Kapsamında
+                      </p>
+                    </div>
+                    <p class="project-description">{{ project.content }}</p>
+                    <button mat-flat-button color="primary">Detaylar</button>
+                  </div>
                 </div>
-                <div class="buttons">
-                    <button mat-flat-button style="background-color:#4B53F2;color: #fff;">Takip Et</button>
-                    <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">Daha Fazla</button>
-                </div>
+              </div>
             </div>
-        </div>
-      </mat-card>
-      <mat-tab-group>
-        <mat-tab label="Ana Sayfa"> 
-              <mat-card class="about card">
-                <div class="title">
-                  <h2>Hakkında</h2>
+            <div>
+              <h3>Sona Erenler</h3>
+              <div class="row justify-content-around">
+                <div
+                  class="col-sm-5"
+                  *ngFor="let project of school.projects.completed"
+                >
+                  <div class="project card">
+                    <img
+                      class="project-image"
+                      [src]="project.image"
+                      alt="Project Image"
+                    />
+                    <h4 class="project-title">{{ project.title }}</h4>
+                    <p class="project-info">
+                      20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor
+                    </p>
+                    <div class="project-parent">
+                      <img [src]="project.parent.image" alt="Parent Image" />
+                      <p class="project-parent-name">
+                        <span>{{ project.parent.name }}</span> Topluluğu
+                        Kapsamında
+                      </p>
+                    </div>
+                    <p class="project-description">{{ project.content }}</p>
+                    <button mat-flat-button color="primary">Detaylar</button>
+                  </div>
                 </div>
-                <p>
-                  {{ school.about1 }}
-                </p>
-                <p>
-                  {{ school.about2 }}
-                </p>
-                <p>
-                  {{ school.about3 }}
-                </p>
-                <div class="row">
-                    <div class="col-6">
-                        <h4>Sektör</h4>
-                        <p>{{school.sector}}</p>
-                    </div>
-                    <div class="col-6">
-                        <h4>Öğrenci Sayısı</h4>
-                        <p>{{school.students}}</p>
-                    </div>
-                    <div class="col-6">
-                        <h4>İnternet Sitesi</h4>
-                        <p>{{school.contact.website}}</p>
-                    </div>
-                </div>
-                
-              </mat-card>
+              </div>
+            </div>
+          </div>
+        </mat-card>
 
-              <mat-card class="universityandme card">
-                <div class="title">
-                    <h2>Akdeniz Üniversitesi ve Siz</h2>
-                </div>
-                <div class="subtitle">
-                    <mat-icon>visibility</mat-icon>
-                    <p>Size Özel</p>
-                </div>
-                <div class="notifications">
-                    <div class="friends">
-                        <div class="icons">
-                            <img src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg">
-                            <img src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q=">
-                            <div>
-                                +7
-                            </div>
-                        </div>
-                        <div class="text">
-                            <h3>5 Arkadaşınız Burada Okudu</h3>
-                            <span>
-                                Abdullah Ustaömeroğlu, Elif Kemertaş ve 3 arkadaşınız daha bu okulda okuyor.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="icons">
-                            <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
-                        </div>
-                        <div class="text">
-                            <h3>
-                                Takip Ettiğiniz Antalya Teknokent, Bu Okulda Yer Alıyor
-                            </h3>
-                            <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                Takip Ediliyor
-                                <mat-icon>done</mat-icon>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-              </mat-card>
+        <mat-card class="school-life card">
+          <div class="row">
+            <div class="col-sm-6">
+              <img
+                src="https://www.akdeniz.edu.tr/vendor/uploads/2021/10/MG_5422_1575x1050.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col-sm-6">
+              <h2>Akdeniz Üniversitesi - Okul Yaşamı</h2>
+              <button
+                mat-flat-button
+                style="background-color: #c9cbfb; color: #4b53f2"
+              >
+                Okul Yaşamı
+              </button>
+            </div>
+          </div>
+        </mat-card>
 
-              <mat-card class="posts card">
-                <div class="title">
-                  <h2>Gönderiler</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
+        <mat-card class="featured-events card">
+          <div class="title">
+            <h2>Yaklaşan Etkinlikler</h2>
+            <div>
+              <button mat-button color="primary">Hepsini Gör</button>
+            </div>
+          </div>
+          <div class="row justify-content-around">
+            <div class="col-sm-5">
+              <div class="event-card blue">
+                <div class="event-title">
+                  <h3>Antalya Teknokent Demoday</h3>
+                </div>
+                <div class="img"></div>
+                <div class="event-content">
+                  <p>
+                    Antalya Teknokent ve farklabs iş birliği ile
+                    gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması"
+                    etkinliğine davetlisiniz.
+                  </p>
+                  <div class="creater">
+                    <div class="logos">
+                      <img
+                        src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png"
+                      />
+                      <img
+                        src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png"
+                      />
                     </div>
+                    <p>
+                      <b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından
+                      düzenleniyor
+                    </p>
+                  </div>
+                  <div class="date">
+                    <mat-icon>calendar_month</mat-icon>
+                    <p>21 Mart</p>
+                  </div>
+                  <div class="time">
+                    <mat-icon>schedule</mat-icon>
+                    <p>10:00</p>
+                  </div>
+                  <div class="location">
+                    <mat-icon>location_on</mat-icon>
+                    <p>
+                      Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer
+                      Salonu
+                    </p>
+                  </div>
+                  <div class="participant">
+                    <mat-icon>groups</mat-icon>
+                    <p>100 Kişi Kontenjan • 91 Kişi Katılıyor</p>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-6" *ngFor="let post of school.posts">
-                    <profile-content [item]="post"></profile-content>
+                <div class="event-action">
+                  <button mat-flat-button color="primary">
+                    Katılın
+                    <mat-icon>arrow_forward</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <div class="event-card light">
+                <div class="event-title">
+                  <h3>Antalya Teknokent Demoday</h3>
+                </div>
+                <div class="event-content">
+                  <p>
+                    Akdeniz Üniversitesi Tiyatro Topluluğu olarak 14-15 Mart
+                    2023 tarihlerinde düzenleyeceğimiz tiyatro oyununu, bu sefer
+                    sınırları aşarak uluslararası çapta yapıyoruz!Başvuru
+                    linkini biomuza sabitledik.
+                  </p>
+                  <div class="creater">
+                    <div class="logos">
+                      <img
+                        src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png"
+                      />
+                      <img
+                        src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png"
+                      />
+                    </div>
+                    <p>
+                      Akdeniz Üniversitesi Tiyatro Topluluğu tarafından
+                      düzenleniyor
+                    </p>
+                  </div>
+                  <div class="date">
+                    <mat-icon>calendar_month</mat-icon>
+                    <p>14.03.2023 - 15.03.2023</p>
+                  </div>
+                  <div class="time">
+                    <mat-icon>schedule</mat-icon>
+                    <p>10:00</p>
+                  </div>
+                  <div class="location">
+                    <mat-icon>location_on</mat-icon>
+                    <p>Atatürk Konferans Salonu</p>
                   </div>
                 </div>
-              </mat-card>
+                <div class="event-action">
+                  <button mat-flat-button color="primary">
+                    Katılın
+                    <mat-icon>arrow_forward</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
 
-              <mat-card class="featured-content card">
-                <div class="title">
-                  <h2>Öne Çıkan İçerikler</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
+        <mat-card class="graduates card">
+          <div class="title">
+            <h2>Mezunlar</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="graduates-area">
+            <div class="row">
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q="
+                  />
                 </div>
-                <div class="row">
-                  <div class="col-sm-6" *ngFor="let item of school.featured">
-                    <profile-content [item]="item"></profile-content>
-                  </div>
+                <div class="text">
+                  <h3>Halil Nuroğlu</h3>
+                  <p>PlayStation Türkiye • İnsan Kaynakları Yöneticisi</p>
+                  <p>
+                    İktisadi ve İdari Bilimler Fakültesi • İktisat Bölümü • 2016
+                    - 2020
+                  </p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı Kur
+                  </button>
                 </div>
-              </mat-card>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://images2.alphacoders.com/702/702389.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>Felya Varol</h3>
+                  <p>Turkcell • Software Developer</p>
+                  <p>
+                    Mühendislik Fakültesi • Bilgisayar Mühendisliği Bölümü •
+                    2013 - 2018
+                  </p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Abdullah Ustaömeroğlu</h3>
+                  <p>Adobe • UI Designer</p>
+                  <p>
+                    Mühendislik Fakültesi • Bilgisayar Mühendisliği Bölümü •
+                    2002 - 2007
+                  </p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://media.istockphoto.com/id/1322686195/photo/beautiful-looking-young-blonde-woman-with-the-middle-length-hair-wearing-in-a-delicate-makeup.jpg?b=1&s=170667a&w=0&k=20&c=pvSTlrQCicJS7Vsv871uUlFlvJGUfD2jsjocaeZwPQU="
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>Kathryn Murphy</h3>
+                  <p>Turkcell • İnsan Kaynakları Yöneticisi</p>
+                  <p>
+                    İktisadi ve İdari Bilimler Fakültesi • İktisat Bölümü • 2010
+                    - 2014
+                  </p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı Kur
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
 
-              <mat-card class="community card">
-                <div class="title">
-                  <h2>Okul Toplulukları</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
+        <mat-card class="jobs card">
+          <div class="title">
+            <h2>İş İlanları</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="jobs-area">
+            <div class="row">
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/tr/thumb/4/4c/Akdeniz_uni.gif/800px-Akdeniz_uni.gif"
+                    style="height: auto !important"
+                  />
                 </div>
-                <div class="community-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://pbs.twimg.com/profile_images/1187722813840482307/UERSPXhG_400x400.jpg">
-                            </div>
-                            <div class="text">
-                                <h3>Ar-Ge ve Yüksek Teknoloji Topluluğu</h3>
-                                <p>Yazılım, elektrik, elektronik, bilgisayar sistemleri, mekanik sistemleri, havacılık ve uzay sanayi sistemleri, robotik ve ...</p>
-                                <p>397 Takipçi • Okul Topluluğu</p>
-                                <button mat-flat-button style="background-color:#4B53F2;color: #fff;">Takip Et</button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://pbs.twimg.com/profile_images/1219323777097572352/zEF2oxWy_400x400.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>AÜ Türk Okçuluğu Topluluğu</h3>
-                                <p>Somut olmayan kültür mirasımız olan Türk Okçuluğunu koruma ve yaşatma amacı doğrultusunda faaliyetler düzenlemek...</p>
-                                <p>121 Takipçi • Okul Topluluğu</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                    Takip Ediliyor
-                                    <mat-icon>done</mat-icon>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://pbs.twimg.com/profile_images/1187722813840482307/UERSPXhG_400x400.jpg">
-                            </div>
-                            <div class="text">
-                                <h3>Ar-Ge ve Yüksek Teknoloji Topluluğu</h3>
-                                <p>Yazılım, elektrik, elektronik, bilgisayar sistemleri, mekanik sistemleri, havacılık ve uzay sanayi sistemleri, robotik ve ...</p>
-                                <p>397 Takipçi • Okul Topluluğu</p>
-                                <button mat-flat-button style="background-color:#4B53F2;color: #fff;">Takip Et</button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://pbs.twimg.com/profile_images/1219323777097572352/zEF2oxWy_400x400.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>AÜ Türk Okçuluğu Topluluğu</h3>
-                                <p>Somut olmayan kültür mirasımız olan Türk Okçuluğunu koruma ve yaşatma amacı doğrultusunda faaliyetler düzenlemek...</p>
-                                <p>121 Takipçi • Okul Topluluğu</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                    Takip Ediliyor
-                                    <mat-icon>done</mat-icon>
-                                </button>
-                            </div>
-                        </div>
-                        
-                    </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>Antalya, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
                 </div>
-              </mat-card>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/tr/thumb/4/4c/Akdeniz_uni.gif/800px-Akdeniz_uni.gif"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>Antalya, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
 
-              <mat-card class="projects card">
-                <div class="title">
-                  <h2>Okuldan Projeler</h2>
-                </div>
-                <div class="projects-area">
-                  <div>
-                    <h3>Devam Edenler</h3>
-                    <div class="row justify-content-around">
-                        <div
-                        class="col-sm-5"
-                        *ngFor="let project of school.projects.inProgress"
-                        >
-                        <div class="project card">
-                            <img class="project-image" [src]="project.image" alt="Project Image">
-                            <h4 class="project-title">{{project.title}}</h4>
-                            <p class="project-info">20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor</p>
-                            <div class="project-parent">
-                            <img [src]="project.parent.image" alt="Parent Image">
-                            <p class="project-parent-name"><span>{{project.parent.name}}</span> Topluluğu Kapsamında</p>
-                            </div>
-                            <p class="project-description">{{project.content}}</p>
-                            <button mat-flat-button color="primary">Detaylar</button>
-                        </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h3>Sona Erenler</h3>
-                  <div class="row justify-content-around">
-                    <div
-                      class="col-sm-5"
-                      *ngFor="let project of school.projects.completed"
-                    >
-                      <div class="project card">
-                        <img class="project-image" [src]="project.image" alt="Project Image">
-                        <h4 class="project-title">{{project.title}}</h4>
-                        <p class="project-info">20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor</p>
-                        <div class="project-parent">
-                          <img [src]="project.parent.image" alt="Parent Image">
-                          <p class="project-parent-name"><span>{{project.parent.name}}</span> Topluluğu Kapsamında</p>
-                        </div>
-                        <p class="project-description">{{project.content}}</p>
-                        <button mat-flat-button color="primary">Detaylar</button>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="school-life card">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <img src="https://www.akdeniz.edu.tr/vendor/uploads/2021/10/MG_5422_1575x1050.jpg" alt="">
-                  </div>
-                  <div class="col-sm-6">
-                    <h2>Akdeniz Üniversitesi - Okul Yaşamı</h2>
-                    <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">Okul Yaşamı</button>
-                  </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="featured-events card">
-                <div class="title">
-                    <h2>Yaklaşan Etkinlikler</h2>
-                    <div>
-                        <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                </div>
-                <div class="row justify-content-around">
-                    <div class="col-sm-5">
-                        <div class="event-card blue">
-                            <div class="event-title">
-                                <h3>Antalya Teknokent Demoday</h3>
-                            </div>
-                            <div class="img">
-                            </div>
-                            <div class="event-content">
-                                <p>
-                                    Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
-                                </p>
-                                <div class="creater">
-                                    <div class="logos">
-                                        <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
-                                        <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
-                                    </div>
-                                    <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
-                                </div>
-                                <div class="date">
-                                    <mat-icon>calendar_month</mat-icon>
-                                    <p>21 Mart</p>
-                                </div>
-                                <div class="time">
-                                    <mat-icon>schedule</mat-icon>
-                                    <p>10:00</p>
-                                </div>
-                                <div class="location">
-                                    <mat-icon>location_on</mat-icon>
-                                    <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
-                                </div>
-                                <div class="participant">
-                                    <mat-icon>groups</mat-icon>
-                                    <p>100 Kişi Kontenjan  • 91 Kişi Katılıyor</p>
-                                </div>
-                            </div>
-                            <div class="event-action">
-                                <button mat-flat-button color='primary'>
-                                    Katılın
-                                    <mat-icon>arrow_forward</mat-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="event-card light">
-                            <div class="event-title">
-                                <h3>Antalya Teknokent Demoday</h3>
-                            </div>
-                            <div class="event-content">
-                                <p>
-                                    Akdeniz Üniversitesi Tiyatro Topluluğu olarak 14-15 Mart 2023 tarihlerinde düzenleyeceğimiz tiyatro oyununu, bu sefer sınırları aşarak uluslararası çapta yapıyoruz!Başvuru linkini biomuza sabitledik.
-                                </p>
-                                <div class="creater">
-                                    <div class="logos">
-                                        <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
-                                        <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
-                                    </div>
-                                    <p>Akdeniz Üniversitesi Tiyatro Topluluğu tarafından düzenleniyor</p>
-                                </div>
-                                <div class="date">
-                                    <mat-icon>calendar_month</mat-icon>
-                                    <p>14.03.2023 - 15.03.2023</p>
-                                </div>
-                                <div class="time">
-                                    <mat-icon>schedule</mat-icon>
-                                    <p>10:00</p>
-                                </div>
-                                <div class="location">
-                                    <mat-icon>location_on</mat-icon>
-                                    <p> Atatürk Konferans Salonu</p>
-                                </div>
-                            </div>
-                            <div class="event-action">
-                                <button mat-flat-button color='primary'>
-                                    Katılın
-                                    <mat-icon>arrow_forward</mat-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                       
-                    
-                </div>
-              </mat-card>
-
-              <mat-card class="graduates card">
-                <div class="title">
-                  <h2>Mezunlar</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="graduates-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q=">
-                            </div>
-                            <div class="text">
-                                <h3>Halil Nuroğlu</h3>
-                                <p>PlayStation Türkiye • İnsan Kaynakları Yöneticisi</p>
-                                <p>İktisadi ve İdari Bilimler Fakültesi • İktisat Bölümü • 2016 - 2020</p>
-                                <button mat-flat-button style="background-color:#C9CBFB;color: #4B53F2;">Bağlantı Kur</button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://images2.alphacoders.com/702/702389.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>Felya Varol</h3>
-                                <p>Turkcell • Software Developer</p>
-                                <p>Mühendislik Fakültesi • Bilgisayar Mühendisliği Bölümü • 2013 - 2018</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                    Bağlantı
-                                    <mat-icon>done</mat-icon>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg">
-                            </div>
-                            <div class="text">
-                                <h3>Abdullah Ustaömeroğlu</h3>
-                                <p>Adobe • UI Designer</p>
-                                <p>Mühendislik Fakültesi • Bilgisayar Mühendisliği Bölümü • 2002 - 2007</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                  Bağlantı
-                                  <mat-icon>done</mat-icon>
-                              </button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://media.istockphoto.com/id/1322686195/photo/beautiful-looking-young-blonde-woman-with-the-middle-length-hair-wearing-in-a-delicate-makeup.jpg?b=1&s=170667a&w=0&k=20&c=pvSTlrQCicJS7Vsv871uUlFlvJGUfD2jsjocaeZwPQU=" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>Kathryn Murphy</h3>
-                                <p>Turkcell • İnsan Kaynakları Yöneticisi</p>
-                                <p>İktisadi ve İdari Bilimler Fakültesi • İktisat Bölümü • 2010 - 2014</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                    Bağlantı Kur
-                                </button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="jobs card">
-                <div class="title">
-                  <h2>İş İlanları</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="jobs-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://upload.wikimedia.org/wikipedia/tr/thumb/4/4c/Akdeniz_uni.gif/800px-Akdeniz_uni.gif" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>Antalya, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://upload.wikimedia.org/wikipedia/tr/thumb/4/4c/Akdeniz_uni.gif/800px-Akdeniz_uni.gif"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>Antalya, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="contact card">
-                <div class="title">
-                  <h2>İletişim</h2>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p class="name">İnternet Sitesi</p>
-                    <p>{{ school.contact.website }}</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="name">Adres</p>
-                    <p>{{ school.contact.address }}</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="name">Telefon</p>
-                    <p>{{ school.contact.phone }}</p>
-                  </div>
-                </div>
-              </mat-card>
-        </mat-tab>
-        <mat-tab label="Okul Yaşamı">
-
-        </mat-tab>
-        <mat-tab label="Mezunlar">
-
-        </mat-tab>
-      </mat-tab-group>
-      
-      
-    </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+        <mat-card class="contact card">
+          <div class="title">
+            <h2>İletişim</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="name">İnternet Sitesi</p>
+              <p>{{ school.contact.website }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="name">Adres</p>
+              <p>{{ school.contact.address }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="name">Telefon</p>
+              <p>{{ school.contact.phone }}</p>
+            </div>
+          </div>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="Okul Yaşamı"> </mat-tab>
+      <mat-tab label="Mezunlar"> </mat-tab>
+    </mat-tab-group>
+  </div>
+</main-content>
