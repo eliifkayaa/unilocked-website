@@ -19,6 +19,10 @@ const routes: Routes = [
     path:'settings',
     component:MainSettingsComponent,
     canActivate: [LoggedIn]
+  },
+  {
+    path:'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
   }
 ];
 
