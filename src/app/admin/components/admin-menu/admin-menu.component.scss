@@ -1,0 +1,8 @@
+a {
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--menu-hover) !important;
+    border-radius: 12px;
+  }
+}
