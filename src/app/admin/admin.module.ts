@@ -9,18 +9,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { ContentPublishingHubComponent } from './content-publishing-hub/content-publishing-hub.component';
 
 
 
 @NgModule({
   declarations: [
     AdminHomeComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    ContentPublishingHubComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +37,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSliderModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ]
 })
 export class AdminModule { }

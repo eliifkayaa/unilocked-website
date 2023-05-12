@@ -8,8 +8,12 @@ import { AuthService } from '@common/auth/auth.service';
 export class NavbarComponent implements OnInit {
 
   @Input('drawer') public drawer
+  @Input('admindrawer') public admindrawer
 
   constructor(public authService:AuthService) { }
+
+  isAdmin = true;
+  isUser = false
 
   ngOnInit(): void {
   }

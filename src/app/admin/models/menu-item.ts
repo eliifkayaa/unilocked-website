@@ -3,4 +3,5 @@ export default interface MenuItem {
     icon: string;
     route: string;
     roles: string[];
+    expands: boolean;
 }
