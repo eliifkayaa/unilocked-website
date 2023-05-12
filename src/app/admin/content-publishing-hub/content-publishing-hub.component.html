@@ -55,7 +55,7 @@
         </div>
         <div class="contents">
 
-            <div *ngIf="liste" class="row daily">
+            <div [@fadeInOut] *ngIf="liste" class="row daily">
 
                 <div class="col-12">
                     <span>
@@ -372,11 +372,11 @@
             </div>
 
             <!-- hafta divi oluşturulacak -->
-            <div *ngIf="hafta" class="weekly">
+            <div [@fadeInOut] *ngIf="hafta" class="weekly">
                 Henüz oluşturulmadı.
             </div>
 
-            <div *ngIf="ay" class="monthly">
+            <div [@fadeInOut] *ngIf="ay" class="monthly">
                 <div class="row days">
                     <div class="col">
                         Pazartesi

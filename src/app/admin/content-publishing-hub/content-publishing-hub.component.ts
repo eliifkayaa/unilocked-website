@@ -1,16 +1,33 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import MenuItem from '../models/menu-item';
 import { MatTabGroup } from '@angular/material/tabs';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'content-publishing-hub',
   templateUrl: './content-publishing-hub.component.html',
-  styleUrls: ['./content-publishing-hub.component.scss']
+  styleUrls: ['./content-publishing-hub.component.scss'],
+  animations: [
+    // Animasyonlu görünüm için bir trigger oluşturalım.
+    trigger('fadeInOut', [
+      // Görünüm geçişleri
+      transition(':enter', [
+        // Başlangıç stilimiz
+        style({ opacity: 0 }),
+        // Bitiş stilimiz
+        animate('300ms ease-in-out', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        // Başlangıç stilimiz
+        style({ opacity: 1 }),
+        // Bitiş stilimiz
+        animate('300ms ease-in-out', style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class ContentPublishingHubComponent implements OnInit {
-
-  @ViewChild('tabGroup') tabGroup : MatTabGroup;
-
+  
   activeButton = 0;
   liste = true;
   hafta = false;
