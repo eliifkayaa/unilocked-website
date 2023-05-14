@@ -1,0 +1,1667 @@
+<admin-menu [menuItems]="menuItems">
+    <div class="content" style="min-height: 100vh;">
+        <div class="mainTitle d-flex justify-content-between">
+            <div class="month">
+                <span>
+                    Nisan Ayı
+                </span>
+            </div>
+            <div class="filters d-flex justify-content-around">
+                <div class="date">
+                    <button mat-flat-button [class.active]="activeButton === 0" class="active" (click)="listeClick()">
+                        Liste
+                    </button>
+                    <button mat-flat-button [class.active]="activeButton === 1" (click)="haftaClick()">
+                        Hafta
+                    </button>
+                    <button mat-flat-button [class.active]="activeButton === 2" (click)="ayClick()">
+                        Ay
+                    </button>
+                    
+                </div>
+                <div class="share">
+                    <button mat-flat-button>
+                        <mat-icon>
+                            ios_share
+                        </mat-icon>
+                        <span>
+                            Paylaş
+                        </span>
+                    </button>
+                </div>
+                <div class="filter">
+                    <button mat-flat-button>
+                        <mat-icon>
+                            filter_alt
+                        </mat-icon>
+                        <span>
+                            Filtre
+                        </span>
+                    </button>  
+                </div>
+                <div class="more">
+                    <button mat-flat-button>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </button>
+                </div>
+                <div class="create">
+                    <button mat-flat-button>
+                        Gönderi Oluştur
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="contents">
+
+            <div [@fadeInOut] *ngIf="liste" class="row daily">
+
+                <div class="col-12">
+                    <span>
+                        17 • Pazartesi 
+                    </span>
+                </div>
+                <div class="col success">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                check_circle
+                            </mat-icon>
+                            12:45
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Yayında • Düzenlendi • Herkese Açık
+                    </div>
+                </div>
+                <div class="col success">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                check_circle
+                            </mat-icon>
+                            12:45
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Yayında • Düzenlendi • <br>
+                        Not: Bu gönderiyi 2 hafta sonra kaldırın.
+                    </div>
+                </div>
+                <div class="col danger">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            20:00
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Yayından Kaldırıldı
+                    </div>
+                </div>
+                <div class="col success">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                check_circle
+                            </mat-icon>
+                            22:10
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Yayında • Düzenlendi • Herkese Açık
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <span>
+                        18 • Salı 
+                    </span>
+                </div>
+                <div class="col danger">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            11:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Unilocked Tarafından Kaldırıldı
+                    </div>
+                </div>
+                <div class="col danger">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            20:00
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Süre Doldu • Yayından Kaldırıldı
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <span>
+                        19 • Çarşamba 
+                    </span>
+                </div>
+                <div class="col success">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                check_circle
+                            </mat-icon>
+                            09:50
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Yayında • Herkese Açık
+                    </div>
+                </div>
+                <div class="col info">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Planlandı
+                    </div>
+                </div>
+                <div class="col orange">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            22:00
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Çapraz Paylaşım için Adobe kurumundan onay bekleniyor.
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <span>
+                        20 • Perşembe 
+                    </span>
+                </div>
+                <div class="col info">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Planlandı
+                    </div>
+                </div>
+                <div class="col info">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Planlandı
+                    </div>
+                </div>
+                <div class="col orange">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            22:00
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Çapraz Paylaşım için Adobe kurumundan onay bekleniyor.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <span>
+                        21 • Cuma 
+                    </span>
+                </div>
+                <div class="col info">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Planlandı
+                    </div>
+                </div>
+                <div class="col info">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Planlandı
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <span>
+                        22 • Cumartesi 
+                    </span>
+                </div>
+                <div class="col info">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Planlandı
+                    </div>
+                </div>
+                <div class="col primary">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                timelapse
+                            </mat-icon>
+                            23:59
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Süresi Dolacak
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <span>
+                        23 • Pazar 
+                    </span>
+                </div>
+                <div class="col primary">
+                    <div class="title d-flex justify-content-between align-items-center">
+                        <span class="time d-flex align-items-center">
+                            <mat-icon>
+                                timelapse
+                            </mat-icon>
+                            12:00
+                        </span>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </div>
+                    <div class="subtitle">
+                        Süresi Dolacak
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <span>
+                        24 • Pazartesi
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- hafta divi oluşturulacak -->
+            <div [@fadeInOut] *ngIf="hafta" class="weekly">
+                Henüz oluşturulmadı.
+            </div>
+
+            <div [@fadeInOut] *ngIf="ay" class="monthly">
+                <div class="row days">
+                    <div class="col">
+                        Pazartesi
+                    </div>
+                    <div class="col">
+                        Salı
+                    </div>
+                    <div class="col">
+                        Çarşamba
+                    </div>
+                    <div class="col">
+                        Perşembe
+                    </div>
+                    <div class="col">
+                        Cuma
+                    </div>
+                    <div class="col">
+                        Cumartesi    
+                    </div>
+                    <div class="col">
+                        Pazar
+                    </div>
+                </div>
+    
+                <div class="row dates">
+                    <div class="col">
+                        27.03
+                    </div>
+                    <div class="col">
+                        28.03
+                    </div>
+                    <div class="col">
+                        29.03
+                    </div>
+                    <div class="col">
+                        30.03
+                    </div>
+                    <div class="col">
+                        31.03
+                    </div>
+                    <div class="col">
+                        1   
+                    </div>
+                    <div class="col">
+                        2
+                    </div>
+                </div>
+                <div class="row events">
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row dates">
+                    <div class="col">
+                        3
+                    </div>
+                    <div class="col">
+                        4
+                    </div>
+                    <div class="col">
+                        5
+                    </div>
+                    <div class="col">
+                        6
+                    </div>
+                    <div class="col">
+                        7
+                    </div>
+                    <div class="col">
+                        8  
+                    </div>
+                    <div class="col">
+                        9
+                    </div>
+                </div>
+                <div class="row events">
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row dates">
+                    <div class="col">
+                        10
+                    </div>
+                    <div class="col">
+                        11
+                    </div>
+                    <div class="col">
+                        12
+                    </div>
+                    <div class="col">
+                        13
+                    </div>
+                    <div class="col">
+                        14
+                    </div>
+                    <div class="col">
+                        15
+                    </div>
+                    <div class="col">
+                        16
+                    </div>
+                </div>
+                <div class="row events">
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row dates">
+                    <div class="col">
+                        17
+                    </div>
+                    <div class="col">
+                        18
+                    </div>
+                    <div class="col">
+                        19
+                    </div>
+                    <div class="col">
+                        20
+                    </div>
+                    <div class="col">
+                        21
+                    </div>
+                    <div class="col">
+                        22 
+                    </div>
+                    <div class="col">
+                        23
+                    </div>
+                </div>
+                <div class="row events">
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    12:45
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Unilocked Tarafından Kaldırıldı
+                            </div>
+                        </div>
+                        <div class="col danger">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        cancel
+                                    </mat-icon>
+                                    11:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süre Doldu • Yayından Kaldırıldı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col success">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        check_circle
+                                    </mat-icon>
+                                    09:50
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Yayında • Düzenlendi • Herkese Açık
+                            </div>
+                        </div>
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col primary">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        timelapse
+                                    </mat-icon>
+                                    23:59
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süresi Dolacak
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col primary">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        timelapse
+                                    </mat-icon>
+                                    12:00
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süresi Dolacak
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row dates">
+                    <div class="col">
+                        24
+                    </div>
+                    <div class="col">
+                        25
+                    </div>
+                    <div class="col">
+                        26
+                    </div>
+                    <div class="col">
+                        27
+                    </div>
+                    <div class="col">
+                        28
+                    </div>
+                    <div class="col">
+                        29 
+                    </div>
+                    <div class="col">
+                        30
+                    </div>
+                </div>
+                <div class="row events">
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col primary">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        timelapse
+                                    </mat-icon>
+                                    23:59
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süresi Dolacak
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col orange">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    22:00
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Çapraz Paylaşım için Adobe kurumundan onay bekleniyor.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col primary">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        timelapse
+                                    </mat-icon>
+                                    23:59
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süresi Dolacak
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col orange">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    22:00
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Çapraz Paylaşım için Adobe kurumundan onay bekleniyor.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col info">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        calendar_month
+                                    </mat-icon>
+                                    17:30
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Planlandı
+                            </div>
+                        </div>
+                        <div class="col primary">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        timelapse
+                                    </mat-icon>
+                                    23:59
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süresi Dolacak
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col primary">
+                            <div class="title d-flex justify-content-between align-items-center">
+                                <span class="time d-flex align-items-center">
+                                    <mat-icon>
+                                        timelapse
+                                    </mat-icon>
+                                    12:00
+                                </span>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="subtitle">
+                                Süresi Dolacak
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+</admin-menu>
