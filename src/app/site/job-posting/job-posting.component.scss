@@ -50,7 +50,7 @@ body {
   border: 1px solid rgb(223, 226, 230);
   margin-top: 20px;
   background-color: #fff;  
-  border-radius: 5px;
+  border-radius: 7px;
   p {
     color: var(--text);
     font-family: "Poppins",sans-serif;
@@ -70,6 +70,8 @@ body {
 .container-suggestions{
   .container{
     margin-top: 10px;
+    display: flex;
+    border-radius: 7px;
 
     mat-card-header{
       margin-top: 30px;
@@ -83,6 +85,171 @@ body {
         font-size: 12px;
       }
       
+    }
+    p{
+      color: var(--text);
+      font-size: 24px;
+      font-weight: 600;
+      font-family: "Poppins",sans-serif;
+    }
+    a{
+      text-decoration: none;
+      text-align: end;
+      align-items: flex-end;
+      float: right;
+      color: #5D64F3;
+      font-weight: 600;
+    }
+  }
+}
+
+.container-posts{
+  background-color: #FBFBFC;
+  .container{
+    border: 1px solid rgb(223, 226, 230);
+    margin-top: 20px;
+    background-color: #fff;  
+    border-radius: 7px;
+    h2{
+      color: var(--text);
+      font-family: "Poppins",sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 20px 20px;
+    }
+    a{
+      float: right;
+      margin: 25px;
+      text-decoration: none;
+      margin-left: 450px;
+      color: #5D64F3;
+      font-weight: 600;
+    }
+    p{
+      font-size: 16px;
+    }
+    mat-card-title{
+      font-size: 16px;
+    }
+    mat-card-content{
+      p{
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+.container-newposts{
+  .container{
+    margin-top: 10px;
+    display: flex;
+    border-radius: 7px;
+
+    mat-card-header{
+      margin-top: 30px;
+    }
+
+    .mat-card-text{
+      font-size: 12px;
+      margin-left: 20px;
+
+      mat-card-subtitle{
+        font-size: 12px;
+      }
+      
+    }
+    p{
+      color: var(--text);
+      font-size: 24px;
+      font-weight: 600;
+      font-family: "Poppins",sans-serif;
+    }
+    a{
+      text-decoration: none;
+      margin-right: 10px;
+      color: #5D64F3;
+      font-weight: 600;
+    }
+  }
+}
+
+.container-explore{
+  .container{
+    display: flex;
+    mat-card{
+      border: 1px solid rgb(223, 226, 230);
+      background-color: #fff;  
+      border-radius: 7px;
+      mat-card-title{
+        margin-top: 20px;
+      }
+      button{
+        margin-left: 57px;
+        margin-top: 20px;
+        height: 40px;
+        text-align: right;
+        align-items: flex-end;
+        justify-content: end;
+      }
+    }
+  }
+}
+
+
+
+.container-peoples{
+  background-color: #ffff;
+  border: 1px solid rgb(223, 226, 230); 
+  border-radius: 7px;
+  
+  .following-area {
+    margin-top: 4%;
+    h2{
+      margin-left: 20px;
+      a{
+        font-size: 14px;
+        text-decoration: none;
+        float: right;
+        margin-right: 50px;
+        color: #5D64F3;
+        font-weight: 600;
+      }
+    }
+    p{
+      margin-left: 20px;
+    }
+  
+    .followed {
+      justify-content: space-between;
+      margin: 0 4% 4% 4%;
+      .community {
+        padding-right: 36px;
+        margin-top: 36px;
+        .avatar {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin: 0px 16px 16px 16px;
+        }
+  
+        .name {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 2px;
+        }
+  
+        .short-desc {
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--sub-text);
+          margin: 2px;
+        }
+  
+        .details {
+          margin: 2px;
+          color: var(--info-text);
+        }
+      }
     }
   }
 }

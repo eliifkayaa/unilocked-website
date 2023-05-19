@@ -21,6 +21,70 @@ export class JobPostingComponent {
   drop(event: CdkDragDrop<Vegetable[]>) {
     moveItemInArray(this.vegetables, event.previousIndex, event.currentIndex);
   }
+
+  public person1 = {
+    name: "Halil Nuroğlu",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar1.png",
+    shortDesc: "Turkcell • İnsan Kaynakları Yöneticisi",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#c9cbfb",
+      color: "#4b53f2",
+    },
+    hasIcon: false,
+    follow: "Bağlantı Kur"
+  };
+  
+  public person2 = {
+    name: "Elif Kemertaş",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar3.png",
+    shortDesc: "PlayStation Türkiye • İnsan Kaynakları Yöneticisi",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#c9cbfb",
+      color: "#4b53f2",
+    },
+    hasIcon: true,
+    follow: "Takip Ediliyor"
+  };
+  
+  public person3 = {
+    name: "Elif Kemertaş",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar2.png",
+    shortDesc: "Warner Music Türkiye",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#c9cbfb",
+      color: "#4b53f2",
+    },
+    hasIcon: true,
+    follow: "Takip Ediliyor"
+  };
+  
+  public person4 = {
+    name: "Elif Kemertaş",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/person1.png",
+    shortDesc: "PlayStation Türkiye • İnsan Kaynakları Yöneticisi",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#c9cbfb",
+      color: "#4b53f2",
+    },
+    hasIcon: false,
+    follow: "Bağlantı Kur"
+  };
+  
+  public people = [
+    this.person1,
+    this.person2,
+    this.person3,
+    this.person4
+  ];
+  
 }
 export interface Vegetable {
   name: string;
