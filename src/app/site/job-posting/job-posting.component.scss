@@ -142,7 +142,7 @@ body {
         margin-bottom: 50px;
       }
       .first-link{
-        margin-right: 370px;
+        margin-right: 350px;
         display: flex;
         align-items: center;
         mat-icon{
@@ -150,7 +150,7 @@ body {
         }
       }
       .second-link{
-        margin-right: 270px;
+        margin-right: 250px;
         display: flex;
         align-items: center;
         mat-icon{
@@ -199,7 +199,7 @@ body {
 
 .container-explore{
   justify-content: space-between;
-  border-radius: 12px;
+  border-radius: 7px;
   .container{
     width: auto;
     .row{
@@ -218,9 +218,6 @@ body {
         height: 20px;
         float: right;
       }
-    }
-    mat-icon{
-      margin: 5px;
     }
   }
 }
