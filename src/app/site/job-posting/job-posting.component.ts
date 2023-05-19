@@ -19,7 +19,9 @@ export class JobPostingComponent {
       color: "#4b53f2",
     },
     hasIcon: false,
-    follow: "Bağlantı Kur"
+    follow: "Bağlantı Kur",
+    details: "Turkcell kurumunda çalışıyor",
+    logo: "assets/img/turkcell-logo.png"
   };
   
   public person2 = {
@@ -33,7 +35,9 @@ export class JobPostingComponent {
       color: "#4b53f2",
     },
     hasIcon: true,
-    follow: "Takip Ediliyor"
+    follow: "Takip Ediliyor",
+    details: "PlayStation Türkiye kurumunda çalışıyor",
+    logo: "assets/img/ps3.jpeg"
   };
   
   public person3 = {
@@ -47,7 +51,9 @@ export class JobPostingComponent {
       color: "#4b53f2",
     },
     hasIcon: true,
-    follow: "Takip Ediliyor"
+    follow: "Takip Ediliyor",
+    details: "Warner Music Türkiye kurumunda çalışıyor",
+    logo: "assets/img/warner-logo.png"
   };
   
   public person4 = {
@@ -61,7 +67,9 @@ export class JobPostingComponent {
       color: "#4b53f2",
     },
     hasIcon: false,
-    follow: "Bağlantı Kur"
+    follow: "Bağlantı Kur",
+    details: "Arçelik kurumunda çalışıyor",
+    logo: "assets/img/arcelik-logo.png"
   };
   
   public people = [
