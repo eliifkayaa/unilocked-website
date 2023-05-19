@@ -1,12 +1,14 @@
 <navbar></navbar>
 <mat-drawer-container class="example-container">
+    <mat-drawer class="mainMenu" #drawer style="width: 250px;" mode="side" opened>
+
+      <main-menu></main-menu>
+
+    </mat-drawer>
     <mat-drawer-content>
       <div class="container">
         <div class="row">
-          <div class="col-sm-3">
-
-          </div>
-          <div class="col-sm-9">
+          <div class="col-sm-11 offset-sm-1">
               <div class="posts">
                 <p> İlanlar</p>
               </div>
@@ -32,8 +34,8 @@
                     <mat-chip
                     class="example-box"
                     cdkDrag
-                    *ngFor="let vegetable of vegetables">
-                      <mat-icon>search</mat-icon>{{vegetable.name}}
+                    *ngFor="let keys of keys">
+                      <mat-icon>search</mat-icon>{{keys.name}}
                     </mat-chip>
                   </mat-chip-list>  
                 </div>
@@ -43,78 +45,58 @@
                 <mat-card class="example-card">
                   <div class="container">
                     <div class="row">
+                      <p style="margin-left: 20px;">Önerilen Staj İlanları<a href="" style="margin-left: 440px;">İlanları Gör</a></p>
                       <div class="col-sm-6">
-                        <p>Önerilen Staj İlanları</p>
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
                             <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, nulla!
-                        </mat-card-content>
-      
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
                             <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quas?
-                        </mat-card-content>
-      
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
                             <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, sit.
-                        </mat-card-content>
                       </div>
                       <div class="col-sm-6">
-                        <a href="">Staj İlanlarını Gör</a>
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Network Programmer</mat-card-title>
                             <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi?
-                        </mat-card-content>
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Network Programmer</mat-card-title>
                             <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi?
-                        </mat-card-content>
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Network Programmer</mat-card-title>
                             <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi?
-                        </mat-card-content>
                       </div>
                     </div>
                   </div>
@@ -140,7 +122,10 @@
                             Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular,
                             sporcular, sanatçılar ve şovmenlerden oluşan büyüyen 
                             bir ağ olan PlayStation Playmaker'larla tanışın.
-                            <a href="" style="margin-right: 300px;">sie.com<mat-icon>link</mat-icon></a>
+                            <a href="" class="first-link">
+                              <span>sie.com</span>
+                              <mat-icon>link</mat-icon>
+                            </a>
                           </p>
                         </mat-card-content>
                       </mat-card>                      
@@ -155,10 +140,14 @@
                           <p>
                             PlayStation VR2'nin bugün dünya çapında piyasaya sürülmesiyle yeni nesil sanal gerçeklik oyunları başlıyor.
                             Özellikleri ve oyun dizisi hakkında daha fazla bilgi edinin:
-                            <a href="" style="margin-right: 200px;">blog.playstation.com<mat-icon>link</mat-icon></a>
+                            <a href="" class="second-link">
+                              <span>blog.playstation.com</span>
+                              <mat-icon>link</mat-icon>
+                            </a>
                           </p>
                         </mat-card-content>
-                      </mat-card>                      
+                      </mat-card>   
+                      <br>                   
                     </div>
                   </div>
                 </div>
@@ -176,35 +165,25 @@
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
                             <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, nulla!
-                        </mat-card-content>
-      
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
                             <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quas?
-                        </mat-card-content>
-      
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
                             <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, sit.
-                        </mat-card-content>
                       </div>
                       <div class="col-sm-6">
                         <mat-card-header>
@@ -212,34 +191,25 @@
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Network Programmer</mat-card-title>
                             <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi?
-                        </mat-card-content>
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Network Programmer</mat-card-title>
                             <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi?
-                        </mat-card-content>
                         <mat-card-header>
                           <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px;"/>
                           <mat-card-title-group class="mat-card-text">
                             <mat-card-title>Network Programmer</mat-card-title>
                             <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            
+                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
                           </mat-card-title-group>
                         </mat-card-header>
-                        <mat-card-content>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi?
-                        </mat-card-content>
                       </div>
                     </div>
                   </div>
@@ -287,8 +257,9 @@
                   </div>
                 </div>
               </div>
+              <br>
           </div>
         </div>
       </div>
     </mat-drawer-content>
-  </mat-drawer-container>
+</mat-drawer-container>

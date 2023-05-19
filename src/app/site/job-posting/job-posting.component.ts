@@ -7,20 +7,6 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./job-posting.component.scss']
 })
 export class JobPostingComponent {
-  vegetables: Vegetable[] = [
-    {name: 'UI Designer'},
-    {name: 'remote'},
-    {name: 'Software Engineer'},
-    {name: 'Senior Software Engineer'},
-    {name: 'Türkiye'},
-    {name: 'Staj'},
-    {name: 'Java'},
-    {name: 'C (Programlama Dili)'},
-    {name: 'Figma'},
-  ];
-  drop(event: CdkDragDrop<Vegetable[]>) {
-    moveItemInArray(this.vegetables, event.previousIndex, event.currentIndex);
-  }
 
   public person1 = {
     name: "Halil Nuroğlu",
@@ -84,9 +70,24 @@ export class JobPostingComponent {
     this.person3,
     this.person4
   ];
+
+  keys: Keys[] = [
+    {name: 'UI Designer'},
+    {name: 'remote'},
+    {name: 'Software Engineer'},
+    {name: 'Senior Software Engineer'},
+    {name: 'Türkiye'},
+    {name: 'Staj'},
+    {name: 'Java'},
+    {name: 'C (Programlama Dili)'},
+    {name: 'Figma'},
+  ];
+  drop(event: CdkDragDrop<Keys[]>) {
+    moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
+  }
   
 }
-export interface Vegetable {
+export interface Keys {
   name: string;
 }
 
