@@ -1,5 +1,5 @@
 <div class="saved-main">
-  <div class="saved-child">
-    <post [post]="post"></post>
+  <div class="saved-child" *ngIf="savedPosts$ | async as posts">
+    <post *ngFor="let post of posts.data" [post]="post"></post>
   </div>
 </div>

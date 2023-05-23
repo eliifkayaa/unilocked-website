@@ -13,15 +13,20 @@
             align-items: center;
         }
 
+        
+
         .filters {
             width: 55%;
             
             .date, .share, .filter, .more {
                 border-radius: 5px;
+                margin-right: 4px;
                 padding: .4%;
                 background-color: #C9CBFB;
                 display: flex;
                 align-items: center;
+
+            
 
                 .mat-flat-button:nth-child(1) {
                     color: #4B53F2;

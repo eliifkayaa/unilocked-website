@@ -1,3 +1,4 @@
+import { PostsService } from './../../../posts/posts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavedPostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public postsService : PostsService) { }
+
+  public savedPosts$ = this.postsService.getSavedPosts();
 
   ngOnInit(): void {
   }

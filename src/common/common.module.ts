@@ -22,6 +22,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { SliderComponent } from './ui/slider/slider.component';
 import { SliderItemComponent } from './ui/slider/slider-item/slider-item.component';
 import { AdminNavbarComponent } from './ui/navbar/admin-navbar/admin-navbar.component';
+import { DateAgoPipe } from './core/pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AdminNavbarComponent } from './ui/navbar/admin-navbar/admin-navbar.comp
     SliderComponent,
     SliderItemComponent,
     AdminNavbarComponent,
+    DateAgoPipe,
   ],
   imports: [
     MatCardModule,
@@ -51,6 +53,6 @@ import { AdminNavbarComponent } from './ui/navbar/admin-navbar/admin-navbar.comp
     ReactiveFormsModule
   ],
   providers: [LoggedIn],
-  exports: [NavbarComponent,InfoCardComponent,EventCardComponent,SliderComponent,SliderItemComponent],
+  exports: [NavbarComponent,InfoCardComponent,EventCardComponent,SliderComponent,SliderItemComponent,DateAgoPipe],
 })
 export class AppCommonModule {}

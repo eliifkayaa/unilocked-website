@@ -3,31 +3,30 @@
     <div>
       <div class="post-top">
         <div class="image-container">
-          <img class="profile-image" [src]="post.user.image" alt="" />
+          <img class="profile-image" [src]="post.postedBy.avatar" alt="" />
         </div>
         <div class="info-container">
-          <h4>Ferman Uludağ</h4>
+          <h4>{{ post.postedBy.name }}</h4>
           <p class="user-info">TED Üniversitesi - Makine Mühendisliği</p>
           <p class="post-info">
-            13 Saat • Düzenlendi •&nbsp;<mat-icon>public</mat-icon>&nbsp;Herkese
-            Açık
+            {{ post.createdAt | dateAgo }} • Düzenlendi
+            •&nbsp;<mat-icon>public</mat-icon>&nbsp;Herkese Açık
           </p>
         </div>
       </div>
       <div class="post-content">
-        <p>
-          Mimarlık Bölümü öğrencilerimizden @Umut Er, geçtiğimiz bahar döneminde
-          1.sınıf stüdyosunda yaptığı projesiyle bu sene yirmi birincisi
-          düzenlenen Mimarlık Eğitimi Derneği Mimarlık Öğrencileri Ödülleri 1.
-          Sınıf kategorisinde Jüri Özel Ödülü'ne layık görüldü.
-          <br /><br /><span class="tag">#mimarlık</span>
-        </p>
+        <post-content
+          [content]="post.text"
+        >
+        </post-content>
       </div>
-      <div class="post-image">
-        <img src="assets/img/post-image.png" alt="" />
+      <div class="post-image row">
+        <div class="col" *ngFor="let image of post.images">
+          <img [src]="image" alt="Post image" />
+        </div>
       </div>
-      <div class="row buttons-container">
-        <div class="col-m-9 d-flex buttons">
+      <div class="buttons-container">
+        <div class="d-flex buttons">
           <button mat-button class="attachment-button">
             <mat-icon>thumb_up</mat-icon> 106
           </button>
@@ -41,11 +40,7 @@
             <mat-icon>bookmark</mat-icon> Kaydedildi
           </button>
         </div>
-        <div class="col-m-3" style="display: flex; justify-content: flex-end">
-          <button mat-flat-button color="primary">
-            <span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon>
-          </button>
-        </div>
+        
       </div>
     </div>
   </div>

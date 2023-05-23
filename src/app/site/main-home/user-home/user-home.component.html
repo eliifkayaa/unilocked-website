@@ -4,46 +4,53 @@
       <div class="row">
         <div class="col-lg-8">
           <mat-card class="home-panel mat-elevation-z0">
-            <div class="post-container">
-              <img class="profile-image" [src]="auth.user.avatar" alt="" />
-              <mat-form-field appearance="outline">
-                <mat-label>Bu gün aklında neler var?</mat-label>
-                <input matInput placeholder="Bir şeyler yaz..." />
-                <mat-icon matSuffix>send</mat-icon>
-              </mat-form-field>
-            </div>
-            <div class="row" style="margin: 2px">
-              <div
-                class="col-sm-9 d-flex"
-                style="align-items: center; justify-content: flex-start"
-              >
-                <button mat-button color="primary" class="attachment-button">
-                  <mat-icon>image</mat-icon> Fotoğraf
-                </button>
-                <button mat-button color="primary" class="attachment-button">
-                  <mat-icon>videocam</mat-icon> Video
-                </button>
-                <button mat-button color="primary" class="attachment-button">
-                  <mat-icon>event</mat-icon> Etkinlik
-                </button>
-                <button mat-button color="primary" class="attachment-button">
-                  <mat-icon>poll</mat-icon> Anket
-                </button>
+            <form 
+            (ngSubmit)="submitPost()"
+            class="center"
+            [formGroup]="postForm">
+              <div class="post-container">
+                <img class="profile-image" [src]="auth.user.avatar" alt="" />
+                <mat-form-field appearance="outline">
+                  <mat-label>Bu gün aklında neler var?</mat-label>
+                  <input formControlName="text" matInput placeholder="Bir şeyler yaz..." />
+                  <mat-icon matSuffix>send</mat-icon>
+                </mat-form-field>
               </div>
-              <div
-                class="col-sm-3"
-                style="display: flex; justify-content: flex-end"
-              >
-                <button mat-flat-button color="primary">
-                  <span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon>
-                </button>
+              <div class="row" style="margin: 2px">
+                <div
+                  class="col-sm-9 d-flex"
+                  style="align-items: center; justify-content: flex-start"
+                >
+                  <button mat-button color="primary" class="attachment-button">
+                    <mat-icon>image</mat-icon> Fotoğraf
+                  </button>
+                  <button mat-button color="primary" class="attachment-button">
+                    <mat-icon>videocam</mat-icon> Video
+                  </button>
+                  <button mat-button color="primary" class="attachment-button">
+                    <mat-icon>event</mat-icon> Etkinlik
+                  </button>
+                  <button mat-button color="primary" class="attachment-button">
+                    <mat-icon>poll</mat-icon> Anket
+                  </button>
+                </div>
+                <div
+                  class="col-sm-3"
+                  style="display: flex; justify-content: flex-end"
+                >
+                  <button mat-flat-button color="primary">
+                    <span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon>
+                  </button>
+                </div>
               </div>
-            </div>
-            <br />
+              <br />
+            </form>
           </mat-card>
           <br />
 
-          <post [post]="post"></post>
+          <ng-container *ngIf="posts$ | async as posts">
+            <post *ngFor="let post of posts.data;" [post]="post"></post>
+          </ng-container>
         </div>
         <div class="col-lg-4">
           <mat-card class="home-panel mat-elevation-z0">
