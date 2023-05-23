@@ -2,7 +2,7 @@
   <ng-container *ngFor="let word of parsedContent">
     <span *ngIf="!isHashtag(word)">{{ word }} </span>
     <span class="tag" *ngIf="isHashtag(word)">
-      <a [routerLink]="['/search']" [queryParams]="{ q: word }">
+      <a [routerLink]="['/search']" [queryParams]="{ query: word.replace('#','')}">
         {{ word }}
       </a>
     </span>

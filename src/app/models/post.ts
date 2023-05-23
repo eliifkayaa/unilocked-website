@@ -7,7 +7,8 @@ export interface Post {
   postedBy?: Profile;
   createdAt?: string;
   updatedAt?: string;
-  reactions?: Reactions;
+  reactionsCounts?: Reactions;
+  commentCount?: number;
 }
 
 export interface Reactions {

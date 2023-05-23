@@ -24,4 +24,6 @@ export interface User{
     has_password?: boolean //!;
     roles?: Role[];
 
+    postsSaved?: any[];
+
 }
