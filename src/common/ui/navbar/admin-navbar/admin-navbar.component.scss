@@ -7,6 +7,13 @@
   }
 }
 
+.mainLogo {
+  width: 300px;
+  height: 100%;
+  border-bottom: 0.3px solid #a2a2a2;
+  border-right: 0.3px solid #a2a2a2;
+}
+
 .logo-container {
   height: 100%;
   display: flex;
@@ -44,13 +51,14 @@
   @include mat.elevation(8);
   display: flex;
   justify-content: center;
-  background-color: var(--toolbar-color);
+  background-color: var(--surface-1);
 }
 
 mat-toolbar {
   //max-width: 1200px;
   @include mat.elevation(0);
   padding-left: 40px;
+  background-color: var(--surface-1) !important;
 
   .menu-button {
     color: var(--icon-color);
@@ -157,53 +165,55 @@ form {
 }
 
 .menuList {
-    padding: 0 2%;
-    .mainContent {
-        .title {
-            font-size: 15px;
-            height: 20px;
-        }
-        .subtitle {
-            font-size: 12px;
-        }
+  padding: 0 2%;
+  .mainContent {
+    .title {
+      font-size: 15px;
+      height: 20px;
     }
-    .userContent {
-        width: 35%;
-
-        .job-area, .user-area {
-            margin-left: 0;
-            padding-left: 0;
-            width: 50%;
-            &:nth-child(1) {
-              border-right: 1px solid #c2c2c2;
-            }
-
-            .profile-image {
-              margin-right: 5%;
-            }
-            img {
-                width: 30%;
-            }
-
-            .jobInfo, .userInfo {
-              p {
-                height: 25px!important;
-                margin: 0;
-              }
-              .name {
-                font-size: 16px;
-                color: #F1F3F5;
-
-                .mat-icon {
-                  margin-left: 1%;
-                  color: #F59F00;
-                }
-              }
-              .type {
-                font-size: 14px;
-                color: #ADB5BD;
-              }
-            }
-        }
+    .subtitle {
+      font-size: 12px;
     }
+  }
+  .userContent {
+    width: 35%;
+
+    .job-area,
+    .user-area {
+      margin-left: 0;
+      padding-left: 0;
+      width: 50%;
+      &:nth-child(1) {
+        border-right: 1px solid #c2c2c2;
+      }
+
+      .profile-image {
+        margin-right: 5%;
+      }
+      img {
+        width: 30%;
+      }
+
+      .jobInfo,
+      .userInfo {
+        p {
+          height: 25px !important;
+          margin: 0;
+        }
+        .name {
+          font-size: 16px;
+          color: #f1f3f5;
+
+          .mat-icon {
+            margin-left: 1%;
+            color: #f59f00;
+          }
+        }
+        .type {
+          font-size: 14px;
+          color: #adb5bd;
+        }
+      }
+    }
+  }
 }

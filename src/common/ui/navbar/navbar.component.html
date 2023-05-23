@@ -1,5 +1,10 @@
-<user-navbar [drawer]="drawer" *ngIf="authService.loggedIn && isUser"></user-navbar>
-<admin-navbar [admindrawer]="admindrawer" *ngIf="authService.loggedIn && isAdmin"></admin-navbar>
-<ng-template #guestNavbar>
-<guest-navbar></guest-navbar>
+<admin-navbar
+  [admindrawer]="admindrawer"
+  *ngIf="authService.loggedIn && isAdmin; else user"
+></admin-navbar>
+<ng-template #user>
+  <user-navbar [drawer]="drawer" *ngIf="authService.loggedIn"></user-navbar>
+  <ng-template #guestNavbar>
+    <guest-navbar></guest-navbar>
+  </ng-template>
 </ng-template>

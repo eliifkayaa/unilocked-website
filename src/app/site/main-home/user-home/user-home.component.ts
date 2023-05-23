@@ -1,7 +1,11 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@common/auth/auth.service';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { HomeService } from '../home.service';
+import { Pagination } from 'src/app/models/pagination';
+import { Post } from 'src/app/models/post';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'user-home',
@@ -9,12 +13,38 @@ import { map } from 'rxjs';
   styleUrls: ['./user-home.component.scss'],
 })
 export class UserHomeComponent implements OnInit {
+  public posts$: Observable<Pagination<Post>>;
+
   constructor(
     public auth: AuthService,
-    private breakPointObserver: BreakpointObserver
-  ) {}
+    private breakPointObserver: BreakpointObserver,
+    public homeService: HomeService,
+    public fb: FormBuilder
+  ) {
+    this.posts$ = this.getPosts();
+  }
+
+  public postForm = this.fb.group({
+    text: [''],
+  });
 
   ngOnInit(): void {}
+
+  public getPosts() {
+    return this.homeService.getPosts();
+  }
+
+  public submitPost() {
+    const text = this.postForm.get('text').value;
+    const data: Post = {
+      text,
+      images: [],
+    };
+    this.homeService.submitPost(data).subscribe((res) => {
+      this.posts$ = this.getPosts();
+    });
+  }
+
 
   public testClick() {}
 
