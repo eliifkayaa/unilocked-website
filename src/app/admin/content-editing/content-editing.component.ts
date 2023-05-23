@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import MenuItem from '../models/menu-item';
 
 @Component({
-  selector: 'admin-home',
-  templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.scss'],
+  selector: 'content-editing',
+  templateUrl: './content-editing.component.html',
+  styleUrls: ['./content-editing.component.scss']
 })
-export class AdminHomeComponent implements OnInit {
+
+
+export class ContentEditingComponent implements OnInit {
+
   public menuItems: MenuItem[][] = [
     [
       {
@@ -94,8 +97,10 @@ export class AdminHomeComponent implements OnInit {
     },
     ]
   ];
+  
+  constructor() { }
 
-  constructor() {}
+  ngOnInit(): void {
+  }
 
-  ngOnInit(): void {}
 }

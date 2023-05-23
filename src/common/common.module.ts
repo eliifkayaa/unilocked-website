@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SliderComponent } from './ui/slider/slider.component';
 import { SliderItemComponent } from './ui/slider/slider-item/slider-item.component';
+import { AdminNavbarComponent } from './ui/navbar/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SliderItemComponent } from './ui/slider/slider-item/slider-item.compone
     EventCardComponent,
     SliderComponent,
     SliderItemComponent,
+    AdminNavbarComponent,
   ],
   imports: [
     MatCardModule,
