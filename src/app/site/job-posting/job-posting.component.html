@@ -1,266 +1,258 @@
-<navbar></navbar>
-<mat-drawer-container class="example-container">
-    <mat-drawer class="mainMenu" #drawer style="width: 250px;" mode="side" opened>
-
-      <main-menu></main-menu>
-
-    </mat-drawer>
-    <mat-drawer-content>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-11 offset-sm-1">
-              <div class="posts">
-                <p> İlanlar</p>
-              </div>
-              <mat-tab-group>
-                  <mat-tab label="Ana Sayfa">
-                    
-                  </mat-tab>
-                  <mat-tab label="Staj İlanları"> 
-        
-                  </mat-tab>
-                  <mat-tab label="Arama">
-                    
-                  </mat-tab>
-              </mat-tab-group>
-              <br>
-              <div class="container-searchs">
-                <div class="container">
-                  <p> <span>Önerilen Anahtar Kelimeler</span> <mat-icon>clear</mat-icon></p>
-                  <mat-chip-list
-                  class="example-chip"
-                  cdkDropList 
-                  cdkDropListOrientation="horizontal">
-                    <mat-chip
-                    class="example-box"
-                    cdkDrag
-                    *ngFor="let keys of keys">
-                      <mat-icon>search</mat-icon>{{keys.name}}
-                    </mat-chip>
-                  </mat-chip-list>  
-                </div>
-              </div>
-              <br>
-              <div class="container-suggestions">
-                <mat-card class="example-card">
-                  <div class="container">
-                    <div class="row">
-                      <p style="margin-left: 20px;">Önerilen Staj İlanları<a href="">İlanları Gör</a></p>
-                      <div class="col-sm-6">
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
-                            <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
-                            <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
-                            <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                      </div>
-                      <div class="col-sm-6">
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Network Programmer</mat-card-title>
-                            <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Network Programmer</mat-card-title>
-                            <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Network Programmer</mat-card-title>
-                            <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                      </div>
-                    </div>
-                  </div>
-                </mat-card>
-              </div>
-              <br>
-              <div class="container-posts">
-                <div class="container">
-                  <div class="row">
-                    <h2>Önerilen Gönderiler</h2>
-                    <a href="">Hepsini Gör</a>
-                  </div>
-                  <p>Staj ve iş başvuruları ile ilgili en iyi gönderiler. Doğru başvuru nasıl yapılır, meslek seçimi nasıl yapılır gibi önemli soruların cevaplarını profesyonellerden öğrenin.</p>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <mat-card class="example-card">
-                        <mat-card-header>
-                          <mat-card-title>Gönderi</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="./assets/img/eric-lempel.png" alt="Photo of Eric Lempel">
-                        <mat-card-content>
-                          <p>
-                            Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular,
-                            sporcular, sanatçılar ve şovmenlerden oluşan büyüyen 
-                            bir ağ olan PlayStation Playmaker'larla tanışın.
-                            <a href="" class="first-link">
-                              <span>sie.com</span>
-                              <mat-icon>link</mat-icon>
-                            </a>
-                          </p>
-                        </mat-card-content>
-                      </mat-card>                      
-                    </div>
-                    <div class="col-sm-6">
-                      <mat-card class="example-card">
-                        <mat-card-header>
-                          <mat-card-title>Gönderi</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="./assets/img/ps-vr.png" alt="Photo of a Playstation VR">
-                        <mat-card-content>
-                          <p>
-                            PlayStation VR2'nin bugün dünya çapında piyasaya sürülmesiyle yeni nesil sanal gerçeklik oyunları başlıyor.
-                            Özellikleri ve oyun dizisi hakkında daha fazla bilgi edinin:
-                            <a href="" class="second-link">
-                              <span>blog.playstation.com</span>
-                              <mat-icon>link</mat-icon>
-                            </a>
-                          </p>
-                        </mat-card-content>
-                      </mat-card>   
-                      <br>                   
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <br>
-              <div class="container-newposts">
-                <mat-card class="example-card">
-                  <div class="container">
-                    <div class="row">
-                      <p style="margin-left: 20px;">Yakınındaki Yeni İlanlar</p><a href="">İlanları Gör</a>
-                      <p style="font-size: 16px; margin-left: 20px;">Ankara, Türkiye konumu ve yakınındaki konumlardan staj ilanları.</p>
-                      <div class="col-sm-6">
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
-                            <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
-                            <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
-                            <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
-                            <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                      </div>
-                      <div class="col-sm-6">
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Network Programmer</mat-card-title>
-                            <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Network Programmer</mat-card-title>
-                            <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                        <mat-card-header>
-                          <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
-                          <mat-card-title-group class="mat-card-text">
-                            <mat-card-title>Network Programmer</mat-card-title>
-                            <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
-                            <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
-                          </mat-card-title-group>
-                        </mat-card-header>
-                      </div>
-                    </div>
-                  </div>
-                </mat-card>
-              </div>
-              <br>
-              <div class="container-explore">
-                <mat-card class="example-card">
-                  <div class="container">
-                    <div class="row">
-                      <mat-card-header>
-                        <mat-card-title>Projeleri Keşfet</mat-card-title>
-                        <button mat-raised-button color="primary" style="height: 45px; margin-left: 200px; margin-top: 5px;">Projeleri Keşfet</button>
-                        <mat-card-subtitle>Kariyerini başlatmak için projeleri keşfet ve ilgini çeken projeler yapan yeni toplulukları takip et.</mat-card-subtitle>
-                      </mat-card-header>
-                    </div>
-                  </div>
-                </mat-card>
-              </div>              
-              <br>
-              <div class="container-peoples">
-                <div class="container">
-                  <div class="row">
-                    <div class="following-area">
-                      <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
-                      <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
-                      <div class="followed row">
-                        <div class="d-flex community" *ngFor="let person of people">
-                          <img [src]="person.avatar" alt="" class="avatar"/>
-                          <div>
-                            <h3 class="name">{{ person.name }}</h3>
-                            <p class="short-desc">{{ person.shortDesc }}</p>
-                            <p class="details"><img [src]="person.logo" alt="" class="logo"/>{{ person.details }}</p>
-                            <button
-                              [ngStyle]="person.buttonStyle"
-                              mat-raised-button
-                              color="accent"
-                              class="action mat-elevation-z0"
-                            >
-                              {{ person.follow }}&nbsp;<mat-icon *ngIf="person.hasIcon">check</mat-icon>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <br>
+<main-content>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-11 offset-sm-1">
+          <div class="posts">
+            <p> İlanlar</p>
           </div>
-        </div>
+          <mat-tab-group>
+              <mat-tab label="Ana Sayfa">
+                
+              </mat-tab>
+              <mat-tab label="Staj İlanları"> 
+    
+              </mat-tab>
+              <mat-tab label="Arama">
+                
+              </mat-tab>
+          </mat-tab-group>
+          <br>
+          <div class="container-searchs">
+            <div class="container">
+              <p> <span>Önerilen Anahtar Kelimeler</span> <mat-icon>clear</mat-icon></p>
+              <mat-chip-list
+              class="example-chip"
+              cdkDropList 
+              cdkDropListOrientation="horizontal">
+                <mat-chip
+                class="example-box"
+                cdkDrag
+                *ngFor="let keys of keys">
+                  <mat-icon>search</mat-icon>{{keys.name}}
+                </mat-chip>
+              </mat-chip-list>  
+            </div>
+          </div>
+          <br>
+          <div class="container-suggestions">
+            <mat-card class="example-card">
+              <div class="container">
+                <div class="row">
+                  <p style="margin-left: 20px;">Önerilen Staj İlanları<a href="">İlanları Gör</a></p>
+                  <div class="col-sm-6">
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
+                        <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                        <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
+                        <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                        <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
+                        <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                        <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                  </div>
+                  <div class="col-sm-6">
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Network Programmer</mat-card-title>
+                        <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
+                        <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Network Programmer</mat-card-title>
+                        <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
+                        <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Network Programmer</mat-card-title>
+                        <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
+                        <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+          <br>
+          <div class="container-posts">
+            <div class="container">
+              <div class="row">
+                <h2>Önerilen Gönderiler</h2>
+                <a href="">Hepsini Gör</a>
+              </div>
+              <p>Staj ve iş başvuruları ile ilgili en iyi gönderiler. Doğru başvuru nasıl yapılır, meslek seçimi nasıl yapılır gibi önemli soruların cevaplarını profesyonellerden öğrenin.</p>
+              <div class="row">
+                <div class="col-sm-6">
+                  <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title>Gönderi</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="./assets/img/eric-lempel.png" alt="Photo of Eric Lempel">
+                    <mat-card-content>
+                      <p>
+                        Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular,
+                        sporcular, sanatçılar ve şovmenlerden oluşan büyüyen 
+                        bir ağ olan PlayStation Playmaker'larla tanışın.
+                        <a href="" class="first-link">
+                          <span>sie.com</span>
+                          <mat-icon>link</mat-icon>
+                        </a>
+                      </p>
+                    </mat-card-content>
+                  </mat-card>                      
+                </div>
+                <div class="col-sm-6">
+                  <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title>Gönderi</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="./assets/img/ps-vr.png" alt="Photo of a Playstation VR">
+                    <mat-card-content>
+                      <p>
+                        PlayStation VR2'nin bugün dünya çapında piyasaya sürülmesiyle yeni nesil sanal gerçeklik oyunları başlıyor.
+                        Özellikleri ve oyun dizisi hakkında daha fazla bilgi edinin:
+                        <a href="" class="second-link">
+                          <span>blog.playstation.com</span>
+                          <mat-icon>link</mat-icon>
+                        </a>
+                      </p>
+                    </mat-card-content>
+                  </mat-card>   
+                  <br>                   
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="container-newposts">
+            <mat-card class="example-card">
+              <div class="container">
+                <div class="row">
+                  <p style="margin-left: 20px;">Yakınındaki Yeni İlanlar</p><a href="">İlanları Gör</a>
+                  <p style="font-size: 16px; margin-left: 20px;">Ankara, Türkiye konumu ve yakınındaki konumlardan staj ilanları.</p>
+                  <div class="col-sm-6">
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
+                        <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                        <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
+                        <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                        <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Sr. UX Designer, Commerce</mat-card-title>
+                        <mat-card-subtitle>İstanbul, Türkiye</mat-card-subtitle>
+                        <mat-card-subtitle>10 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                  </div>
+                  <div class="col-sm-6">
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Network Programmer</mat-card-title>
+                        <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
+                        <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Network Programmer</mat-card-title>
+                        <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
+                        <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-header>
+                      <img mat-card-image src="./assets/img/ps3.jpeg" style="width: 50px; height: 50px; border-radius: 7px; margin-right: 5px;"/>
+                      <mat-card-title-group class="mat-card-text">
+                        <mat-card-title>Network Programmer</mat-card-title>
+                        <mat-card-subtitle>Londra, İngiltere • PlayStation Global İle Birlikte</mat-card-subtitle>
+                        <mat-card-subtitle>12 Gün Önce Yayınlandı</mat-card-subtitle>
+                      </mat-card-title-group>
+                    </mat-card-header>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+          <br>
+          <div class="container-explore">
+            <mat-card class="example-card">
+              <div class="container">
+                <div class="row">
+                  <mat-card-header>
+                    <mat-card-title>Projeleri Keşfet</mat-card-title>
+                    <button mat-raised-button color="primary" style="height: 45px; margin-left: 200px; margin-top: 5px;">Projeleri Keşfet</button>
+                    <mat-card-subtitle>Kariyerini başlatmak için projeleri keşfet ve ilgini çeken projeler yapan yeni toplulukları takip et.</mat-card-subtitle>
+                  </mat-card-header>
+                </div>
+              </div>
+            </mat-card>
+          </div>              
+          <br>
+          <div class="container-peoples">
+            <div class="container">
+              <div class="row">
+                <div class="following-area">
+                  <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
+                  <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+                  <div class="followed row">
+                    <div class="d-flex community" *ngFor="let person of people">
+                      <img [src]="person.avatar" alt="" class="avatar"/>
+                      <div>
+                        <h3 class="name">{{ person.name }}</h3>
+                        <p class="short-desc">{{ person.shortDesc }}</p>
+                        <p class="details"><img [src]="person.logo" alt="" class="logo"/>{{ person.details }}</p>
+                        <button
+                          [ngStyle]="person.buttonStyle"
+                          mat-raised-button
+                          color="accent"
+                          class="action mat-elevation-z0"
+                        >
+                          {{ person.follow }}&nbsp;<mat-icon *ngIf="person.hasIcon">check</mat-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
       </div>
-    </mat-drawer-content>
-</mat-drawer-container>
+    </div>
+  </div>
+</main-content>
