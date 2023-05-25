@@ -17,6 +17,7 @@ import { CommunityProfileComponent } from './profiles/community-profile/communit
 import { SearchResultsComponent } from './search-results/search-results.component';
 
 import { CompanyComponent } from './company/company.component';
+import { JobPostingComponent } from './job-posting/job-posting.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
   
   { path : 'search', component: SearchResultsComponent, canActivate: [LoggedIn]},
 
+  { path : 'job-posting', component: JobPostingComponent, canActivate: [LoggedIn]},
 
   { path: 'company', component: CompanyComponent, canActivate: [LoggedIn] },
 
