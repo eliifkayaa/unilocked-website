@@ -1,0 +1,491 @@
+<admin-menu [menuItems]="menuItems">
+    <div class="content" style="min-height: 100vh;">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center title">
+                <div class="col-6">
+                    <span>Gönderi İçeriği</span>
+                </div>
+                <div class="col-6 d-flex justify-content-end buttons">
+                    <button mat-flat-button class="text-center">
+                        <mat-icon>
+                            timelapse
+                        </mat-icon>
+                        Gönderiyi Zamanla
+                    </button>                    
+                    <button mat-flat-button color="primary">
+                        Paylaş
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 context">
+                <textarea name="context" placeholder="Gönderinizin içeriğini giriniz..." cols="30" rows="10"></textarea>
+                <div class="editing d-flex align-items-center justify-content-between">
+                    <div class="text-edit d-flex">
+                        <mat-icon>
+                            format_size
+                        </mat-icon>
+                        <mat-icon>
+                            format_bold
+                        </mat-icon>
+                        <mat-icon>
+                            format_italic
+                        </mat-icon>
+                        <mat-icon>
+                            format_color_fill
+                        </mat-icon>
+                        <mat-icon>
+                            format_ink_highlighter
+                        </mat-icon>
+                        <mat-icon>
+                            format_quote
+                        </mat-icon>
+                        <mat-icon>
+                            format_list_bulleted
+                        </mat-icon>
+                    </div>
+                    <div class="file-edit">
+                        <button mat-flat-button>
+                            <mat-icon>
+                                image
+                            </mat-icon>
+                            Fotoğraf
+                        </button>
+                        <button mat-flat-button>
+                            <mat-icon>
+                                videocam
+                            </mat-icon>
+                            Video
+                        </button>
+                        <button mat-flat-button>
+                            <mat-icon>
+                                insert_link
+                            </mat-icon>
+                            Bağlantı
+                        </button>
+                        <button mat-flat-button>
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            Etkinlik
+                        </button>
+                        <button mat-flat-button>
+                            <mat-icon>
+                                poll
+                            </mat-icon>
+                            Anket
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 photos d-flex">
+                <img src="../../../assets/img/uni.jpg">
+                <img src="../../../assets/img/editing2.jpg">
+                <div class="loading">
+                    <img src="../../../assets/img/community-3.png">
+                    <span>Yükleniyor %76</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12 d-flex align-items-center title">
+                <div class="col-6">
+                    <span>Gönderi Ön İzlemesi</span>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <mat-icon>
+                        check_circle
+                    </mat-icon>
+                    Önizleme Güncellendi
+                </div>
+            </div>
+            <div class="col-12 d-flex company">
+                <div class="col-1">
+                    <img src="../../../assets/img/turkcell.png">
+                </div>
+                <div class="col-11 d-flex">
+                    <div class="col-6 d-flex flex-column ">
+                        <span class="title d-flex align-items-center">
+                            Turkcell
+                            <mat-icon>
+                                verified
+                            </mat-icon>
+                        </span>
+                        <span class="person">
+                            21.896 Takipçi • 200+ Çalışan
+                        </span>
+                        <span class="subtitle">
+                            0 Saniye • Ön İzleme
+                        </span>
+                    </div>
+                    <div class="col-6 d-flex align-items-center justify-content-end">
+                        <button>
+                            <mat-icon>
+                                more_horiz
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 input-text">
+                <input type="text" placeholder="Gönderinizin içeriğini giriniz...">
+            </div>
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center images">
+                <img src="../../../assets/img/uni.jpg">
+                <span>
+                    0 beğeni • 0 yorum • 1 görüntülenme • 0 kaydetme    
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 title">
+                <span>
+                    Kitle Seçenekleri
+                </span>
+            </div>
+            <div class="col-12 subtitle">
+                <span>
+                    Görünürlük
+                </span>
+            </div>
+
+            <div class="col-12 settings">
+                <div class="col-12 title">
+                    <span>
+                        Gönderi Görünürlüğü
+                    </span>
+                </div>
+                <div class="col-12 subtitle">
+                    <span>
+                        Gönderinizin görünürlüğünü ayarlayın.
+                    </span>
+                </div>
+                <div class="col-12 setting d-flex">
+                    <button class="active" mat-flat-button>
+                        <mat-icon>
+                            radio_button_checked
+                        </mat-icon>
+                        Herkese Açık
+                    </button>
+
+                    <button mat-flat-button>
+                        <mat-icon>
+                            update
+                        </mat-icon>
+                        Takipçiler Arası
+                    </button>
+
+                    <button mat-flat-button>
+                        <mat-icon>
+                            update
+                        </mat-icon>
+                        Takipçi Öğrenciler Arası
+                    </button>
+                    
+                    <button mat-flat-button>
+                        <mat-icon>
+                            update
+                        </mat-icon>
+                        Takipçi Profesyoneller Arası
+                    </button>
+
+                </div>
+            </div>
+            <div class="col-12 settings">
+                <div class="col-12 title">
+                    <span>
+                        Bildirimler
+                    </span>
+                </div>
+                <div class="col-12 subtitle">
+                    <span>
+                        Gönderinizin takipçilerinize bildirim yoluyla gönderilip gönderilmeyeceğini ayarlayın.
+                    </span>
+                </div>
+                <div class="col-12 setting">
+                    <button class="active" mat-flat-button>
+                        <mat-icon>
+                            check_box
+                        </mat-icon>
+                        Takipçi Öğrenciler
+                    </button>
+
+                    <button mat-flat-button>
+                        <mat-icon>
+                            check_box_outline_blank
+                        </mat-icon>
+                        Takipçi Profesyoneller
+                    </button>
+
+                    <button mat-flat-button>
+                        <mat-icon>
+                            check_box_outline_blank
+                        </mat-icon>
+                        İş Partnerleri
+                    </button>
+                        
+
+                </div>
+            </div>
+            <div class="col-12 settings">
+                <div class="col-12 title">
+                    <span>
+                        Görünürlük Süresi
+                    </span>
+                </div>
+                <div class="col-12 subtitle">
+                    <span>
+                        Gönderinizin ne kadar görüneceğini ayarlayın.
+                    </span>
+                </div>
+                <div class="col-12 setting">
+                    <button mat-flat-button>
+                        <mat-icon>
+                            update
+                        </mat-icon>
+                        Yayın Süresi
+                    </button>
+                    
+                    <button class="active" mat-flat-button>
+                        <mat-icon>
+                            radio_button_checked
+                        </mat-icon>
+                        Bitiş Tarihi
+                    </button>
+
+                    <button mat-flat-button>
+                        <mat-icon>
+                            update
+                        </mat-icon>
+                        Otomatik
+                    </button>
+                </div>
+                <div class="col-6 d-flex finish-time">
+                    <div class="date">
+                        <span>
+                            Bitiş Tarihi
+                        </span>
+                        <button mat-flat-button>
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            07.05.2023
+                        </button>
+                    </div>
+                    <div class="time">
+                        <span>
+                            Bitiş Saati
+                        </span>
+                        <button mat-flat-button>
+                            <mat-icon>
+                                calendar_month
+                            </mat-icon>
+                            17:30
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 settings">
+                <div class="col-12 title">
+                    <span>
+                        Gönderi Dili
+                    </span>
+                </div>
+                <div class="col-12 subtitle">
+                    <span>
+                        Erişilebilirlik için gönderinizin dilini seçin. Unilocked’u bu dilde kullanmayanlar gönderiyi çevirme seçeneğine sahip olacaktır.
+                    </span>
+                </div>
+                <div class="col-12 setting d-flex">
+                    <mat-form-field>
+                        <mat-label>Dili Seçin</mat-label>
+                        <mat-select>
+                          <mat-option value="one">Türkçe</mat-option>
+                          <mat-option value="two">İngilizce</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-12 settings">
+                <div class="col-12 title">
+                    <span>
+                        Bölge
+                    </span>
+                </div>
+                <div class="col-12 subtitle">
+                    <span>
+                        Gönderinizi sadece seçili bölgelerde gösterilecek şekilde ayarlayın. 
+                    </span>
+                </div>
+                <div class="col-12 setting d-flex">
+                    <mat-form-field>
+                        <mat-label>Bölge Seçin</mat-label>
+                        <mat-select>
+                          <mat-option value="one">Türkiye, Kanada,ABD</mat-option>
+                          <mat-option value="two">Avrupa</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="col-12 subtitle">
+                İşbirliği
+            </div>
+            <div class="col-12 settings">
+                <div class="col-12 title">
+                    <span>
+                        Çapraz Paylaşım
+                    </span>
+                </div>
+                <div class="col-12 subtitle">
+                    <span>
+                        Gönderinizi başka bir (1) şirket/kurum/topluluk ile birlikte paylaşın. Çapraz Paylaşım açılırsa, gönderinin paylaşılması için birliktelik yapılan hesabın paylaşıma izin vermesi gerekir.
+                    </span>
+                </div>
+                <div class="col-12 setting d-flex">
+                    <button class="search" mat-flat-button>
+                        <mat-icon>
+                            search
+                        </mat-icon>
+                        <input type="text" name="arama" value="Arama">
+                    </button>
+                    <div class="company-name">
+                        Adobe 
+                        <mat-icon>
+                            verified
+                        </mat-icon>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 subtitle">
+                Reklam
+            </div>
+            <div class="col-12 settings">
+                <div class="col-6 title">
+                    <span>
+                        Öne Çıkarılma
+                    </span>
+                </div>
+                <div class="col-6 subtitle">
+                    <span>
+                        Gönderinizi keşif sekmesinde öne çıkarın.
+                    </span>
+                </div>
+                <div class="col-6 setting d-flex">
+                    <div class="masses">
+                        <span>
+                            Kitle
+                        </span>
+                        <mat-form-field>
+                            <mat-label>Kitleyi Seçin</mat-label>
+                            <mat-select>
+                              <mat-option value="one">Öğrenciler</mat-option>
+                              <mat-option value="two">Profesyoneller</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="publication-time">
+                        <span>
+                            Yayınlanma Süresi
+                        </span>
+                        <mat-form-field>
+                            <mat-label>Süreyi Seçin</mat-label>
+                            <mat-select>
+                              <mat-option value="one">1 gün</mat-option>
+                              <mat-option value="two">2 gün</mat-option>
+                              <mat-option value="three">3 gün</mat-option>
+                              <mat-option value="four">4 gün</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="advertising-package">
+                        <span>
+                            Reklam Paketi
+                        </span>
+                        <mat-form-field>
+                            <mat-label>Paketi Seçin</mat-label>
+                            <mat-select>
+                              <mat-option value="one">1000+ Görüntülenme</mat-option>
+                              <mat-option value="two">2000+ Görüntülenme</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="col-6 setting d-flex justify-content-end align-items-center">
+                    <div class="price">
+                        <span>
+                            Ücret
+                        </span>
+                        <span>
+                            1.320₺/Gün
+                        </span>
+                    </div>
+                    <button mat-flat-button class="add">
+                        Ekle
+                    </button>
+
+                </div>
+            </div>
+            <div class="col-12 settings">
+                <div class="col-6 title">
+                    <span>
+                        Eposta Kampanyası
+                    </span>
+                </div>
+                <div class="col-6 subtitle">
+                    <span>
+                        Unilocked tarafından kullanıcılara gönderilecek gönderi özeti kolajında yer alın.
+                    </span>
+                </div>
+                <div class="col-6 setting d-flex">
+                    <div class="masses">
+                        <span>
+                            Kitle
+                        </span>
+                        <mat-form-field>
+                            <mat-label>Kitleyi Seçin</mat-label>
+                            <mat-select>
+                              <mat-option value="one">Sadece Öğrenciler</mat-option>
+                              <mat-option value="two">Sadece Profesyoneller</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="advertising-package">
+                        <span>
+                            Reklam Paketi
+                        </span>
+                        <mat-form-field>
+                            <mat-label>Paketi Seçin</mat-label>
+                            <mat-select>
+                              <mat-option value="one">Tam Boyut Gönderi</mat-option>
+                              <mat-option value="two">2 Gün Gönderi </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="col-6 setting d-flex justify-content-end align-items-center">
+                    <div class="price">
+                        <span>
+                            Ücret
+                        </span>
+                        <span>
+                            5.000₺
+                        </span>
+                    </div>
+                    <button mat-flat-button class="add">
+                        Çıkar
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</admin-menu>

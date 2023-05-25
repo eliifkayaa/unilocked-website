@@ -1,0 +1,219 @@
+@use "src/common/variables" as app;
+@use "@angular/material" as mat;
+
+.spacer {
+  @media (min-width: 800px) {
+    flex: 1 1 auto;
+  }
+}
+
+.mainLogo {
+  width: 300px;
+  height: 100%;
+  border-bottom: 0.3px solid #a2a2a2;
+  border-right: 0.3px solid #a2a2a2;
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+
+  .logo {
+    width: 120px;
+    height: 20px;
+
+    object-fit: cover;
+
+    // contain in mobile
+    @media (max-width: 800px) {
+      object-fit: contain;
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+  }
+}
+
+/*.logo:hover {
+  width: 50px;
+  object-position: 52% 0;
+  height: 50px;
+}*/
+
+.toolbar-parent {
+  @include mat.elevation(8);
+  display: flex;
+  justify-content: center;
+  background-color: var(--surface-1);
+}
+
+mat-toolbar {
+  //max-width: 1200px;
+  @include mat.elevation(0);
+  padding-left: 40px;
+  background-color: var(--surface-1) !important;
+
+  .menu-button {
+    color: var(--icon-color);
+  }
+
+  .user-area {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .profile-image {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .profile-texts {
+      padding-top: 12px;
+      margin-left: 12px;
+      padding-bottom: 12px;
+      .username {
+        font-size: 12px;
+      }
+      .school {
+        color: var(--sub-text);
+        margin-top: -12px;
+        text-align: center;
+        font-size: 10px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-radius: 24px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.toolbar-child {
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+}
+
+.navbar-button {
+  margin-left: 12px;
+}
+
+form {
+  @media (max-width: 800px) {
+    flex: 1 1 auto;
+  }
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.navbar-search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  .navbar-input {
+    padding: 8px;
+    border-radius: 12px;
+    border-style: none;
+    background-color: map-get(app.$purple-palette, 50);
+    width: 100%;
+  }
+  .navbar-icon {
+    margin-left: -30px;
+    color: #141414;
+  }
+}
+
+.icon-button {
+  background-color: transparent;
+  border-style: none;
+  color: var(--icon-color);
+  cursor: pointer;
+  font-family: "Quicksand";
+  font-size: 15px;
+  margin-left: 4px;
+
+  span {
+    display: block;
+  }
+
+  // hide buttons on mobile
+}
+
+@media (max-width: 600px) {
+  .icon-button,
+  .messages-icon,
+  .notifications-icon {
+    display: none;
+  }
+}
+
+.menuList {
+  padding: 0 2%;
+  .mainContent {
+    .title {
+      font-size: 15px;
+      height: 20px;
+    }
+    .subtitle {
+      font-size: 12px;
+    }
+  }
+  .userContent {
+    width: 35%;
+
+    .job-area,
+    .user-area {
+      margin-left: 0;
+      padding-left: 0;
+      width: 50%;
+      &:nth-child(1) {
+        border-right: 1px solid #c2c2c2;
+      }
+
+      .profile-image {
+        margin-right: 5%;
+      }
+      img {
+        width: 30%;
+      }
+
+      .jobInfo,
+      .userInfo {
+        p {
+          height: 25px !important;
+          margin: 0;
+        }
+        .name {
+          font-size: 16px;
+          color: #f1f3f5;
+
+          .mat-icon {
+            margin-left: 1%;
+            color: #f59f00;
+          }
+        }
+        .type {
+          font-size: 14px;
+          color: #adb5bd;
+        }
+      }
+    }
+  }
+}

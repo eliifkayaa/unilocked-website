@@ -1,30 +1,17 @@
-<ng-container *ngIf="auth.loggedIn">
-  <navbar [drawer]="drawer"></navbar>
-  <mat-drawer-container class="example-container">
-    <mat-drawer
-      class="mainMenu"
-      #drawer
-      style="width: 250px"
-      mode="side"
-      opened
-    >
-      <main-menu></main-menu>
-    </mat-drawer>
-    <mat-drawer-content style="min-height: 100vh">
-      <div class="header">
-        <div class="container">
-          <h1>Topluluklar</h1>
-          <div class="content">
-            <div class="d-flex justify-content-between">
-              <h2>Üye Olduğum Topluluklarım</h2>
-              <button mat-button color="primary">Hepsini gör</button>
-            </div>
-            <div class="joined">
-              <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
-              <mat-card
-                class="community mat-elevation-z0"
-                *ngFor="let community of communities"
-              >
+<main-content>
+  <div class="header">
+    <div class="container">
+      <h1>Topluluklar</h1>
+      <div class="content">
+        <div class="d-flex justify-content-between">
+          <h2>Üye Olduğum Topluluklarım</h2>
+          <button mat-button color="primary">Hepsini gör</button>
+        </div>
+
+        <div class="joined">
+          <slider>
+            <slider-item *ngFor="let community of communities">
+              <mat-card class="community mat-elevation-z0">
                 <div
                   class="backdrop-area"
                   style="position: relative; height: 120px"
@@ -49,78 +36,69 @@
                 <p class="short-desc">{{ community.shortDesc }}</p>
                 <p class="role">Katılımcı üye</p>
               </mat-card>
-              <button mat-icon-button>
-                <mat-icon>chevron_right</mat-icon>
-              </button>
-            </div>
-            <info-card
-              title="Toplulukların projelerini keşfet"
-              icon="rocket-launch"
-              text="Üyesi olduğun toplulukların yeni projelerini keşfet ve ilgini çeken projeler yapan yeni toplulukları takip et."
-            buttonText="Projeleri Keşfet"
-              ></info-card>
-            <div class="following-area">
-              <h2>Takip ettiğim topluluklarım</h2>
-              <div class="followed row">
-                <div
-                  class="d-flex community"
-                  *ngFor="let community of communities"
-                >
-                  <img [src]="community.avatar" alt="" class="avatar" />
-                  <div>
-                    <h3 class="name">{{ community.name }}</h3>
-                    <p class="short-desc">{{ community.shortDesc }}</p>
-                    <p class="details">Okul Topluluğu • Ankara, Türkiye</p>
-                    <div class="d-flex">
-                      <p>TED Üniversitesi kurumu altında</p>
-                    </div>
-                    <br>
-                    <button
-                      style="
-                        border-style: none;
-                        background-color: #c9cbfb;
-                        color: #4b53f2;
-                      "
-                      mat-raised-button
-                      color="accent"
-                      class="action mat-elevation-z0"
-                    >
-                      Takip Ediliyor&nbsp;<mat-icon>check</mat-icon>
-                    </button>
-                  </div>
+            </slider-item>
+          </slider>
+        </div>
+        <info-card
+          title="Toplulukların projelerini keşfet"
+          icon="rocket-launch"
+          text="Üyesi olduğun toplulukların yeni projelerini keşfet ve ilgini çeken projeler yapan yeni toplulukları takip et."
+          buttonText="Projeleri Keşfet"
+        ></info-card>
+        <div class="following-area">
+          <h2>Takip ettiğim topluluklarım</h2>
+          <div class="followed row">
+            <div class="d-flex community" *ngFor="let community of communities">
+              <img [src]="community.avatar" alt="" class="avatar" />
+              <div>
+                <h3 class="name">{{ community.name }}</h3>
+                <p class="short-desc">{{ community.shortDesc }}</p>
+                <p class="details">Okul Topluluğu • Ankara, Türkiye</p>
+                <div class="d-flex">
+                  <p>TED Üniversitesi kurumu altında</p>
                 </div>
+                <br />
+                <button
+                  style="
+                    border-style: none;
+                    background-color: #c9cbfb;
+                    color: #4b53f2;
+                  "
+                  mat-raised-button
+                  color="accent"
+                  class="action mat-elevation-z0"
+                >
+                  Takip Ediliyor&nbsp;<mat-icon>check</mat-icon>
+                </button>
               </div>
             </div>
-            <div class="following-area">
-              <h2>Önerilen Topluluklar</h2>
-              <div class="followed row">
-                <div
-                  class="d-flex community"
-                  *ngFor="let community of communities"
-                >
-                  <img [src]="community.avatar" alt="" class="avatar" />
-                  <div>
-                    <h3 class="name">{{ community.name }}</h3>
-                    <p class="short-desc">{{ community.shortDesc }}</p>
-                    <p class="details">Okul Topluluğu • Ankara, Türkiye</p>
-                    <div class="d-flex">
-                      <p>TED Üniversitesi kurumu altında</p>
-                    </div>
-                    <br>
-                    <button
-                      mat-raised-button
-                      color="primary"
-                      class="action mat-elevation-z0"
-                    >
-                      Takip Et&nbsp;<mat-icon>add</mat-icon>
-                    </button>
-                  </div>
+          </div>
+        </div>
+        <div class="following-area">
+          <h2>Önerilen Topluluklar</h2>
+          <div class="followed row">
+            <div class="d-flex community" *ngFor="let community of communities">
+              <img [src]="community.avatar" alt="" class="avatar" />
+              <div>
+                <h3 class="name">{{ community.name }}</h3>
+                <p class="short-desc">{{ community.shortDesc }}</p>
+                <p class="details">Okul Topluluğu • Ankara, Türkiye</p>
+                <div class="d-flex">
+                  <p>TED Üniversitesi kurumu altında</p>
                 </div>
+                <br />
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="action mat-elevation-z0"
+                >
+                  Takip Et&nbsp;<mat-icon>add</mat-icon>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
-</ng-container>
+    </div>
+  </div>
+</main-content>

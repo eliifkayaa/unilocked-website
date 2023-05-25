@@ -1,0 +1,49 @@
+<navbar [admindrawer]="drawer"></navbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer
+    class="mainMenu"
+    #drawer
+    style="width: 300px"
+    [mode]="(isMobile | async) ? 'over' : 'side'"
+    [opened]="!(isMobile | async)"
+  >
+    <mat-action-list role="list">
+      <div class="menuList">
+        <div class="categories" *ngFor="let items of menuItems">
+          <a *ngFor="let item of items" [routerLink]="item.route" mat-list-item>
+            <mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
+            <div mat-line>{{ item.label }}</div>
+            <mat-icon *ngIf="item.expands">expand_more</mat-icon>
+          </a>
+        </div>
+      </div>
+      
+
+      <div class="menuFooter">
+        <a mat-list-item>
+          <mat-icon mat-list-icon>settings_accessibility</mat-icon>
+          <div mat-line>Erişilebilirlik</div>
+        </a>
+        <div class="support">
+          <a mat-list-item>
+            <mat-icon mat-list-icon>support</mat-icon>
+            <div mat-line>Destek</div>
+          </a>
+          <a mat-list-item>
+            <div mat-line>Hızlı Erişim</div>
+            <mat-icon mat-list-icon>chevron_right</mat-icon>
+          </a>
+        </div>
+        <div class="logo">
+          <img [src]="logo | async">
+          <span>Unilocked © 2023</span>
+        </div>
+      </div>
+      
+      
+    </mat-action-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

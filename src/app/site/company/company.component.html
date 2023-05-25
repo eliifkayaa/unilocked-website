@@ -1,549 +1,674 @@
-<navbar></navbar>
+<main-content>
+  <div class="company-host container">
+    <mat-card class="company-top">
+      <div class="row">
+        <div class="col images">
+          <div class="logo">
+            <img [src]="company.logo" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col company-info">
+          <div class="description">
+            <span class="name">
+              <h2>{{ company.name }}</h2>
+              <mat-icon> verified </mat-icon>
+            </span>
+            <span class="text">
+              {{ company.slogan }}
+            </span>
+            <span class="followers">
+              {{ company.info }}
+            </span>
+          </div>
+          <div class="buttons">
+            <button
+              mat-flat-button
+              style="background-color: #4b53f2; color: #fff"
+            >
+              Takip Et
+            </button>
+            <button
+              mat-flat-button
+              style="background-color: #c9cbfb; color: #4b53f2"
+            >
+              Daha Fazla
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <mat-tab-group>
+      <mat-tab label="Ana Sayfa">
+        <mat-card class="about card">
+          <div class="title">
+            <h2>Hakkında</h2>
+          </div>
+          <p>
+            {{ company.about1 }}
+          </p>
+          <p>
+            {{ company.about2 }}
+          </p>
+          <p>
+            {{ company.about3 }}
+          </p>
+          <div class="row">
+            <div class="col-6">
+              <h4>Sektör</h4>
+              <p>{{ company.sector }}</p>
+            </div>
+            <div class="col-6">
+              <h4>Çalışan Sayısı</h4>
+              <p>{{ company.workers }}</p>
+            </div>
+            <div class="col-6">
+              <h4>İnternet Sitesi</h4>
+              <p>{{ company.contact.website }}</p>
+            </div>
+          </div>
+        </mat-card>
 
-<mat-drawer-container class="example-container">
-  <mat-drawer class="mainMenu" #drawer style="width: 250px" mode="side" opened>
-    <main-menu></main-menu>
-  </mat-drawer>
-  <mat-drawer-content>
-    <div class="company-host container">
-      <mat-card class="company-top">
-        <div class="row">
-            <div class="col images">
+        <mat-card class="posts card">
+          <div class="title">
+            <h2>Gönderiler</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let post of company.posts">
+              <profile-content [item]="post"></profile-content>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="featured-content card">
+          <div class="title">
+            <h2>Öne Çıkan İçerikler</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let item of company.featured">
+              <profile-content [item]="item"></profile-content>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="company-life card">
+          <div class="row">
+            <div class="col-sm-6">
+              <img
+                src="https://media.abilityjobfair.org/wp-content/uploads/2021/11/29143328/Three-men-smiling-in-Play-Station-shirts.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col-sm-6">
+              <h2>PlayStation Türkiye Kurumunda İş Yaşamı</h2>
+              <button
+                mat-flat-button
+                style="background-color: #c9cbfb; color: #4b53f2"
+              >
+                İş Yaşamı
+              </button>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="jobs card">
+          <div class="title">
+            <h2>Yeni İş İlanları</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="jobs-area">
+            <div class="row">
+              <div class="col-6">
                 <div class="logo">
-                    <img [src]='company.logo' alt="">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
                 </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col company-info">
-                <div class="description">
-                    <span class="name">
-                        <h2>{{company.name}}</h2>
-                        <mat-icon> verified </mat-icon>
-                    </span>
-                    <span class="text">
-                        {{company.slogan}}
-                    </span>
-                    <span class="followers">
-                        {{company.info}}
-                    </span>
-                </div>
-                <div class="buttons">
-                    <button mat-flat-button style="background-color:#4B53F2;color: #fff;">Takip Et</button>
-                    <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">Daha Fazla</button>
-                </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="employees card">
+          <div class="title">
+            <h2>Çalışanlar</h2>
+            <div>
+              <button mat-button color="primary">Hepsini Gör</button>
             </div>
-        </div>
-      </mat-card>
-      <mat-tab-group>
-        <mat-tab label="Ana Sayfa"> 
-              <mat-card class="about card">
-                <div class="title">
-                  <h2>Hakkında</h2>
+          </div>
+          <div class="subtitle">
+            <p>
+              Listeye belirli PlayStation Global, Sony Eurasia ve PlayStation ME
+              Çalışanları Dahil Edilmiştir.
+            </p>
+          </div>
+          <div class="employees-area">
+            <div class="row">
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q="
+                  />
                 </div>
+                <div class="text">
+                  <h3>Halil Nuroğlu</h3>
+                  <p>İnsan Kaynakları Yöneticisi</p>
+                  <p>Şirkette 7 Yıl 3 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı Kur
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://images2.alphacoders.com/702/702389.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>Felya Varol</h3>
+                  <p>İçerik Üreticisi</p>
+                  <p>Şirkette 2 Yıl 1 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Abdullah Ustaömeroğlu</h3>
+                  <p>Network Programmer</p>
+                  <p>Şirkette 2 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://media.istockphoto.com/id/1322686195/photo/beautiful-looking-young-blonde-woman-with-the-middle-length-hair-wearing-in-a-delicate-makeup.jpg?b=1&s=170667a&w=0&k=20&c=pvSTlrQCicJS7Vsv871uUlFlvJGUfD2jsjocaeZwPQU="
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>Kathryn Murphy</h3>
+                  <p>UI Designer</p>
+                  <p>Şirkette 7 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı Kur
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="contact card">
+          <div class="title">
+            <h2>İletişim</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="name">İnternet Sitesi</p>
+              <p>{{ company.contact.website }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="name">E-posta</p>
+              <p>{{ company.contact.mail }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="name">Adres</p>
+              <p>{{ company.contact.address }}</p>
+            </div>
+          </div>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="İş İlanları">
+        <mat-card class="warning card">
+          <div class="warning-content">
+            <div class="warning-message">
+              <mat-icon> notifications </mat-icon>
+              <div class="texts">
+                <b>PlayStation Türkiye Tarafından İş İlanları Uyarısı Alın</b>
                 <p>
-                  {{ company.about1 }}
+                  İlginizi çekebilecek ilanlar yayınlandığında bilgi
+                  alacaksınız.
                 </p>
-                <p>
-                  {{ company.about2 }}
-                </p>
-                <p>
-                  {{ company.about3 }}
-                </p>
-                <div class="row">
-                    <div class="col-6">
-                        <h4>Sektör</h4>
-                        <p>{{company.sector}}</p>
-                    </div>
-                    <div class="col-6">
-                        <h4>Çalışan Sayısı</h4>
-                        <p>{{company.workers}}</p>
-                    </div>
-                    <div class="col-6">
-                        <h4>İnternet Sitesi</h4>
-                        <p>{{company.contact.website}}</p>
-                    </div>
-                </div>
-                
-              </mat-card>
-
-              <mat-card class="posts card">
-                <div class="title">
-                  <h2>Gönderiler</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6" *ngFor="let post of company.posts">
-                    <profile-content [item]="post"></profile-content>
-                  </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="featured-content card">
-                <div class="title">
-                  <h2>Öne Çıkan İçerikler</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6" *ngFor="let item of company.featured">
-                    <profile-content [item]="item"></profile-content>
-                  </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="company-life card">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <img src="https://media.abilityjobfair.org/wp-content/uploads/2021/11/29143328/Three-men-smiling-in-Play-Station-shirts.jpg" alt="">
-                  </div>
-                  <div class="col-sm-6">
-                    <h2>PlayStation Türkiye Kurumunda İş Yaşamı</h2>
-                    <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">İş Yaşamı</button>
-                  </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="jobs card">
-                <div class="title">
-                  <h2>Yeni İş İlanları</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="jobs-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="employees card">
-                <div class="title">
-                    <h2>Çalışanlar</h2>
-                    <div>
-                        <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                </div>
-                <div class="subtitle">
-                    <p>Listeye belirli PlayStation Global, Sony Eurasia ve PlayStation ME Çalışanları Dahil Edilmiştir.</p>
-                </div>
-                <div class="employees-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q=">
-                            </div>
-                            <div class="text">
-                                <h3>Halil Nuroğlu</h3>
-                                <p>İnsan Kaynakları Yöneticisi</p>
-                                <p>Şirkette 7 Yıl 3 Ay</p>
-                                <button mat-flat-button style="background-color:#C9CBFB;color: #4B53F2;">Bağlantı Kur</button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://images2.alphacoders.com/702/702389.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>Felya Varol</h3>
-                                <p>İçerik Üreticisi</p>
-                                <p>Şirkette 2 Yıl 1 Ay</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                    Bağlantı
-                                    <mat-icon>done</mat-icon>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg">
-                            </div>
-                            <div class="text">
-                                <h3>Abdullah Ustaömeroğlu</h3>
-                                <p>Network Programmer</p>
-                                <p>Şirkette 2 Ay</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                  Bağlantı
-                                  <mat-icon>done</mat-icon>
-                              </button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://media.istockphoto.com/id/1322686195/photo/beautiful-looking-young-blonde-woman-with-the-middle-length-hair-wearing-in-a-delicate-makeup.jpg?b=1&s=170667a&w=0&k=20&c=pvSTlrQCicJS7Vsv871uUlFlvJGUfD2jsjocaeZwPQU=" alt="">
-                            </div>
-                            <div class="text">
-                                <h3>Kathryn Murphy</h3>
-                                <p>UI Designer</p>
-                                <p>Şirkette 7 Ay</p>
-                                <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                    Bağlantı Kur
-                                </button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-              </mat-card>
-
-              <mat-card class="contact card">
-                <div class="title">
-                  <h2>İletişim</h2>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p class="name">İnternet Sitesi</p>
-                    <p>{{ company.contact.website }}</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="name">E-posta</p>
-                    <p>{{ company.contact.mail }}</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="name">Adres</p>
-                    <p>{{ company.contact.address }}</p>
-                  </div>
-                  
-                </div>
-              </mat-card>
-
-        </mat-tab>
-        <mat-tab label="İş İlanları">
-
-            <mat-card class="warning card">
-                <div class="warning-content">
-                    <div class="warning-message">
-                        <mat-icon>
-                            notifications
-                        </mat-icon>
-                        <div class="texts">
-                            <b>PlayStation Türkiye Tarafından İş İlanları Uyarısı Alın</b>
-                            <p>İlginizi çekebilecek ilanlar yayınlandığında bilgi alacaksınız.</p>
-                        </div>
-                    </div>
-                    <div class="warning-button">
-                        <button mat-flat-button color="accent">Takibi Bırak</button>
-                    </div>
-                </div>
-                
-            </mat-card>
-
-            <mat-card class="new jobs card">
-                <div class="title">
-                  <h2>Yeni İş İlanları</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="jobs-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-
-            <mat-card class="employees card">
-            <div class="title">
-                <h2>Çalışanlar</h2>
-                <div>
-                    <button mat-button color="primary">Hepsini Gör</button>
-                </div>
+              </div>
             </div>
-            <div class="subtitle">
-                <p>Listeye belirli PlayStation Global, Sony Eurasia ve PlayStation ME Çalışanları Dahil Edilmiştir.</p>
+            <div class="warning-button">
+              <button mat-flat-button color="accent">Takibi Bırak</button>
             </div>
-            <div class="employees-area">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="logo">
-                            <img src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q=">
-                        </div>
-                        <div class="text">
-                            <h3>Halil Nuroğlu</h3>
-                            <p>İnsan Kaynakları Yöneticisi</p>
-                            <p>Şirkette 7 Yıl 3 Ay</p>
-                            <button mat-flat-button style="background-color:#C9CBFB;color: #4B53F2;">Bağlantı Kur</button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="logo">
-                            <img src="https://images2.alphacoders.com/702/702389.jpg" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Felya Varol</h3>
-                            <p>İçerik Üreticisi</p>
-                            <p>Şirkette 2 Yıl 1 Ay</p>
-                            <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                Mesaj
-                                <mat-icon>send</mat-icon>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="logo">
-                            <img src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg">
-                        </div>
-                        <div class="text">
-                            <h3>Abdullah Ustaömeroğlu</h3>
-                            <p>Network Programmer</p>
-                            <p>Şirkette 2 Ay</p>
-                            <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                Mesaj
-                                <mat-icon>send</mat-icon>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="logo">
-                            <img src="https://media.istockphoto.com/id/1322686195/photo/beautiful-looking-young-blonde-woman-with-the-middle-length-hair-wearing-in-a-delicate-makeup.jpg?b=1&s=170667a&w=0&k=20&c=pvSTlrQCicJS7Vsv871uUlFlvJGUfD2jsjocaeZwPQU=" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Kathryn Murphy</h3>
-                            <p>UI Designer</p>
-                            <p>Şirkette 7 Ay</p>
-                            <button mat-flat-button style="background-color: #C9CBFB;color: #4B53F2;">
-                                Bağlantı Kur
-                            </button>
-                        </div>
-                    </div>
-                    
-                </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="new jobs card">
+          <div class="title">
+            <h2>Yeni İş İlanları</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
             </div>
-            </mat-card>
-
-            <mat-card class="all jobs card">
-                <div class="title">
-                  <h2>Tüm İş İlanları • 71 İlan</h2>
-                  <div>
-                    <div>
-                      <button mat-button color="primary">Hepsini Gör</button>
-                    </div>
-                  </div>
+          </div>
+          <div class="jobs-area">
+            <div class="row">
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
                 </div>
-                <div class="jobs-area">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj" style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Sr. UX Designer, Commerce</h3>
-                                <p>İstanbul, Türkiye</p>
-                                <p>10 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="logo">
-                                <img src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"  style="height: auto!important;">
-                            </div>
-                            <div class="text">
-                                <h3>Network Programmer</h3>
-                                <p>Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte</p>
-                                <p>12 Gün Önce Yayınlandı</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
                 </div>
-            </mat-card>
-
-            <mat-card class="contact card">
-                <div class="title">
-                  <h2>İletişim</h2>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
                 </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p class="name">İnternet Sitesi</p>
-                    <p>{{ company.contact.website }}</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="name">E-posta</p>
-                    <p>{{ company.contact.mail }}</p>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="name">Adres</p>
-                    <p>{{ company.contact.address }}</p>
-                  </div>
-                  
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
                 </div>
-            </mat-card>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
 
-        </mat-tab>
-        <mat-tab label="İş Yaşamı">
+        <mat-card class="employees card">
+          <div class="title">
+            <h2>Çalışanlar</h2>
+            <div>
+              <button mat-button color="primary">Hepsini Gör</button>
+            </div>
+          </div>
+          <div class="subtitle">
+            <p>
+              Listeye belirli PlayStation Global, Sony Eurasia ve PlayStation ME
+              Çalışanları Dahil Edilmiştir.
+            </p>
+          </div>
+          <div class="employees-area">
+            <div class="row">
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?b=1&s=170667a&w=0&k=20&c=lrHSjzuqKIAC76-vpOhzR7pRsP38DGPWt7x7SOFbm0Q="
+                  />
+                </div>
+                <div class="text">
+                  <h3>Halil Nuroğlu</h3>
+                  <p>İnsan Kaynakları Yöneticisi</p>
+                  <p>Şirkette 7 Yıl 3 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı Kur
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://images2.alphacoders.com/702/702389.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>Felya Varol</h3>
+                  <p>İçerik Üreticisi</p>
+                  <p>Şirkette 2 Yıl 1 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Mesaj
+                    <mat-icon>send</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-842811.jpg&fm=jpg"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Abdullah Ustaömeroğlu</h3>
+                  <p>Network Programmer</p>
+                  <p>Şirkette 2 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Mesaj
+                    <mat-icon>send</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://media.istockphoto.com/id/1322686195/photo/beautiful-looking-young-blonde-woman-with-the-middle-length-hair-wearing-in-a-delicate-makeup.jpg?b=1&s=170667a&w=0&k=20&c=pvSTlrQCicJS7Vsv871uUlFlvJGUfD2jsjocaeZwPQU="
+                    alt=""
+                  />
+                </div>
+                <div class="text">
+                  <h3>Kathryn Murphy</h3>
+                  <p>UI Designer</p>
+                  <p>Şirkette 7 Ay</p>
+                  <button
+                    mat-flat-button
+                    style="background-color: #c9cbfb; color: #4b53f2"
+                  >
+                    Bağlantı Kur
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
 
-        </mat-tab>
-      </mat-tab-group>
-      
-      
-    </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+        <mat-card class="all jobs card">
+          <div class="title">
+            <h2>Tüm İş İlanları • 71 İlan</h2>
+            <div>
+              <div>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+            </div>
+          </div>
+          <div class="jobs-area">
+            <div class="row">
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Sr. UX Designer, Commerce</h3>
+                  <p>İstanbul, Türkiye</p>
+                  <p>10 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="logo">
+                  <img
+                    src="https://yt3.ggpht.com/ytc/AKedOLSXiy7dSBzgSKU-4wTmqs8hUZ0d4w6RMjsQEjlEFVs=s900-c-k-c0x00ffffff-no-rj"
+                    style="height: auto !important"
+                  />
+                </div>
+                <div class="text">
+                  <h3>Network Programmer</h3>
+                  <p>
+                    Londra, İngiltere • <b>PlayStation Global </b> İle Birlikte
+                  </p>
+                  <p>12 Gün Önce Yayınlandı</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="contact card">
+          <div class="title">
+            <h2>İletişim</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="name">İnternet Sitesi</p>
+              <p>{{ company.contact.website }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="name">E-posta</p>
+              <p>{{ company.contact.mail }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="name">Adres</p>
+              <p>{{ company.contact.address }}</p>
+            </div>
+          </div>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="İş Yaşamı"> </mat-tab>
+    </mat-tab-group>
+  </div>
+</main-content>

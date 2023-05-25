@@ -1,11 +1,6 @@
 <mat-toolbar color="primary">
-  <a [routerLink]="['/home']"
-    ><img
-      [src]="
-        theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'
-      "
-      class="logo"
-      alt="UniLocked"
+  <a class="logo-container" [routerLink]="['/home']"
+    ><img [src]="logo | async" class="logo" alt="UniLocked"
   /></a>
   <button class="menu-button" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
@@ -22,8 +17,7 @@
     <mat-icon>rocket</mat-icon><br />
   </button>
   <form [formGroup]="searchForm" (ngSubmit)="search()">
-  <div class="navbar-search">
-   
+    <div class="navbar-search">
       <input
         formControlName="query"
         placeholder="Ara..."
@@ -31,32 +25,31 @@
         type="text"
       />
       <mat-icon class="navbar-icon">search</mat-icon>
-  
-  </div>
-</form>
+    </div>
+  </form>
   <button
     mat-icon-button
-    class="example-icon favorite-icon"
+    class="messages-icon"
     aria-label="Example icon-button with heart icon"
   >
     <mat-icon matBadge="1" matBadgeColor="primary">messages</mat-icon>
   </button>
   <button
     mat-icon-button
-    class="example-icon"
+    class="notifications-icon"
     aria-label="Example icon-button with share icon"
     routerLink="/notifications"
   >
     <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
   </button>
   <div class="user-area">
-    <img class="profile-image" [src]="auth.user.avatar" alt="" />
-    <div class="profile-texts" [matMenuTriggerFor]="menu">
-      <div class="username">
-        {{ auth.user.first_name }} {{ auth.user.last_name }}
-      </div>
-      <div class="school">TED Üniversitesi</div>
-    </div>
+    <img
+      class="profile-image"
+      [matMenuTriggerFor]="menu"
+      [src]="auth.user.avatar"
+      alt=""
+    />
+
     <mat-menu #menu="matMenu">
       <button
         [disabled]="auth.loading$ | async"

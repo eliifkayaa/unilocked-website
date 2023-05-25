@@ -1,0 +1,86 @@
+<mat-toolbar color="primary" style="padding: 0;">
+    <div class="mainLogo d-flex align-items-center justify-content-around">
+      <a class="logo-container" [routerLink]="['/home']">
+        <img [src]="logo | async" class="logo" alt="UniLocked"/>
+      </a>
+      <button class="menu-button" mat-icon-button (click)="admindrawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="menuList d-flex justify-content-between align-items-center" style="width: 80%;">
+      <div class="mainContent d-flex flex-column">
+        <span class="title">Ana Sayfa</span>
+        <span class="subtitle">Şirket profiliniz ile ilgili detayları görüntüleyin</span>
+      </div>
+      <div class="userContent d-flex">
+        <div class="job-area d-flex align-items-center">
+          <img
+            class="job-image"
+            src="https://1000logos.net/wp-content/uploads/2021/11/Logo-Turkcell-2048x1152.png"
+            alt="job-img"
+          />
+          <div class="jobInfo d-flex flex-column">
+            <p class="name d-flex align-items-center">
+              Turkcell
+              <mat-icon>
+                verified
+              </mat-icon>
+            </p>
+            <p class="type">
+              Şirket Profili
+            </p>
+          </div>
+        </div>
+        <div class="user-area">
+          <div class="userCard d-flex align-items-center" [matMenuTriggerFor]="menu">
+            <img
+              class="profile-image"
+              [src]="auth.user.avatar"
+              alt=""
+            />
+            <div class="userInfo d-flex flex-column">
+              <p class="name d-flex align-items-center">
+                Felya Varol
+                <mat-icon>
+                  verified
+                </mat-icon>
+              </p>
+              <p class="type">
+                Tam Erişim
+              </p>
+            </div>
+          </div>
+          
+      
+          <mat-menu #menu="matMenu">
+            <button
+              [disabled]="auth.loading$ | async"
+              (click)="logout()"
+              mat-menu-item
+            >
+              <mat-icon>logout</mat-icon>
+              <span>Çıkış Yap</span>
+            </button>
+      
+            <button
+              routerLink="/settings"
+              [disabled]="auth.loading$ | async"
+              mat-menu-item
+            >
+              <mat-icon>settings</mat-icon>
+              <span>Seçenekler</span>
+            </button>
+      
+            <button (click)="toggleDarkMode()" mat-menu-item>
+              <mat-icon>image</mat-icon>
+              <span>{{ theme.darkMode ? "Açık Tema" : "Koyu Tema" }}</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      
+    </div>
+  
+    
+  </mat-toolbar>
+  

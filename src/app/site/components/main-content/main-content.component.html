@@ -1,0 +1,15 @@
+<navbar [drawer]="drawer"></navbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer
+    class="mainMenu"
+    #drawer
+    style="width: 250px"
+    [mode]="(isMobile | async) ? 'over' : 'side'"
+    [opened]="!(isMobile | async)"
+  >
+    <main-menu></main-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

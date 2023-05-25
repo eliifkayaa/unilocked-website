@@ -4,6 +4,7 @@
 
 .home-area {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   .home-child {
@@ -11,6 +12,12 @@
     margin: 24px;
     max-width: 1200px;
     width: 100%;
+
+    .col-lg-4 {
+      @media screen and (max-width: 1200px) {
+        display: none !important;
+      }
+    }
 
     .home-panel {
       border-radius: 12px;

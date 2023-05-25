@@ -7,16 +7,12 @@
   margin-top: 4%;
 }
 
-
 .joined {
-  display: flex;
   margin-top: -2%;
-  justify-content: center;
-  align-items: center;
+
+  width: 100%;
 
   .community {
-    margin: 4% 16px 16px 16px;
-    max-width: 300px;
     position: relative;
     color: var(--text);
     padding: 0;
@@ -78,7 +74,6 @@
       }
 
       .name {
-        
         font-size: 16px;
         font-weight: 600;
         margin: 2px;
