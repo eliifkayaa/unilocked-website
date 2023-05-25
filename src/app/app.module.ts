@@ -15,7 +15,7 @@ import { LoggedIn } from '@common/auth/logged-in.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
