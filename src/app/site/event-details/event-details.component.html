@@ -1,0 +1,192 @@
+<main-content>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11 offset-sm-1">
+                <br>
+                <div class="container-commons">
+                    <mat-card class="analyzes">
+                        <h2>Analiz ve Öneriler</h2>
+                        <p class="special">
+                          <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
+                        </p>
+                        <div class="row">
+                          <div class="col-sm">
+                            <h4>
+                              <img src="./assets/img/avatar1.png" alt=""> <span>Arkadaşınız Elif Kemertaş bu etkinlikte konuşmacı</span>
+                            </h4>
+                            <p class="description">
+                                Elif proje programına göre 21 Mart 2023 tarihinde, 11:45 saatinde konuşmacı olarak etkinlikte bulunacak
+                            </p>
+                          </div>
+                          <div class="col-sm">
+                            <h4>
+                                <img src="./assets/img/teknokent.png" alt=""> <span>Bu etkinlik takip ettiğiniz Antalya Teknokent kurumu tarafından düzenleniyor</span>
+                            </h4>
+                            <p class="description">
+                                Antalya Teknokent kurumunun güncel etkinliklerinden haberdar olmak için kurum için bildirimleri açın
+                            </p>
+                          </div>
+                        </div>
+                    </mat-card>
+                </div>
+                <br>
+                <div class="container-about">
+                    <mat-card class="about">
+                        <h2>Hakkında</h2>
+                        <div class="row">
+                          <div class="col-sm">
+                            <p class="description">
+                                Lorem ipsum dolor sit amet consectetur. Ultricies consectetur sed sem dolor integer mauris nunc. Ultrices nec fermentum lectus ac nunc molestie a. Pharetra velit leo viverra ipsum sem fusce auctor sed metus. Nisi pharetra euismod et tristique. Aliquet odio in lacus tempus porttitor duis. Amet pellentesque ac vitae nunc blandit nibh in.
+                            </p>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet consectetur. Ultricies consectetur sed sem dolor integer mauris nunc. Ultrices nec fermentum lectus ac nunc molestie a. Pharetra velit leo viverra ipsum sem fusce auctor sed metus. Nisi pharetra euismod et tristique. Aliquet odio in lacus tempus porttitor duis. Amet pellentesque ac vitae nunc blandit nibh in.
+                            </p>
+                            <p class="continue">
+                                Okumaya devam et...
+                            </p>
+                          </div>
+                        </div>
+                    </mat-card>
+                </div>
+                <br>
+                <div class="container-sponsors">
+                    <div class="container">
+                      <div class="row">
+                        <div class="following-area">
+                          <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
+                          <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+                          <div class="followed row">
+                            <div class="d-flex community" *ngFor="let person of people">
+                              <img [src]="person.avatar" alt="" class="avatar"/>
+                              <div>
+                                <h3 class="name">{{ person.name }}</h3>
+                                <p class="short-desc">{{ person.shortDesc }}</p>
+                                
+                                <button
+                                  [ngStyle]="person.buttonStyle"
+                                  mat-raised-button
+                                  color="accent"
+                                  class="action mat-elevation-z0"
+                                >
+                                <mat-icon *ngIf="person.hasIcon">check</mat-icon> {{ person.follow }}&nbsp;
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <br>
+                <div class="container-highlights">
+                    <div class="container">
+                      <div class="row">
+                        <h2>Önerilen Gönderiler</h2>
+                        <a href="">Hepsini Gör</a>
+                      </div>
+                      <p>Staj ve iş başvuruları ile ilgili en iyi gönderiler. Doğru başvuru nasıl yapılır, meslek seçimi nasıl yapılır gibi önemli soruların cevaplarını profesyonellerden öğrenin.</p>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <mat-card class="example-card">
+                            <mat-card-header>
+                              <mat-card-title>Gönderi</mat-card-title>
+                            </mat-card-header>
+                            <img mat-card-image src="./assets/img/zoom.png" alt="Photo of Eric Lempel">
+                            <mat-card-content>
+                              <p>
+                                Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular,
+                                sporcular, sanatçılar ve şovmenlerden oluşan büyüyen 
+                                bir ağ olan PlayStation Playmaker'larla tanışın.
+                                
+                              </p>
+                              <h4>
+                                <img src="./assets/img/person1.png" alt=""> <span>Elif Kemertaş tarafından paylaşıldı</span>
+                            </h4>
+                            </mat-card-content>
+                          </mat-card>                      
+                        </div>
+                        <div class="col-sm-6">
+                          <mat-card class="example-card">
+                            <mat-card-header>
+                              <mat-card-title>Gönderi</mat-card-title>
+                            </mat-card-header>
+                            <img mat-card-image src="./assets/img/zoom.png" alt="Photo of a Playstation VR">
+                            <mat-card-content>
+                              <p>
+                                PlayStation VR2'nin bugün dünya çapında piyasaya sürülmesiyle yeni nesil sanal gerçeklik oyunları başlıyor.
+                                Özellikleri ve oyun dizisi hakkında daha fazla bilgi edinin:
+                                
+                              </p>
+                              <h4>
+                                <img src="./assets/img/person1.png" alt=""> <span>Elif Kemertaş tarafından paylaşıldı</span>
+                              </h4>
+                            </mat-card-content>
+                          </mat-card>   
+                          <br>                   
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <br>
+                <div class="container-sponsors">
+                    <div class="container">
+                      <div class="row">
+                        <div class="following-area">
+                          <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
+                          <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+                          <div class="followed row">
+                            <div class="d-flex community" *ngFor="let person of people">
+                              <img [src]="person.avatar" alt="" class="avatar"/>
+                              <div>
+                                <h3 class="name">{{ person.name }}</h3>
+                                <p class="short-desc">{{ person.shortDesc }}</p>
+                                <p class="details"><img [src]="person.logo" alt="" class="logo"/>{{ person.details }}</p>
+                                <button
+                                  [ngStyle]="person.buttonStyle"
+                                  mat-raised-button
+                                  color="accent"
+                                  class="action mat-elevation-z0"
+                                >
+                                <mat-icon *ngIf="person.hasIcon">check</mat-icon> {{ person.follow }}&nbsp;
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <br>
+                <div class="container-sponsors">
+                    <div class="container">
+                      <div class="row">
+                        <div class="following-area">
+                          <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
+                          <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+                          <div class="followed row">
+                            <div class="d-flex community" *ngFor="let person of people">
+                              <img [src]="person.avatar" alt="" class="avatar"/>
+                              <div>
+                                <h3 class="name">{{ person.name }}</h3>
+                                <p class="short-desc">{{ person.shortDesc }}</p>
+                                <p class="details"><img [src]="person.logo" alt="" class="logo"/>{{ person.details }}</p>  
+                                <button
+                                  [ngStyle]="person.buttonStyle"
+                                  mat-raised-button
+                                  color="accent"
+                                  class="action mat-elevation-z0"
+                                >
+                                <mat-icon *ngIf="person.hasIcon">check</mat-icon> {{ person.follow }}&nbsp;
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</main-content>

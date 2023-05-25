@@ -18,6 +18,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 
 import { CompanyComponent } from './company/company.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,8 @@ const routes: Routes = [
   { path : 'search', component: SearchResultsComponent, canActivate: [LoggedIn]},
 
   { path : 'job-posting', component: JobPostingComponent, canActivate: [LoggedIn]},
+
+  { path : 'event-details', component: EventDetailsComponent, canActivate: [LoggedIn]},
 
   { path: 'company', component: CompanyComponent, canActivate: [LoggedIn] },
 
