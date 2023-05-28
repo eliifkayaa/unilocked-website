@@ -3,6 +3,60 @@
         <div class="row">
             <div class="col-sm-11 offset-sm-1">
                 <br>
+                <div class="container-eventcard">
+                  <mat-card class="events-card" [ngClass]="color">
+                    <div class="color">
+                      
+                    </div>
+                    <div class="event">
+                      <mat-card-header class="eventTitle">
+                        <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+                      </mat-card-header>
+                        <mat-card-content class="eventContent">
+                            <div class="col-sm-6 first">
+                              
+                              <p>
+                                Antalya Teknokent ve farklabs iş birliği ile gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması" etkinliğine davetlisiniz.
+                              </p>
+                            </div>
+                            <div class="col-sm-6 second">
+                              <div class="creater">
+                                <div class="logos">
+                                    <img src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png">
+                                    <img src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png">
+                                </div>
+                                <p><b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından düzenleniyor</p>
+                            </div>
+                            <div class="date">
+                                <mat-icon>calendar_month</mat-icon>
+                                <p>21 Mart</p>
+                            </div>
+                            <div class="time">
+                                <mat-icon>schedule</mat-icon>
+                                <p>10:00</p>
+                            </div>
+                            <div class="location">
+                                <mat-icon>location_on</mat-icon>
+                                <p> Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu</p>
+                            </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions class="eventActions">
+                            <div class="description">
+                                <p>Unilocked Sanal Bilet</p>
+                            </div>
+                            <div class="buttons">
+                                <button mat-flat-button>
+                                    <mat-icon>done</mat-icon>
+                                    Katılıyorsunuz
+                                </button>
+                                <button mat-flat-button>Takvime Ekle</button>
+                            </div>
+                        </mat-card-actions>
+                    </div>
+                  </mat-card>
+                </div>
+                <br>
                 <div class="container-commons">
                     <mat-card class="analyzes">
                         <h2>Analiz ve Öneriler</h2>
@@ -346,26 +400,24 @@
                   </div>
                 </div>
                 <br>
-                <div class="container-sponsors">
+                <div class="container-sponsors-2">
                     <div class="container">
                       <div class="row">
                         <div class="following-area">
-                          <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
-                          <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+                          <h2>Konuşmacılar Ve Düzenleyenler<a href="">Hepsini Gör</a></h2>
                           <div class="followed row">
-                            <div class="d-flex community" *ngFor="let person of people">
-                              <img [src]="person.avatar" alt="" class="avatar"/>
+                            <div class="d-flex community" *ngFor="let human of humans">
+                              <img [src]="human.avatar" alt="" class="avatar"/>
                               <div>
-                                <h3 class="name">{{ person.name }}</h3>
-                                <p class="short-desc">{{ person.shortDesc }}</p>
-                                <p class="details"><img [src]="person.logo" alt="" class="logo"/>{{ person.details }}</p>
+                                <h3 class="name">{{ human.name }}</h3>
+                                <p class="short-desc">{{ human.shortDesc }}</p>
                                 <button
-                                  [ngStyle]="person.buttonStyle"
+                                  [ngStyle]="human.buttonStyle"
                                   mat-raised-button
                                   color="accent"
                                   class="action mat-elevation-z0"
                                 >
-                                <mat-icon *ngIf="person.hasIcon">check</mat-icon> {{ person.follow }}&nbsp;
+                                <mat-icon *ngIf="human.hasIcon">check</mat-icon> {{ human.follow }}&nbsp;
                                 </button>
                               </div>
                             </div>
@@ -375,27 +427,29 @@
                     </div>
                 </div>
                 <br>
-                <div class="container-sponsors">
+                <div class="container-sponsors-3">
                     <div class="container">
                       <div class="row">
                         <div class="following-area">
-                          <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
-                          <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+                          <h2>Katılımcılar <a href="">Hepsini Gör</a></h2>
+                          <p>Bu etkinlikte katılımcı sınırı yoktur.</p>
                           <div class="followed row">
-                            <div class="d-flex community" *ngFor="let person of people">
-                              <img [src]="person.avatar" alt="" class="avatar"/>
+                            <div class="d-flex community" *ngFor="let being of beings">
+                              <div class="col-sm-10" style="float: right;">
+                                <img [src]="being.avatar" alt="" class="avatar"/>
                               <div>
-                                <h3 class="name">{{ person.name }}</h3>
-                                <p class="short-desc">{{ person.shortDesc }}</p>
-                                <p class="details"><img [src]="person.logo" alt="" class="logo"/>{{ person.details }}</p>  
+                                <h3 class="name">{{ being.name }}</h3>
+                                <p class="short-desc">{{ being.shortDesc }}</p>
+                                <p class="details">{{ being.details }}</p>  
                                 <button
-                                  [ngStyle]="person.buttonStyle"
+                                  [ngStyle]="being.buttonStyle"
                                   mat-raised-button
                                   color="accent"
                                   class="action mat-elevation-z0"
                                 >
-                                <mat-icon *ngIf="person.hasIcon">check</mat-icon> {{ person.follow }}&nbsp;
+                                <mat-icon *ngIf="being.hasIcon">check</mat-icon> {{ being.follow }}&nbsp;
                                 </button>
+                              </div>
                               </div>
                             </div>
                           </div>
@@ -404,6 +458,27 @@
                     </div>
                 </div>
                 <br>
+                <div class="container-contact">
+                  <div class="container">
+                    <h4>İletişim</h4>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h5>internet Sitesi</h5>
+                        <p>www.antalyateknokent.com</p>
+                      </div>
+                      <div class="col-sm-6">
+                        <h5>E-posta</h5>
+                        <p>atek@antalyateknokent.com.tr</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h5>Adres</h5>
+                        <p>Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer Salonu<mat-icon>room</mat-icon></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
     </div>

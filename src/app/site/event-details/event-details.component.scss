@@ -15,6 +15,166 @@ body {
   }
 }  
 
+.container-eventcard{
+  .events-card {
+    padding: 0;
+    display: flex;
+    border: 1px solid rgb(223, 226, 230);
+    height: 90vh;
+    border-radius: 7px;
+
+    mat-card-title{
+      font-size: 32px;
+      font-weight: 600;
+      margin-left: -5px;
+    }
+    .first{
+      margin-top: 50px;
+      float: left;
+    }
+    .second{
+      float: right;
+    }
+
+    &.purple {
+      .color {
+        background-color: #7a59a4;
+      }
+      .mat-icon {
+        color: #7a59a4;
+      }
+    }
+    .color {
+      width: 5%;
+      height: 100%;
+      border-radius: 7px 0 0 7px;
+    }
+
+    //Başlığında img bulunan
+    .container {
+      padding: 0 !important;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        width: 100%;
+        height: 20%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .eventActions {
+        position: absolute;
+        width: 85%;
+        bottom: 0;
+      }
+    }
+
+    //Bulunmayan
+    .event {
+      width: 100%;
+      padding: 6% 4% 0 0;
+      border-radius: 0 7px 7px 0;
+
+      .eventTitle div {
+        margin: 0;
+      }
+      .eventContent {
+        margin-top: 5%;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+
+        .creater {
+          margin: 10% 0;
+          display: flex;
+          align-items: center;
+
+          .logos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+            height: 71px;
+            border: 1px solid rgba(73, 80, 87, 0.25);
+            border-radius: 2px;
+
+            img {
+              width: 100%;
+              height: 50%;
+
+              &:nth-child(1) {
+                border-bottom: 1px solid black;
+              }
+            }
+          }
+          p {
+            margin: 0 0 0 2%;
+          }
+        }
+        .date,
+        .time,
+        .location,
+        .participant {
+          display: flex;
+          align-items: center;
+          margin: 3% 0;
+
+          p {
+            width: 90%;
+            margin: 0 0 0 2%;
+          }
+        }
+      }
+      .eventActions {
+        position: absolute;
+        width: 85%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+
+        .description {
+          display: flex;
+          align-items: end;
+          color: #868e96;
+
+          p {
+            margin: 0;
+          }
+        }
+        .buttons {
+          display: flex;
+          flex-direction: column;
+
+          button {
+            display: flex;
+            justify-content: center;
+            border-radius: 7px;
+            font-weight: 600;
+            margin: 2% 0;
+
+            .mat-icon {
+              color: #fbfbfc;
+            }
+
+            &:nth-child(1) {
+              background: #4b53f2;
+              border: 1px solid #444bda;
+              color: #fbfbfc;
+            }
+            &:nth-child(2) {
+              background: #dbddfc;
+              border: 1px solid #c9cbfb;
+              color: #4b53f2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .container-commons{  
   background-color: var(--surface-2);
   margin-top: 20px;  
@@ -134,15 +294,169 @@ body {
     
       .followed {
         justify-content: space-between;
-        margin: 0 4% 4% 4%;
+        margin: 0 0 4% 4%;
         .community {
-          padding-right: 36px;
+          padding-right: 10px;
           margin-top: 36px;
+          margin-right: 60px;
           .avatar {
             width: 40px;
             height: 40px;
             border-radius: 4px;
             margin: 0px 16px 16px 16px;
+          }
+  
+          .logo{
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            margin-right: 5px;
+            margin-top: 5px;
+          }
+    
+          .name {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 2px;
+          }
+    
+          .short-desc {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--sub-text);
+            margin: 2px 2px 0px 2px;
+          }
+    
+        .details {
+          margin: 2px 0px 10px 0px;
+          color: var(--info-text);
+        }
+      }
+    }
+  }
+}
+
+.container-sponsors-2{
+  background-color: var(--surface-2);
+  border: 1px solid rgb(223, 226, 230);
+  border-radius: 7px;
+  margin-top: 20px;
+    
+  .following-area {
+      margin-top: 4%;
+      h2{
+        margin-left: 2.5rem;
+        a{
+          font-size: 14px;
+          text-decoration: none;
+          float: right;
+          margin-right: 4rem;
+          color: #5D64F3;
+          font-weight: 600;
+        }
+      }
+      p{
+        margin-left: 2.5rem;
+      }
+
+      button{
+        margin-top: 10px;
+        mat-icon{
+            width: 20px;
+            height: 20px;
+            margin-bottom: 8px;
+            margin-right: 2px;
+        }
+      }
+    
+      .followed {
+        justify-content: space-between;
+        margin: 0 0 4% 3%;
+        .community {
+          padding-right: 10px;
+          margin-top: 36px;
+          margin-right: 60px;
+          .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            margin: 0px 9px 16px 16px;
+          }
+  
+          .logo{
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            margin-right: 5px;
+            margin-top: 5px;
+          }
+    
+          .name {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 2px;
+          }
+    
+          .short-desc {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--sub-text);
+            margin: 2px 2px 0px 2px;
+          }
+    
+        .details {
+          margin: 2px 0px 10px 0px;
+          color: var(--info-text);
+        }
+      }
+    }
+  }
+}
+
+.container-sponsors-3{
+  background-color: var(--surface-2);
+  border: 1px solid rgb(223, 226, 230);
+  border-radius: 7px;
+  margin-top: 20px;
+    
+  .following-area {
+      margin-top: 4%;
+      h2{
+        margin-left: 2.5rem;
+        a{
+          font-size: 14px;
+          text-decoration: none;
+          float: right;
+          margin-right: 4rem;
+          color: #5D64F3;
+          font-weight: 600;
+        }
+      }
+      p{
+        margin-left: 2.5rem;
+      }
+
+      button{
+        margin-top: 10px;
+        mat-icon{
+            width: 20px;
+            height: 20px;
+            margin-bottom: 8px;
+            margin-right: 2px;
+        }
+      }
+    
+      .followed {
+        justify-content: space-between;
+        margin: 0 0 4% 4%;
+        .community {
+          padding-right: 1px;
+          margin-top: 36px;
+          .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            margin: 0px 8px 16px 3px;
           }
   
           .logo{
@@ -301,6 +615,30 @@ body {
         font-size: 14px;
         font-weight: 300;
       }
+    }
+  }
+}
+
+.container-contact{
+  border: 1px solid rgb(223, 226, 230);
+  border-radius: 7px;
+  background-color: var(--surface-2);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .container{
+    margin: 20px 16px 20px 20px;
+
+    h4{
+      font-size: 24px;
+      font-weight: 600;
+    }
+    h5,p{
+      font-size: 14px;
+      font-weight: 400;
+    }
+    mat-icon{
+      font-size: 20px;
+      margin-top: -10px;
     }
   }
 }

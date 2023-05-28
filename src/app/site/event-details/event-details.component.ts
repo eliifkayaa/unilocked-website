@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'event-details',
@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-details.component.scss']
 })
 export class EventDetailsComponent {
+
+  @Input('icon') icon:string
+  @Input('color') color:string
+
+  @Input('title') title:string
+  @Input('text') text:string
+  @Input('buttonText') buttonText:string
+  @Output('buttonClick') buttonClick = new EventEmitter()
 
   public person1 = {
     name: "Halil Nuroğlu",
@@ -78,11 +86,11 @@ export class EventDetailsComponent {
     this.person4
   ];
 
-  public person5 = {
+  public human1 = {
     name: "Halil Nuroğlu",
     backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/turkcell-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
+    avatar: "assets/img/avatar1.png",
+    shortDesc: "Konuşmacı • 21 Mart 2023 - 14:00",
     buttonStyle: {
       borderStyle: "none",
       backgroundColor: "#444BDA",
@@ -92,116 +100,124 @@ export class EventDetailsComponent {
     follow: "Takip Et",
   };
   
-  public person6 = {
-    name: "Elif Kemertaş",
+  public human2 = {
+    name: "Felya Varol",
     backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/turkcell-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
+    avatar: "assets/img/avatar3.png",
+    shortDesc: "Etkinlik Düzenleyicisi",
     buttonStyle: {
       borderStyle: "none",
       backgroundColor: "#c9cbfb",
       color: "#4b53f2",
     },
     hasIcon: true,
-    follow: "Takip Ediliyor",
+    follow: "Takip Ediliyor"
   };
   
-  public person7 = {
-    name: "Elif Kemertaş",
+  public human3 = {
+    name: "Abdullah Ustaömeroğlu",
     backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/warner-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
+    avatar: "assets/img/avatar2.png",
+    shortDesc: "Konuşmacı ve Etkinlik Düzenleyicisi • 21 Mart 2023 - 10:05",
     buttonStyle: {
       borderStyle: "none",
       backgroundColor: "#c9cbfb",
       color: "#4b53f2",
     },
     hasIcon: true,
+    details: "Arçelik kurumunda çalışıyor",
     follow: "Takip Ediliyor",
+    logo: "assets/img/arcelik-logo.png"
   };
   
-  public person8 = {
-    name: "Elif Kemertaş",
-    backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/turkcell-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
-    buttonStyle: {
-      borderStyle: "none",
-      backgroundColor: "#444BDA",
-      color: "#fff",
-    },
-    hasIcon: false,
-    follow: "Takip Et",
-  };
-  
-  public people2 = [
-    this.person5,
-    this.person6,
-    this.person7,
-    this.person8
-  ];
-
-  public person9 = {
-    name: "Halil Nuroğlu",
-    backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/turkcell-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
-    buttonStyle: {
-      borderStyle: "none",
-      backgroundColor: "#444BDA",
-      color: "#fff",
-    },
-    hasIcon: false,
-    follow: "Takip Et",
-  };
-  
-  public person10 = {
-    name: "Elif Kemertaş",
-    backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/turkcell-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
-    buttonStyle: {
-      borderStyle: "none",
-      backgroundColor: "#c9cbfb",
-      color: "#4b53f2",
-    },
-    hasIcon: true,
-    follow: "Takip Ediliyor",
-  };
-  
-  public person11 = {
-    name: "Elif Kemertaş",
-    backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/warner-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
-    buttonStyle: {
-      borderStyle: "none",
-      backgroundColor: "#c9cbfb",
-      color: "#4b53f2",
-    },
-    hasIcon: true,
-    follow: "Takip Ediliyor",
-  };
-  
-  public person12 = {
+  public human4 = {
     name: "Kathryn Murphy",
     backdrop: "assets/img/person1-back.png",
-    avatar: "assets/img/turkcell-logo.png",
-    shortDesc: "16.747 Takipçi • İletişim Sektörü Şirketi",
+    avatar: "assets/img/avatar4.png",
+    shortDesc: "Etkinlik Düzenleyicisi",
     buttonStyle: {
       borderStyle: "none",
       backgroundColor: "#444BDA",
       color: "#fff",
     },
     hasIcon: false,
+    details: "Arçelik kurumunda çalışıyor",
+    follow: "Takip Et",
+    logo: "assets/img/arcelik-logo.png"
+  };
+  
+  public humans = [
+    this.human1,
+    this.human2,
+    this.human3,
+    this.human4
+  ];
+
+  public being1 = {
+    name: "Halil Nuroğlu",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar1.png",
+    shortDesc: "PlayStation Türkiye • İnsan Kaynakları Yöneticisi",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#444BDA",
+      color: "#fff",
+    },
+    hasIcon: false,
+    details: "İktisadi ve İdari Bilimler Fakültesi • İktisat Bölümü • 2016 - 2020",
     follow: "Takip Et",
   };
   
-  public people3 = [
-    this.person5,
-    this.person6,
-    this.person7,
-    this.person8
+  public being2 = {
+    name: "Felya Varol",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar3.png",
+    shortDesc: "Turkcell • Software Developer",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#c9cbfb",
+      color: "#4b53f2",
+    },
+    hasIcon: true,
+    details: "Mühendislik Fakültesi • Bilgisayar Mühendisliği Bölümü • 2013 - 2018",
+    follow: "Takip Et"
+  };
+  
+  public being3 = {
+    name: "Abdullah Ustaömeroğlu",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar2.png",
+    shortDesc: "Adobe • UI Designer",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#c9cbfb",
+      color: "#4b53f2",
+    },
+    hasIcon: true,
+    details: "Mühendislik Fakültesi • Bilgisayar Mühendisliği Bölümü • 2002 - 2007",
+    follow: "Takip Et"
+  };
+  
+  public being4 = {
+    name: "Kathryn Murphy",
+    backdrop: "assets/img/person1-back.png",
+    avatar: "assets/img/avatar4.png",
+    shortDesc: "Turkcell • İnsan Kaynakları Yöneticisi",
+    buttonStyle: {
+      borderStyle: "none",
+      backgroundColor: "#444BDA",
+      color: "#fff",
+    },
+    hasIcon: false,
+    details: "İktisadi ve İdari Bilimler Fakültesi • İktisat Bölümü • 2010 - 2014",
+    follow: "Takip Et"
+  };
+  
+  public beings = [
+    this.being1,
+    this.being2,
+    this.being3,
+    this.being4
   ];
 
 }
