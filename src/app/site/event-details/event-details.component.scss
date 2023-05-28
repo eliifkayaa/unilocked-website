@@ -175,6 +175,7 @@ body {
     }
   }
 }
+
 .container-commons{  
   background-color: var(--surface-2);
   margin-top: 20px;  
@@ -564,6 +565,10 @@ body {
   border: 1px solid rgb(223, 226, 230);
   border-radius: 7px;
   background-color: var(--surface-2);
+
+  .container{
+    margin: 10px 10px 0px 10px;
+  }
 
   .col-sm-4,.col-sm-8,.col-sm-9{
     margin-top: 30px;
