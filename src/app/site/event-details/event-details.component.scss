@@ -183,17 +183,59 @@ body {
   .analyzes {
     border: 1px solid rgb(223, 226, 230);
     margin-top: 2%;
+
+    .link{
+      float: inline-end;
+      margin-right: 50px;
+      color: #444bda;
+      font-size: 14px;
+    }
     
+    .special{
+      color: #5D64F3;
+      margin-top: 10px;
+      display: flex;
+    }
+
     .col-sm {
       mat-icon {
         color: #5d64f3;
-        background-color: #edeefe;
         border-radius: 50%;
         padding: 4px;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         font-size: 20px;
+      }
+
+      img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+
+      .second-button{
+        margin-left: 4rem;
+        margin-bottom: 20px;
+        float: left;
+        margin-top: 10px;
+        background-color: #4B53F2;
+        color: #fff;
+        mat-icon{
+          color: #fff;
+        }
+      }
+
+      button{
+        margin-left: 4rem;
+        float: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        background-color: #C9CBFB;
+        color: #4B53F2;
+        mat-icon{
+          color: #4B53F2;
+        }
       }
     }
     
