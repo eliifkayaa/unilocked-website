@@ -8,7 +8,6 @@ body {
 .container {
   overflow-x: hidden;
   max-width: 1200px;
-  margin: 0 auto;
   
   mat-card {
     border-radius: 10px;
@@ -19,7 +18,6 @@ body {
   .events-card {
     padding: 0;
     display: flex;
-    border: 1px solid rgb(223, 226, 230);
     height: 90vh;
     border-radius: 7px;
 

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppThemeService {
 
-   
+  public changed$ = new BehaviorSubject<boolean>(this.darkMode); 
   private get localStorageAvaible() : boolean {
     try {
       localStorage.setItem('test', 'test');
@@ -28,6 +29,7 @@ export class AppThemeService {
   public set darkMode(value: boolean) {
     if (this.localStorageAvaible) {
       localStorage.setItem('darkMode', value.toString());
+      this.changed$.next(value);
     }
   }
 
