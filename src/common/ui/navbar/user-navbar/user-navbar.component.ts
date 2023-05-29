@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@common/auth/auth.service';
 import { AppThemeService } from '@common/ui/theming/app-theme.service';
-import { Observable, map } from 'rxjs';
+import { Observable, map, mapTo } from 'rxjs';
 
 @Component({
   selector: 'user-navbar',
@@ -29,11 +29,11 @@ export class UserNavbarComponent implements OnInit {
       if (isMobile) {
         observer.next('assets/img/logo-mobile.png');
       } else {
-        observer.next(
-          this.theme.darkMode
-            ? 'assets/img/logo-white.png'
-            : 'assets/img/logo.png'
-        );
+        this.theme.changed$.subscribe((darkMode) => {
+          observer.next(
+            darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'
+          );
+        });
       }
     });
   });
@@ -43,7 +43,7 @@ export class UserNavbarComponent implements OnInit {
   });
 
   public isMobile = this.breakPointObserver
-    .observe("(max-width: 800px)")
+    .observe('(max-width: 800px)')
     .pipe(map((result) => result.matches));
 
   public logout() {

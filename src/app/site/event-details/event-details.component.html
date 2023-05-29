@@ -1,0 +1,552 @@
+<main-content>
+  <div class="container">
+      <br />
+      <div class="container-eventcard">
+        <mat-card class="events-card" [ngClass]="color">
+          <div class="color"></div>
+          <div class="event">
+            <mat-card-header class="eventTitle">
+              <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="eventContent">
+              <div class="col-sm-6 first">
+                <p>
+                  Antalya Teknokent ve farklabs iş birliği ile
+                  gerçekleştirilecek olan "Girişimci Yatırımcı Buluşması"
+                  etkinliğine davetlisiniz.
+                </p>
+              </div>
+              <div class="col-sm-6 second">
+                <div class="creater">
+                  <div class="logos">
+                    <img
+                      src="https://www.karayeltasarim.com/Upload/File/2020/4/30/atek.png"
+                    />
+                    <img
+                      src="https://www.farklabs.com/wp-content/uploads/2022/04/fark-labs-logo-200x200-1.png"
+                    />
+                  </div>
+                  <p>
+                    <b>Antalya Teknokent</b> ve <b>farklabs</b> tarafından
+                    düzenleniyor
+                  </p>
+                </div>
+                <div class="date">
+                  <mat-icon>calendar_month</mat-icon>
+                  <p>21 Mart</p>
+                </div>
+                <div class="time">
+                  <mat-icon>schedule</mat-icon>
+                  <p>10:00</p>
+                </div>
+                <div class="location">
+                  <mat-icon>location_on</mat-icon>
+                  <p>
+                    Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer
+                    Salonu
+                  </p>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions class="eventActions">
+              <div class="description">
+                <p>Unilocked Sanal Bilet</p>
+              </div>
+              <div class="buttons">
+                <button mat-flat-button>
+                  <mat-icon>done</mat-icon>
+                  Katılıyorsunuz
+                </button>
+                <button mat-flat-button>Takvime Ekle</button>
+              </div>
+            </mat-card-actions>
+          </div>
+        </mat-card>
+      </div>
+      <br />
+      <div class="container-commons">
+        <mat-card class="analyzes">
+          <h2>Analiz ve Öneriler<a class="link">Hepsini Gör</a></h2>
+          <p class="special">
+            <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
+          </p>
+          <div class="row">
+            <div class="col-sm">
+              <h4>
+                <img src="./assets/img/person1.png" alt="" />
+                <span>Arkadaşınız Elif Kemertaş bu etkinlikte konuşmacı</span>
+              </h4>
+              <p class="description">
+                Elif proje programına göre 21 Mart 2023 tarihinde, 11:45
+                saatinde konuşmacı olarak etkinlikte bulunacak
+              </p>
+              <button mat-flat-button color="primary">
+                Mesaj <mat-icon>send</mat-icon>
+              </button>
+            </div>
+            <div class="col-sm">
+              <h4>
+                <img src="./assets/img/teknokent.png" alt="" />
+                <span
+                  >Bu etkinlik takip ettiğiniz Antalya Teknokent kurumu
+                  tarafından düzenleniyor</span
+                >
+              </h4>
+              <p class="description">
+                Antalya Teknokent kurumunun güncel etkinliklerinden haberdar
+                olmak için kurum için bildirimleri açın
+              </p>
+              <button mat-flat-button color="primary" class="second-button">
+                <mat-icon>notifications</mat-icon>Kurum İçin Bildirimleri Aç
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <br />
+      <div class="container-about">
+        <mat-card class="about">
+          <h2>Hakkında</h2>
+          <div class="row">
+            <div class="col-sm">
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur. Ultricies consectetur
+                sed sem dolor integer mauris nunc. Ultrices nec fermentum lectus
+                ac nunc molestie a. Pharetra velit leo viverra ipsum sem fusce
+                auctor sed metus. Nisi pharetra euismod et tristique. Aliquet
+                odio in lacus tempus porttitor duis. Amet pellentesque ac vitae
+                nunc blandit nibh in.
+              </p>
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur. Ultricies consectetur
+                sed sem dolor integer mauris nunc. Ultrices nec fermentum lectus
+                ac nunc molestie a. Pharetra velit leo viverra ipsum sem fusce
+                auctor sed metus. Nisi pharetra euismod et tristique. Aliquet
+                odio in lacus tempus porttitor duis. Amet pellentesque ac vitae
+                nunc blandit nibh in.
+              </p>
+              <p class="continue">Okumaya devam et...</p>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <br />
+      <div class="container-sponsors">
+        <div class="container">
+          <div class="row">
+            <div class="following-area">
+              <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
+              <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
+              <div class="followed row">
+                <div class="d-flex community" *ngFor="let person of people">
+                  <img [src]="person.avatar" alt="" class="avatar" />
+                  <div>
+                    <h3 class="name">{{ person.name }}</h3>
+                    <p class="short-desc">{{ person.shortDesc }}</p>
+
+                    <button
+                      [ngStyle]="person.buttonStyle"
+                      mat-raised-button
+                      color="accent"
+                      class="action mat-elevation-z0"
+                    >
+                      <mat-icon *ngIf="person.hasIcon">check</mat-icon>
+                      {{ person.follow }}&nbsp;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container-highlights">
+        <div class="container">
+          <div class="row">
+            <h2>Önerilen Gönderiler</h2>
+            <a href="">Hepsini Gör</a>
+          </div>
+          <p>
+            Staj ve iş başvuruları ile ilgili en iyi gönderiler. Doğru başvuru
+            nasıl yapılır, meslek seçimi nasıl yapılır gibi önemli soruların
+            cevaplarını profesyonellerden öğrenin.
+          </p>
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Gönderi</mat-card-title>
+                </mat-card-header>
+                <img
+                  mat-card-image
+                  src="./assets/img/zoom.png"
+                  alt="Photo of Eric Lempel"
+                />
+                <mat-card-content>
+                  <p>
+                    Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik
+                    oluşturucular, sporcular, sanatçılar ve şovmenlerden oluşan
+                    büyüyen bir ağ olan PlayStation Playmaker'larla tanışın.
+                  </p>
+                  <h4>
+                    <img src="./assets/img/person1.png" alt="" />
+                    <span>Elif Kemertaş tarafından paylaşıldı</span>
+                  </h4>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-sm-6">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Gönderi</mat-card-title>
+                </mat-card-header>
+                <img
+                  mat-card-image
+                  src="./assets/img/zoom.png"
+                  alt="Photo of a Playstation VR"
+                />
+                <mat-card-content>
+                  <p>
+                    PlayStation VR2'nin bugün dünya çapında piyasaya
+                    sürülmesiyle yeni nesil sanal gerçeklik oyunları başlıyor.
+                    Özellikleri ve oyun dizisi hakkında daha fazla bilgi edinin:
+                  </p>
+                  <h4>
+                    <img src="./assets/img/person1.png" alt="" />
+                    <span>Elif Kemertaş tarafından paylaşıldı</span>
+                  </h4>
+                </mat-card-content>
+              </mat-card>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container-schedule">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4" style="border-right: 1px solid #dee2e6">
+              <p class="event-program">Etkinlik Programı</p>
+              <h4 class="time">10:00</h4>
+              <p class="topic">Açılış</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">5 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px">Konuşmacı</span>
+            </div>
+            <div class="col-sm-4" style="border-right: 1px solid #dee2e6">
+              <h4 class="time-2">10:05</h4>
+              <p class="topic">Günümüz Teknolojileri</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">1 Saat 10 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px">Konuşmacı</span>
+            </div>
+            <div class="col-sm-4">
+              <h4 class="time-2">11:15</h4>
+              <p class="topic">Girişimciler ve Teknoloji</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">1 Saat 15 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px">Konuşmacı</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4" style="border-right: 1px solid #dee2e6">
+              <h4 class="time-2">12:30 - 14:00</h4>
+              <p class="topic">Öğle Arası</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">1 Saat 30 Dakika</p>
+            </div>
+            <div class="col-sm-8">
+              <h4 class="time-2">10:05</h4>
+              <p class="topic">Günümüz Teknolojileri</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">1 Saat 10 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img
+                  src="./assets/img/turkcell-logo.png"
+                  alt=""
+                  style="border-radius: 3px"
+                />
+                <span style="font-weight: 600">Turkcell</span>
+              </h4>
+              <span>Konuşma Sponsoru</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4" style="border-right: 1px solid #dee2e6">
+              <h4 class="time" style="margin-top: 55px">14:50</h4>
+              <p class="topic">Günümüz Teknolojileri</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">35 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px">Konuşmacı</span>
+            </div>
+            <div class="col-sm-4" style="border-right: 1px solid #dee2e6">
+              <h4 class="time-2">15:25</h4>
+              <p class="topic">Günümüz Teknolojileri</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">45 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px">Konuşmacı</span>
+            </div>
+            <div class="col-sm-4">
+              <h4 class="time-2">16:10</h4>
+              <p class="topic">Girişimciler ve Teknoloji</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">45 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px">Konuşmacı</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8" style="border-right: 1px solid #dee2e6">
+              <h4 class="time-2">16:55</h4>
+              <p class="topic">Günümüz Teknolojileri</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">1 Saat 10 Dakika</p>
+              <h4>
+                <img src="./assets/img/avatar1.png" alt="" />
+                <span style="font-weight: 600">Halil Nuroğlu</span>
+              </h4>
+              <span style="margin-left: -90px; margin-right: 50px"
+                >Konuşmacı</span
+              >
+              <h4>
+                <img
+                  src="./assets/img/turkcell-logo.png"
+                  alt=""
+                  style="border-radius: 3px"
+                />
+                <span style="font-weight: 600">Turkcell</span>
+              </h4>
+              <span>Konuşma Sponsoru</span>
+              <h4>
+                <img
+                  src="./assets/img/turkcell-logo.png"
+                  alt=""
+                  style="border-radius: 3px"
+                />
+                <span style="font-weight: 600">Turkcell</span>
+              </h4>
+              <span>Konuşma Sponsoru</span>
+            </div>
+            <div class="col-sm-4">
+              <h4 class="time-2">18:00</h4>
+              <p class="topic">Kapanış Konuşması</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet consectetur. Diam massa amet sit
+                convallis sem tellus. Id suspendisse dolor blandit et a.
+              </p>
+              <p class="minute">1 Saat 30 Dakika</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container-sponsors-2">
+        <div class="container">
+          <div class="row">
+            <div class="following-area">
+              <h2>Konuşmacılar Ve Düzenleyenler<a href="">Hepsini Gör</a></h2>
+              <div class="followed row">
+                <div class="d-flex community" *ngFor="let human of humans">
+                  <img [src]="human.avatar" alt="" class="avatar" />
+                  <div>
+                    <h3 class="name">{{ human.name }}</h3>
+                    <p class="short-desc">{{ human.shortDesc }}</p>
+                    <button
+                      [ngStyle]="human.buttonStyle"
+                      mat-raised-button
+                      color="accent"
+                      class="action mat-elevation-z0"
+                    >
+                      <mat-icon *ngIf="human.hasIcon">check</mat-icon>
+                      {{ human.follow }}&nbsp;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container-sponsors-3">
+        <div class="container">
+          <div class="row">
+            <div class="following-area">
+              <h2>Katılımcılar <a href="">Hepsini Gör</a></h2>
+              <p>Bu etkinlikte katılımcı sınırı yoktur.</p>
+              <div class="followed row">
+                <div class="d-flex community" *ngFor="let being of beings">
+                  <div class="col-sm-10" style="float: right">
+                    <img [src]="being.avatar" alt="" class="avatar" />
+                    <div>
+                      <h3 class="name">{{ being.name }}</h3>
+                      <p class="short-desc">{{ being.shortDesc }}</p>
+                      <p class="details">{{ being.details }}</p>
+                      <button
+                        [ngStyle]="being.buttonStyle"
+                        mat-raised-button
+                        color="accent"
+                        class="action mat-elevation-z0"
+                      >
+                        <mat-icon *ngIf="being.hasIcon">check</mat-icon>
+                        {{ being.follow }}&nbsp;
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container-contact">
+        <div class="container">
+          <h4>İletişim</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>internet Sitesi</h5>
+              <p>www.antalyateknokent.com</p>
+            </div>
+            <div class="col-sm-6">
+              <h5>E-posta</h5>
+              <p>atek@antalyateknokent.com.tr</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <h5>Adres</h5>
+              <p>
+                Antalya Teknokent Ar-Ge 2 Uluğbey Binası Büyük Seminer
+                Salonu<mat-icon>room</mat-icon>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main-content>
