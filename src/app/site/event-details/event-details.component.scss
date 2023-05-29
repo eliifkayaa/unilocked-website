@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 body {
-    font-family: "Poppins", sans-serif;
-    padding: 20px;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
 }
 
 .container {
   overflow-x: hidden;
-  max-width: 1200px;
+  max-width: 1000px;
   
   mat-card {
     border-radius: 10px;
@@ -15,23 +15,43 @@ body {
 }  
 
 .container-eventcard{
+  margin-top: 20px;
   .events-card {
     padding: 0;
     display: flex;
-    height: 90vh;
+    height: 120vh;
     border-radius: 7px;
+
+    .title-image {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 104.2%;
+      border-radius: 7px 7px 0 0;
+      overflow-x: hidden;
+      height: 40%;
+      object-fit: cover; 
+      margin-top: -68px;
+      margin-bottom: 20px;
+    }
+    mat-card-header{
+      margin-left: 20px;
+    }
+    mat-card-content{
+      margin-left: 20px;
+    }
 
     mat-card-title{
       font-size: 32px;
       font-weight: 600;
-      margin-left: -5px;
     }
     .first{
-      margin-top: 50px;
+      margin-top: 20px;
       float: left;
     }
     .second{
       float: right;
+      margin-top: -30px;
     }
 
     &.purple {
@@ -43,9 +63,11 @@ body {
       }
     }
     .color {
-      width: 5%;
-      height: 100%;
-      border-radius: 7px 0 0 7px;
+      width: 104.2%;
+      height: 5%;
+      margin-top: -30px;
+      margin-bottom: 30px;
+      background-color: #7a59a4;
     }
 
     //Başlığında img bulunan
@@ -139,7 +161,7 @@ body {
           color: #868e96;
 
           p {
-            margin: 0;
+            margin-left: 30px;
           }
         }
         .buttons {
@@ -179,8 +201,14 @@ body {
   margin-top: 20px;  
 
   .analyzes {
-    border: 1px solid rgb(223, 226, 230);
+    
     margin-top: 2%;
+    padding: 30px;
+
+    h2{
+      font-size: 24px;
+      font-weight: 600;
+    }
 
     .link{
       float: inline-end;
@@ -259,11 +287,16 @@ body {
 .container-about{
     background-color: var(--surface-2);
     margin-top: 20px;  
+    mat-card{
+      padding: 30px;
+    }
     
     .about {
-      border: 1px solid rgb(223, 226, 230);
         margin-top: 2%;
-    
+        h2{
+          font-size: 24px;
+          font-weight: 600;
+        }
         .col-sm {
           mat-icon {
             color: #5d64f3;
@@ -302,14 +335,16 @@ body {
 
 .container-sponsors{
   background-color: var(--surface-2);
-  border: 1px solid rgb(223, 226, 230);
   border-radius: 7px;
   margin-top: 20px;
     
   .following-area {
-      margin-top: 4%;
+      margin-top: 2%;
+      padding: 15px;
       h2{
-        margin-left: 2.5rem;
+        margin-left: 1.5rem;
+        font-size: 24px;
+        font-weight: 600;
         a{
           font-size: 14px;
           text-decoration: none;
@@ -379,14 +414,16 @@ body {
 
 .container-sponsors-2{
   background-color: var(--surface-2);
-  border: 1px solid rgb(223, 226, 230);
   border-radius: 7px;
   margin-top: 20px;
     
   .following-area {
-      margin-top: 4%;
+      margin-top: 2%;
+      padding: 15px;
       h2{
-        margin-left: 2.5rem;
+        margin-left: 1.5rem;
+        font-size: 24px;
+        font-weight: 600;
         a{
           font-size: 14px;
           text-decoration: none;
@@ -456,7 +493,6 @@ body {
 
 .container-sponsors-3{
   background-color: var(--surface-2);
-  border: 1px solid rgb(223, 226, 230);
   border-radius: 7px;
   margin-top: 20px;
     
@@ -464,6 +500,8 @@ body {
       margin-top: 4%;
       h2{
         margin-left: 2.5rem;
+        font-size: 24px;
+        font-weight: 600;
         a{
           font-size: 14px;
           text-decoration: none;
@@ -533,14 +571,17 @@ body {
 .container-highlights{
   margin-top: 20px;
   .container{
+    padding: 20px;
     margin-top: 20px; 
     border-radius: 7px;
     background-color: var(--surface-2);
-    border: 1px solid rgb(223, 226, 230);
+
+    .heading{
+      margin-bottom: -20px;
+    }
 
     h2{
       color: var(--text);
-      font-family: "Poppins",sans-serif;
       font-size: 24px;
       font-weight: 600;
       margin: 20px 20px;
@@ -548,11 +589,12 @@ body {
     a{
       float: right;
       text-align: end;
-      margin: 25px;
+      margin-bottom: 50px;
       text-decoration: none;
-      margin-left: 600px;
+      margin-left: 555px;
       color: #5D64F3;
       font-weight: 600;
+      font-size: 14px;
     }
     p{
       font-size: 16px;
@@ -602,7 +644,6 @@ body {
 }
 
 .container-schedule{
-  border: 1px solid rgb(223, 226, 230);
   border-radius: 7px;
   background-color: var(--surface-2);
 
@@ -665,15 +706,15 @@ body {
 }
 
 .container-contact{
-  border: 1px solid rgb(223, 226, 230);
   border-radius: 7px;
   background-color: var(--surface-2);
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   .container{
     margin: 20px 16px 20px 20px;
 
     h4{
+      margin-top: 20px;
       font-size: 24px;
       font-weight: 600;
     }

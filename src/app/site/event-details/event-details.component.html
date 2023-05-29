@@ -3,10 +3,13 @@
       <br />
       <div class="container-eventcard">
         <mat-card class="events-card" [ngClass]="color">
-          <div class="color"></div>
           <div class="event">
+            <img src="./assets/img/Event IMG.png" alt="Image" class="title-image">
+            <div class="color"></div>
             <mat-card-header class="eventTitle">
-              <mat-card-title>Antalya Teknokent Demoday</mat-card-title>
+              <mat-card-title>
+                Antalya Teknokent Demoday
+              </mat-card-title>
             </mat-card-header>
             <mat-card-content class="eventContent">
               <div class="col-sm-6 first">
@@ -86,7 +89,7 @@
             </div>
             <div class="col-sm">
               <h4>
-                <img src="./assets/img/teknokent.png" alt="" />
+                <img src="./assets/img/teknokent.png" alt="" style="border-radius: 3px;" />
                 <span
                   >Bu etkinlik takip ettiğiniz Antalya Teknokent kurumu
                   tarafından düzenleniyor</span
@@ -135,7 +138,7 @@
         <div class="container">
           <div class="row">
             <div class="following-area">
-              <h2>Önerilen kişiler <a href="">Hepsini Gör</a></h2>
+              <h2>Etkinlik Sponsorları <a href="">Hepsini Gör</a></h2>
               <p>Unilocked’a ilan ekleyen popüler profesyoneller.</p>
               <div class="followed row">
                 <div class="d-flex community" *ngFor="let person of people">
@@ -163,9 +166,8 @@
       <br />
       <div class="container-highlights">
         <div class="container">
-          <div class="row">
-            <h2>Önerilen Gönderiler</h2>
-            <a href="">Hepsini Gör</a>
+          <div class="row heading">
+            <h2>Öne Çıkarılan İçerikler<a href="">Hepsini Gör</a></h2>    
           </div>
           <p>
             Staj ve iş başvuruları ile ilgili en iyi gönderiler. Doğru başvuru
@@ -529,7 +531,7 @@
           <h4>İletişim</h4>
           <div class="row">
             <div class="col-sm-6">
-              <h5>internet Sitesi</h5>
+              <h5>İnternet Sitesi</h5>
               <p>www.antalyateknokent.com</p>
             </div>
             <div class="col-sm-6">
