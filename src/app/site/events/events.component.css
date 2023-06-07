@@ -1,0 +1,66 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  border-bottom: 0.1px solid #dee2e6;
+  margin-top: 4%;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.content {
+  margin-top: 4%;
+}
+
+.joined {
+  display: flex;
+  margin-bottom: 2%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+event-card {
+  margin-top: 16px;
+}
+
+.suggested-area,
+.upcoming-area,
+.past-area {
+  margin-top: 5%;
+}
+.suggested-area .joined,
+.upcoming-area .joined,
+.past-area .joined {
+  justify-content: start;
+}
+.suggested-area .joined .row,
+.upcoming-area .joined .row,
+.past-area .joined .row {
+  display: inline-block !important;
+}
+.suggested-area .joined .row .col,
+.upcoming-area .joined .row .col,
+.past-area .joined .row .col {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.suggested-area .joined .row .col .events-card,
+.upcoming-area .joined .row .col .events-card,
+.past-area .joined .row .col .events-card {
+  width: 50% !important;
+  height: 80vh;
+  margin-bottom: 3% !important;
+}
+.suggested-area .joined .row .col .events-card .eventContent,
+.upcoming-area .joined .row .col .events-card .eventContent,
+.past-area .joined .row .col .events-card .eventContent {
+  margin-bottom: 0 !important;
+}
+.suggested-area .joined .row .col .events-card .eventContent .creater,
+.upcoming-area .joined .row .col .events-card .eventContent .creater,
+.past-area .joined .row .col .events-card .eventContent .creater {
+  margin: 5% 0;
+}/*# sourceMappingURL=events.component.css.map */

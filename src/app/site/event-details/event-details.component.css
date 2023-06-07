@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+.container {
+  overflow-x: hidden;
+  max-width: 1000px;
+}
+.container mat-card {
+  border-radius: 10px;
+}
+
+.container-eventcard {
+  margin-top: 20px;
+}
+.container-eventcard .events-card {
+  padding: 0;
+  display: flex;
+  height: 120vh;
+  border-radius: 7px;
+}
+.container-eventcard .events-card .title-image {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 104.2%;
+  border-radius: 7px 7px 0 0;
+  overflow-x: hidden;
+  height: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -68px;
+  margin-bottom: 20px;
+}
+.container-eventcard .events-card mat-card-header {
+  margin-left: 20px;
+}
+.container-eventcard .events-card mat-card-content {
+  margin-left: 20px;
+}
+.container-eventcard .events-card mat-card-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+.container-eventcard .events-card .first {
+  margin-top: 20px;
+  float: left;
+}
+.container-eventcard .events-card .second {
+  float: right;
+  margin-top: -30px;
+}
+.container-eventcard .events-card.purple .color {
+  background-color: #7a59a4;
+}
+.container-eventcard .events-card.purple .mat-icon {
+  color: #7a59a4;
+}
+.container-eventcard .events-card .color {
+  width: 104.2%;
+  height: 5%;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  background-color: #7a59a4;
+}
+.container-eventcard .events-card .container {
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+}
+.container-eventcard .events-card .container .image {
+  width: 100%;
+  height: 20%;
+}
+.container-eventcard .events-card .container .image img {
+  width: 100%;
+  height: 100%;
+}
+.container-eventcard .events-card .container .eventActions {
+  position: absolute;
+  width: 85%;
+  bottom: 0;
+}
+.container-eventcard .events-card .event {
+  width: 100%;
+  padding: 6% 4% 0 0;
+  border-radius: 0 7px 7px 0;
+}
+.container-eventcard .events-card .event .eventTitle div {
+  margin: 0;
+}
+.container-eventcard .events-card .event .eventContent {
+  margin-top: 5%;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+.container-eventcard .events-card .event .eventContent .creater {
+  margin: 10% 0;
+  display: flex;
+  align-items: center;
+}
+.container-eventcard .events-card .event .eventContent .creater .logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 71px;
+  border: 1px solid rgba(73, 80, 87, 0.25);
+  border-radius: 2px;
+}
+.container-eventcard .events-card .event .eventContent .creater .logos img {
+  width: 100%;
+  height: 50%;
+}
+.container-eventcard .events-card .event .eventContent .creater .logos img:nth-child(1) {
+  border-bottom: 1px solid black;
+}
+.container-eventcard .events-card .event .eventContent .creater p {
+  margin: 0 0 0 2%;
+}
+.container-eventcard .events-card .event .eventContent .date,
+.container-eventcard .events-card .event .eventContent .time,
+.container-eventcard .events-card .event .eventContent .location,
+.container-eventcard .events-card .event .eventContent .participant {
+  display: flex;
+  align-items: center;
+  margin: 3% 0;
+}
+.container-eventcard .events-card .event .eventContent .date p,
+.container-eventcard .events-card .event .eventContent .time p,
+.container-eventcard .events-card .event .eventContent .location p,
+.container-eventcard .events-card .event .eventContent .participant p {
+  width: 90%;
+  margin: 0 0 0 2%;
+}
+.container-eventcard .events-card .event .eventActions {
+  position: absolute;
+  width: 85%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.container-eventcard .events-card .event .eventActions .description {
+  display: flex;
+  align-items: end;
+  color: #868e96;
+}
+.container-eventcard .events-card .event .eventActions .description p {
+  margin-left: 30px;
+}
+.container-eventcard .events-card .event .eventActions .buttons {
+  display: flex;
+  flex-direction: column;
+}
+.container-eventcard .events-card .event .eventActions .buttons button {
+  display: flex;
+  justify-content: center;
+  border-radius: 7px;
+  font-weight: 600;
+  margin: 2% 0;
+}
+.container-eventcard .events-card .event .eventActions .buttons button .mat-icon {
+  color: #fbfbfc;
+}
+.container-eventcard .events-card .event .eventActions .buttons button:nth-child(1) {
+  background: #4b53f2;
+  border: 1px solid #444bda;
+  color: #fbfbfc;
+}
+.container-eventcard .events-card .event .eventActions .buttons button:nth-child(2) {
+  background: #dbddfc;
+  border: 1px solid #c9cbfb;
+  color: #4b53f2;
+}
+
+.container-commons {
+  background-color: var(--surface-2);
+  margin-top: 20px;
+}
+.container-commons .analyzes {
+  margin-top: 2%;
+  padding: 30px;
+}
+.container-commons .analyzes h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-commons .analyzes .link {
+  float: inline-end;
+  margin-right: 50px;
+  color: #444bda;
+  font-size: 14px;
+}
+.container-commons .analyzes .special {
+  color: #5D64F3;
+  margin-top: 10px;
+  display: flex;
+}
+.container-commons .analyzes .col-sm mat-icon {
+  color: #5d64f3;
+  border-radius: 50%;
+  padding: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.container-commons .analyzes .col-sm img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.container-commons .analyzes .col-sm .second-button {
+  margin-left: 4rem;
+  margin-bottom: 20px;
+  float: left;
+  margin-top: 10px;
+  background-color: #4B53F2;
+  color: #fff;
+}
+.container-commons .analyzes .col-sm .second-button mat-icon {
+  color: #fff;
+}
+.container-commons .analyzes .col-sm button {
+  margin-left: 4rem;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #C9CBFB;
+  color: #4B53F2;
+}
+.container-commons .analyzes .col-sm button mat-icon {
+  color: #4B53F2;
+}
+.container-commons .analyzes h4 {
+  font-weight: 500;
+  margin: 2px;
+  display: inline-flex;
+  align-items: center;
+}
+.container-commons .analyzes h4 span {
+  margin-left: 15px;
+  font-size: 20px;
+}
+.container-commons .analyzes .description {
+  font-weight: 400;
+  margin-left: 4.2rem;
+}
+
+.container-about {
+  background-color: var(--surface-2);
+  margin-top: 20px;
+}
+.container-about mat-card {
+  padding: 30px;
+}
+.container-about .about {
+  margin-top: 2%;
+}
+.container-about .about h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-about .about .col-sm mat-icon {
+  color: #5d64f3;
+  background-color: #edeefe;
+  border-radius: 50%;
+  padding: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.container-about .about h4 {
+  font-weight: 500;
+  margin: 2px;
+  display: inline-flex;
+  align-items: center;
+}
+.container-about .about h4 span {
+  margin-left: 15px;
+  font-size: 20px;
+}
+.container-about .about .description {
+  font-weight: 400;
+}
+.container-about .about .continue {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #868E96;
+}
+
+.container-sponsors {
+  background-color: var(--surface-2);
+  border-radius: 7px;
+  margin-top: 20px;
+}
+.container-sponsors .following-area {
+  margin-top: 2%;
+  padding: 15px;
+}
+.container-sponsors .following-area h2 {
+  margin-left: 1.5rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-sponsors .following-area h2 a {
+  font-size: 14px;
+  text-decoration: none;
+  float: right;
+  margin-right: 4rem;
+  color: #5D64F3;
+  font-weight: 600;
+}
+.container-sponsors .following-area p {
+  margin-left: 2.5rem;
+}
+.container-sponsors .following-area button {
+  margin-top: 10px;
+}
+.container-sponsors .following-area button mat-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+.container-sponsors .following-area .followed {
+  justify-content: space-between;
+  margin: 0 0 4% 4%;
+}
+.container-sponsors .following-area .followed .community {
+  padding-right: 10px;
+  margin-top: 36px;
+  margin-right: 60px;
+}
+.container-sponsors .following-area .followed .community .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin: 0px 16px 16px 16px;
+}
+.container-sponsors .following-area .followed .community .logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.container-sponsors .following-area .followed .community .name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 2px;
+}
+.container-sponsors .following-area .followed .community .short-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sub-text);
+  margin: 2px 2px 0px 2px;
+}
+.container-sponsors .following-area .followed .community .details {
+  margin: 2px 0px 10px 0px;
+  color: var(--info-text);
+}
+
+.container-sponsors-2 {
+  background-color: var(--surface-2);
+  border-radius: 7px;
+  margin-top: 20px;
+}
+.container-sponsors-2 .following-area {
+  margin-top: 2%;
+  padding: 15px;
+}
+.container-sponsors-2 .following-area h2 {
+  margin-left: 1.5rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-sponsors-2 .following-area h2 a {
+  font-size: 14px;
+  text-decoration: none;
+  float: right;
+  margin-right: 4rem;
+  color: #5D64F3;
+  font-weight: 600;
+}
+.container-sponsors-2 .following-area p {
+  margin-left: 2.5rem;
+}
+.container-sponsors-2 .following-area button {
+  margin-top: 10px;
+}
+.container-sponsors-2 .following-area button mat-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+.container-sponsors-2 .following-area .followed {
+  justify-content: space-between;
+  margin: 0 0 4% 3%;
+}
+.container-sponsors-2 .following-area .followed .community {
+  padding-right: 10px;
+  margin-top: 36px;
+  margin-right: 60px;
+}
+.container-sponsors-2 .following-area .followed .community .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin: 0px 9px 16px 16px;
+}
+.container-sponsors-2 .following-area .followed .community .logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.container-sponsors-2 .following-area .followed .community .name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 2px;
+}
+.container-sponsors-2 .following-area .followed .community .short-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sub-text);
+  margin: 2px 2px 0px 2px;
+}
+.container-sponsors-2 .following-area .followed .community .details {
+  margin: 2px 0px 10px 0px;
+  color: var(--info-text);
+}
+
+.container-sponsors-3 {
+  background-color: var(--surface-2);
+  border-radius: 7px;
+  margin-top: 20px;
+}
+.container-sponsors-3 .following-area {
+  margin-top: 4%;
+}
+.container-sponsors-3 .following-area h2 {
+  margin-left: 2.5rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-sponsors-3 .following-area h2 a {
+  font-size: 14px;
+  text-decoration: none;
+  float: right;
+  margin-right: 4rem;
+  color: #5D64F3;
+  font-weight: 600;
+}
+.container-sponsors-3 .following-area p {
+  margin-left: 2.5rem;
+}
+.container-sponsors-3 .following-area button {
+  margin-top: 10px;
+}
+.container-sponsors-3 .following-area button mat-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+.container-sponsors-3 .following-area .followed {
+  justify-content: space-between;
+  margin: 0 0 4% 4%;
+}
+.container-sponsors-3 .following-area .followed .community {
+  padding-right: 1px;
+  margin-top: 36px;
+}
+.container-sponsors-3 .following-area .followed .community .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin: 0px 8px 16px 3px;
+}
+.container-sponsors-3 .following-area .followed .community .logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.container-sponsors-3 .following-area .followed .community .name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 2px;
+}
+.container-sponsors-3 .following-area .followed .community .short-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sub-text);
+  margin: 2px 2px 0px 2px;
+}
+.container-sponsors-3 .following-area .followed .community .details {
+  margin: 2px 0px 10px 0px;
+  color: var(--info-text);
+}
+
+.container-highlights {
+  margin-top: 20px;
+}
+.container-highlights .container {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 7px;
+  background-color: var(--surface-2);
+}
+.container-highlights .container .heading {
+  margin-bottom: -20px;
+}
+.container-highlights .container h2 {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 20px;
+}
+.container-highlights .container a {
+  float: right;
+  text-align: end;
+  margin-bottom: 50px;
+  text-decoration: none;
+  margin-left: 555px;
+  color: #5D64F3;
+  font-weight: 600;
+  font-size: 14px;
+}
+.container-highlights .container p {
+  font-size: 16px;
+}
+.container-highlights .container mat-card-title {
+  font-size: 16px;
+}
+.container-highlights .container mat-card-content p {
+  margin-bottom: 50px;
+}
+.container-highlights .container mat-card-content .first-link {
+  margin-right: 350px;
+  display: flex;
+  align-items: center;
+}
+.container-highlights .container mat-card-content .first-link mat-icon {
+  margin-right: 5px;
+}
+.container-highlights .container mat-card-content .second-link {
+  margin-right: 250px;
+  display: flex;
+  align-items: center;
+}
+.container-highlights .container mat-card-content .second-link mat-icon {
+  margin-right: 5px;
+}
+.container-highlights .container h4 {
+  font-weight: 500;
+  margin: 2px;
+  display: inline-flex;
+  align-items: center;
+}
+.container-highlights .container h4 img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container-highlights .container h4 span {
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.container-schedule {
+  border-radius: 7px;
+  background-color: var(--surface-2);
+}
+.container-schedule .container {
+  margin: 10px 10px 0px 10px;
+}
+.container-schedule .col-sm-4, .container-schedule .col-sm-8, .container-schedule .col-sm-9 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.container-schedule .col-sm-4 .event-program, .container-schedule .col-sm-8 .event-program, .container-schedule .col-sm-9 .event-program {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.container-schedule .col-sm-4 span, .container-schedule .col-sm-8 span, .container-schedule .col-sm-9 span {
+  margin-left: -55px;
+}
+.container-schedule .col-sm-4 .time, .container-schedule .col-sm-8 .time, .container-schedule .col-sm-9 .time {
+  color: #7A59A4;
+  font-size: 32px;
+  font-weight: 700;
+}
+.container-schedule .col-sm-4 .time-2, .container-schedule .col-sm-8 .time-2, .container-schedule .col-sm-9 .time-2 {
+  margin-top: 52px;
+  color: #7A59A4;
+  font-size: 32px;
+  font-weight: 700;
+}
+.container-schedule .col-sm-4 .topic, .container-schedule .col-sm-8 .topic, .container-schedule .col-sm-9 .topic {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.container-schedule .col-sm-4 .content, .container-schedule .col-sm-8 .content, .container-schedule .col-sm-9 .content {
+  font-size: 16px;
+}
+.container-schedule .col-sm-4 .minute, .container-schedule .col-sm-8 .minute, .container-schedule .col-sm-9 .minute {
+  color: #868E96;
+}
+.container-schedule .col-sm-4 h4, .container-schedule .col-sm-8 h4, .container-schedule .col-sm-9 h4 {
+  font-weight: 500;
+  margin: 2px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.container-schedule .col-sm-4 h4 img, .container-schedule .col-sm-8 h4 img, .container-schedule .col-sm-9 h4 img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container-schedule .col-sm-4 h4 span, .container-schedule .col-sm-8 h4 span, .container-schedule .col-sm-9 h4 span {
+  margin-left: 15px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.container-contact {
+  border-radius: 7px;
+  background-color: var(--surface-2);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.container-contact .container {
+  margin: 20px 16px 20px 20px;
+}
+.container-contact .container h4 {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-contact .container h5, .container-contact .container p {
+  font-size: 14px;
+  font-weight: 400;
+}
+.container-contact .container mat-icon {
+  font-size: 20px;
+  margin-top: -10px;
+}/*# sourceMappingURL=event-details.component.css.map */

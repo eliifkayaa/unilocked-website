@@ -1,0 +1,18 @@
+:host {
+  margin: 4% 16px 16px 16px;
+  flex: 0 0 calc(25% - 32px);
+  position: relative;
+  color: var(--text);
+  padding: 0;
+  border-radius: 12px;
+}
+@media screen and (max-width: 1200px) {
+  :host {
+    flex: 0 0 calc(33.33% - 32px);
+  }
+}
+@media screen and (max-width: 800px) {
+  :host {
+    flex: 0 0 calc(50% - 32px);
+  }
+}/*# sourceMappingURL=slider-item.component.css.map */

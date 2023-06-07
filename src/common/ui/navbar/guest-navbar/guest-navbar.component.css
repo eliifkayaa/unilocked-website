@@ -1,0 +1,73 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  width: 120px;
+  height: 20px;
+  margin-top: 1%;
+  margin-left: 1%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo:hover {
+  width: 50px;
+  -o-object-position: 52% 0;
+     object-position: 52% 0;
+  height: 50px;
+}
+
+.toolbar-parent {
+  display: flex;
+  justify-content: center;
+  background-color: var(--surface-2);
+}
+
+.mat-toolbar {
+  background-color: var(--surface-2);
+  justify-content: center;
+}
+
+.icon-button {
+  background-color: transparent;
+  border-style: none;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-family: "Quicksand";
+  font-size: 15px;
+  margin-left: 4px;
+}
+.icon-button span {
+  display: block;
+}
+
+.icon-button:hover {
+  color: rgb(0, 0, 0);
+}
+
+.toolbar-child {
+  width: 100%;
+  display: flex;
+}
+
+.navbar-button {
+  margin-top: 4px;
+  margin-left: 12px;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
+}
+.navbar-search .navbar-input {
+  padding: 8px;
+  border-radius: 12px;
+  border-style: none;
+}
+.navbar-search .navbar-icon {
+  margin-left: -30px;
+}/*# sourceMappingURL=guest-navbar.component.css.map */
