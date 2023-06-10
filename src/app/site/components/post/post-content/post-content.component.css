@@ -1,0 +1,8 @@
+.tag {
+  color: var(--accent-1);
+  font-weight: 500;
+}
+.tag a {
+  text-decoration: none;
+  color: var(--accent-1);
+}/*# sourceMappingURL=post-content.component.css.map */

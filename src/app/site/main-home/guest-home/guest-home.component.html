@@ -1,175 +1,627 @@
 <navbar></navbar>
-
-<div class="main-panel">
-  <div class="row top-panel-1">
-    <div class="col-sm-6">
-      <img class="ill" src="assets/img/home-top-1.gif" />
+<div class="guest-homepage">
+  <div class="top-bar d-flex flex-column">
+    <div class="navbar d-flex justify-content-between">
+      <div class="logo d-flex justify-content-center align-items-center">
+        <img src="../../../../assets/img/logo-white.png">
+      </div>
+      <div class="menu-list">
+        <ul class="d-flex justify-content-around">
+          <li><a href="#">Keşfet</a></li>
+          <li><a href="#">Kişiler</a></li>
+          <li><a href="#">İlanlar</a></li>
+          <li><a href="#">Projeler</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Premium</a></li>
+        </ul>
+      </div>
+      <div class="login-btn d-flex justify-content-between align-items-center">
+        <a href="#">Giriş Yap</a>
+        <button mat-flat-button color="primary">Aramıza Katıl</button>
+      </div>
     </div>
-
-    <div class="col-sm-6 panel center">
-      <div style="display: block">
-        <div class="container right-panel">
-          <h1 class="animate">
-            Yeni bir kariyerin kilidini açmaya hazır mısın?
-          </h1>
-
-          <div class="center">
-            <button
-              routerLink="/login"
-              [queryParams]="{ from: 'home' }"
-              class="login-button"
-            >
-              Sen de Katıl!
-            </button>
+    <div class="top-title d-flex">
+      <div class="col align-items-start">
+        <img src="../../../../assets/img/saturn.png">
+      </div>
+      <div class="col align-items-center">
+        <p>
+          GELECEĞİNİ <br> KEŞFETMEYE <br> HAZIR MISIN?
+        </p>
+      </div>
+      <div class="col align-items-end">
+        <img src="../../../../assets/img/dunya.png">
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3">
+        <p class="end">
+          Öğrencilerin okul hayatlarını dolu dolu geçirip, kendilerini geliştirebilmesi için; Profesyonellerin geleceğin yıldızlı gençlere ve okul topluluklarına ulaşabilmesi için artık bir platform var!
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          Unilocked üyesi olun ve kendi insanlarınız ile geleceğin yıldızları olun
+        </p>
+        <div class="login d-flex justify-content-between align-items-center">
+          <div>
+            <p>Zaten üye misin?</p>
+            <a href="#">Giriş Yap</a>
+          </div>
+          <button type="button" class="btn btn-primary d-flex justify-content-between align-items-center">
+            <p>Aramıza Katıl</p>
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-5">
+        <div class="community d-flex justify-content-between">
+          <div class="logo">
+            <img src="../../../../assets/img/odtucom.png">
+          </div>
+          <div class="info d-flex flex-column justify-content-around">
+            <div class="name">
+              <b>ODTÜ Genç Girişimciler Topluluğu</b>
+            </div>
+            <div class="school">
+              <p>Orta Doğu Teknik Üniversitesi altında</p>
+            </div>
+          </div>
+        </div>
+        <div class="community d-flex justify-content-between">
+          <div class="logo">
+            <img src="../../../../assets/img/arge.png">
+          </div>
+          <div class="info d-flex flex-column justify-content-around">
+            <div class="name">
+              <b>ARGE ve Yüksek Teknoloji Topluluğu</b>
+            </div>
+            <div class="school">
+              <p>Akdeniz Üniversitesi altında</p>
+            </div>
+          </div>
+        </div>
+        <div class="community d-flex justify-content-between">
+          <div class="logo">
+            <img src="../../../../assets/img/alekted.png">
+          </div>
+          <div class="info d-flex flex-column justify-content-around">
+            <div class="name">
+              <b>AlecTED</b>
+            </div>
+            <div class="school">
+              <p>TED Üniversitesi altında</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="title">
+          <b>Sizin için en uygun <i>toplulukları</i> bulun</b>
+        </div>
+        <div class="subtitle">
+          Geleceğin projelerini tasarlayanlar, hobilerini başkalarıyla tartışmak isteyenler, vücudunu ve zihnini sonuna kadar zorlayan insanlar ile birlikte olabileceğiniz toplulukları bulun.
+          <br><br>
+          Sayısız okul topluluğunu keşfedin, okulunuzda bulunan topluluklara üye olun, yeni insanlar tanıyın, etknliklere katılın.
+        </div>
+        <a href="#" class="d-flex align-items-center justify-content-between">
+          <p>Toplulukları Keşfedin</p>
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-5 d-flex flex-column align-items-end">
+        <div class="title">
+          <b>Tüm <i> girişim </i> ve <br> <i>projeleri</i> kolayca <br> takip edin</b>
+        </div>
+        <div class="subtitle">
+          Unilocked’da bulunan binlerce okul topluğu, proje ve startup ile geleceğinizi şekillendirin. 
+          <br><br>
+          İlgi alanlarınızı takip edin, projelere başvurun, gelecekte çalışmak istediğiniz alanlarda çalışma fırsatları yaratın, kendinizi ve yeteneklerinizi keşfedin.
+        </div>
+        <a href="#" class="d-flex align-items-center justify-content-between">
+          <p>Projeleri Keşfedin</p>
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </a>
+      </div>
+      <div class="col-5">
+        <div class="card">
+          <div class="img">
+            <img src="../../../../assets/img/alectedcard.png" alt="">
+          </div>
+          <div class="title">
+            <p>Tracking and Reducing CO2 <br> Emissions Challenge</p>
+          </div>
+          <div class="friends d-flex align-items-center">
+            <div class="users d-flex align-items-center">
+              <mat-icon>
+                account_circle
+              </mat-icon>
+              <mat-icon>
+                account_circle
+              </mat-icon>
+              <mat-icon>
+                add_circle
+              </mat-icon>
+            </div>
+            <p>4 arkadaşınız bu projede</p>
+          </div>
+          <div class="subtitle d-flex">
+            <img src="../../../../assets/img/alekted.png" alt="">
+            <p class="d-flex align-items-center">AlecTED topluluğu altında</p>
+          </div>
+          <div class="buttons d-flex justify-content-around">
+            <button mat-flat-button>Katıl</button>
+            <button mat-flat-button>Listeye Ekle</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row mid-panel mid-panel-1">
-    <div class="col-sm-6">
-      <img class="ill" src="assets/img/community-3.png" />
-    </div>
-    <div
-      class="col-sm-6 content"
-      style="
-        text-align: center;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      "
-    >
-      <div>
-        <h1 class="animate">Sizin için en uygun topluluğu bulun</h1>
-        <p>
-          Şu anda üniversite öğrencilerinin en büyük sorunlarından biri olan
-          ileride hangi alanda çalışmaya karar verememe sorunu artık bir sorun
-          değil. Hangi üniversite veya hangi bölümde okuduğunuz fark etmeden siz
-          de kendinizi geliştirmek için istediğiniz okul topluluklarına
-          katılabilir, takip edebilir ve istediğiniz projelere katkı
-          sağlayabilirsiniz.
-        </p>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-5">
+        <div class="community d-flex justify-content-between">
+          <div class="logo">
+            <img src="../../../../assets/img/turkcell.png">
+          </div>
+          <div class="info d-flex flex-column justify-content-around">
+            <div class="name">
+              <b>Turkcell</b>
+            </div>
+            <div class="school">
+              <p>İletişim Sektörü Şirketi ve Unilocked Partneri</p>
+            </div>
+          </div>
+        </div>
+        <div class="community d-flex justify-content-between">
+          <div class="logo">
+            <img src="../../../../assets/img/teknokent.png">
+          </div>
+          <div class="info d-flex flex-column justify-content-around">
+            <div class="name">
+              <b>Antalya Teknokent</b>
+            </div>
+            <div class="school">
+              <p>Akdeniz Üniversitesi İçinde Teknopark ve Unilocked Partneri</p>
+            </div>
+          </div>
+        </div>
+        <div class="community d-flex flex-column justify-content-between">
+          <div class="company d-flex justify-content-between">
+            <div class="logo">
+              <img src="../../../../assets/img/alekted.png">
+            </div>
+            <div class="info d-flex flex-column justify-content-center">
+              <div class="name">
+                <b>AlecTED</b>
+              </div>
+              <div class="friends d-flex align-items-center">
+                <div class="users d-flex align-items-center">
+                  <mat-icon>
+                    account_circle
+                  </mat-icon>
+                  <mat-icon>
+                    account_circle
+                  </mat-icon>
+                  <mat-icon>
+                    account_circle
+                  </mat-icon>
+                </div>
+                <p>4 arkadaşınız bu kurumda çalışıyor</p>
+              </div>
+            </div>
+          </div>
+          <div class="work d-flex justify-content-between">
+            <div class="title">
+              <b>2023 Yaz Tatili Staj İmkanı</b>
+              <p>2023 yaz tatilinde Arçelik’de staj yapm...</p>
+            </div>
+            <div class="button d-flex align-items-center">
+              <button mat-flat-button>
+                <mat-icon>
+                  ads_click
+                </mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="title">
+          <b> <i>Fırsatlara</i> daha önce hiç erişemediğiniz şekilde erişin</b>
+        </div>
+        <div class="subtitle">
+          Unilocked ile farklı platformlardaki fırsatları tek bir yerden yakalayın.
+            <br><br>
+          Teknoparklar, Şirketler ve Kariyer Merkezlerinin faaliyetlerini Unilocked’da gözetleyin, staj imkanlarını ve iş tekliflerini kolayca takip edin.
+        </div>
+        <a href="#" class="d-flex align-items-center justify-content-between">
+          <p>Şirketleri Keşfedin</p>
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </a>
+        <a href="#" class="d-flex align-items-center justify-content-between">
+          <p>Unilocked Partnerleri</p>
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </a>
       </div>
     </div>
-  </div>
-  <div class="row mid-panel mid-panel-2">
-    <div
-      class="col-sm-6 content"
-      style="
-        text-align: center;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      "
-    >
-      <div>
-        <h1 class="animate">Tüm girişim ve projeleri kolayca takip edin</h1>
-        <p>
-          Unilocked platfomu bünyesinde binlerce okul topluluğu, projeler ve
-          startup'lar bulunmaktadır. Siz de ilerde geleceğinizi şekillendirmek
-          için ilgili olduğunuz projeleri takip edip, katılabilir ve ilerde
-          kendinizi mutlu hissettiğiniz alanlarda çalışma fırsatı yaratarak
-          kendinizi ve yeteneklerinizi keşfedebilirsiniz.
-        </p>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col">
+            <h3>Unilocked Kimler İçin?</h3>
+          </div>
+          <div class="col">
+            <div class="title">
+              <p>Topluluklar</p>
+            </div>
+            <div class="subtitle">
+              <p>Kendi gibi düşünen insaların olduğu toplulukları keşfetmek isteyen aktif gençler için</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="title">
+              <p>Kişiler</p>
+            </div>
+            <div class="subtitle">
+              <p>Hayallerini gerçekleştirmek için kendi insanlarını arayan sosyal gençler için</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="title">
+              <p>Projeler</p>
+            </div>
+            <div class="subtitle">
+              <p>KGeleceğe yön veren projelerin bir parçası olmak isteyen girişimci gençler için</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="title">
+              <p>Şirketler</p>
+            </div>
+            <div class="subtitle">
+              <p>Dünyayı değiştiren şirketlerde kariyer yapmak için her türlü imkanı kovalayan gözlemci gençler için</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <img src="../../../../assets/img/homeimg.png">
+          </div>
+          <div class="col-6">
+            <div class="title">
+              <h2>Unilocked Toplulukları</h2>
+            </div>
+            <div class="subtitle">
+              <p>
+                Unilocked, okul topluluklarının toplanma merkezidir. Öğrenciler toplulukları takip edebilir, üye olabilir ve topluluklar tarafından düzenlenen proje ve etkinliklere katılabilirler.
+                    <br><br>
+                Profesyoneller, topluklar ile iş birlikleri yapabilir, umut vadeden projeler için kaynak sağlayabilir.
+              </p>
+            </div>
+            <a href="#" class="d-flex align-items-center justify-content-between">
+              <p>Unilocked Toplulukları</p>
+              <mat-icon>
+                arrow_forward
+              </mat-icon>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <img class="ill" src="assets/img/projects.png" />
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-5">
+        <div class="logo">
+          <img src="../../../../assets/img/ato.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/alekted.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/ieee.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/itucapella.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/ggtyes.png" alt="">
+        </div>
+      </div>
+      <div class="col-5 d-flex flex-column align-items-end">
+        <div class="subtitle">
+          <p>PARTNER TOPLULUKLAR</p>
+        </div>
+        <div class="title">
+          <p>Kendini geliştirmek için hep yeni yollar arayanlar için en iyi topluluklar Unilocked’da</p>
+        </div>
+        <div class="links d-flex flex-column align-items-end">
+          <button mat-flat-button>
+            Unilocked Topluluklarını Keşfedin
+          </button>
+          <a href="#" class="d-flex align-items-center justify-content-between">
+            <p>Partner Topluluk Olun</p>
+            <mat-icon>
+              arrow_forward
+            </mat-icon>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row mid-panel mid-panel-3">
-    <div class="col-sm-6">
-      <img class="ill" src="assets/img/ilanlar.png" />
+    <div class="row">
+      <div class="col-12 d-flex flex-column align-items-center">
+        <h3>İstatistikler</h3>
+        <h1>Sayılarla Unilocked</h1>
+      </div>
+      <div class="col-3">
+
+      </div>
+      <div class="col-2 community d-flex justify-content-between align-items-center">
+        <div class="count">
+          <h2>1683</h2>
+          <p>Topluluk</p>
+        </div>
+        <mat-icon>
+          group
+        </mat-icon>
+      </div>
+      <div class="col-2 company d-flex justify-content-between align-items-center">
+        <div class="count">
+          <h2>273</h2>
+          <p>Şirket</p>
+        </div>
+        <mat-icon>
+          apartment
+        </mat-icon>
+      </div>
+      <div class="col-2 work d-flex justify-content-between align-items-center">
+        <div class="count">
+          <h1>10B+</h1>
+          <h3>Staj ve İş İmkanı</h3>
+          <a href="#" class="d-flex align-items-center justify-content-between">
+            <p>İlanları Keşfet</p>
+            <mat-icon>
+              arrow_forward
+            </mat-icon>
+          </a>
+        </div>
+        <mat-icon>
+          newspaper
+        </mat-icon>
+      </div>
+      
+      <div class="col-3"></div>
+      
+      <div class="col-2 work primary d-flex justify-content-between align-items-center">
+        <mat-icon>
+          rocket_launch
+        </mat-icon>
+        <div class="count">
+          <h1>750+</h1>
+          <h3>Topluluk Projesi</h3>
+          <a href="#" class="d-flex align-items-center justify-content-between">
+            <p>Projeleri Keşfet</p>
+            <mat-icon>
+              arrow_forward
+            </mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="col-2 community d-flex justify-content-between align-items-center">
+        <div class="count">
+          <h2>150B+</h2>
+          <p>Öğrenci ve Profesyonel</p>
+        </div>
+        <mat-icon>
+          group
+        </mat-icon>
+      </div>
+      <div class="col-2 company d-flex justify-content-between align-items-center">
+        <div class="count">
+          <h2>93</h2>
+          <p>Teknopark</p>
+        </div>
+        <mat-icon>
+          settings
+        </mat-icon>
+      </div>
     </div>
-    <div
-      class="col-sm-6 content"
-      style="
-        text-align: center;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      "
-    >
-      <div>
-        <h1 class="animate">
-          İlanlara ve daha önce erişemediğiniz fırsatlara erişin
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-5 d-flex flex-column">
+        <div class="subtitle">
+          <p>OKULLAR VE ŞİRKETLER</p>
+        </div>
+        <div class="title">
+          <p>En prestijli okullar ve en büyük şirketler Unilocked’da</p>
+        </div>
+        <div class="links d-flex align-items-center justify-content-between">
+          <button mat-flat-button>
+            Partnerlerimizi Keşfet
+          </button>
+          <a href="#" class="d-flex align-items-center justify-content-between">
+            <p>Partner Olun</p>
+            <mat-icon>
+              arrow_forward
+            </mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="logo">
+          <img src="../../../../assets/img/aulogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/turkcell.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/logo2.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/microsoftlogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/trendyologo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/itulogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/applelogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/aulogo2.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/gulogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/halkbanklogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/hulogo.png" alt="">
+        </div>
+        <div class="logo">
+          <img src="../../../../assets/img/eczacibasilogo.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-5 d-flex align-items-center justify-content-around">
+        <h1>
+          Bugün Aramıza Katıl
         </h1>
+        <mat-icon>
+          arrow_forward
+        </mat-icon>
+      </div>
+      <div class="col-5">
+          <form>
+            <div class="inputs d-flex justify-content-between">
+              <input type="email" placeholder="Eposta">
+              <input type="password" placeholder="Şifre">
+              <button mat-flat-button>
+                Aramıza Katıl
+              </button>
+            </div>
+            <div class="box d-flex align-items-center">
+              <input type="checkbox">
+              <p>Unilocked gizlilik şartlarını kabul ediyorum</p>
+            </div>
+          </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center">
         <p>
-          UniLocked ile Teknoparklar, şirketler, barolar ve kariyer merkezleri gibi
-          bir çok çeşitli programları kolayca takip edebilirsiniz.
+          Aramıza Katıl butonuna tıklayarak, Unilocked <a href="#"> Kullanıcı Anlaşmasını </a>, <a href="#">Gizlilik Politikasını</a> ve <a href="#"> Çerez Politikasını </a> kabul etmiş olursunuz.
         </p>
       </div>
     </div>
   </div>
-  <div class="mid-panel-4">
-    <h1 style="text-align: center">Sayılarla UniLocked</h1>
-    <div class="row justify-content-center">
-      <div class="text-center col-sm-3 animate" #midPanel>
-        <h2
-          class="animate"
-          [animatedCounter]="150000"
-          [animationStarted]="midPanel.className.includes('animationActive')"
-        ></h2>
-        <p class="animate">Üye</p>
-      </div>
-      <div class="col-sm-3 text-center">
-        <h2
-          class="animate"
-          [animatedCounter]="2000"
-          [animationStarted]="midPanel.className.includes('animationActive')"
-        ></h2>
-        <p class="animate">Şirket</p>
-      </div>
-      <div class="col-sm-3 text-center">
-        <h2
-          class="animate"
-          [animatedCounter]="1500"
-          [animationStarted]="midPanel.className.includes('animationActive')"
-        ></h2>
-        <p class="animate">Topluluk</p>
-      </div>
-      <div class="col-sm-3 text-center">
-        <h2
-          class="animate"
-          [animatedCounter]="150"
-          [animationStarted]="midPanel.className.includes('animationActive')"
-        ></h2>
-        <p class="animate">Teknopark</p>
+  <div class="footer">
+    <div class="top d-flex justify-content-between align-items-center">
+      <img src="../../../../assets/images/unilocked-09.png" >
+      <div class="social d-flex justify-content-around">
+        <a href="#">
+          <img src="../../../../assets/img/insta.png">
+        </a>
+        <a href="#">
+          <img src="../../../../assets/img/face.png">
+        </a>
+        <a href="#">
+          <img src="../../../../assets/img/twitter.png">
+        </a>
       </div>
     </div>
-  </div>
-  <div class="mid-panel-5">
-
-    <div #slider class="content">
-      <div class="slider-item">a</div>
-      <div class="slider-item">b</div>
-      <div class="slider-item">c</div>
-      <div class="slider-item">d</div>
-      <div class="slider-item">e</div>
+    <div class="mid d-flex justify-content-between align-items-center">
+      <div class="links d-flex justify-content-between">
+        <div class="link">
+          <p class="title">
+            Genel
+          </p>
+          <ul>
+            <li>Keşfet</li>
+            <li>Kişiler</li>
+            <li>İlanlar</li>
+            <li>Programlar</li>
+          </ul>
+        </div>
+        <div class="link">
+          <p class="title">
+            Hakkımızda
+          </p>
+          <ul>
+            <li>Hakkımızda</li>
+            <li>Unilocked Partnerleri</li>
+            <li>Kariyer</li>
+          </ul>
+        </div>
+        <div class="link">
+          <p class="title">
+            Destek
+          </p>
+          <ul>
+            <li>Destek Merkezi</li>
+            <li>Destek İsteği Oluşturuniler</li>
+            <li>SSS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="language">
+        <select>
+          <option value="Türkçe">Türkçe</option>
+          <option value="İngilizce">İngilizce</option>
+          <option value="Almanca">Almanca</option>
+        </select>
+      </div>
     </div>
-
-  </div>
-  <div class="bottom-panel">
-    <div class="content">
-      <div class="circle">
-        <div class="image">
-          <img src="assets/img/halka_1.svg" alt="Halka 1" />
-        </div>
-        <h1>Yeni üniversite topluluklarını keşfetmek istiyorsan</h1>
-      </div>
-      <div class="circle circle-2">
-        <div class="image">
-          <img src="assets/img/halka-2.png" alt="Halka 1" />
-        </div>
-
-        <h1>Hayallerini gerçeği döndürmek için takım arkadaşları arıyorsan</h1>
-      </div>
-      <div class="circle">
-        <div class="image">
-          <img src="assets/img/halka-3.png" alt="Halka 1" />
-        </div>
-        <h1>Geleceğe yön veren bir projenin parçası olmak istiyorsan</h1>
-      </div>
+    <hr>
+    <div class="bottom">
+      <ul class="d-flex justify-content-between">
+        <li>
+          Unilocked ©2023 - All Rights Deserved
+        </li>
+        <li>
+          <a href="#">
+            Erişilebilrilik
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Kullanıcı Anlaşması
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Gizlilik Politikası
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Çerez Politikası
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
