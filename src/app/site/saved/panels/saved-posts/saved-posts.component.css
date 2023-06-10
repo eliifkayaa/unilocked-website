@@ -1,0 +1,19 @@
+.saved-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.saved-main .saved-child {
+  display: block;
+  margin: 24px;
+  max-width: 800px;
+  width: 100%;
+}
+.saved-main .saved-child .saved-panel {
+  border-radius: 12px;
+  padding: 0;
+}
+
+mat-drawer-content {
+  height: 100vh;
+}/*# sourceMappingURL=saved-posts.component.css.map */
