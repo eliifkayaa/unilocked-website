@@ -1,1 +1,125 @@
-@import '../styles/auth.scss';
+
+.left-side {
+    float: left;
+    width: 50%;
+    height: 100vh;
+    background-image: url('../../../assets/img/login4.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #7a59a4b3;
+    }
+    .logo {
+        position: absolute;
+        top: 5%;
+        img {
+            width: 20%;
+        }
+    }
+
+    h1, p {
+        z-index: 10;
+        color: #F1F3F5;
+        width: 50%;
+        text-align: center;
+    }
+
+}
+
+.right-side {
+    width: 50%;
+    height: 100vh;
+    background-color: #F1F3F5;
+
+    .form {
+        width: 75%;
+        .title {
+            width: 70%;
+            margin-bottom: 5%;
+            text-align: start;
+
+            h1 {
+                color: #7A59A4;
+                font-size: 45px;
+                font-weight: 600;
+                line-height: 40px;
+            }
+        }
+
+        .login-form {
+            width: 70%;
+            flex-wrap: wrap;
+
+            .mat-form-field {
+                width: 100%;
+            }
+
+            .register {
+                a {
+                    text-decoration: none;
+                    color: #5D64F3;
+                    font-weight: 600;
+                }
+            }
+
+            .pass {
+                width: 100%;
+                margin-top: 2%;
+
+                .remember {
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .forget {
+                    a {
+                        text-decoration: none;
+                        font-weight: 600;
+                        color: #5D64F3;
+                    }
+                }
+
+                
+            }
+
+            
+            .buttons {
+
+                a {
+                    width: 100%;
+                }
+                
+                margin-top: 5%;
+                width: 100%;
+                button {
+                    width: 100%;
+                    margin-top: 2%;
+                    &:not(:nth-child(1)) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #DBDDFC;
+                        color: #4B53F2;
+                        border: 1px solid #C9CBFB;
+
+                        p {
+                            font-weight: 600;
+                            display: inline;
+                            margin-left: 3%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
+}

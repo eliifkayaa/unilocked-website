@@ -1,163 +1,240 @@
-<a class="logo" routerLink="/home"><img [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'" alt="" /> </a>
-<mat-progress-bar
-  *ngIf="auth.loading$ | async"
-  mode="indeterminate"
-></mat-progress-bar>
-<div class="row reversable">
-  <div class="col-sm center form-panel reverse">
-    <mat-horizontal-stepper style="width: 100%" [linear]="false" #stepper>
-      <mat-step
-        [stepControl]="firstFormGroup"
-        label="E-Posta"
-        style="width: 100%"
-        #stepper
-      >
-        <form style="width: 100%" class="center" [formGroup]="firstFormGroup">
-          <div class="formContainer">
-            <div>
-              <h1 class="header">
-                Hoş geldin, {{ firstFormGroup.value.firstname }}
-              </h1>
-            </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <mat-form-field class="field" appearance="fill">
-                  <mat-label>İsminiz</mat-label>
-                  <input
-                    formControlName="firstname"
-                    matInput
-                    placeholder="İsim"
-                  />
-                </mat-form-field>
-              </div>
-              <div class="col-sm-6">
-                <mat-form-field class="field" appearance="fill">
-                  <mat-label>Soy isminiz</mat-label>
-                  <input
-                    formControlName="lastname"
-                    matInput
-                    placeholder="Soyisim"
-                  />
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="mt-4">
-              <mat-form-field class="field" appearance="fill">
-                <mat-label>E-posta adresinizi girin</mat-label>
-                <input formControlName="email" matInput placeholder="E-Posta" />
-                <mat-icon matSuffix>email</mat-icon>
-              </mat-form-field>
-            </div>
-            <div class="row">
-              <div class="col-sm">
-                <a
-                  routerLink="/login"
-                  [queryParams]="{ from: 'register' }"
-                  mat-stroked-button
-                  color="primary"
-                  matStepperPrevious
-                  >Giriş yapın</a
-                >
-              </div>
-              <div class="col-sm">
-                <div class="d-flex justify-content-end">
-                  <button
-                    [disabled]="!firstFormGroup.valid"
-                    mat-flat-button
-                    color="primary"
-                    matStepperNext
-                  >
-                    Devam et
-                  </button>
-                </div>
-              </div>
-            </div>
+<div class="left-side d-flex flex-column justify-content-center align-items-center">
+  <a class="logo d-flex justify-content-center" routerLink="/home"><img [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'" alt="" /> </a>
+  
+  <div *ngIf="page == 'category'" class="form d-flex flex-column align-items-center">
+    <div class="title">
+      <h1>Bugün Aramıza Katıl</h1>
+      <p>Kendinizi nasıl tanımlarsınız?</p>
+    </div>
+    <div class="category d-flex flex-column align-items-center">
+      <div class="box d-flex align-items-center" *ngFor="let category of categories">
+        <div class="logos">
+          <img *ngFor="let img of category.photos" src="{{img}}" alt="">
+        </div>
+        <div class="info">
+          <div class="name">
+            <span class="d-flex justify-content-between align-items-center">
+              <b>{{category.title}}</b>
+              <mat-icon *ngIf="category.checked" style="color: #444BDA;">check_circle</mat-icon>
+              <mat-icon *ngIf="!category.checked">circle</mat-icon>
+            </span>
+            <p>{{category.subtitle}}</p>
           </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form
-          (ngSubmit)="submit()"
-          class="center"
-          [formGroup]="secondFormGroup"
-        >
-          <div class="formContainer">
-            <div>
-              <h1 class="header">
-                Hoş geldin, {{ firstFormGroup.value.firstname }}
-              </h1>
-              <mat-chip-list aria-label="Fish selection">
-                <mat-chip>
-                  <mat-icon matChipTrailingIcon>account_circle</mat-icon
-                  >&nbsp;&nbsp;
-                  {{ firstFormGroup.value.email }}
-                </mat-chip>
-              </mat-chip-list>
-            </div>
-
-            <div class="mt-4 row">
-              <mat-form-field class="field" appearance="fill">
-                <mat-label>Parolanızı girin,</mat-label>
-                <input
-                  formControlName="password"
-                  type="password"
-                  matInput
-                  placeholder="Parola"
-                />
-                <mat-icon matSuffix>password</mat-icon>
-              </mat-form-field>
-            </div>
-            <div class="mt-4 row">
-              <mat-form-field class="field" appearance="fill">
-                <mat-label>Parolanızı onaylayın,</mat-label>
-                <input
-                  formControlName="password2"
-                  type="password"
-                  matInput
-                  placeholder="Parola"
-                />
-                <mat-icon matSuffix>password</mat-icon>
-              </mat-form-field>
-            </div>
-            <div class="d-flex justify-content-end">
-              <button
-                type="submit"
-                [disabled]="secondFormGroup.invalid || (auth.loading$ | async)"
-                style="width: 100%; margin-top: 4%"
-                mat-flat-button
-                color="accent"
-              >
-                Devam et
-              </button>
-            </div>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step>
-        <h1 class="header">
-          Nerdeyse hazırsın, {{ firstFormGroup.value.firstname }}!
-        </h1>
-        <br />
-        <p>
-          Bu yeni diyarın kilidini açman için yalnızca bir kaç adım kaldı!
-          Detayları kayıt olduğun e-posta adresine gönderdik. Hesabın sana ait
-          olduğunu anlayabilmemiz için lütfen bu adımları uygulamayı unutma!
-        </p>
-        <br />
-        <a
-          routerLink="/login"
-          style="width: 100%; margin-top: 4%"
-          mat-flat-button
-          color="accent"
-        >
-          Şimdi Giriş Yap
-        </a>
-      </mat-step>
-    </mat-horizontal-stepper>
+        </div>
+      </div>
+    </div>
+    <div class="login d-flex justify-content-center">
+      <p>Zaten hesabınız var mı?</p>
+      <a href="/login">Giriş yapın</a>
+    </div>
+    <button mat-flat-button color="primary" (click)="changePage('general_info')">
+      İlerle
+      <mat-icon>
+        arrow_forward
+      </mat-icon>
+    </button>
+    
   </div>
-  <div
-    class="col-sm d-flex justify-content-center align-items-center image-panel reverse"
-  >
-    <img src="assets/img/login-il.png" alt="" />
+
+  <div *ngIf="page == 'general_info'" class="form d-flex flex-column align-items-center">
+    <div class="title">
+      <h1>Genel Bilgiler</h1>
+      <p>Kaydınızı yapabilmemiz için bazı temel bilgilere ihtiyacımız olacak.</p>
+    </div>
+    <div class="register-form d-flex justify-content-between">
+      <mat-form-field class="example-form-field">
+        <mat-label>İsim</mat-label>
+        <input matInput type="text" [(ngModel)]="isim">
+        <button *ngIf="isim" matSuffix mat-icon-button aria-label="Clear" (click)="isim=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Soyisim</mat-label>
+        <input matInput type="text" [(ngModel)]="soyisim">
+        <button *ngIf="soyisim" matSuffix mat-icon-button aria-label="Clear" (click)="soyisim=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Eposta</mat-label>
+        <input matInput type="email" [(ngModel)]="mail">
+        <button *ngIf="mail" matSuffix mat-icon-button aria-label="Clear" (click)="mail=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Telefon</mat-label>
+        <input matInput type="text" [(ngModel)]="tel">
+        <button *ngIf="tel" matSuffix mat-icon-button aria-label="Clear" (click)="tel=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Şifre</mat-label>
+        <input matInput type="password">
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Şifreyi Doğrulayın</mat-label>
+        <input matInput type="password">
+      </mat-form-field>
+      
+      <div class="check">
+        <input type="checkbox" class="checkbox" checked>
+        <p>Unilocked haberleri hakkında eposta almak istiyorum</p>
+      </div>
+      <div class="check">
+        <input type="checkbox" class="checkbox">
+        <p>Unilocked <a href="#">şartlarını </a> ve <a href="#"> gizlilik politikasını </a> kabul ediyorum</p>
+      </div>
+      <div class="buttons d-flex flex-column align-items-center justify-content-center">
+        <button mat-flat-button color="primary" (click)="changePage('education_info')">
+          İlerle
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </button>
+        <button mat-flat-button color="primary">
+          <img src="../../../assets/img/google.png" alt="">
+          <p>Google ile kaydolun</p>
+        </button>
+        <button mat-flat-button color="primary">
+          <img src="../../../assets/img/apple.png" alt="">
+          <p>Apple ile kaydolun</p>
+        </button>
+      </div>
+    </div>
+    
+
+    
+  </div> 
+
+  <div *ngIf="page == 'education_info'" class="form d-flex flex-column align-items-center">
+    <div class="title">
+      <h1>Eğitim Bilgiler</h1>
+      <p>Deneyimini özelleştirebilmemiz için nerede okuduğun, ne okuduğun gibi bilgilere ihtiyacımız olacak.</p>
+    </div>
+    <div class="register-form d-flex justify-content-between">
+      <mat-form-field class="example-form-field">
+        <mat-label>Okul</mat-label>
+        <input matInput type="text" [(ngModel)]="okul">
+        <button *ngIf="okul" matSuffix mat-icon-button aria-label="Clear" (click)="okul=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Bölüm</mat-label>
+        <input matInput type="text" [(ngModel)]="bolum">
+        <button *ngIf="bolum" matSuffix mat-icon-button aria-label="Clear" (click)="bolum=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Başlangıç Tarihi</mat-label>
+        <input matInput type="date">
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Bitiş Tarihi</mat-label>
+        <input matInput type="date" [(ngModel)]="tel">
+      </mat-form-field>
+      
+      <div class="buttons d-flex flex-column align-items-center justify-content-center">
+        <button mat-flat-button color="primary" (click)="changePage('summary')">
+          İlerle
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </button>
+        <button mat-flat-button color="primary" (click)="changePage('general_info')">
+          <p>Geri</p>
+        </button>
+      </div>
+    </div>
+    
+
+    
+  </div> 
+
+  <div *ngIf="page == 'summary'" class="form d-flex flex-column align-items-center">
+    <div class="title">
+      <h1>Kısa Özet</h1>
+      <p>Profilinizdeki “Hakkında” kısmı için kısa bir yazı yazın. Bu aşamayı isterseniz atlayabilirsiniz.</p>
+    </div>
+    <div class="register-form summary d-flex justify-content-between">
+      <mat-form-field class="example-full-width">
+        <mat-label>Hakkında birşeyler yaz... </mat-label>
+        <textarea matInput placeholder="Adım Mustafa. 20 yaşındayım. Yazılım konusuna meraklıyım ve kendimi bu alanda geliştirmek istiyorum..."></textarea>
+      </mat-form-field>
+      
+      <div class="buttons d-flex flex-column align-items-center justify-content-center">
+        <button mat-flat-button color="primary" (click)="changePage('finish')">
+          Kaydı Tamamla
+          <mat-icon>
+            arrow_forward
+          </mat-icon>
+        </button>
+        <button mat-flat-button color="primary" (click)="changePage('education_info')">
+          <p>Geri</p>
+        </button>
+      </div>
+    </div>
+    
+
+    
+  </div> 
+
+  <div *ngIf="page == 'finish'" class="form d-flex flex-column align-items-center">
+    <div class="title">
+      <h1>Ve ... Bu kadar!</h1>
+      <p>Unilocked profiliniz oluşturuldu ve yeni bir dünya sizi bekliyor, gelecekte ne yapacağınızı görmek için sabırsızlanıyoruz!</p>
+    </div>
+    <a href="/login" class="d-flex justify-content-center" style="width: 45%;text-decoration: none;">
+      <button mat-flat-button style="color: #F1F3F5;background-color: #7A59A4;">
+        Keşfetmeye Başlayın
+      </button>
+    </a>
+  </div> 
+</div>
+
+
+<div class="right-side d-flex flex-column justify-content-around align-items-center">
+  <div *ngIf="page == 'category' || page == 'general_info'" class="content1">
+    <div class="title">
+      <span>Gelecek <i>Burada</i> Başlıyor</span>
+      <p>Unilocked üyeliği ile öğrenciler ve profesyoneller iletişime geçebilir, projeler ve staj imkanları oluşturulabilir.</p>
+    </div>
+    <img src="../../../assets/img/login1.png">
+  </div>
+
+  <div *ngIf="page == 'education_info'" class="content2">
+    <div class="title">
+      <span>
+        Kendi <i>İnsanlarını</i> Bul 👋
+      </span>
+      <p>
+        Çeşitli okullardan, farklı öğrenciler ile tanış. İlgi alanlarını paylaşan kişiler ile yeni maceralara atıl.  Senin gibi düşünen insanlar ile geleceği inşa et.
+      </p>
+    </div>
+    <img class="center" src="../../../assets/img/login2.png" alt="">
+  </div>
+
+  <div *ngIf="page == 'summary'" class="content3">
+    <div class="title">
+      <span>
+        Kendizi 🌍 <i>Dünyaya</i> Tanıtın
+      </span>
+      <p>
+        Profilinizde eğitim bilgilerinizi, sertifikalarınızı, projelerinizi ve çok daha fazlası sergileyin, kendi zevkinize göre kişiselleştirin ve kendinizi Unilocked üyelerine tanıtın.
+      </p>
+    </div>
+    <img class="center" src="../../../assets/img/login3.png" alt="">
+  </div>
+
+  <div *ngIf="page == 'finish'" class="content4 d-flex justify-content-center">
+    <h1 style="width: 55%;color: #F1F3F5;font-weight: 900;font-size: 50px;line-height: 50px;">
+      Unilocked’a 🎉 Hoşgeldiniz!
+    </h1>
   </div>
 </div>
+
+

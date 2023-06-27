@@ -14,6 +14,54 @@ export class RegisterComponent implements OnInit {
 
   @ViewChild('stepper') stepper : MatStepper
 
+  isim = '';
+  soyisim = '';
+  mail = '';
+  tel = '';
+  okul = '';
+  bolum = '';
+
+  page = 'category'
+
+  changePage = (page_name) => {
+    this.page = page_name
+    console.log(this.page)
+  }
+
+  public categories = [
+    {
+      photos : [
+        "../../../assets/img/avatar1.png",
+        "../../../assets/img/avatar2.png",
+        "../../../assets/img/avatar3.png"
+      ],
+      title : "Öğrenciyim",
+      checked : true,
+      subtitle: "Kendimi geliştirmek ve benim gibi düşünenler ile birlikte olmak istiyorum."
+    },
+    {
+      photos : [
+        "../../../assets/img/teknokent.png",
+        "../../../assets/img/turkcell.png",
+        "../../../assets/img/avatar4.png"
+      ],
+      title : "Profesyonelim",
+      checked : false,
+      subtitle: "Genç yetenekleri keşfetmek, iş ve staj imkanlarını paylaşmak ve alanım hakkında öğrencileri bilgilendirmek istiyorum."
+    },
+    {
+      photos : [
+        "../../../assets/img/ieee.png",
+        "../../../assets/img/alekted.png",
+        "../../../assets/img/arge.png"
+      ],
+      title : "Topluluğuz",
+      checked : false,
+      subtitle: "Genç yetenekleri keşfetmek, iş ve staj imkanlarını paylaşmak ve alanım hakkında öğrencileri bilgilendirmek istiyorum."
+    },
+
+  ]
+
   public firstFormGroup = this._formBuilder.group({
     email: ['', [Validators.email, Validators.required]],
     firstname: ['', Validators.required],

@@ -1,119 +1,68 @@
-<a class="logo" routerLink="/home"><img [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'" alt="" /> </a
->
-<mat-progress-bar
-  *ngIf="auth.loading$ | async"
-  mode="indeterminate"
-></mat-progress-bar>
-<div class="row reversable">
-  <div class="col-sm center form-panel" [class.reverse]="reversed">
-    <mat-horizontal-stepper style="width: 100%" [linear]="false" #stepper>
-      <mat-step
-        [stepControl]="firstFormGroup"
-        label="E-Posta"
-        style="width: 100%"
-        #stepper
-      >
-        <form style="width: 100%" class="center" [formGroup]="firstFormGroup">
-          <div class="formContainer">
-            <div><h1 class="header">Hoş geldin,</h1></div>
-            <div class="mt-4">
-              <mat-form-field class="field" appearance="fill">
-                <mat-label>E-posta adresinizi girin</mat-label>
-                <input formControlName="email" matInput placeholder="E-Posta" />
-                <mat-icon matSuffix>email</mat-icon>
-              </mat-form-field>
-            </div>
-            <div class="row">
-              <div class="col-sm">
-                <a
-                  mat-stroked-button
-                  routerLink="/register"
-                  color="primary"
-                  matStepperPrevious
-                  >Bir hesap oluşturun</a
-                >
-              </div>
-              <div class="col-sm">
-                <div class="d-flex justify-content-end">
-                  <button
-                    [disabled]="!firstFormGroup.valid"
-                    mat-flat-button
-                    color="primary"
-                    matStepperNext
-                    (click)="saveEmail()"
-                  >
-                    Devam et
-                  </button>
-                </div>
-              </div>
-            </div>
+<div class="left-side d-flex flex-column justify-content-center align-items-center">
+  <div class="background"></div>
+  <a class="logo d-flex justify-content-center" routerLink="/home"><img [src]="theme.darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'" alt="" /> </a>
+  <h1>Unilocked’u keşfetmenin tam zamanı!</h1>
+  <p>Kendini her zaman geliştirmenin yeni yollarını arayan gençler ve geleceğin yıldızlarını arayan profesyonellerin arasına dönme zamanı.</p>
+  
 
-            <div class="seperator">
-              <span class="seperator-text">veya</span>
-            </div>
-            <div class="d-flex justify-content-end">
-              <button style="width: 100%; margin-top: 4%" mat-stroked-button>
-                <mat-icon svgIcon="google"></mat-icon> Google ile giriş yap
-              </button>
-            </div>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form
-          (ngSubmit)="submit()"
-          class="center"
-          [formGroup]="secondFormGroup"
-        >
-          <div class="formContainer">
-            <div>
-              <h1 class="header">Hoş geldin,</h1>
-              <mat-chip-list aria-label="Fish selection">
-                <mat-chip (click)="stepper.previous()">
-                  <mat-icon matChipTrailingIcon>account_circle</mat-icon
-                  >&nbsp;&nbsp;
-                  {{ firstFormGroup.value.email }}
-                </mat-chip>
-              </mat-chip-list>
-            </div>
-
-            <div class="mt-4">
-              <mat-form-field class="field" appearance="fill">
-                <mat-label>Parolanız ile devam edin,</mat-label>
-                <input
-                  formControlName="password"
-                  type="password"
-                  matInput
-                  placeholder="Parola"
-                />
-                <mat-icon matSuffix>password</mat-icon>
-              </mat-form-field>
-            </div>
-            <div class="d-flex justify-content-end">
-              <button
-                type="submit"
-                [disabled]="!secondFormGroup.valid || (auth.loading$ | async)"
-                style="width: 100%; margin-top: 4%"
-                mat-flat-button
-                color="primary"
-              >
-                Devam et
-              </button>
-
-            </div>
-            <div *ngIf="auth.error" class="error mt-4">
-              <p>{{auth.error}}</p>
-            </div>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step> </mat-step>
-    </mat-horizontal-stepper>
-  </div>
-  <div
-    class="col-sm d-flex justify-content-center align-items-center image-panel"
-    [class.reverse]="reversed"
-  >
-    <img src="assets/img/login-il.png" alt="" />
-  </div>
 </div>
+
+
+<div class="right-side d-flex justify-content-center align-items-center">
+
+  <div class="form d-flex flex-column align-items-center">
+    <div class="title">
+      <h1>Tekrardan Hoşgeldin!</h1>
+    </div>
+    <div class="login-form d-flex justify-content-between">
+      <mat-form-field class="example-form-field">
+        <mat-label>Eposta</mat-label>
+        <input matInput type="text" [(ngModel)]="mail">
+        <button *ngIf="mail" matSuffix mat-icon-button aria-label="Clear" (click)="isim=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Şifre</mat-label>
+        <input matInput type="password">
+      </mat-form-field>
+      
+      <div class="register">
+        <p>
+          Henüz hesabınız yok mu?
+          <a href="/register">Kayıt olun</a>
+        </p>
+      </div>
+
+      <div class="pass d-flex align-items-center justify-content-between">
+        <div class="remember d-flex align-items-center ">
+          <input type="checkbox" class="checkbox">
+          <p>Şifremi Hatırla</p>
+        </div>
+        <div class="forget">
+          <a href="#">Şifremi Unuttum</a>
+        </div>
+      </div>
+     
+      <div class="buttons d-flex flex-column align-items-center justify-content-center">
+        <button mat-flat-button color="primary">
+          Giriş Yap
+        </button>
+        <button mat-flat-button color="primary">
+          <img src="../../../assets/img/google.png" alt="">
+          <p>Google ile Giriş Yap</p>
+        </button>
+        <button mat-flat-button color="primary">
+          <img src="../../../assets/img/apple.png" alt="">
+          <p>Apple ile Giriş Yap</p>
+        </button>
+      </div>
+    </div>
+    
+
+    
+  </div> 
+
+</div>
+
+
