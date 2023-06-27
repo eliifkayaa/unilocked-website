@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { AuthService } from '@common/auth/auth.service';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppThemeService {
+
+  constructor(private auth:AuthService) { }
+
 
   public changed$ = new BehaviorSubject<boolean>(this.darkMode); 
   private get localStorageAvaible() : boolean {
@@ -19,7 +23,7 @@ export class AppThemeService {
 
   public get darkMode() : boolean {
     
-    if (this.localStorageAvaible) {
+    if ( this.localStorageAvaible) {
       return localStorage.getItem('darkMode') === 'true';
     } else {
       return false;
@@ -35,5 +39,4 @@ export class AppThemeService {
 
   
 
-  constructor() { }
 }

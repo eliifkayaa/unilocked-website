@@ -11,7 +11,7 @@ import { BehaviorSubject, finalize } from 'rxjs';
 export class AuthService {
   public loggedIn = false;
   public loading$ = new BehaviorSubject(false);
-  public redirect: string | null = null;
+  public redirect: string | null = "/home";
   public user?: User;
   public error?: string;
 
@@ -45,7 +45,7 @@ export class AuthService {
       .subscribe({
         next: (response) => {
           if (response.success) {
-            this.handleLogin(response);
+            this.handleLogin(response,true);
           } else {
             this.error = response.error;
           }

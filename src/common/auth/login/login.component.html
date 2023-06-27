@@ -10,21 +10,19 @@
 
 <div class="right-side d-flex justify-content-center align-items-center">
 
-  <div class="form d-flex flex-column align-items-center">
+  <form [formGroup]="firstFormGroup" (ngSubmit)="submit()" class="form d-flex flex-column align-items-center">
     <div class="title">
       <h1>Tekrardan Hoşgeldin!</h1>
     </div>
     <div class="login-form d-flex justify-content-between">
       <mat-form-field class="example-form-field">
         <mat-label>Eposta</mat-label>
-        <input matInput type="text" [(ngModel)]="mail">
-        <button *ngIf="mail" matSuffix mat-icon-button aria-label="Clear" (click)="isim=''">
-          <mat-icon>close</mat-icon>
-        </button>
+        <input formControlName="email" matInput type="text">
+        
       </mat-form-field>
       <mat-form-field class="example-form-field">
         <mat-label>Şifre</mat-label>
-        <input matInput type="password">
+        <input formControlName="password" matInput type="password">
       </mat-form-field>
       
       <div class="register">
@@ -36,8 +34,8 @@
 
       <div class="pass d-flex align-items-center justify-content-between">
         <div class="remember d-flex align-items-center ">
-          <input type="checkbox" class="checkbox">
-          <p>Şifremi Hatırla</p>
+          <input id="remember" type="checkbox" class="checkbox">
+          <label for="remember">Şifremi Hatırla</label>
         </div>
         <div class="forget">
           <a href="#">Şifremi Unuttum</a>
@@ -45,7 +43,7 @@
       </div>
      
       <div class="buttons d-flex flex-column align-items-center justify-content-center">
-        <button mat-flat-button color="primary">
+        <button type="submit" mat-flat-button color="primary">
           Giriş Yap
         </button>
         <button mat-flat-button color="primary">
@@ -61,7 +59,7 @@
     
 
     
-  </div> 
+  </form> 
 
 </div>
 

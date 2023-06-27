@@ -23,32 +23,17 @@ import { AppThemeService } from '@common/ui/theming/app-theme.service';
 export class LoginComponent implements OnInit, AfterContentInit {
   @ViewChild('stepper') stepper: MatStepper;
 
-  isim = '';
-  soyisim = '';
-  mail = '';
-  tel = '';
-  okul = '';
-  bolum = '';
-
-  page = 'category'
-
-  changePage = (page_name) => {
-    this.page = page_name
-    console.log(this.page)
-  }
-
-  
 
   public reversed = false;
   public firstFormGroup = this._formBuilder.group({
     email: ['', Validators.required],
-  });
-  public secondFormGroup = this._formBuilder.group({
+
     password: [
       '',
       [Validators.required, Validators.minLength(6), Validators.maxLength(30)],
     ],
   });
+
 
 
   constructor(
@@ -74,7 +59,7 @@ export class LoginComponent implements OnInit, AfterContentInit {
   ngAfterViewInit(): void {}
 
   public submit() {
-    const data = { ...this.firstFormGroup.value, ...this.secondFormGroup.value }
+    const data = this.firstFormGroup.value
     this.auth.login(data.email, data.password)
   }
 

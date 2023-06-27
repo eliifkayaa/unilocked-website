@@ -11,65 +11,63 @@ import { AppThemeService } from '@common/ui/theming/app-theme.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-
-  @ViewChild('stepper') stepper : MatStepper
-
-  isim = '';
-  soyisim = '';
-  mail = '';
-  tel = '';
-  okul = '';
-  bolum = '';
-
-  page = 'category'
-
-  changePage = (page_name) => {
-    this.page = page_name
-    console.log(this.page)
-  }
-
+  @ViewChild('stepper') stepper: MatStepper;
+ 
   public categories = [
     {
-      photos : [
-        "../../../assets/img/avatar1.png",
-        "../../../assets/img/avatar2.png",
-        "../../../assets/img/avatar3.png"
+      photos: [
+        '../../../assets/img/avatar1.png',
+        '../../../assets/img/avatar2.png',
+        '../../../assets/img/avatar3.png',
       ],
-      title : "Öğrenciyim",
-      checked : true,
-      subtitle: "Kendimi geliştirmek ve benim gibi düşünenler ile birlikte olmak istiyorum."
+      title: 'Öğrenciyim',
+      checked: true,
+      subtitle:
+        'Kendimi geliştirmek ve benim gibi düşünenler ile birlikte olmak istiyorum.',
     },
     {
-      photos : [
-        "../../../assets/img/teknokent.png",
-        "../../../assets/img/turkcell.png",
-        "../../../assets/img/avatar4.png"
+      photos: [
+        '../../../assets/img/teknokent.png',
+        '../../../assets/img/turkcell.png',
+        '../../../assets/img/avatar4.png',
       ],
-      title : "Profesyonelim",
-      checked : false,
-      subtitle: "Genç yetenekleri keşfetmek, iş ve staj imkanlarını paylaşmak ve alanım hakkında öğrencileri bilgilendirmek istiyorum."
+      title: 'Profesyonelim',
+      checked: false,
+      subtitle:
+        'Genç yetenekleri keşfetmek, iş ve staj imkanlarını paylaşmak ve alanım hakkında öğrencileri bilgilendirmek istiyorum.',
     },
     {
-      photos : [
-        "../../../assets/img/ieee.png",
-        "../../../assets/img/alekted.png",
-        "../../../assets/img/arge.png"
+      photos: [
+        '../../../assets/img/ieee.png',
+        '../../../assets/img/alekted.png',
+        '../../../assets/img/arge.png',
       ],
-      title : "Topluluğuz",
-      checked : false,
-      subtitle: "Genç yetenekleri keşfetmek, iş ve staj imkanlarını paylaşmak ve alanım hakkında öğrencileri bilgilendirmek istiyorum."
+      title: 'Topluluğuz',
+      checked: false,
+      subtitle:
+        'Genç yetenekleri keşfetmek, iş ve staj imkanlarını paylaşmak ve alanım hakkında öğrencileri bilgilendirmek istiyorum.',
     },
+  ];
 
-  ]
-
-  public firstFormGroup = this._formBuilder.group({
+  public firstFormGroup = this._formBuilder.group({});
+  public secondFormGroup = this._formBuilder.group({
     email: ['', [Validators.email, Validators.required]],
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
-  });
-  public secondFormGroup = this._formBuilder.group({
+    phone: ['', Validators.required],
     password: ['', Validators.required],
     password2: ['', Validators.required],
+    receiveNotifications: [false],
+    acceptPolicies: [false, Validators.requiredTrue],
+  });
+  public thirdFormGroup = this._formBuilder.group({
+    school: ['', Validators.required],
+    department: ['', Validators.required],
+    startDate: ['', Validators.required],
+    endDate: ['', Validators.required],
+  });
+  public fourthFormGroup = this._formBuilder.group({
+    about: ['', Validators.required],
   });
   public error: string;
 
@@ -106,7 +104,7 @@ export class RegisterComponent implements OnInit {
             this.error = error;
           },
           complete: () => {
-            this.stepper.next()
+            this.stepper.next();
           },
         });
     }

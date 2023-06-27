@@ -1,200 +1,216 @@
+:host ::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+
+mat-stepper {
+  background-color: transparent !important;
+  margin: 0px !important;
+}
 
 .left-side {
-    float: left;
-    width: 50%;
-    height: 100vh;
-    background-color: #F1F3F5;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  background-color: #f1f3f5;
 
-    .logo {
-        img {
-            width: 20%;
-        }
-        margin-bottom: 10%;
+  // 100% on mobile
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .logo {
+    img {
+      width: 20%;
+    }
+    margin-bottom: 10%;
+  }
+
+  .form {
+    .title {
+      width: 70%;
+      text-align: center;
+
+      h1 {
+        margin-bottom: 5px;
+        color: #7a59a4;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      p {
+        color: #343a40;
+        font-size: 16px;
+        font-weight: 600;
+      }
     }
 
-    .form {
-        .title {
-            width: 70%;
-            text-align: center;
+    .category {
+      margin-bottom: 2%;
+      .box {
+        width: 80%;
+        margin-bottom: 2%;
+        background-color: #fbfbfc;
+        border-radius: 7px;
+        padding: 2%;
 
-            h1 {
-                margin-bottom: 5px;
-                color: #7A59A4;
-                font-size: 24px;
-                font-weight: 600;
+        &:nth-child(1) {
+          background-color: #c9cbfb;
+        }
+        .logos {
+          width: 25%;
+
+          img {
+            width: 25%;
+            border-radius: 50%;
+
+            &:nth-child(2) {
+              width: 30%;
             }
+          }
+        }
+
+        .info {
+          width: 75%;
+          .name {
+            span {
+              width: 95%;
+
+              b {
+                font-size: 17px;
+              }
+
+              .mat-icon {
+                border: 1px solid #dee2e6;
+                border-radius: 50%;
+                color: #fbfbfc;
+                cursor: pointer;
+              }
+            }
+
             p {
-                color: #343A40;
-                font-size: 16px;
-                font-weight: 600;
+              margin: 2% 0 0 0;
+              color: #495057;
             }
+          }
         }
-
-        .category {
-            margin-bottom: 2%;
-            .box {
-                width: 80%;
-                margin-bottom: 2%;
-                background-color: #FBFBFC;
-                border-radius: 7px;
-                padding: 2%;
-
-                &:nth-child(1) {
-                    background-color: #C9CBFB;
-                }
-                .logos {
-                    width: 25%;
-
-                    img {
-                        width: 25%;
-                        border-radius: 50%;
-
-                        &:nth-child(2) {
-                            width: 30%;
-                        }
-                    }
-                }
-
-                .info {
-                    width: 75%;
-                    .name {
-                        span {
-                            width: 95%;
-
-                            b {
-                                font-size: 17px;
-                            }
-
-                            .mat-icon {
-                                border: 1px solid #DEE2E6;
-                                border-radius: 50%;
-                                color: #FBFBFC;
-                                cursor: pointer;
-                            }
-                        }
-
-                        p {
-                            margin: 2% 0 0 0;
-                            color: #495057;
-                        }
-                    }
-                }
-            }
-        }
-        .login {
-            width: 80%;
-            margin-bottom: 2%;
-            
-            a {
-                color: #5D64F3;
-                text-decoration: none;
-                margin-left: 1%;
-            }
-        }
-        button {
-            width: 60%;
-            margin-top: 2%;
-
-            .mat-icon {
-                font-size: 15px;
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        .register-form {
-            width: 70%;
-            flex-wrap: wrap;
-
-            .mat-form-field {
-                width: 45%;
-            }
-
-            .check {
-                width: 80%;
-                display: flex;
-                align-items: center;
-                margin-top: 2%;
-
-                p {
-                    margin: 0;
-
-                    a {
-                        color: #495057;
-                    }
-                }
-            }
-
-            &.summary {
-                .mat-form-field {
-                    width: 100%;
-                }
-            }
-
-            .buttons {
-                margin-top: 5%;
-                width: 100%;
-                button {
-                    &:not(:nth-child(1)) {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: #DBDDFC;
-                        color: #4B53F2;
-                        border: 1px solid #C9CBFB;
-
-                        p {
-                            font-weight: 600;
-                            display: inline;
-                            margin-left: 3%;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+    .login {
+      width: 80%;
+      margin-bottom: 2%;
+
+      a {
+        color: #5d64f3;
+        text-decoration: none;
+        margin-left: 1%;
+      }
+    }
+    button {
+      width: 60%;
+      margin-top: 2%;
+
+      .mat-icon {
+        font-size: 15px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .register-form {
+      width: 70%;
+      flex-wrap: wrap;
+
+      .mat-form-field {
+        width: 45%;
+      }
+
+      .check {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        margin-top: 2%;
+
+        p {
+          margin: 0;
+
+          a {
+            color: #495057;
+          }
+        }
+      }
+
+      &.summary {
+        .mat-form-field {
+          width: 100%;
+        }
+      }
+
+      .buttons {
+        margin-top: 5%;
+        width: 100%;
+        button {
+          &:not(:nth-child(1)) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #dbddfc;
+            color: #4b53f2;
+            border: 1px solid #c9cbfb;
+
+            p {
+              font-weight: 600;
+              display: inline;
+              margin-left: 3%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .right-side {
-    width: 50%;
-    height: 100vh;
-    background-color: #7A59A4;
+  width: 50%;
+  height: 100vh;
+  background-color: #7a59a4;
 
-    .title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-top: 15%;
-        
+  // hide on mobile
+  @media (max-width: 768px) {
+    display: none !important;
+  }
 
-        span {
-            width: 50%;
-            line-height: 40px;
-            font-size: 40px;
-            font-weight: 900;
-            color: #F1F3F5;
-            text-align: center;
-        }
-        p {
-            width: 70%;
-            font-size: 18px;
-            margin-top: 5%;
-            color: #E9ECEF;
-            text-align: center;
-        }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15%;
+
+    span {
+      width: 50%;
+      line-height: 40px;
+      font-size: 40px;
+      font-weight: 900;
+      color: #f1f3f5;
+      text-align: center;
     }
-
-    img {
-        width: 70%;
-        margin-left: 30%;
-        margin-top: 5%;
-
-        &.center {
-            margin: 5% 15%;
-        }
+    p {
+      width: 70%;
+      font-size: 18px;
+      margin-top: 5%;
+      color: #e9ecef;
+      text-align: center;
     }
-    
+  }
+
+  img {
+    width: 70%;
+    margin-left: 30%;
+    margin-top: 5%;
+
+    &.center {
+      margin: 5% 15%;
+    }
+  }
 }
