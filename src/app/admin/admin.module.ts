@@ -8,6 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -18,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { ContentPublishingHubComponent } from './content-publishing-hub/content-publishing-hub.component';
 import { ContentEditingComponent } from './content-editing/content-editing.component';
+import { ProfileEditingComponent } from './profile-editing/profile-editing.component';
 
 
 
@@ -26,7 +28,8 @@ import { ContentEditingComponent } from './content-editing/content-editing.compo
     AdminHomeComponent,
     AdminMenuComponent,
     ContentPublishingHubComponent,
-    ContentEditingComponent
+    ContentEditingComponent,
+    ProfileEditingComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ import { ContentEditingComponent } from './content-editing/content-editing.compo
     LayoutModule,
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     MatFormFieldModule,
     FormsModule,
     MatSliderModule,
