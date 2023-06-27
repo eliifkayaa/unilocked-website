@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from '@common/core/toast/toast/toast.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LoggedIn } from '@common/auth/logged-in.service';
+import { NotLoggedIn } from '@common/auth/not-logged-in.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { LoggedIn } from '@common/auth/logged-in.service';
     ToastModule,
     MatProgressBarModule,
   ],
-  providers: [LoggedIn],
+  providers: [LoggedIn,NotLoggedIn],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
