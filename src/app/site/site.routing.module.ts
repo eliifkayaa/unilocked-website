@@ -19,6 +19,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { CompanyComponent } from './company/company.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { MessagesComponent } from './messages/messages.component';
+import { CompaniesExtendedComponent } from './companies/companies-extended/companies-extended.component';
 
 
 const routes: Routes = [
@@ -59,7 +61,9 @@ const routes: Routes = [
 
   { path: 'company', component: CompanyComponent, canActivate: [LoggedIn] },
 
+  { path: 'messages', component: MessagesComponent, canActivate: [LoggedIn] },
 
+  { path: 'companies-extended', component: CompaniesExtendedComponent, canActivate: [LoggedIn] },
 
 ];
 
