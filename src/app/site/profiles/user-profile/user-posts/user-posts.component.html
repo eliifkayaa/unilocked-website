@@ -1,0 +1,39 @@
+<main-content>
+    <div class="container">
+        <mat-card class="posts card">
+            <div class="title">
+              <h2>Gönderiler</h2>
+              <div>
+                <div>
+                  <button mat-button color="primary">
+                    <mat-icon>add</mat-icon> Ekle
+                  </button>
+                  <button mat-button color="primary">
+                    <mat-icon>edit</mat-icon> Düzenle
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6" *ngFor="let post of user.posts">
+                <profile-content [item]="post"></profile-content>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" *ngFor="let post of user.posts">
+                  <profile-content [item]="post"></profile-content>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" *ngFor="let post of user.posts">
+                  <profile-content [item]="post"></profile-content>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" *ngFor="let post of user.posts">
+                  <profile-content [item]="post"></profile-content>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</main-content>

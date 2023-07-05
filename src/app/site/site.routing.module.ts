@@ -25,6 +25,8 @@ import { PeopleExtendedComponent } from './people/people-extended/people-extende
 import { ProjectsExtendedComponent } from './projects/projects-extended/projects-extended.component';
 import { CommunitiesExtendedComponent } from './communities/communities-extended/communities-extended.component';
 import { EventsExtendedComponent } from './events/events-extended/events-extended.component';
+import { UserPostsComponent } from './profiles/user-profile/user-posts/user-posts.component';
+import { UserHighlightsComponent } from './profiles/user-profile/user-highlights/user-highlights.component';
 
 
 const routes: Routes = [
@@ -76,6 +78,10 @@ const routes: Routes = [
   { path: 'communities-extended', component: CommunitiesExtendedComponent, canActivate: [LoggedIn] },
 
   { path: 'events-extended', component: EventsExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'user-posts', component: UserPostsComponent, canActivate: [LoggedIn] },
+
+  { path: 'user-highlights', component: UserHighlightsComponent, canActivate: [LoggedIn] },
 ];
 
 @NgModule({

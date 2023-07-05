@@ -153,7 +153,7 @@
         <h2>Gönderiler</h2>
         <div>
           <div>
-            <button mat-button color="primary">Hepsini Gör</button>
+            <a [routerLink]="['/user-posts']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
             <button mat-button color="primary">
               <mat-icon>add</mat-icon> Ekle
             </button>
@@ -174,7 +174,7 @@
         <h2>Öne Çıkan İçerikler</h2>
         <div>
           <div>
-            <button mat-button color="primary">Hepsini Gör</button>
+            <a [routerLink]="['/user-highlights']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
             <button mat-button color="primary">
               <mat-icon>add</mat-icon> Ekle
             </button>
