@@ -1,0 +1,105 @@
+.container{
+    margin-top: 40px;
+}
+
+.header {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 4%;
+    margin-bottom: 40px;
+  }
+  
+  .content {
+    margin-top: 4%;
+  }
+
+  h2{
+    margin: 35px 0px 35px 60px;
+  }
+  
+  .joined {
+    margin-top: -2%;
+  
+    width: 100%;
+  
+    .community {
+      position: relative;
+      color: var(--text);
+      padding: 0;
+      border-radius: 12px;
+  
+      .backdrop {
+        border-radius: 20px;
+        width: 100%;
+        height: 120px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+  
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+  
+      .name {
+        font-weight: 600;
+        margin: 16px 16px 0px 16px;
+      }
+  
+      .short-desc {
+        font-weight: 500;
+        font-size: 14px;
+        margin: 8px 16px 0px 16px;
+      }
+  
+      .role {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--info-text);
+        margin: 8px 16px 16px 16px;
+      }
+    }
+  }
+  
+  .following-area {
+    margin-top: 4%;
+  
+    .followed {
+      justify-content: space-between;
+      margin: 0 4% 4% 4%;
+      .community {
+        padding-right: 36px;
+        margin-top: 36px;
+        .avatar {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin: 0px 16px 16px 16px;
+        }
+  
+        .name {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 2px;
+        }
+  
+        .short-desc {
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--sub-text);
+          margin: 2px;
+        }
+  
+        .details {
+          margin: 2px;
+          color: var(--info-text);
+        }
+      }
+    }
+  }

@@ -23,6 +23,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { CompaniesExtendedComponent } from './companies/companies-extended/companies-extended.component';
 import { PeopleExtendedComponent } from './people/people-extended/people-extended.component';
 import { ProjectsExtendedComponent } from './projects/projects-extended/projects-extended.component';
+import { CommunitiesExtendedComponent } from './communities/communities-extended/communities-extended.component';
+import { EventsExtendedComponent } from './events/events-extended/events-extended.component';
 
 
 const routes: Routes = [
@@ -70,6 +72,10 @@ const routes: Routes = [
   { path: 'people-extended', component: PeopleExtendedComponent, canActivate: [LoggedIn] },
 
   { path: 'projects-extended', component: ProjectsExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'communities-extended', component: CommunitiesExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'events-extended', component: EventsExtendedComponent, canActivate: [LoggedIn] },
 ];
 
 @NgModule({

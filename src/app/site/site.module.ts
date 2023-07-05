@@ -66,10 +66,12 @@ import { MessagesComponent } from './messages/messages.component';
 import { CompaniesExtendedComponent } from './companies/companies-extended/companies-extended.component';
 import { PeopleExtendedComponent } from './people/people-extended/people-extended.component';
 import { ProjectsExtendedComponent } from './projects/projects-extended/projects-extended.component';
+import { CommunitiesExtendedComponent } from './communities/communities-extended/communities-extended.component';
+import { EventsExtendedComponent } from './events/events-extended/events-extended.component';
 
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent],
 
 
   imports: [
