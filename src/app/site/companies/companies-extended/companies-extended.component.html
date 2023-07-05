@@ -1,111 +1,337 @@
 <main-content>
-    <div class="header">
-        <div class="container">
-          <h1>Şirketler</h1>
-          <div class="content">
-            <div class="d-flex justify-content-between">
-              <h2>Takip Ettiklerim</h2>
-            </div>
-            <div class="joined">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <slider-item *ngFor="let company of companies">
-                      <mat-card class="company mat-elevation-z0">
-                        <div
-                          class="backdrop-area"
-                          style="position: relative; height: 120px"
-                        >
-                          <div
-                            style="position: absolute"
-                            class="backdrop"
-                            [style.backgroundImage]="
-                              'url(' + company.backdrop + ')'
-                            "
-                          ></div>
-                          <div
-                            style="
-                              width: 100%;
-                              height: 120px;
-                              position: absolute;
-                              background-color: rgba(0, 0, 0, 0.3);
-                              border-radius: 12px 12px 0 0;
-                            "
-                          ></div>
-                          <img class="avatar" [src]="company.avatar" alt="Avatar" />
-                        </div>
-                        <h3 class="name">{{ company.name }}</h3>
-                        <p class="short-desc">{{ company.shortDesc }}</p>
-                        <p class="role">Katılımcı üye</p>
-                      </mat-card>
-                    </slider-item>
-                  </div>
-                  <div class="col-sm-4">
-                    <slider-item *ngFor="let company of companies">
-                      <mat-card class="company mat-elevation-z0">
-                        <div
-                          class="backdrop-area"
-                          style="position: relative; height: 120px"
-                        >
-                          <div
-                            style="position: absolute"
-                            class="backdrop"
-                            [style.backgroundImage]="
-                              'url(' + company.backdrop + ')'
-                            "
-                          ></div>
-                          <div
-                            style="
-                              width: 100%;
-                              height: 120px;
-                              position: absolute;
-                              background-color: rgba(0, 0, 0, 0.3);
-                              border-radius: 12px 12px 0 0;
-                            "
-                          ></div>
-                          <img class="avatar" [src]="company.avatar" alt="Avatar" />
-                        </div>
-                        <h3 class="name">{{ company.name }}</h3>
-                        <p class="short-desc">{{ company.shortDesc }}</p>
-                        <p class="role">Katılımcı üye</p>
-                      </mat-card>
-                    </slider-item>
-                  </div>
-                  <div class="col-sm-4">
-                    <slider-item *ngFor="let company of companies">
-                      <mat-card class="company mat-elevation-z0">
-                        <div
-                          class="backdrop-area"
-                          style="position: relative; height: 120px"
-                        >
-                          <div
-                            style="position: absolute"
-                            class="backdrop"
-                            [style.backgroundImage]="
-                              'url(' + company.backdrop + ')'
-                            "
-                          ></div>
-                          <div
-                            style="
-                              width: 100%;
-                              height: 120px;
-                              position: absolute;
-                              background-color: rgba(0, 0, 0, 0.3);
-                              border-radius: 12px 12px 0 0;
-                            "
-                          ></div>
-                          <img class="avatar" [src]="company.avatar" alt="Avatar" />
-                        </div>
-                        <h3 class="name">{{ company.name }}</h3>
-                        <p class="short-desc">{{ company.shortDesc }}</p>
-                        <p class="role">Katılımcı üye</p>
-                      </mat-card>
-                    </slider-item>
+    <div class="container">
+      <h1>Şirketler</h1>
+      <mat-tab-group>
+        <mat-tab label="Takip Ettiklerim">
+          <div class="header">
+            <div class="container">
+              <div class="content">
+                <div class="d-flex justify-content-between">
+                  <h2>Takip Ettiklerim</h2>
+                </div>
+                <div class="joined">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </mat-tab>
+        <mat-tab label="Çevrendekiler">
+          <div class="header">
+            <div class="container">
+              <div class="content">
+                <div class="d-flex justify-content-between">
+                  <h2>Çevrendekiler</h2>
+                </div>
+                <div class="joined">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Takip Edilmeye Değer">
+          <div class="header">
+            <div class="container">
+              <div class="content">
+                <div class="d-flex justify-content-between">
+                  <h2>Takip Edilmeye Değer</h2>
+                </div>
+                <div class="joined">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                      <div class="col-sm-4">
+                        <slider-item *ngFor="let company of companies">
+                          <mat-card class="company mat-elevation-z0">
+                            <div
+                              class="backdrop-area"
+                              style="position: relative; height: 120px"
+                            >
+                              <div
+                                style="position: absolute"
+                                class="backdrop"
+                                [style.backgroundImage]="
+                                  'url(' + company.backdrop + ')'
+                                "
+                              ></div>
+                              <div
+                                style="
+                                  width: 100%;
+                                  height: 120px;
+                                  position: absolute;
+                                  background-color: rgba(0, 0, 0, 0.3);
+                                  border-radius: 12px 12px 0 0;
+                                "
+                              ></div>
+                              <img class="avatar" [src]="company.avatar" alt="Avatar" />
+                            </div>
+                            <h3 class="name">{{ company.name }}</h3>
+                            <p class="short-desc">{{ company.shortDesc }}</p>
+                            <p class="role">Katılımcı üye</p>
+                          </mat-card>
+                        </slider-item>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
 </main-content>
