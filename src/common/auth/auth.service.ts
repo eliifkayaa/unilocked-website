@@ -30,6 +30,7 @@ export class AuthService {
 
     this.http.get<UserResponse>('auth/me').subscribe({
       next: (data) => {
+        this.loadingStatus$.next(false)
         this.handleLogin(data, false);
       },
       error: (err) => {
