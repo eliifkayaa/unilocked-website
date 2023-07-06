@@ -52,7 +52,7 @@
                 </slider-item>
               </slider>
             </div>
-            <info-card
+            <info-card [routerLink]="['/people']" routerLinkActive="router-link-active" 
               title="Yeni bağlantılar kurun"
               icon="person_add"
               text="Kişiler sayfasında ortak kurumlarda okuduğunuz, çalıştığınız, ilgi alanlarına sahip olduğunuz insanları bulun, bağlantı kurun."
@@ -113,7 +113,7 @@
                 </div>
               </div>
             </div>
-            <info-card
+            <info-card [routerLink]="['/communities']" routerLinkActive="router-link-active" 
               icon="group"
               title="Yeni Topluluklar Bulun"
               text="Farklı projeler yapan, yetenekli öğrencilerin bulunduğu toplulukları keşfedin, bir parçası olun ve devrim yaratacak yeni bir projenin öncüsü olun."
