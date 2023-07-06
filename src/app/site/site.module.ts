@@ -64,6 +64,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { PostContentComponent } from './components/post/post-content/post-content.component';
 import { PlanetLeftComponent } from './main-home/guest-home/planet-left/planet-left.component';
 import { PlanetRightComponent } from './main-home/guest-home/planet-right/planet-right.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -84,7 +85,7 @@ import { PlanetRightComponent } from './main-home/guest-home/planet-right/planet
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatSidenavModule,
