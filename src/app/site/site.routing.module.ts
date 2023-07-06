@@ -19,6 +19,14 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { CompanyComponent } from './company/company.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { MessagesComponent } from './messages/messages.component';
+import { CompaniesExtendedComponent } from './companies/companies-extended/companies-extended.component';
+import { PeopleExtendedComponent } from './people/people-extended/people-extended.component';
+import { ProjectsExtendedComponent } from './projects/projects-extended/projects-extended.component';
+import { CommunitiesExtendedComponent } from './communities/communities-extended/communities-extended.component';
+import { EventsExtendedComponent } from './events/events-extended/events-extended.component';
+import { UserPostsComponent } from './profiles/user-profile/user-posts/user-posts.component';
+import { UserHighlightsComponent } from './profiles/user-profile/user-highlights/user-highlights.component';
 
 
 const routes: Routes = [
@@ -59,8 +67,21 @@ const routes: Routes = [
 
   { path: 'company', component: CompanyComponent, canActivate: [LoggedIn] },
 
+  { path: 'messages', component: MessagesComponent, canActivate: [LoggedIn] },
 
+  { path: 'companies-extended', component: CompaniesExtendedComponent, canActivate: [LoggedIn] },
 
+  { path: 'people-extended', component: PeopleExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'projects-extended', component: ProjectsExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'communities-extended', component: CommunitiesExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'events-extended', component: EventsExtendedComponent, canActivate: [LoggedIn] },
+
+  { path: 'user-posts', component: UserPostsComponent, canActivate: [LoggedIn] },
+
+  { path: 'user-highlights', component: UserHighlightsComponent, canActivate: [LoggedIn] },
 ];
 
 @NgModule({

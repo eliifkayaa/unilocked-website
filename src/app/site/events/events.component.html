@@ -25,7 +25,7 @@
           </button>
         </div>
 
-        <info-card
+        <info-card [routerLink]="['/event-details']" routerLinkActive="router-link-active" 
           title="Toplulukların etkinliklerini keşfet"
           icon="rocket-launch"
           text="Üyesi olduğun toplulukların yeni etkinlikleri keşfet ve ilgini çeken etkinlikleri düzenleyen yeni toplulukları takip et."
@@ -35,7 +35,7 @@
         <div class="suggested-area">
           <div class="d-flex justify-content-between">
             <h2>Önerilen Etkinlikler</h2>
-            <button mat-button color="primary">Hepsini gör</button>
+            <a [routerLink]="['/events-extended']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini gör</a>
           </div>
           <div class="joined">
             <div class="row">
@@ -69,7 +69,7 @@
         <div class="past-area">
           <div class="d-flex justify-content-between">
             <h2>Geçmiş Etkinlikleriniz</h2>
-            <button mat-button color="primary">Hepsini gör</button>
+            <a [routerLink]="['/events-extended']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini gör</a>
           </div>
           <div class="joined">
             <div class="row">
