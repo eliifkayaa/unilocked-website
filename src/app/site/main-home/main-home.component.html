@@ -1,4 +1,10 @@
-<user-home *ngIf="authService.loggedIn else guestHome"></user-home>
+<ng-container *ngIf="authService.loadingStatus$ | async else home">
+  <div class="progress">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-container>
+<ng-template #home>
+  <user-home *ngIf="authService.loggedIn else guestHome"></user-home>
 <ng-template #guestHome>
   <guest-home></guest-home>
 </ng-template>
