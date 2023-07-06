@@ -1,0 +1,594 @@
+<admin-menu [menuItems]="menuItems">
+    <div class="content" style="min-height: 100vh;">
+        <div class="mainTitle d-flex justify-content-between">
+            <div class="title">
+                Profil
+            </div>
+            <div class="filters d-flex align-items-center justify-content-around">
+                <div class="buttons">
+                    <button mat-flat-button [class.active]="activeButton === 0" class="active" (click)="bolumClick()">
+                        Bölümler
+                    </button>
+                    <button mat-flat-button [class.active]="activeButton === 1" (click)="duzenlemeClick()">
+                        Düzenleme
+                    </button>
+                    <button mat-flat-button [class.active]="activeButton === 2" (click)="onizleClick()">
+                        Ön İzleme
+                    </button>
+                    
+                </div>
+                <div class="more d-flex justify-content-center align-items-center">
+                    <button mat-flat-button>
+                        <mat-icon>
+                            more_horiz
+                        </mat-icon>
+                    </button>
+                </div>
+                <div class="save">
+                    <button mat-flat-button>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contents" [@fadeInOut] *ngIf="bolum">
+            <div class="content" *ngFor="let content of contents">
+                <div class="header d-flex justify-content-between align-items-center">
+                    <p>{{content.title}}</p>
+                    <button *ngIf="content.button" class="d-flex justify-content-around align-items-center">
+                        <mat-icon>
+                            add
+                        </mat-icon>
+                        Bölüm Ekle
+                    </button>
+                </div>
+                <div class="main">
+                    <ul>
+                        <li *ngFor="let list of content.lists">
+                            <div class="info">
+                                <mat-icon>
+                                    menu
+                                </mat-icon>
+                                <div class="title">
+                                    <b>{{list.title}}</b>
+                                    <p *ngIf="list.subtitle === 'yes'" style="color: #40C057;">
+                                        <mat-icon>
+                                            done
+                                        </mat-icon>
+                                        Bu bölümün sayfanız için doğru noktada olduğunu öngörüyoruz. 
+                                    </p>
+                                    <p *ngIf="list.subtitle === 'no'" style="color: #FA5252;">
+                                        <mat-icon>
+                                            close
+                                        </mat-icon>
+                                        Bu bölümün sayfanız için yanlış noktada olduğunu öngörüyoruz. • İletişim bölümünün sayfa sonunda bulunmasının daha olumlu etkiye sahip olduğu gözlendi. 
+                                    </p>
+                                    <p *ngIf="list.subtitle != 'yes' && list.subtitle != 'no'">
+                                        {{list.subtitle}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons" *ngIf="content.button">
+                                <mat-icon>
+                                    edit
+                                </mat-icon>
+                                <mat-icon>
+                                    visibility
+                                </mat-icon>
+                                <mat-icon>
+                                    delete
+                                </mat-icon>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </div>
+                            <div class="buttons" *ngIf="!content.button">
+                                <button mat-flat-button>
+                                    Ekle
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="contents" [@fadeInOut] *ngIf="duzenleme">
+            <div class="accordion" id="accordion1">
+                <div class="header d-flex justify-content-between align-items-center" (click)="accordionClick(1)">
+                    <div class="title d-flex flex-column ">
+                        <b>Genel</b>
+                        <p>Profil sayfanız dışında da gösterilecek ayarları düzenleyin. </p>
+                    </div>
+                    <div class="expand">
+                        <mat-icon>
+                            expand_more
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="main" id="main1">
+                    <div class="subtitle">
+                        <b>Profil Fotoğrafı</b>
+                        <p>Profilinizde görünecek profil fotoğrafınızı ayarlayın. Yönetim panelinde görünen şirket profil resmi ayarlardan değiştirilebilir.</p>
+                    </div>
+                    <div class="photo d-flex">
+                        <img src="../../../assets/img/turkcell.png">
+                        <div class="changephoto">
+                            <b>Kullanılan Fotoğraf</b>
+                            <p>Yüklenecek fotoğrafın en az 400x400px ve jpg/png formatında olması gerekmektedir. 1:1 fotoğraf oranı tercih edilmelidir. </p>
+                            <div class="buttons d-flex">
+                                <button mat-flat-button class="upload">
+                                    Fotoğraf Yükle
+                                </button>
+                                <button mat-flat-button class="remove">
+                                    Fotoğraf Kaldır
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subtitle">
+                        <b>Kısa Özet</b>
+                        <p>Şirketinizi birkaç kelimede özetleyen, slogan olarak kullandığınız bir cümleyi yazınız. Özet profilinizde ve ön izleme kartlarında görüntülenir.</p>
+                        <input type="text" placeholder="#TurkcellİstihdamSeferberliği">
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion2">
+                <div class="header d-flex justify-content-between align-items-center" (click)="accordionClick(2)">
+                    <div class="title d-flex flex-column ">
+                        <b>Başlık</b>
+                    </div>
+                    <div class="expand">
+                        <mat-icon>
+                            expand_more
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="main" id="main2">
+                    <div class="subtitle">
+                        <b>Kapak Fotoğrafı</b>
+                        <p>Profilinizde görünecek kapak fotoğrafınızı ayarlayın. Farklı boyutlarda her zaman kapsayıcı olacak bir fotoğraf seçin.</p>
+                    </div>
+                    <div class="photo d-flex">
+                        <img src="../../../assets/img/arkaplan.png">
+                        <div class="changephoto">
+                            <b>Kullanılan Fotoğraf</b>
+                            <p>Yüklenecek fotoğrafın en az 800x450px ve jpg formatında olması gerekmektedir. 16:9 fotoğraf oranı tercih edilmelidir. </p>
+                            <div class="buttons d-flex">
+                                <button mat-flat-button class="upload">
+                                    Fotoğraf Yükle
+                                </button>
+                                <button mat-flat-button class="remove">
+                                    Fotoğraf Kaldır
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subtitle">
+                        <b>Takipçi Sayısı</b>
+                        <p>Takipçi Sayınızı nasıl gösterileceğini seçin.</p>
+                        <div class="followers d-flex justify-content-between">
+                            <div class="option">
+                                <mat-icon>
+                                    radio_button_checked
+                                </mat-icon>
+                                <p>Tam Sayı(12.345)</p>
+                            </div>
+                            <div class="option">
+                                <mat-icon>
+                                    av_timer
+                                </mat-icon>
+                                <p>Kısaltılmış Sayı(12B)</p>
+                            </div>
+                            <div class="option">
+                                <mat-icon>
+                                    av_timer
+                                </mat-icon>
+                                <p>Gizle</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion3">
+                <div class="header d-flex justify-content-between align-items-center" (click)="accordionClick(3)">
+                    <div class="title d-flex flex-column ">
+                        <b>Hakkında ve İletişim</b>
+                    </div>
+                    <div class="expand">
+                        <mat-icon>
+                            expand_more
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="main" id="main3">
+                    <div class="subtitle">
+                        <b>Hakkında</b>
+                        <p>Şirketinizi tanıtan bir hakkında yazısı yazınız.</p>
+                    </div>
+                    <div class="about">
+                        <textarea rows="19">
+Turkcell, Türkiye’de kurulmuş; yerleşik, entegre iletişim ve teknoloji hizmetleri şirketidir. Müşterilerine mobil ve sabit şebekeleri üzerinden ses, data, TV hizmetleri ve katma değerli bireysel ve kurumsal servisler sunmaktadır.
+                            
+Hisseleri 11 Temmuz 2000'de Borsa İstanbul (BİST) ve New York Stock Exchange'de (NYSE) eşzamanlı olarak işlem görmeye başlayan Turkcell, NYSE'ye kote olan tek Türk şirketi unvanına sahiptir. Turkcell aynı zamanda Borsa İstanbul Sürdürülebilirlik Endeksi’nde yer almaktadır.
+                                                           
+Turkcell bölgede entegre iletişim ve teknoloji hizmeti oyuncusudur. Birleşik, mobil ve sabit şebeke platformu üzerinden geniş kapsamda yaratıcı ürün ve servis sunmayı hedeflemektedir. Bireysel ve kurumsal müşterilerimizin beklentilerini karşılamak için mobil, sabit ve data servislerimizin tamamını sunabilmenin önemine inanmaktayız.
+                            
+Turkcell'in yurt dışında da yatırımları bulunmaktadır. 1999 yılında hizmete giren %100 Turkcell iştiraki KKTCell Kuzey Kıbrıs Türk Cumhuriyeti Telekomünikasyon Dairesi ile gelir paylaşımı anlaşması çerçevesinde faaliyet göstermektedir. Turkcell'in Ukrayna'da %100 hissesine sahip olduğu lifecell şirketi Şubat 2005'de mobil iletişim hizmeti vermeye başladı. Belarus'ta ise Turkcell, BeST'in hisselerinin %80'ini Belarus Cumhuriyet Devlet Varlık Komitesi'nden 2008'de satın almıştı. 2011 yılından beri Almanya’da Turkcell Europe markasıyla bulunan Turkcell, Deutsche Telekom’un iştiraki ile yaptığı pazarlama işbirliği ile Almanya'daki faaliyetlerine devam etmektedir.
+                            
+Turkcell, Türkiye'deki geniş kapsama alanı ve yurt dışında kullanım hizmetlerinin yaygınlığıyla, müşterilerinin iletişim ihtiyaçlarına yüksek kalitede cevap verebilmeyi amaçlamaktadır.
+</textarea>
+                    </div>
+                    <div class="subtitle">
+                        <b>İletişim</b>
+                        <p>Kullanıcıların şirketiniz ile iletişime geçebilmesi ve markanızın farklı platformlardaki hesaplarını ekleyin.</p>
+                        <div class="contact d-flex justify-content-between align-items-end">
+                            <div class="option">
+                                <p>İletişim Çeşidi</p>
+                                <select>
+                                    <option value="twitter" selected>Twitter</option>
+                                    <option value="instagram">Instagram</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <p>Başlık</p>
+                                <input type="text" placeholder="Turkcell Twitter Sayfası">
+                            </div>
+                            <div class="option">
+                                <p>Açıklama</p>
+                                <input type="text" placeholder="@Turkcell">
+                            </div>
+                            <button mat-flat-button color="primary">Ekle</button>
+                        </div>
+                        <div class="contacts">
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <mat-icon>
+                                            menu
+                                        </mat-icon>
+                                        <div class="info">
+                                            <b>İnternet Sitesi • Turkcell Ana Sayfa</b>
+                                            <p>https://www.turkcell.com.tr/</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttons d-flex justify-content-between">
+                                        <mat-icon>
+                                            edit
+                                        </mat-icon>
+                                        <mat-icon>
+                                            delete
+                                        </mat-icon>
+                                        <mat-icon>
+                                            more_horiz
+                                        </mat-icon>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <mat-icon>
+                                            menu
+                                        </mat-icon>
+                                        <div class="info">
+                                            <b>E-posta Adresi • Kurumsal İletişim </b>
+                                            <p>turkcell-kurumsal-iletisim@turkcell.com.tr</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttons d-flex justify-content-between">
+                                        <mat-icon>
+                                            edit
+                                        </mat-icon>
+                                        <mat-icon>
+                                            delete
+                                        </mat-icon>
+                                        <mat-icon>
+                                            more_horiz
+                                        </mat-icon>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <mat-icon>
+                                            menu
+                                        </mat-icon>
+                                        <div class="info">
+                                            <b>Adres • Turkcell Küçükyalı Plaza (Genel Müdürlük)</b>
+                                            <p>Aydınevler Mahallesi İnönü Caddesi No:20 Küçükyalı Ofispark B Blok - Maltepe / İSTANBUL</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttons d-flex justify-content-between">
+                                        <mat-icon>
+                                            edit
+                                        </mat-icon>
+                                        <mat-icon>
+                                            delete
+                                        </mat-icon>
+                                        <mat-icon>
+                                            more_horiz
+                                        </mat-icon>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <mat-icon>
+                                            menu
+                                        </mat-icon>
+                                        <div class="info">
+                                            <b>Telefon Numarası • Turkcell Küçükyalı Plaza (Genel Müdürlük)</b>
+                                            <p>(0212) 313 10 00</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttons d-flex justify-content-between">
+                                        <mat-icon>
+                                            edit
+                                        </mat-icon>
+                                        <mat-icon>
+                                            delete
+                                        </mat-icon>
+                                        <mat-icon>
+                                            more_horiz
+                                        </mat-icon>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <mat-icon>
+                                            menu
+                                        </mat-icon>
+                                        <div class="info">
+                                            <b>Facebook • Facebook Sayfamız</b>
+                                            <p>https://www.facebook.com/Turkcell</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttons d-flex justify-content-between">
+                                        <mat-icon>
+                                            edit
+                                        </mat-icon>
+                                        <mat-icon>
+                                            delete
+                                        </mat-icon>
+                                        <mat-icon>
+                                            more_horiz
+                                        </mat-icon>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion4">
+                <div class="header d-flex justify-content-between align-items-center" (click)="accordionClick(4)">
+                    <div class="title d-flex flex-column ">
+                        <b>İçerik</b>
+                    </div>
+                    <div class="expand">
+                        <mat-icon>
+                            expand_more
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="main" id="main4">
+                    <div class="subtitle">
+                        <b>Öne Çıkarılan İçerikler</b>
+                        <p>Öne çıkarılan içeriklerin nasıl gösterileceğini seçin.</p>
+                        <div class="option">
+                            <p>Gösterilecek İçerik Sayısı</p>
+                            <select>
+                                <option value="4" selected>4 İçerik</option>
+                                <option value="5">5 İçerik</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="contents row justify-content-center"> 
+                        <div class="content col-5">
+                            <div class="header d-flex justify-content-between align-items-center">
+                                <div class="title d-flex justify-content-between align-items-center">
+                                    <mat-icon>
+                                        menu
+                                    </mat-icon>
+                                    <p>Gönderi</p>
+                                </div>
+                                <div class="buttons d-flex justify-content-between">
+                                    <mat-icon>
+                                        edit
+                                    </mat-icon>
+                                    <mat-icon>
+                                        delete
+                                    </mat-icon>
+                                    <mat-icon>
+                                        more_horiz
+                                    </mat-icon>
+                                </div>
+                            </div>
+                            <div class="img">
+                                <img src="../../../assets/img/alekted.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular, sporcular, sanatçılar ve şovmenlerden oluşan büyüyen bir ağ olan PlayStation Playmaker'larla tanışın.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content col-5">
+                            <div class="header d-flex justify-content-between align-items-center">
+                                <div class="title d-flex justify-content-between align-items-center">
+                                    <mat-icon>
+                                        menu
+                                    </mat-icon>
+                                    <p>Gönderi</p>
+                                </div>
+                                <div class="buttons d-flex justify-content-between">
+                                    <mat-icon>
+                                        edit
+                                    </mat-icon>
+                                    <mat-icon>
+                                        delete
+                                    </mat-icon>
+                                    <mat-icon>
+                                        more_horiz
+                                    </mat-icon>
+                                </div>
+                            </div>
+                            <div class="img">
+                                <img src="../../../assets/img/alekted.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular, sporcular, sanatçılar ve şovmenlerden oluşan büyüyen bir ağ olan PlayStation Playmaker'larla tanışın.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content col-5">
+                            <div class="header d-flex justify-content-between align-items-center">
+                                <div class="title d-flex justify-content-between align-items-center">
+                                    <mat-icon>
+                                        menu
+                                    </mat-icon>
+                                    <p>Gönderi</p>
+                                </div>
+                                <div class="buttons d-flex justify-content-between">
+                                    <mat-icon>
+                                        edit
+                                    </mat-icon>
+                                    <mat-icon>
+                                        delete
+                                    </mat-icon>
+                                    <mat-icon>
+                                        more_horiz
+                                    </mat-icon>
+                                </div>
+                            </div>
+                            <div class="img">
+                                <img src="../../../assets/img/alekted.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Oyunun gücünü kanıtlayan tutkulu oyuncular, içerik oluşturucular, sporcular, sanatçılar ve şovmenlerden oluşan büyüyen bir ağ olan PlayStation Playmaker'larla tanışın.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content col-5 d-flex flex-column align-items-start justify-content-center">
+                            <div class="title">
+                                <b>Yeni İçerik Ekleyin</b>
+                            </div>
+                            <div class="link d-flex align-items-center">
+                                <input type="text" placeholder="Link ekleyin">
+                                <button mat-flat-button>
+                                    Ekle
+                                </button>
+                            </div>
+                            <hr>
+                            <p>Veya</p>
+                            <div class="text">
+                                <p>
+                                    Gönderi Yayın Merkezinde takvimde bir gönderide üç noktaya tıklayın ve “Öne Çıkarılan İçeriklere Ekle” tuşuna basın.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion5">
+                <div class="header d-flex justify-content-between align-items-center" (click)="accordionClick(5)">
+                    <div class="title d-flex flex-column ">
+                        <b>İlanlar</b>
+                    </div>
+                    <div class="expand">
+                        <mat-icon>
+                            expand_more
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="main" id="main5">
+                    <div class="subtitle">
+                        <b>İlan Partnerleri</b>
+                        <p>İlanlarını paylaşacağınız partnerleri düzenleyin</p>
+                    </div>
+                    <div class="partner d-flex">
+                        <mat-icon>
+                            toggle_on
+                        </mat-icon>
+                        <p>Partnerlerin İsmini Göster</p>
+                    </div>
+                    <div class="partner">
+                        <p>Partnerlerinizi İş Birliği Platformu üzerinden yönetebilirsiniz.</p>
+                        <button class="d-flex justify-content-around align-items-center">
+                            <mat-icon>
+                                group_work
+                            </mat-icon>
+                            İş Birliği Platformuna Git
+                        </button>
+                    </div>
+                    <div class="subtitle d-flex flex-column">
+                        <b>Staj İlanları Gösterimi</b>
+                        <p>İlanların nasıl gösterileceğini seçin.</p>
+
+                        <div class="option d-flex flex-column">
+                            <span>Gösterilecek İlan Sayısı</span>
+                            <select>
+                                <option value="4" selected>4 İlan</option>
+                                <option value="5">5 İlan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion6">
+                <div class="header d-flex justify-content-between align-items-center" (click)="accordionClick(6)">
+                    <div class="title d-flex flex-column ">
+                        <b>Çalışanlar</b>
+                    </div>
+                    <div class="expand">
+                        <mat-icon>
+                            expand_more
+                        </mat-icon>
+                    </div>
+                </div>
+                <div class="main" id="main6">
+                    <div class="subtitle d-flex flex-column">
+                        <b>Çalışanlar Gösterimi</b>
+                        <p>Çalışanların nasıl gösterileceğini seçin.</p>
+
+                        <div class="option d-flex flex-column">
+                            <span>Gösterilecek Çalışan Sayısı</span>
+                            <select>
+                                <option value="4" selected>4 Çalışan</option>
+                                <option value="5">5 Çalışan</option>
+                            </select>
+                        </div>
+
+                        <div class="option d-flex flex-column">
+                            <span>Açıklama Çeşidi</span>
+                            <div class="options d-flex align-items-center">
+                                <select>
+                                    <option value="4" selected>Kullanıcı tarafından belirlenen</option>
+                                    <option value="5">Partner tarafından belirlenen</option>
+                                </select>
+                                <mat-icon>
+                                    toggle_on
+                                </mat-icon>
+                                <p>Kurumda Çalışma Süresi</p>
+
+                                <mat-icon>
+                                    toggle_on
+                                </mat-icon>
+                                <p>Partner Çalışanlarının İsmini Göster</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</admin-menu>

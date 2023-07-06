@@ -62,6 +62,7 @@ import { JobPostingComponent } from './job-posting/job-posting.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { PostContentComponent } from './components/post/post-content/post-content.component';
+
 import { MessagesComponent } from './messages/messages.component';
 import { CompaniesExtendedComponent } from './companies/companies-extended/companies-extended.component';
 import { PeopleExtendedComponent } from './people/people-extended/people-extended.component';
@@ -70,11 +71,12 @@ import { CommunitiesExtendedComponent } from './communities/communities-extended
 import { EventsExtendedComponent } from './events/events-extended/events-extended.component';
 import { UserPostsComponent } from './profiles/user-profile/user-posts/user-posts.component';
 import { UserHighlightsComponent } from './profiles/user-profile/user-highlights/user-highlights.component';
-
+import { PlanetLeftComponent } from './main-home/guest-home/planet-left/planet-left.component';
+import { PlanetRightComponent } from './main-home/guest-home/planet-right/planet-right.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent],
-
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent],
 
   imports: [
     CommonModule,
@@ -90,7 +92,7 @@ import { UserHighlightsComponent } from './profiles/user-profile/user-highlights
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatSidenavModule,

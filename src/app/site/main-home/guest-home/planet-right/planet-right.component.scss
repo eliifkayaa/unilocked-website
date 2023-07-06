@@ -1,0 +1,38 @@
+.earth {
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rocket {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    // gradient #FCC419, #FCC419, #FCC419, #FCC419
+    background: linear-gradient(
+      180deg,
+      #fcc419 0%,
+      #fcc419 25%,
+      #fcc419 50%,
+      #fcc419 75%,
+      #fcc419 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: rotate(-14.642deg);
+
+    // animation
+    animation: rocket 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes rocket {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(-40deg) translateX(20px) translateY(-20px);
+  }
+}
