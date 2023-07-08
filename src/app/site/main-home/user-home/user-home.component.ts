@@ -6,6 +6,7 @@ import { HomeService } from '../home.service';
 import { Pagination } from 'src/app/models/pagination';
 import { Post } from 'src/app/models/post';
 import { FormBuilder } from '@angular/forms';
+import { UploadService } from '@common/core/upload/upload.service';
 
 @Component({
   selector: 'user-home',
@@ -19,7 +20,8 @@ export class UserHomeComponent implements OnInit {
     public auth: AuthService,
     private breakPointObserver: BreakpointObserver,
     public homeService: HomeService,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private uploadService:UploadService
   ) {
     this.posts$ = this.getPosts();
   }
@@ -83,4 +85,8 @@ export class UserHomeComponent implements OnInit {
   };
 
   public posts = [this.post, this.post, this.post];
+
+  public upload(files:FileList) {
+    this.uploadService.upload(files[0]);
+  }
 }

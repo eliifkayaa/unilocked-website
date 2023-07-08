@@ -21,10 +21,11 @@
                   class="col-sm-9 d-flex"
                   style="align-items: center; justify-content: flex-start"
                 >
+                  <input (change)="upload(file.files)" type="file" style="display: none;" #file>
                   <button mat-button color="primary" class="attachment-button">
                     <mat-icon>image</mat-icon> Fotoğraf
                   </button>
-                  <button mat-button color="primary" class="attachment-button">
+                  <button mat-button color="primary" class="attachment-button" (click)="file.click()">
                     <mat-icon>videocam</mat-icon> Video
                   </button>
                   <button mat-button color="primary" class="attachment-button">
