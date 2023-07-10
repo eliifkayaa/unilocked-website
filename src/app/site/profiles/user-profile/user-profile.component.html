@@ -36,7 +36,7 @@
               İletişim Bilgileri
             </button>
             <br />
-            <button mat-stroked-button color="primary" class="message">
+            <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-stroked-button color="primary" class="message">
               Profili Düzenle
             </button>
           </div>
@@ -70,7 +70,7 @@
           </div>
         </div>
         <div class="col-sm-3 d-flex justify-content-center align-items-center">
-          <button mat-button class="accent-button">Gizlilik Ayarları</button>
+          <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-button class="accent-button">Gizlilik Ayarları</button>
         </div>
       </div>
     </mat-card>
