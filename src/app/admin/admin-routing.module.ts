@@ -6,6 +6,7 @@ import { LoggedIn } from '@common/auth/logged-in.service';
 import { ContentEditingComponent } from './content-editing/content-editing.component';
 import { ProfileContentComponent } from '../site/profiles/profile-content/profile-content.component';
 import { ProfileEditingComponent } from './profile-editing/profile-editing.component';
+import { PartnershipPlatformComponent } from './partnership-platform/partnership-platform.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path : 'profile-editing',
     component : ProfileEditingComponent,
+    canActivate : [LoggedIn]
+  },
+  {
+    path : 'partnership-platform',
+    component : PartnershipPlatformComponent,
     canActivate : [LoggedIn]
   }
 ];

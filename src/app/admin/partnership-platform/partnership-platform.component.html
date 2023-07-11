@@ -1,0 +1,401 @@
+<admin-menu>
+    <div class="content">
+        <div class="partnership" *ngIf="activePage == 'partner'">
+            <div class="top d-flex justify-content-between">
+                <div class="title d-flex align-items-center justify-content-between">
+                    <h1>İş Birlikleri</h1>
+                    <div class="d-flex justify-content-between">
+                        <button (click)="changeActivePage('advert')">
+                            Reklamlar
+                        </button>
+                        <button class="active" (click)="changeActivePage('partner')">
+                            İş Birlikleri
+                        </button>
+                    </div>
+                </div>
+                <button class="horiz">
+                    <mat-icon>
+                        more_horiz
+                    </mat-icon>
+                </button>
+            </div>
+            <div class="main d-flex">
+                <div class="request">
+                    <div class="filter d-flex justify-content-between align-items-center">
+                        <h2>İstekler(164)</h2>
+                        <div class="filters d-flex justify-content-between align-items-center">
+                            <button>
+                                <p>Durum • Hepsi</p>
+                                <mat-icon>
+                                    expand_more
+                                </mat-icon>
+                            </button>
+                            <button>
+                                <mat-icon>
+                                    download
+                                </mat-icon>
+                                <p>Listeyi Kaydet</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="request-table">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>
+                                    <mat-icon
+                                        [@checkboxAnimation]="allBox ? 'checked' : 'unchecked'"
+                                        (click)="changeBox(0)">
+                                            {{ allBox ? 'check_box' : 'check_box_outline_blank' }}
+                                        </mat-icon>
+                                </th>
+                                <th>
+                                    Kurum
+                                </th>
+                                <th>
+                                    İçerik Türü
+                                </th>
+                                <th>
+                                    Tarih
+                                </th>
+                                <th>
+                                    Durum
+                                </th>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let row of partnerRows">
+                                    <td>
+                                        <mat-icon
+                                        [@checkboxAnimation]="row.checked ? 'checked' : 'unchecked'"
+                                        (click)="changeBox(row.id)">
+                                            {{ row.checked ? 'check_box' : 'check_box_outline_blank' }}
+                                        </mat-icon>
+                                    </td>
+                                    <td  class="d-flex align-items-center">
+                                         <span class="company">
+                                            <p>{{row.from}}</p>
+                                            <mat-icon>
+                                                verified
+                                            </mat-icon>
+                                         </span>
+                                         <mat-icon>
+                                            arrow_forward
+                                         </mat-icon>
+                                         <span class="company">
+                                            <p>{{row.to}} </p>
+                                            <mat-icon>
+                                                verified
+                                            </mat-icon>
+                                         </span>
+                                    </td>
+                                    <td>
+                                        {{row.type}}
+                                    </td>
+                                    <td>
+                                        {{row.date}}
+                                    </td>
+                                    <td [ngClass]="row.state" class="d-flex justify-content-between  align-items-center">
+                                        <p *ngIf="row.state == 'reject'">Reddedildi</p>
+                                        <p *ngIf="row.state == 'wait'">Bekliyor</p>
+                                        <p *ngIf="row.state == 'process'">Görüşülüyor</p>
+                                        <p *ngIf="row.state == 'accept'">Kabul Edildi</p>
+                                        <div class="buttons d-flex align-items-center">
+                                            <mat-icon>
+                                                comment
+                                            </mat-icon>
+                                            <mat-icon>
+                                                more_horiz
+                                            </mat-icon>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="detail-card">
+                        <h2>İlan Detayları</h2>
+                        <div class="companies d-flex">
+                            <div class="logos d-flex">
+                                <img src="../../../assets/img/turkcell.png" alt="">
+                                <img src="../../../assets/img/lifecell.png" alt="">
+                            </div>
+                            <div class="name">
+                                <h3>Turkcell & Lifecell Summer Internship Program</h3>
+                                <p>Lifecell ve Turkcell</p>
+                            </div>
+                        </div>
+                        <div class="work-detail">
+                            <p>
+                                İstanbul • Ankara • Uzaktan
+                            </p>
+                            <p>
+                                Staj Süresi • 2 Ay • 1 Temmuz - 1 Eylül
+                            </p>
+                        </div>
+                        <div class="buttons d-flex justify-content-between">
+                            <button>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </button>
+                            <button>
+                                İlan Detayları
+                            </button>
+                        </div>
+                    </div>
+                    <div class="partner-detail">
+                        <h3>
+                            Ortaklık Detayları
+                        </h3>
+    
+                        <h4>
+                            Ortaklık İsteği Gönderilme Tarihi
+                        </h4>
+                        <p>
+                            20.01.20203
+                        </p>
+    
+                        <h4>
+                            İlan Son Yayın Tarihi
+                        </h4>
+                        <p>
+                            18.05.2023, 23:59
+                        </p>
+    
+                        <h4>
+                            Bilet Satış Payı
+                        </h4>
+                        <p>
+                            %50
+                        </p>
+    
+                        <div class="partner-request">
+                            <div class="partner d-flex justify-content-between">
+                                <div class="name d-flex align-items-center">
+                                    <img src="../../../assets/img/avatar1.png" alt="">
+                                    <h4>Halil Nuroğlu</h4>
+                                </div>
+                                <button mat-flat-button>
+                                    <mat-icon>
+                                        comment
+                                    </mat-icon>
+                                    Mesajlaşmaya Git
+                                </button>
+                            </div>
+                            <div class="buttons d-flex justify-content-between">
+                                <div class="state">
+                                    <h4>
+                                        Durum
+                                    </h4>
+                                    <p>
+                                        Bekliyor
+                                    </p>
+                                </div>
+                                <button class="reject" mat-flat-button>
+                                    Reddet
+                                </button>
+                                <button class="accept" mat-flat-button>
+                                    Kabul Et
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="advert" *ngIf="activePage == 'advert'">
+            <div class="top d-flex justify-content-between">
+                <div class="title d-flex align-items-center justify-content-between">
+                    <h1>Reklamlar</h1>
+                    <div class="d-flex justify-content-between">
+                        <button class="active" (click)="changeActivePage('advert')">
+                            Reklamlar
+                        </button>
+                        <button (click)="changeActivePage('partner')">
+                            İş Birlikleri
+                        </button>
+                    </div>
+                </div>
+                <button class="horiz">
+                    <mat-icon>
+                        more_horiz
+                    </mat-icon>
+                </button>
+            </div>
+            <div class="main d-flex">
+                <div class="request">
+                    <div class="filter d-flex justify-content-between align-items-center">
+                        <h2>Reklam Kampanyaları(7)</h2>
+                        <div class="filters d-flex justify-content-between align-items-center">
+                            <button>
+                                <p>Durum • Hepsi</p>
+                                <mat-icon>
+                                    expand_more
+                                </mat-icon>
+                            </button>
+                            <button>
+                                <mat-icon>
+                                    download
+                                </mat-icon>
+                                <p>Listeyi Kaydet</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="request-table">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>
+                                    <mat-icon
+                                        [@checkboxAnimation]="allBox ? 'checked' : 'unchecked'"
+                                        (click)="changeBox(0)">
+                                            {{ allBox ? 'check_box' : 'check_box_outline_blank' }}
+                                        </mat-icon>
+                                </th>
+                                <th>
+                                    İçerik
+                                </th>
+                                <th>
+                                    Kitle
+                                </th>
+                                <th>
+                                    Tarih
+                                </th>
+                                <th>
+                                    Durum
+                                </th>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let row of advertRows">
+                                    <td>
+                                        <mat-icon
+                                        [@checkboxAnimation]="row.checked ? 'checked' : 'unchecked'"
+                                        (click)="changeBox(row.id)">
+                                            {{ row.checked ? 'check_box' : 'check_box_outline_blank' }}
+                                        </mat-icon>
+                                    </td>
+                                    <td  class="d-flex align-items-center">
+                                         {{row.content}}
+                                    </td>
+                                    <td>
+                                        {{row.mass}}
+                                    </td>
+                                    <td>
+                                        {{row.date}}
+                                    </td>
+                                    <td [ngClass]="row.state" class="d-flex justify-content-between  align-items-center">
+                                        <p *ngIf="row.state == 'process'">Sona Erdi</p>
+                                        <p *ngIf="row.state == 'accept'">Devam Ediyor</p>
+                                        <div class="buttons d-flex align-items-center">
+                                            <mat-icon>
+                                                comment
+                                            </mat-icon>
+                                            <mat-icon>
+                                                more_horiz
+                                            </mat-icon>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="detail-card">
+                        <h2>İlan Detayları</h2>
+                        <div class="companies d-flex">
+                            <div class="logos d-flex">
+                                <img src="../../../assets/img/turkcell.png" alt="">
+                                <img src="../../../assets/img/lifecell.png" alt="">
+                            </div>
+                            <div class="name">
+                                <h3>Turkcell & Lifecell Summer Internship Program</h3>
+                                <p>Lifecell ve Turkcell</p>
+                            </div>
+                        </div>
+                        <div class="work-detail">
+                            <p>
+                                İstanbul • Ankara • Uzaktan
+                            </p>
+                            <p>
+                                Staj Süresi • 2 Ay • 1 Temmuz - 1 Eylül
+                            </p>
+                        </div>
+                        <div class="buttons d-flex justify-content-between">
+                            <button>
+                                <mat-icon>
+                                    more_horiz
+                                </mat-icon>
+                            </button>
+                            <button>
+                                İlan Detayları
+                            </button>
+                        </div>
+                    </div>
+                    <div class="partner-detail">
+                        <h3>
+                            Reklam Detayları
+                        </h3>
+    
+                        <h4>
+                            Reklam Başlama Tarihi
+                        </h4>
+                        <p>
+                            20.01.20203
+                        </p>
+    
+                        <h4>
+                            Reklam Sona Erme Tarihi
+                        </h4>
+                        <p>
+                            18.05.2023, 23:59
+                        </p>
+    
+                        <h3>
+                            Reklamlar
+                        </h3>
+                        <h4>
+                            Öne Çıkarılma • Öğrenciler • 7 Gün • 1000 Görüntülenme/saat
+                        </h4>
+                        <h2>
+                            1.180₺/Gün
+                        </h2>
+                        <h4>
+                            Eposta Kampanyası • Herkes • Tam Boyut Gönderi
+                        </h4>
+                        <h2>
+                            4.500₺/Gün
+                        </h2>
+                        <h4>
+                            Toplam
+                        </h4>
+                        <h2>
+                            39.760₺
+                        </h2>
+    
+                        <div class="partner-request">
+                            <div class="buttons d-flex justify-content-between">
+                                <div class="state">
+                                    <h4>
+                                        Durum
+                                    </h4>
+                                    <p>
+                                        Bekliyor
+                                    </p>
+                                </div>
+                                <button mat-flat-button class="primary">
+                                    Kampanyayı Durdur
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</admin-menu>
