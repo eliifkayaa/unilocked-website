@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ContentPublishingHubComponent } from './content-publishing-hub/content-publishing-hub.component';
 import { ContentEditingComponent } from './content-editing/content-editing.component';
 import { ProfileEditingComponent } from './profile-editing/profile-editing.component';
+import { PartnershipPlatformComponent } from './partnership-platform/partnership-platform.component';
 
 
 
@@ -29,7 +30,8 @@ import { ProfileEditingComponent } from './profile-editing/profile-editing.compo
     AdminMenuComponent,
     ContentPublishingHubComponent,
     ContentEditingComponent,
-    ProfileEditingComponent
+    ProfileEditingComponent,
+    PartnershipPlatformComponent
   ],
   imports: [
     CommonModule,
