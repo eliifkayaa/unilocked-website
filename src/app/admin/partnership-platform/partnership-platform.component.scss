@@ -1,0 +1,334 @@
+.content {
+    min-height: 100vh;
+    padding: 2%;
+    background-color: #f1f3f5;
+
+    .top {
+        .title {
+            width: 30%;
+
+            h1 {
+                margin: 0;
+                color: #212529;
+            }
+            div {
+                background-color: #DBDDFC;
+                padding: 1%;
+                border-radius: 7px;
+                width: 50%;
+
+                button {
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    color: #495057;
+                    font-weight: 600;
+                    padding: 4%;
+
+                    &.active {
+                        background-color: #EDEEFE;
+                        color: #4B53F2;
+                        border-radius: 7px;
+                    }
+                }
+            }
+        }
+
+        .horiz {
+            background-color: #DBDDFC;
+            border: none;
+            border-radius: 7px;
+            color: #212529;
+            cursor: pointer;
+        }
+    }
+
+    .main {
+        margin-top: 3%;
+        .request {
+            width: 60%;
+
+            .filter {
+                h2 {
+                    color: #343A40;
+                    margin: 0;
+                }
+
+                .filters {
+                    width: 46%;
+                    button {
+                        padding: 2% 4%;
+                        background-color: #DBDDFC;
+                        border: none;
+                        border-radius: 7px;
+                        color: #4B53F2;
+                        width: 45%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        p {
+                            margin: 0;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .request-table {
+                margin-top: 2%;
+                .table {
+                    width: 100%;
+                    background-color: transparent;
+                    border-collapse: collapse;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    tbody, thead {
+                        th,td {
+                            padding: 0.75rem;
+
+                            &:first-child {
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    thead {
+                        background-color: #495057;
+
+                        th {
+                            text-align: start;
+                            color: #FBFBFC;
+                            border-right: 2px solid #FBFBFC;
+                            border-bottom: 2px solid #FBFBFC;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            border-bottom: 2px solid #FBFBFC;
+
+                            td {
+                                border-right: 2px solid #FBFBFC;
+                                color: #495057;
+                                font-size: 13px;
+
+                                .company {
+                                    display: inline-flex;
+                                    align-items: center;
+
+                                    p {
+                                        font-size: 14px;
+                                    }
+
+                                    .mat-icon {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        font-size: 20px;
+                                        color: #F59F00;
+                                    }
+                                }
+
+                                .mat-icon {
+                                    font-size: 18px;
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                p {
+                                    margin: 0;
+                                }
+                                &.reject {
+                                    p {
+                                        color: #F03E3E;
+                                    }
+                                }
+                                &.wait {
+                                    p {
+                                        color: #F59F00;
+                                    }
+                                }
+                                &.process {
+                                    p {
+                                        color: #4B53F2;
+                                    }
+                                }
+                                &.accept {
+                                    p {
+                                        color: #37B24D;
+                                    }
+                                }
+
+                                .buttons {
+                                    .mat-icon {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                            
+                            }
+
+                            &:nth-child(even) {
+                                background-color: #E9ECEF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .detail {
+            width: 39%;
+            margin-left: 1%;
+
+            .detail-card {
+                background-color: #EDEEFE;
+                padding: 3%;
+                border-radius: 7px;
+
+                h2 {
+                    color: #343A40;
+                }
+
+                .companies {
+                    .logos {
+                        width: 15%;
+                        position: relative;
+
+                        img {
+                            position: absolute;
+                            width: 50%;
+                            height: 50%;
+                            border-radius: 7px;
+                            overflow: hidden;
+
+                            &:first-child {
+                                top: 10%;
+                                left: 10%;
+                                z-index: 10;
+                            }
+                            &:last-child {
+                                bottom: 10%;
+                                right: 10%;
+                            }
+                        }
+                    }
+
+                    .name {
+                        margin-left: 2%;
+
+                        h3 {
+                            margin: 0;
+                            line-height: 20px;
+                            color: #343A40;
+                            font-weight: 600;
+                        }
+                        p {
+                            margin: 0;
+                            font-weight: 600;
+                            color: #495057;
+                        }
+
+                    }
+                }
+
+                .work-detail {
+                    p {
+                        color: #495057;
+                        margin: 2% 0;
+                    }
+                }
+
+                .buttons {
+                    margin-top: 5%;
+                    button {
+                        cursor: pointer;
+                        border-radius: 7px;
+                        border: none;
+                        padding: 1%;
+
+                        &:first-child {
+                            width: 10%;
+                            background-color: #C9CBFB;
+                            color: #4B53F2;
+                        }
+                        &:last-child {
+                            width: 88%;
+                            background-color: #444BDA;
+                            color: #F1F3F5;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .partner-detail {
+                background-color: #fbfbfc;
+                color: #343A40;
+                padding: 2%;
+
+                h2 {
+                    color: #5D64F3;
+                }
+                h3 {
+                    font-weight: 600;
+                }
+                h4 {
+                    margin: 0;
+                    font-weight: 600;
+                }
+            }
+            .partner-request {
+                margin-top: 5%;
+                border-top: 1px solid grey;
+                padding: 5% 2%;
+
+                .partner {
+                    .name {
+                        width: 40%;
+                        img {
+                            width: 30%;
+                        }
+                        h4 {
+                            width: 68%;
+                            margin-left: 2%;
+                        }
+                    }
+                    button {
+                        background-color: #444BDA;
+                    }
+                }
+                .buttons {
+                    margin-top: 5%;
+                    .state {
+                        h4 {
+                            margin-bottom: 5%;
+                        }
+                        p {
+                            margin: 0;
+                            color: #F59F00;
+                        }
+                    }
+                    button {
+                        width: 40%;
+
+                        &.reject {
+                            background-color: #FFC9C9;
+                            color: #F03E3E;
+                        }
+                        &.accept {
+                            background-color: #37B24D;
+                            color: #F1F3F5;
+                        }
+                        &.primary {
+                            color: #F1F3F5;
+                            background-color: #4B53F2;
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

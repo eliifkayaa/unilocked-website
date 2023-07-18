@@ -431,17 +431,20 @@
 
                                     &::before {
                                         content: "•";
-                                        color: #6F75F5;
-                                        display: inline-block;
+                                        color: #059bff;
+                                        display: inline-flex;
+                                        justify-content: end;
+                                        vertical-align: bottom;
+                                        font-size: 40px;
                                         width: 1em;
                                         margin-left: -1em
                                     }
 
                                     &:nth-child(2)::before {
-                                        color: #957AB6;
+                                        color: #ff4069;
                                     }
                                     &:nth-child(3)::before {
-                                        color: #20C997;
+                                        color: #ff9121;
                                     }
                                     &:nth-child(4)::before {
                                         color: #FF6B6B;
