@@ -1,0 +1,93 @@
+.Group108 {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  margin-left: -20%;
+  margin-top: -50%;
+  z-index: 1;
+
+  .Ellipse38 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Ellipse37 {
+    width: 80%;
+    height: 80%;
+  }
+
+  .Ellipse35 {
+    width: 60%;
+    height: 60%;
+  }
+
+  .Ellipse36 {
+    width: 40%;
+    height: 40%;
+  }
+}
+
+.Ellipse {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 9999px;
+  border: 2.5px #ced4da solid;
+}
+
+.animated15 {
+  -webkit-animation: spin 15s linear infinite;
+  -moz-animation: spin 15s linear infinite;
+  animation: spin 15s linear infinite;
+}
+
+.animated10 {
+  -webkit-animation: spin 10s linear infinite;
+  -moz-animation: spin 10s linear infinite;
+  animation: spin 10s linear infinite;
+}
+
+.animated8 {
+  -webkit-animation: spin 8s linear infinite;
+  -moz-animation: spin 8s linear infinite;
+  animation: spin 8s linear infinite;
+}
+
+.animated6 {
+  -webkit-animation: spin 6s linear infinite;
+  -moz-animation: spin 6s linear infinite;
+  animation: spin 6s linear infinite;
+}
+
+.animated4 {
+  -webkit-animation: spin 6s linear infinite;
+  -moz-animation: spin 6s linear infinite;
+  animation: spin 6s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.community-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2.5px #ced4da solid;
+  top: 50%;
+  left: -20px;
+  position: absolute;
+}
