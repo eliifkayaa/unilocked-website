@@ -271,7 +271,7 @@
           <div class="col">
             <h3>Unilocked Kimler İçin?</h3>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 1}" (click)="changeActive(1)">
             <div class="title">
               <p>Topluluklar</p>
             </div>
@@ -279,7 +279,7 @@
               <p>Kendi gibi düşünen insaların olduğu toplulukları keşfetmek isteyen aktif gençler için</p>
             </div>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 2}" (click)="changeActive(2)">
             <div class="title">
               <p>Kişiler</p>
             </div>
@@ -287,7 +287,7 @@
               <p>Hayallerini gerçekleştirmek için kendi insanlarını arayan sosyal gençler için</p>
             </div>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 3}" (click)="changeActive(3)">
             <div class="title">
               <p>Projeler</p>
             </div>
@@ -295,7 +295,7 @@
               <p>KGeleceğe yön veren projelerin bir parçası olmak isteyen girişimci gençler için</p>
             </div>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 4}" (click)="changeActive(4)">
             <div class="title">
               <p>Şirketler</p>
             </div>
