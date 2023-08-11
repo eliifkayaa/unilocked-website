@@ -42,10 +42,7 @@
           .icon {
             width: 11.67px;
             height: 11.67px;
-            left: 4.17px;
-            top: 4.17px;
-            position: absolute;
-            background: #495057;
+            position: relative;
           }
         }
   
@@ -280,21 +277,20 @@
 }
   
 .container-5 {
-    background: #FBFBFC;
-    border-radius: 7px;
-    border: 0.50px solid #E9ECEF;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
-    display: inline-flex;
-  
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
+    
   
   .inner-container {
-    width: 700px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    display: inline-flex;
+    gap: 8px;
+    align-self: stretch;
   }
   
   .box {
@@ -329,11 +325,8 @@
   }
   
   .box-column {
-    align-self: stretch;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
   }
   
   .item {
@@ -344,7 +337,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
-    display: inline-flex;
+    display: flex;
   }
   
   .item-icon {
@@ -356,9 +349,8 @@
       width: 11.72px;
       height: 16px;
       left: 2.14px;
-      top: 0;
+      top: -5px;
       position: absolute;
-      background: #495057;
     }
   }
   
@@ -370,6 +362,9 @@
     font-weight: 500;
     line-height: 16px;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    margin-left: 3px;
   }
   
   .item-group {
@@ -387,6 +382,7 @@
       .item-text {
         width: 106px;
         align-self: stretch;
+        margin-left: 3px;
       }
   
       .item-icon {
@@ -398,9 +394,8 @@
           width: 13.33px;
           height: 13.33px;
           left: 1.33px;
-          top: 1.33px;
+          top: -5px;
           position: absolute;
-          background: #495057;
         }
       }
     }
