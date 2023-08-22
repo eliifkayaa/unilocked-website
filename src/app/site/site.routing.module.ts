@@ -27,6 +27,7 @@ import { CommunitiesExtendedComponent } from './communities/communities-extended
 import { EventsExtendedComponent } from './events/events-extended/events-extended.component';
 import { UserPostsComponent } from './profiles/user-profile/user-posts/user-posts.component';
 import { UserHighlightsComponent } from './profiles/user-profile/user-highlights/user-highlights.component';
+import { DiscoveryCatalogComponent } from './discovery-catalog/discovery-catalog.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,8 @@ const routes: Routes = [
   { path: 'user-posts', component: UserPostsComponent, canActivate: [LoggedIn] },
 
   { path: 'user-highlights', component: UserHighlightsComponent, canActivate: [LoggedIn] },
+
+  { path: 'discovery-catalog', component: DiscoveryCatalogComponent, canActivate: [LoggedIn] },
 ];
 
 @NgModule({
