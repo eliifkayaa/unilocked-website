@@ -87,14 +87,13 @@ export class RegisterComponent implements OnInit {
       const data = {
         ...this.firstFormGroup.value,
         ...this.secondFormGroup.value,
+        ...this.thirdFormGroup.value,
+        ...this.fourthFormGroup.value,
+
       };
       this.auth
         .register(
-          data.email,
-          data.firstname,
-          data.lastname,
-          data.password,
-          data.password2
+        data
         )
         .subscribe({
           next: (response) => {
