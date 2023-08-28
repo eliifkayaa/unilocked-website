@@ -1,0 +1,214 @@
+.company-card {
+    max-width: 450px;
+    height: 500px;
+    background: #FBFBFC;
+    border-radius: 7px;
+    overflow: hidden;
+    border: 0.50px #E9ECEF solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    display: inline-flex;
+  
+    .company-header {
+      align-self: stretch;
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      display: inline-flex;
+  
+      .company-title {
+        flex: 1 1 0;
+        color: #343A40;
+        font-size: 16px;
+        font-family: Indivisible;
+        font-weight: 600;
+        line-height: 18px;
+        word-wrap: break-word;
+      }
+    }
+  
+    .company-content {
+      align-self: stretch;
+      padding-bottom: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 16px;
+      display: inline-flex;
+  
+      .company-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 7px;
+        border: 0.50px rgba(73, 80, 87, 0.25) solid;
+      }
+  
+      .company-info {
+        flex: 1 1 0;
+        padding-top: 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 4px;
+        display: inline-flex;
+  
+        .company-info-header {
+          align-self: stretch;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 4px;
+          display: inline-flex;
+  
+          .company-name {
+            color: #495057;
+            font-size: 16px;
+            font-family: Indivisible;
+            font-weight: 600;
+            line-height: 18px;
+            word-wrap: break-word;
+  
+            .company-verified {
+              .verified-icon {
+                width: 16px;
+                height: 16px;
+                position: relative;
+  
+                div {
+                  position: absolute;
+                  background: #F59F00;
+                }
+              }
+            }
+          }
+        }
+  
+        .company-info-description {
+          align-self: stretch;
+          padding-bottom: 4px;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 4px;
+          display: inline-flex;
+          font-size: 16px;
+          margin-top: -10px;
+  
+          .company-info-stats {
+            .company-industry,
+            .company-followers,
+            .company-separator,
+            .company-followers-count {
+              flex: 1 1 0;
+              color: #868E96;
+              font-size: 14px;
+              font-family: Indivisible;
+              font-weight: 500;
+              line-height: 16px;
+              word-wrap: break-word;
+            }
+          }
+        }
+      }
+    }
+  
+    .company-rating {
+      align-self: stretch;
+      flex: 1 1 0;
+      padding-left: 16px;
+      padding-right: 16px;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 8px;
+      display: inline-flex;
+  
+      .rating-circle {
+        width: 44px;
+        height: 44px;
+        padding: 4px;
+        background: #4B53F2;
+        border-radius: 100px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: inline-flex;
+  
+        .rating-number {
+          color: #FBFBFC;
+          font-size: 24px;
+          font-family: Indivisible;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0.50px;
+          word-wrap: break-word;
+        }
+  
+        .rating-total {
+          color: #DBDDFC;
+          font-size: 10px;
+          font-family: Indivisible;
+          font-weight: 500;
+          line-height: 10px;
+          word-wrap: break-word;
+        }
+      }
+    }
+  
+    .company-divider {
+      align-self: stretch;
+      border-top: 0.50px #E9ECEF solid;
+      justify-content: flex-start;
+      align-items: flex-start;
+      display: inline-flex;
+  
+      .company-divider-segment {
+        flex: 1 1 0;
+        height: 48px;
+        padding: 8px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+  
+        .divider-icon {
+          width: 32px;
+          height: 32px;
+          position: relative;
+  
+          div {
+            position: absolute;
+            background: #343A40;
+          }
+        }
+      }
+    }
+
+    .profile-footer {
+        align-self: stretch;
+        border-top: 0.50px #E9ECEF solid;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: inline-flex;
+        flex-direction: row;
+    
+        .footer-icon {
+          flex: 1 1 0;
+          height: 48px;
+          padding: 8px;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+    
+          .divider {
+            width: 48px;
+            align-self: stretch;
+            transform: rotate(90deg);
+            transform-origin: 0 0;
+            border: 0.50px #E9ECEF solid;
+          }
+        }
+    }
+  }
+  
