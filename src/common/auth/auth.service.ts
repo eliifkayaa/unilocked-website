@@ -11,8 +11,8 @@ import { BehaviorSubject, finalize } from 'rxjs';
 export class AuthService {
   public loggedIn = false;
   public loading$ = new BehaviorSubject(false);
-  public loadingStatus$ = new BehaviorSubject(false)
-  public redirect: string | null = "/home";
+  public loadingStatus$ = new BehaviorSubject(false);
+  public redirect: string | null = '/home';
   public user?: User;
   public error?: string;
 
@@ -22,20 +22,20 @@ export class AuthService {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  public init(url:string = null) {
+  public init(url: string = null) {
     this.redirect = url;
-    
-    this.loading$.next(true)
-    this.loadingStatus$.next(true)
+
+    this.loading$.next(true);
+    this.loadingStatus$.next(true);
 
     this.http.get<UserResponse>('auth/me').subscribe({
       next: (data) => {
-        this.loadingStatus$.next(false)
+        this.loadingStatus$.next(false);
         this.handleLogin(data, false);
       },
       error: (err) => {
-        this.loading$.next(false)
-        this.loadingStatus$.next(false)
+        this.loading$.next(false);
+        this.loadingStatus$.next(false);
       },
     });
   }
@@ -50,7 +50,7 @@ export class AuthService {
       .subscribe({
         next: (response) => {
           if (response.success) {
-            this.handleLogin(response,true);
+            this.handleLogin(response, true);
           } else {
             this.error = response.error;
           }
@@ -65,22 +65,10 @@ export class AuthService {
       });
   }
 
-  public register(
-    email: string,
-    firstname: string,
-    lastname: string,
-    password: string,
-    password2: string
-  ) {
+  public register(data: any) {
     this.loading$.next(true);
     return this.http
-      .post<UserResponse>('auth/register', {
-        first_name: firstname,
-        last_name: lastname,
-        email: email,
-        password: password,
-        password2: password2,
-      })
+      .post<UserResponse>('auth/register', data)
       .pipe(finalize(() => this.loading$.next(false)));
   }
 
@@ -102,7 +90,7 @@ export class AuthService {
       this.error = response.error;
     }
 
-    this.loading$.next(false)
+    this.loading$.next(false);
 
     if (redirect) {
       this.router.navigate([this.redirect ? this.redirect : '/home']);

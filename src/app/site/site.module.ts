@@ -74,6 +74,7 @@ import { UserHighlightsComponent } from './profiles/user-profile/user-highlights
 import { PlanetLeftComponent } from './main-home/guest-home/planet-left/planet-left.component';
 import { PlanetRightComponent } from './main-home/guest-home/planet-right/planet-right.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { MessagesMainComponent } from './messages/tabs/messages-main/messages-main.component';
 import { DiscoveryCatalogComponent } from './discovery-catalog/discovery-catalog.component';
 import { CommunityCardComponent } from './discovery-catalog/catalog-cards/community-card/community-card.component';
@@ -82,9 +83,11 @@ import { PersonCardComponent } from './discovery-catalog/catalog-cards/person-ca
 import { ProjectPostCardComponent } from './discovery-catalog/catalog-cards/project-post-card/project-post-card.component';
 import { EventsCardComponent } from './discovery-catalog/catalog-cards/events-card/events-card.component';
 import { JobCardComponent } from './discovery-catalog/catalog-cards/job-card/job-card.component';
+import { UploadModule } from '@common/core/upload/upload.module';
+import { HomePartnersComponent } from './main-home/guest-home/home-partners/home-partners.component';
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent, MessagesMainComponent, DiscoveryCatalogComponent, CommunityCardComponent, CompanyCardComponent, PersonCardComponent, ProjectPostCardComponent, EventsCardComponent, JobCardComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent,HomePartnersComponent, MessagesMainComponent, DiscoveryCatalogComponent, CommunityCardComponent, CompanyCardComponent, PersonCardComponent, ProjectPostCardComponent, EventsCardComponent, JobCardComponent],
 
   imports: [
     CommonModule,
@@ -106,6 +109,7 @@ import { JobCardComponent } from './discovery-catalog/catalog-cards/job-card/job
     MatSidenavModule,
     MatTabsModule,
     MatChipsModule,
+    UploadModule
     
   ],
   
