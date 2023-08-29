@@ -10,32 +10,14 @@
         font-weight: 600;
         margin-bottom: 30px;
     }
-    /* Your existing SCSS code here */
-
-    .tabs {
-        display: flex;
-        flex-direction: column;
-
-        .mat-tab-labels {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap; /* Allow tabs to wrap to the next line if needed */
-        }
-
-        .mat-tab-label {
-            flex-grow: 1;
-            text-align: center; /* Center-align the tab label text */
-            white-space: nowrap; /* Prevent tab labels from wrapping to the next line */
-            overflow: hidden;
-            text-overflow: ellipsis; /* Add ellipsis for long tab labels */
-        }
-
-        .button {
-            margin-left: 10px; /* Adjust the margin as needed */
+    .tabs{
+        
+        .button{
+            
+            border-radius: 5px;
+            background: #4B53F2;
         }
     }
-
     .highlights {
         .texts {
             margin-top: 50px;

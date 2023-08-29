@@ -1,0 +1,36 @@
+<div class="container-topnotes">
+    <div class="texts">
+        <h3>Yüksek Notlular</h3>
+        <p>İlgi alanlarınız ve seçimleriniz sonucu en yüksek İlgi Notu alanlar.</p>
+    </div>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="text-center">
+                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+            </div>
+            <div class="col-lg-11">
+                <div class="row">
+                    <div class="col-md-4">
+                        <events-card></events-card>
+                    </div>
+                    <div class="col-md-4">
+                        <company-card></company-card>
+                    </div>
+                    <div class="col-md-4">
+                        <job-card></job-card>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container-chips">
+    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+      <mat-chip class="example-box" cdkDrag *ngFor="let key of keys" [ngStyle]="{ 'background-color': key.color, 'color': key.textColor }">
+        <mat-icon *ngIf="key.icon">{{key.icon}}</mat-icon>{{key.name}}
+      </mat-chip>
+    </mat-chip-list>
+</div>    
