@@ -4,7 +4,7 @@
    
       <div class="navbar d-flex justify-content-between">
         <div class="logo d-flex justify-content-center align-items-center">
-          <img src="../../../../assets/img/logo-white.png">
+          <img src="../../../../assets/img/logo.png">
         </div>
         <div class="menu-list">
           <ul class="d-flex justify-content-around">
@@ -21,46 +21,50 @@
           <button mat-flat-button color="primary">Aramıza Katıl</button>
         </div>
       </div>
-      <div class="top-title d-flex">
-        <div class="col left align-items-start">
-          <planet-left class="planet"></planet-left>
+      <div class="top-title row align-items-center">
+        <div class="col-5 left">
+          <div>
+            <img src="../../../../assets/img/homepage1.png" alt="">
+            <img src="../../../../assets/img/homepage2.png" alt="">
+          </div>
         </div>
-        <div class="col align-items-center">
-          <p>
-            GELECEĞİNİ <br> KEŞFETMEYE <br> HAZIR MISIN?
-          </p>
-        </div>
-        <div class="col right align-items-end">
-          <planet-right class="planet"></planet-right>
+        <div class="col-6 right">
+          <div class="paragraph">
+            <h1>
+              Üniversiteliler ve Girişimciler burada!
+            </h1>
+            <p>
+              Öğrencilerin okul hayatlarını dolu dolu geçirip, kendilerini geliştirebilmesi için; Profesyonellerin geleceğin yıldızlı gençlere ve okul topluluklarına ulaşabilmesi için artık bir platform var!
+            </p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <h2>Öğrenci</h2>
+              <p>olarak kariyerinde 1-0 önde başla</p>
+              <a href="#">
+                Aramıza Katıl
+                <mat-icon>
+                  arrow_forward
+                </mat-icon>
+              </a>
+            </div>
+            <div class="card">
+              <h2>Profesyonel</h2>
+              <p>olarak geleceği inşa eden gençleri keşfedin</p>
+              <a href="#">
+                Profesyoneller için Unilocked 
+                <mat-icon>
+                  arrow_forward
+                </mat-icon>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   
   <div class="content">
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-3">
-        <p class="end">
-          Öğrencilerin okul hayatlarını dolu dolu geçirip, kendilerini geliştirebilmesi için; Profesyonellerin geleceğin yıldızlı gençlere ve okul topluluklarına ulaşabilmesi için artık bir platform var!
-        </p>
-      </div>
-      <div class="col-3">
-        <p>
-          Unilocked üyesi olun ve kendi insanlarınız ile geleceğin yıldızları olun
-        </p>
-        <div class="login d-flex justify-content-between align-items-center">
-          <div>
-            <p>Zaten üye misin?</p>
-            <a href="#">Giriş Yap</a>
-          </div>
-          <button type="button" class="btn btn-primary d-flex justify-content-between align-items-center">
-            <p>Aramıza Katıl</p>
-            <mat-icon>arrow_forward</mat-icon>
-          </button>
-        </div>
-      </div>
-      <div class="col-3"></div>
-    </div>
+    
     <div class="row">
       <div class="col-1"></div>
       <div class="col-5">
@@ -121,6 +125,7 @@
         </a>
       </div>
     </div>
+
     <div class="row">
       <div class="col-1"></div>
       <div class="col-5 d-flex flex-column align-items-end">
@@ -184,7 +189,12 @@
               <b>Turkcell</b>
             </div>
             <div class="school">
-              <p>İletişim Sektörü Şirketi ve Unilocked Partneri</p>
+              <p>
+                İletişim Sektörü Şirketi ve 
+                <span class="color-purple">
+                    Unilocked Partneri
+                </span>
+            </p>
             </div>
           </div>
         </div>
@@ -197,7 +207,11 @@
               <b>Antalya Teknokent</b>
             </div>
             <div class="school">
-              <p>Akdeniz Üniversitesi İçinde Teknopark ve Unilocked Partneri</p>
+              <p>Akdeniz Üniversitesi İçinde Teknopark ve 
+                <span class="color-purple">
+                  Unilocked Partneri
+                </span>
+              </p>
             </div>
           </div>
         </div>
@@ -271,7 +285,7 @@
           <div class="col">
             <h3>Unilocked Kimler İçin?</h3>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 1}" (click)="changeActive(1)">
             <div class="title">
               <p>Topluluklar</p>
             </div>
@@ -279,7 +293,7 @@
               <p>Kendi gibi düşünen insaların olduğu toplulukları keşfetmek isteyen aktif gençler için</p>
             </div>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 2}" (click)="changeActive(2)">
             <div class="title">
               <p>Kişiler</p>
             </div>
@@ -287,7 +301,7 @@
               <p>Hayallerini gerçekleştirmek için kendi insanlarını arayan sosyal gençler için</p>
             </div>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 3}" (click)="changeActive(3)">
             <div class="title">
               <p>Projeler</p>
             </div>
@@ -295,7 +309,7 @@
               <p>KGeleceğe yön veren projelerin bir parçası olmak isteyen girişimci gençler için</p>
             </div>
           </div>
-          <div class="col">
+          <div class="col" [ngClass]="{active: activeDiv == 4}" (click)="changeActive(4)">
             <div class="title">
               <p>Şirketler</p>
             </div>
@@ -431,63 +445,46 @@
         </mat-icon>
       </div>
     </div>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-5 d-flex flex-column">
-        <div class="subtitle">
-          <p>OKULLAR VE ŞİRKETLER</p>
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="col-5 d-flex flex-column">
+          <div class="subtitle">
+            <p>OKULLAR VE ŞİRKETLER</p>
+          </div>
+          <div class="title">
+            <p>En prestijli okullar ve en büyük şirketler Unilocked’da</p>
+          </div>
+          <div class="links d-flex align-items-center justify-content-between">
+            <button mat-flat-button>
+              Partnerlerimizi Keşfet
+            </button>
+            <a href="#" class="d-flex align-items-center justify-content-between">
+              <p>Partner Olun</p>
+              <mat-icon>
+                arrow_forward
+              </mat-icon>
+            </a>
+          </div>
         </div>
-        <div class="title">
-          <p>En prestijli okullar ve en büyük şirketler Unilocked’da</p>
-        </div>
-        <div class="links d-flex align-items-center justify-content-between">
-          <button mat-flat-button>
-            Partnerlerimizi Keşfet
-          </button>
-          <a href="#" class="d-flex align-items-center justify-content-between">
-            <p>Partner Olun</p>
-            <mat-icon>
-              arrow_forward
-            </mat-icon>
-          </a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="logo">
-          <img src="../../../../assets/img/aulogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/turkcell.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/logo2.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/microsoftlogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/trendyologo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/itulogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/applelogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/aulogo2.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/gulogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/halkbanklogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/hulogo.png" alt="">
-        </div>
-        <div class="logo">
-          <img src="../../../../assets/img/eczacibasilogo.png" alt="">
+        <div class="col-7">
+          <div class="logo">
+            <img src="../../../../assets/img/aulogo.png" alt="">
+          </div>
+          <div class="logo">
+            <img src="../../../../assets/img/turkcell.png" alt="">
+          </div>
+          <div class="logo">
+            <img src="../../../../assets/img/logo2.png" alt="">
+          </div>
+          <div class="logo">
+            <img src="../../../../assets/img/microsoftlogo.png" alt="">
+          </div>
+          <div class="logo">
+            <img src="../../../../assets/img/itulogo.png" alt="">
+          </div>
+          <div class="logo">
+            <img src="../../../../assets/img/applelogo.png" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -574,8 +571,12 @@
           </ul>
         </div>
       </div>
+      
       <div class="language">
         <select>
+          <option selected disabled>
+            Dil
+          </option>
           <option value="Türkçe">Türkçe</option>
           <option value="İngilizce">İngilizce</option>
           <option value="Almanca">Almanca</option>
