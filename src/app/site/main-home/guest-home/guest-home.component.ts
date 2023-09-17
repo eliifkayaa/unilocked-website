@@ -16,9 +16,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GuestHomeComponent implements OnInit, AfterViewInit , OnChanges{
   @ViewChild('slider', { static: false }) slider: ElementRef<HTMLDivElement>;
 
-  // private counts = [150000, 60, 200, 1500];
-  // public animatedCounts = [0, 0, 0, 0];
-  // intervals: any[] = [null,null,null,null];
+  activeDiv = 1;
+
+  public changeActive = (id) => {
+    this.activeDiv = id
+  }
+
 
   constructor(private route:ActivatedRoute) {}
 
