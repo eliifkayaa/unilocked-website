@@ -7,15 +7,15 @@
   </button>
 
   <span class="spacer"></span>
-  <button routerLink="/discovery-catalog" matTooltip="Keşfet" class="icon-button">
+  <a routerLink="/discovery-catalog" matTooltip="Keşfet" class="icon-button">
     <mat-icon>explore</mat-icon><br />
-  </button>
+  </a>
   <a routerLink="/job-posting" matTooltip="İlanlar" class="icon-button">
     <mat-icon>newspaper</mat-icon><br />
   </a>
-  <button matTooltip="Programlar" class="icon-button">
+  <a matTooltip="Programlar" class="icon-button">
     <mat-icon>rocket</mat-icon><br />
-  </button>
+  </a>
   <form [formGroup]="searchForm" (ngSubmit)="search()">
     <div class="navbar-search">
       <input
