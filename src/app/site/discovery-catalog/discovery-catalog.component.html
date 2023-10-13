@@ -1,135 +1,690 @@
 <main-content>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-11 offset-sm-1">
+    <div class="container" style="min-height: 84vh;align-items: start;">
+        <div class="row" style="width: 100%;">
+            <div style="width: 100%;">
                 <div class="header">
                     Keşif Kataloğu
                 </div>
-                <div class="tabs">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <mat-tab-group>
+                <div class="tabs d-flex justify-content-between align-items-start" style="width: 100%;">
+                    <div class="d-flex justify-content-between align-items-center" style="width: 100%;">
+                        <mat-tab-group style="width: 100%;">
                             <mat-tab label="Size Özel">
-                                  
+                                <div class="highlights">
+                                    <div class="texts">
+                                        <h3>İlginizi Çekebilecekler</h3>
+                                        <p>Popüler olan keşiflerden ilginizi çekebileceğini düşündüklerimiz.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <person-card></person-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <project-post-card></project-post-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <events-card></events-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>                                                                   
+                                </div>
+                                <info-card
+                                title="Kendi İnsanlarınla Geleceği İnşa Et"
+                                icon="people"
+                                text="Unilocked’da edindiğin arkadaşların ile geleceği değiştirecek o projeyi yapın, yakın çevrenizdeki zeki <span> öğrenciler</span>i keşfedin."
+                                buttonText="Arkadaşları Keşfet"
+                                buttonColor="#4B53F2"
+                                class="info-card"
+                                >
+                                </info-card>
+                                <div class="container-topnotes">
+                                    <div class="texts">
+                                        <h3>Yüksek Notlular</h3>
+                                        <p>İlgi alanlarınız ve seçimleriniz sonucu en yüksek İlgi Notu alanlar.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <events-card></events-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <company-card></company-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <job-card></job-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <div class="container-chips">
+                                    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                                      <mat-chip class="example-box" cdkDrag *ngFor="let key of keys" [ngStyle]="{ 'background-color': key.color, 'color': key.textColor }">
+                                        <mat-icon *ngIf="key.icon">{{key.icon}}</mat-icon>{{key.name}}
+                                      </mat-chip>
+                                    </mat-chip-list>
+                                </div>  
+                                <div class="container-popular">
+                                    <div class="texts">
+                                        <h3>Konumunuzda Popüler</h3>
+                                        <p>Ankara içerisinde popüler olan keşiflerden ilginizi çekebileceğini düşündüklerimiz.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <person-card></person-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <project-post-card></project-post-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <events-card></events-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div> 
                             </mat-tab>
-                            <mat-tab label="Trendler"> 
-                      
+                            <mat-tab label="Trendler">
+                                <div class="container trends">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <person-card></person-card>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <project-post-card></project-post-card>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <events-card></events-card>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <person-card></person-card>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <company-card></company-card>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <intern-card></intern-card>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <person-card></person-card>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <project-post-card></project-post-card>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <events-card></events-card>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
                             </mat-tab>
                             <mat-tab label="Kategoriler">
-                                  
+                                <div class="container">
+                                    <div class="input-container">
+                                        <i class="material-icons">search</i>
+                                        <input type="text" placeholder="Arama Yap">
+                                    </div>
+                                    <div class="row" style="width: 100%; margin-top: 5%;">
+                                        <div class="col-12" style="padding: 0;">
+                                            <h2>Kişiler</h2>
+                                        </div>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip class="selected">
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span  class="chip-text"> Öğrenciler & Veliler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                    </div>
+                                    <div class="row" style="width: 100%; margin-top: 5%;">
+                                        <div class="col-12" style="padding: 0;">
+                                            <h2>Topluluklar</h2>
+                                        </div>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler & Veliler</span>
+                                        </mat-chip>
+                                        
+                                    </div>
+                                    <div class="row" style="width: 100%; margin-top: 5%;">
+                                        <div class="col-12" style="padding: 0;">
+                                            <h2>Şirketler</h2>
+                                        </div>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span  class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip class="selected">
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip class="selected">
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler & Veliler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                    </div>
+                                    <div class="row" style="width: 100%; margin-top: 5%;">
+                                        <div class="col-12" style="padding: 0;">
+                                            <h2>Kurumlar</h2>
+                                        </div>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip class="selected">
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span  class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler & Veliler</span>
+                                        </mat-chip>
+                                        
+                                    </div>
+                                    <div class="row" style="width: 100%; margin-top: 5%;">
+                                        <div class="col-12" style="padding: 0;">
+                                            <h2>Etkinlikler</h2>
+                                        </div>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span  class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip class="active">
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler & Veliler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Onaylılar</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text"> Öğrenciler</span>
+                                        </mat-chip>
+                                        <mat-chip>
+                                            <span class="chip-text">Yetkililer</span>
+                                        </mat-chip>
+                                    </div>
+                                </div>
                             </mat-tab>
                             <mat-tab label="Takip Edilenler">
-                                  
+                                <div class="highlights">
+                                    <div class="texts">
+                                        <h3>Topluluklarımdan Projeler</h3>
+                                        <p>Takip ettiğiniz veya üye olduğunuz topluluklardan keşfedilecek projeler.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <project-post-card></project-post-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <project-post-card></project-post-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <project-post-card></project-post-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>                                                                   
+                                </div>
+                                <info-card
+                                title="Gelecek ve Geçmiş Projelerinize Erişin"
+                                icon="people"
+                                text="Geçmişte bulunduğunuz ve gelecekte bulunacağınız projeleri Projeler sayfasından kontrol edin. Katalog'da beğendiğiniz "
+                                buttonText="Projeleri Keşfet"
+                                buttonColor="#4B53F2"
+                                class="info-card"
+                                >
+                                </info-card>
+
+                                <div class="highlights">
+                                    <div class="texts">
+                                        <h3>Takip Edilenlerden İlanlar</h3>
+                                        <p>Takip ettiğiniz şirket ve kurumlardan yeni staj ilanları.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <intern-card></intern-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <intern-card></intern-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <intern-card></intern-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>                                                                   
+                                </div>
+
+                                <div class="highlights">
+                                    <div class="texts">
+                                        <h3>Takip Edilenlerden, Takip Edilesi Profiller</h3>
+                                        <p>Takip ettiklerinizin, takipte olduğu şirketler, kurumlar, topluluklar ve kişiler.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <company-card></company-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <person-card></person-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <company-card></company-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>                                                                   
+                                </div>
+
+                                <div class="row" style="width: 100%; margin-top: 5%;padding-left: 2%;">
+                                    <div class="col-12" style="padding: 0;">
+                                        <h2>Favori Kategorileriniz</h2>
+                                    </div>
+                                    <mat-chip class="active">
+                                        <span class="chip-text">Onaylılar</span>
+                                    </mat-chip>
+                                    <mat-chip class="active">
+                                        <span  class="chip-text"> Öğrenciler</span>
+                                    </mat-chip>
+                                    <mat-chip class="active">
+                                        <span class="chip-text">Yetkililer</span>
+                                    </mat-chip>
+                                    <mat-chip class="active">
+                                        <span class="chip-text">Onaylılar</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <span class="chip-text"> Öğrenciler</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <span class="chip-text">Yetkililer</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <span class="chip-text">Onaylılar</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <span class="chip-text"> Öğrenciler</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <span class="chip-text">Yetkililer</span>
+                                    </mat-chip>
+                                </div>
+
+                                <div class="highlights">
+                                    <div class="texts">
+                                        <h3>Takip Edilenlerden Etkinlikler</h3>
+                                        <p>Takip ettiklerinizin düzenledikleri etkinlikler.</p>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <events-card></events-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <events-card></events-card>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <events-card></events-card>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
+                                            </div>
+                                        </div>
+                                    </div>                                                                   
+                                </div>
                             </mat-tab>
                             <mat-tab label="Kaydedilenler">
-                                  
+                                <div class="row saved" style="width: 100%; margin-top: 5%;padding-left: 2%;">
+                                    <mat-chip class="active-tag">
+                                        <span class="chip-text">Hepsi</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4363/4363382.png">
+                                        <span class="chip-text">İlanlar</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/117/117992.png">
+                                        <span class="chip-text">Projeler</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/615/615075.png">
+                                        <span class="chip-text">Topluluklar</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/3995/3995725.png">
+                                        <span class="chip-text"> Etkinlikler</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4615/4615221.png">
+                                        <span class="chip-text">Kurumlar</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4192/4192708.png">
+                                        <span class="chip-text">Şirketler</span>
+                                    </mat-chip>
+                                    <mat-chip>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png">
+                                        <span class="chip-text">Kişiler</span>
+                                    </mat-chip>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row" style="margin: 5% 0;">
+                                            <div class="col-md-4">
+                                                <person-card></person-card>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <project-post-card></project-post-card>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <events-card></events-card>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin: 5% 0;">
+                                            <div class="col-md-4">
+                                                <person-card></person-card>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <company-card></company-card>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <intern-card></intern-card>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin: 5% 0;">
+                                            <div class="col-md-4">
+                                                <person-card></person-card>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <project-post-card></project-post-card>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <events-card></events-card>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </mat-tab>
                         </mat-tab-group>
-                        <button mat-raised-button class="button" color="primary">İlgi Alanlarım</button>
+                    </div>
+                    <button mat-flat-button class="button"  style="position: absolute; right: 5%; width: 15%;z-index: 10;color: #f3f3f3;">İlgi Alanlarım</button>
+                </div>
+            <div class="selected-tags d-flex justify-content-between align-items-center">
+                <div class="content d-flex align-items-center">
+                    <h4>Seçilen Etiketler</h4>
+                    <div class="tags d-flex justify-content-between align-items-center">
+                        <mat-chip class="selected">
+                            <span class="chip-text">Yetkililer</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Öğrenciler</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Profesyoneller</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Yetkililer</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Öğrenciler</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Profesyoneller</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Yetkililer</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Öğrenciler</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Profesyoneller</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Yetkililer</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Öğrenciler</span>
+                        </mat-chip>
+                        <mat-chip class="selected">
+                            <span class="chip-text">Profesyoneller</span>
+                        </mat-chip>
                     </div>
                 </div>
-                <div class="highlights">
-                    <div class="texts">
-                        <h3>İlginizi Çekebilecekler</h3>
-                        <p>Popüler olan keşiflerden ilginizi çekebileceğini düşündüklerimiz.</p>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="text-center">
-                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
-                            </div>
-                            <div class="col-lg-11">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <person-card></person-card>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <project-post-card></project-post-card>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <events-card></events-card>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
-                            </div>
-                        </div>
-                    </div>                                                                   
-                </div>
-                <info-card
-                title="Kendi İnsanlarınla Geleceği İnşa Et"
-                icon="people"
-                text="Unilocked’da edindiğin arkadaşların ile geleceği değiştirecek o projeyi yapın, yakın çevrenizdeki zeki öğrencileri keşfedin."
-                buttonText="Arkadaşları Keşfet"
-                buttonColor="#4B53F2"
-                class="info-card"
-                >
-                </info-card>
-                <div class="container-topnotes">
-                    <div class="texts">
-                        <h3>Yüksek Notlular</h3>
-                        <p>İlgi alanlarınız ve seçimleriniz sonucu en yüksek İlgi Notu alanlar.</p>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="text-center">
-                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
-                            </div>
-                            <div class="col-lg-11">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <events-card></events-card>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <company-card></company-card>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <job-card></job-card>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
-                            </div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="container-chips">
-                    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
-                      <mat-chip class="example-box" cdkDrag *ngFor="let key of keys" [ngStyle]="{ 'background-color': key.color, 'color': key.textColor }">
-                        <mat-icon *ngIf="key.icon">{{key.icon}}</mat-icon>{{key.name}}
-                      </mat-chip>
-                    </mat-chip-list>
-                </div>  
-                <div class="container-popular">
-                    <div class="texts">
-                        <h3>Konumunuzda Popüler</h3>
-                        <p>Ankara içerisinde popüler olan keşiflerden ilginizi çekebileceğini düşündüklerimiz.</p>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="text-center">
-                                <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
-                            </div>
-                            <div class="col-lg-11">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <person-card></person-card>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <project-post-card></project-post-card>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <events-card></events-card>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button mat-icon-button><mat-icon>chevron_right</mat-icon></button>
-                            </div>
-                        </div>
-                    </div>    
-                </div>                                
+                <button mat-flat-button color="primary">Kategorilerde Ara</button>
+            </div>                          
             </div>
         </div>
     </div>
