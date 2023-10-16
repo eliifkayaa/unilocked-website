@@ -26,7 +26,7 @@ import { NotLoggedIn } from '@common/auth/not-logged-in.service';
     AuthModule,
     HttpClientModule,
     ToastModule,
-    MatProgressBarModule,
+    MatProgressBarModule
   ],
   providers: [LoggedIn,NotLoggedIn],
   bootstrap: [AppComponent]

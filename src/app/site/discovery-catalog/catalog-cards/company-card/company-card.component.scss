@@ -114,6 +114,61 @@
         }
       }
     }
+    .company-actions {
+      align-self: stretch;
+      flex: 1 1 0;
+      padding-left: 16px;
+      padding-right: 16px;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 8px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 8px;
+      display: inline-flex;
+  
+      .action-item {
+        flex: 1 1 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4px;
+        display: inline-flex;
+  
+        .action-icon {
+          width: 16px;
+          height: 16px;
+          position: relative;
+          margin-right: 10px;
+          color: #37B24D;
+        }
+  
+        .action-text {
+          flex: 1 1 0;
+          height: 40px;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 4px;
+          display: flex;
+          color: #495057;
+          font-size: 16px;
+          font-family: Indivisible;
+          font-weight: 500;
+          line-height: 18px;
+          word-wrap: break-word;
+        
+          br {
+            display: block;
+            margin: 0;
+            padding: 0;
+          }
+          span{
+            font-weight: 600;
+          }
+        }
+      }
+    }
   
     .company-rating {
       align-self: stretch;
@@ -185,7 +240,7 @@
       }
     }
 
-    .profile-footer {
+    .company-footer {
         align-self: stretch;
         border-top: 0.50px #E9ECEF solid;
         justify-content: flex-start;
