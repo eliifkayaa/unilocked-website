@@ -1,457 +1,454 @@
 <main-content>
-  <div class="profile-host container">
-    <mat-card class="profile-top">
-      <div class="row">
-        <div class="images col-lg-3">
-          <div class="backdrop-area">
-            <img class="backdrop" [src]="user.backdrop" alt="" />
-          </div>
-          <div class="avatar-area">
-            <img class="avatar" [src]="user.avatar" alt="" />
-          </div>
-        </div>
-        <div class="col-lg info-area">
-          <div class="info-child">
-            <h2 class="user-name">{{ user.name }}</h2>
-            <p class="user-job">{{ user.job }}</p>
-            <p class="user-info">{{ user.info }}</p>
-            <div
-              class="organizations"
-              *ngFor="let organization of user.organizations"
-            >
-              <div class="organization">
-                <div class="organisation-image">
-                  <img [src]="organization.image" />
-                </div>
-                <div class="organization-info">
-                  <p class="organization-name">{{ organization.name }}</p>
-                </div>
-              </div>
+  <ng-container *ngIf="user$ | async as user else loading">
+    <div class="profile-host container">
+      <mat-card class="profile-top">
+        <div class="row">
+          <div class="images col-lg-3">
+            <div class="backdrop-area">
+              <img class="backdrop" [src]="user.background" alt="" />
+            </div>
+            <div class="avatar-area">
+              <img class="avatar" [src]="user.avatar" alt="" />
             </div>
           </div>
-        </div>
-        <div class="col-lg buttons-area">
-          <div>
-            <button mat-flat-button color="primary" class="follow">
-              İletişim Bilgileri
-            </button>
-            <br />
-            <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-stroked-button color="primary" class="message">
-              Profili Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="private-profile-warning">
-      <div class="row">
-        <div class="col-sm-3 left">
-          <div>
-            <h2>Uyarı</h2>
-            <p class="special">
-              <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-6 mid">
-          <div class="d-flex">
-            <mat-icon
-              style="width: 60px; margin-top: 4px"
-              svgIcon="settings_alert"
-            ></mat-icon>
-            <div>
-              <h3 style="margin: 2px"><b>Profiliniz Gizli</b></h3>
-              <p class="warning-text">
-                Profiliniz “Gizli” olarak ayarlandığı için diğer Unilocked
-                kullanıcılarına gösterilmiyor. Eğer gizlilik ayarınızı
-                değiştirmek istiyorsanız hesap ayarlarınıza gidin.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 d-flex justify-content-center align-items-center">
-          <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-button class="accent-button">Gizlilik Ayarları</button>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="analyzes">
-      <h2>Analiz ve Öneriler</h2>
-      <p class="special">
-        <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
-      </p>
-      <div class="row">
-        <div class="col-sm">
-          <h4>
-            <mat-icon>people</mat-icon> <span>6 Profil Görüntülenmesi</span>
-          </h4>
-          <p class="description">
-            Geçmiş 30 gün içerisinde profilinizi görüntüleyenleri görün.
-          </p>
-        </div>
-        <div class="col-sm">
-          <h4>
-            <mat-icon>search</mat-icon> <span>3 Arama Görüntülenmesi</span>
-          </h4>
-          <p class="description">
-            Geçmiş 30 gün içerisinde arama sonuçlarında nasıl göründüğünüzü
-            keşfedin.
-          </p>
-        </div>
-        <div class="col-sm">
-          <h4>
-            <mat-icon>auto_awesome</mat-icon>
-            <span>Profilinizi Kişiselleştirme</span>
-          </h4>
-          <p class="description">
-            Aramalarda öne çıkmak, hedefinize yaklaşmak için profilinizi
-            düzenleme rehberine bakın.
-          </p>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="about card">
-      <div class="title">
-        <h2>Hakkında</h2>
-        <button mat-button color="primary">
-          <mat-icon>edit</mat-icon> Düzenle
-        </button>
-      </div>
-      <p>
-        {{ user.about }}
-      </p>
-      <p class="keep-reading">Okumaya devam et...</p>
-    </mat-card>
-    <mat-card class="contact card">
-      <div class="title">
-        <h2>İletişim</h2>
-        <div>
-          <button mat-button color="primary">
-            <mat-icon>edit</mat-icon> Düzenle
-          </button>
-          <button mat-button color="primary">
-            <mat-icon>add</mat-icon> Ekle
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <p class="name">Web Sitesi</p>
-          <p>{{ user.contact.website }}</p>
-        </div>
-        <div class="col-sm-6">
-          <p class="name">E-Posta</p>
-          <p>{{ user.contact.email }}</p>
-        </div>
-        <div class="col-sm-6">
-          <p class="name">Telefon</p>
-          <p>{{ user.contact.phone }}</p>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="posts card">
-      <div class="title">
-        <h2>Gönderiler</h2>
-        <div>
-          <div>
-            <a [routerLink]="['/user-posts']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
-            <button mat-button color="primary">
-              <mat-icon>add</mat-icon> Ekle
-            </button>
-            <button mat-button color="primary">
-              <mat-icon>edit</mat-icon> Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6" *ngFor="let post of user.posts">
-          <profile-content [item]="post"></profile-content>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="featured-content card">
-      <div class="title">
-        <h2>Öne Çıkan İçerikler</h2>
-        <div>
-          <div>
-            <a [routerLink]="['/user-highlights']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
-            <button mat-button color="primary">
-              <mat-icon>add</mat-icon> Ekle
-            </button>
-            <button mat-button color="primary">
-              <mat-icon>edit</mat-icon> Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6" *ngFor="let item of user.featured">
-          <profile-content [item]="item"></profile-content>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="experience card">
-      <div class="title">
-        <h2>Deneyim</h2>
-        <div>
-          <div>
-            <button mat-button color="primary">
-              <mat-icon>add</mat-icon> Ekle
-            </button>
-            <button mat-button color="primary">
-              <mat-icon>edit</mat-icon> Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="experience-area">
-        <div
-          class="experience-content"
-          *ngFor="let experience of user.experience"
-        >
-          <div class="top">
-            <img class="company-image" [src]="experience.image" alt="" />
-            <div>
-              <h3 class="experience-title">{{ experience.title }}</h3>
-              <p class="name">
-                {{ experience.company }} • {{ experience.workingType }}
-              </p>
-              <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
-            </div>
-          </div>
-          <div class="mid">
-            <p class="description">{{ experience.description }}</p>
-          </div>
-          <div class="talents">
-            <h4 class="talents-header">Yetenekler</h4>
-            <mat-chip-list aria-label="Talents">
-              <mat-chip *ngFor="let talent of experience.talents">{{
-                talent.name
-              }}</mat-chip>
-            </mat-chip-list>
-          </div>
-          <div class="featured">
-            <h4 class="featured-header">Öne Çıkanlar</h4>
-            <div class="row">
-              <div class="col-sm-4" *ngFor="let item of experience.featured">
-                <profile-content [item]="item"></profile-content>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="education card">
-      <div class="title">
-        <h2>Eğitim</h2>
-        <div>
-          <div>
-            <button mat-button color="primary">
-              <mat-icon>add</mat-icon> Ekle
-            </button>
-            <button mat-button color="primary">
-              <mat-icon>edit</mat-icon> Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="education-area">
-        <div class="education-content" *ngFor="let education of user.education">
-          <div class="top">
-            <img class="school-image" [src]="education.image" alt="" />
-            <div>
-              <h3 class="education-title">{{ education.school }}</h3>
-              <p class="name">
-                {{ education.title }} • {{ education.educationInfo.type }}
-              </p>
-              <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
-            </div>
-          </div>
-          <div class="mid">
-            <p class="description">{{ education.description }}</p>
-          </div>
-          <div class="communities">
-            <div class="communities-header">
-              <h4>Topluluklar ve Faaliyetler</h4>
-              <button mat-button color="primary">Hepsini Gör</button>
-            </div>
-            <div class="row">
+          <div class="col-lg info-area">
+            <div class="info-child">
+              <h2 class="user-name">{{ user.name }}</h2>
+              <p class="user-job">{{ user.job }}</p>
+              <p class="user-info">{{ user.info }}</p>
               <div
-                class="col-sm-4"
-                *ngFor="let community of education.communities"
+                class="organizations"
+                *ngFor="let organization of user.organizations"
               >
-                <div class="community">
-                  <img class="community-image" [src]="community.image" alt="" />
-                  <div class="community-info">
-                    <h5 class="community-name">{{ community.name }}</h5>
-                    <p class="community-role">{{ community.role }}</p>
-                    <p class="community-date">Mayıs 2022 - Günümüz</p>
+                <div class="organization">
+                  <div class="organisation-image">
+                    <img [src]="organization.image" />
+                  </div>
+                  <div class="organization-info">
+                    <p class="organization-name">{{ organization.name }}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="education-info">
-            <h4>Eğitim Bilgileri</h4>
-            <div class="row">
-              <div class="col-sm-3">
-                <h5 class="info-title">Ortalama</h5>
-                <p class="gpa">{{ education.educationInfo.gpa }}</p>
-                <p class="info">Program başlangıcından beri</p>
-              </div>
-              <div class="col-sm-3">
-                <h5 class="info-title">Seçmeli Program</h5>
-                <p
-                  class="grade"
-                  *ngFor="let elective of education.educationInfo.elective"
-                >
-                  {{ elective.name }} • {{ elective.grade }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="talents">
-            <h4 class="talents-header">Yetenekler</h4>
-            <mat-chip-list aria-label="Talents">
-              <mat-chip *ngFor="let talent of education.talents">{{
-                talent.name
-              }}</mat-chip>
-            </mat-chip-list>
-          </div>
-          <div class="featured">
-            <h4 class="featured-header">Öne Çıkanlar</h4>
-            <div class="row">
-              <div class="col-sm-4" *ngFor="let item of education.featured">
-                <profile-content [item]="item"></profile-content>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="projects card">
-      <div class="title">
-        <h2>Projeler</h2>
-        <div>
-          <div>
-            <button mat-button color="primary">
-              <mat-icon>add</mat-icon> Ekle
-            </button>
-            <button mat-button color="primary">
-              <mat-icon>edit</mat-icon> Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="projects-area">
-        <div>
-          <h3>Devam Edenler</h3>
-          <div class="row">
-            <div
-              class="col-sm-4"
-              *ngFor="let project of user.projects.inProgress"
-            >
-              <div class="project">
-                <img
-                  class="project-image"
-                  [src]="project.image"
-                  alt="Project Image"
-                />
-                <h4 class="project-title">{{ project.title }}</h4>
-                <p class="project-info">
-                  20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor
-                </p>
-                <div class="project-parent">
-                  <img [src]="project.parent.image" alt="Parent Image" />
-                  <p class="project-parent-name">
-                    <span>{{ project.parent.name }}</span> Topluluğu Kapsamında
-                  </p>
-                </div>
-                <p class="project-description">{{ project.content }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3>Tamamlananlar</h3>
-          <div class="row">
-            <div
-              class="col-sm-4"
-              *ngFor="let project of user.projects.completed"
-            >
-              <div class="project">
-                <img
-                  class="project-image"
-                  [src]="project.image"
-                  alt="Project Image"
-                />
-                <h4 class="project-title">{{ project.title }}</h4>
-                <p class="project-info">
-                  20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor
-                </p>
-                <div class="project-parent">
-                  <img [src]="project.parent.image" alt="Parent Image" />
-                  <p class="project-parent-name">
-                    <span>{{ project.parent.name }}</span> Topluluğu Kapsamında
-                  </p>
-                </div>
-                <p class="project-description">{{ project.content }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="certificates card">
-      <div class="title">
-        <h2>Sertifikalar</h2>
-        <div>
-          <div>
-            <button mat-button color="primary">
-              <mat-icon>add</mat-icon> Ekle
-            </button>
-            <button mat-button color="primary">
-              <mat-icon>edit</mat-icon> Düzenle
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="certificates-area">
-        <div
-          class="certificate-content"
-          *ngFor="let certificate of user.certificates"
-        >
-          <div class="top">
-            <img class="certificate-image" [src]="certificate.image" alt="" />
+          <div class="col-lg buttons-area">
             <div>
-              <h3 class="certificate-title">{{ certificate.name }}</h3>
-              <p class="name">
-                {{ certificate.platform }}
-              </p>
-              <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
+              <button mat-flat-button color="primary" class="follow">
+                İletişim Bilgileri
+              </button>
+              <br />
+              <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-stroked-button color="primary" class="message">
+                Profili Düzenle
+              </button>
             </div>
           </div>
-          <div class="mid">
-            <p class="description">Yeterlilik Kimliği : {{ certificate.id }}</p>
+        </div>
+      </mat-card>
+      <mat-card class="private-profile-warning">
+        <div class="row">
+          <div class="col-sm-3 left">
+            <div>
+              <h2>Uyarı</h2>
+              <p class="special">
+                <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
+              </p>
+            </div>
           </div>
-          <div class="talents">
-            <h4 class="talents-header">Yetenekler</h4>
-            <mat-chip-list aria-label="Talents">
-              <mat-chip *ngFor="let talent of certificate.accomplishments">{{
-                talent.name
-              }}</mat-chip>
-            </mat-chip-list>
+          <div class="col-sm-6 mid">
+            <div class="d-flex">
+              <mat-icon
+                style="width: 60px; margin-top: 4px"
+                svgIcon="settings_alert"
+              ></mat-icon>
+              <div>
+                <h3 style="margin: 2px"><b>Profiliniz Gizli</b></h3>
+                <p class="warning-text">
+                  Profiliniz “Gizli” olarak ayarlandığı için diğer Unilocked
+                  kullanıcılarına gösterilmiyor. Eğer gizlilik ayarınızı
+                  değiştirmek istiyorsanız hesap ayarlarınıza gidin.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="featured">
-            <h4 class="featured-header">Öne Çıkanlar</h4>
-            <div class="row">
-              <div class="col-sm-4" *ngFor="let item of certificate.featured">
-                <profile-content [item]="item"></profile-content>
+          <div class="col-sm-3 d-flex justify-content-center align-items-center">
+            <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-button class="accent-button">Gizlilik Ayarları</button>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="analyzes">
+        <h2>Analiz ve Öneriler</h2>
+        <p class="special">
+          <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
+        </p>
+        <div class="row">
+          <div class="col-sm">
+            <h4>
+              <mat-icon>people</mat-icon> <span>6 Profil Görüntülenmesi</span>
+            </h4>
+            <p class="description">
+              Geçmiş 30 gün içerisinde profilinizi görüntüleyenleri görün.
+            </p>
+          </div>
+          <div class="col-sm">
+            <h4>
+              <mat-icon>search</mat-icon> <span>3 Arama Görüntülenmesi</span>
+            </h4>
+            <p class="description">
+              Geçmiş 30 gün içerisinde arama sonuçlarında nasıl göründüğünüzü
+              keşfedin.
+            </p>
+          </div>
+          <div class="col-sm">
+            <h4>
+              <mat-icon>auto_awesome</mat-icon>
+              <span>Profilinizi Kişiselleştirme</span>
+            </h4>
+            <p class="description">
+              Aramalarda öne çıkmak, hedefinize yaklaşmak için profilinizi
+              düzenleme rehberine bakın.
+            </p>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="about card">
+        <div class="title">
+          <h2>Hakkında</h2>
+          <button mat-button color="primary">
+            <mat-icon>edit</mat-icon> Düzenle
+          </button>
+        </div>
+        <p>
+          {{ user.about }}
+        </p>
+        <p class="keep-reading">Okumaya devam et...</p>
+      </mat-card>
+      <mat-card class="contact card" *ngIf="user.contactList.length > 0">
+        <div class="title">
+          <h2>İletişim</h2>
+          <div>
+            <button mat-button color="primary">
+              <mat-icon>edit</mat-icon> Düzenle
+            </button>
+            <button mat-button color="primary">
+              <mat-icon>add</mat-icon> Ekle
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngFor="let contact of user.contactList">
+            <p class="name">{{contact.name}}</p>
+            <p>{{ contact.data }}</p>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="posts card">
+        <div class="title">
+          <h2>Gönderiler</h2>
+          <div>
+            <div>
+              <a [routerLink]="['/user-posts']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
+              <button mat-button color="primary">
+                <mat-icon>add</mat-icon> Ekle
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>edit</mat-icon> Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngFor="let post of user.posts">
+            <profile-content [item]="post"></profile-content>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="featured-content card">
+        <div class="title">
+          <h2>Öne Çıkan İçerikler</h2>
+          <div>
+            <div>
+              <a [routerLink]="['/user-highlights']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
+              <button mat-button color="primary">
+                <mat-icon>add</mat-icon> Ekle
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>edit</mat-icon> Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6" *ngFor="let item of user.featured">
+            <profile-content [item]="item"></profile-content>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="experience card">
+        <div class="title">
+          <h2>Deneyim</h2>
+          <div>
+            <div>
+              <button mat-button color="primary">
+                <mat-icon>add</mat-icon> Ekle
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>edit</mat-icon> Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="experience-area">
+          <div
+            class="experience-content"
+            *ngFor="let experience of user.experience"
+          >
+            <div class="top">
+              <img class="company-image" [src]="experience.image" alt="" />
+              <div>
+                <h3 class="experience-title">{{ experience.title }}</h3>
+                <p class="name">
+                  {{ experience.company }} • {{ experience.workingType }}
+                </p>
+                <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
+              </div>
+            </div>
+            <div class="mid">
+              <p class="description">{{ experience.description }}</p>
+            </div>
+            <div class="talents">
+              <h4 class="talents-header">Yetenekler</h4>
+              <mat-chip-list aria-label="Talents">
+                <mat-chip *ngFor="let talent of experience.talents">{{
+                  talent.name
+                }}</mat-chip>
+              </mat-chip-list>
+            </div>
+            <div class="featured">
+              <h4 class="featured-header">Öne Çıkanlar</h4>
+              <div class="row">
+                <div class="col-sm-4" *ngFor="let item of experience.featured">
+                  <profile-content [item]="item"></profile-content>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </mat-card>
-  </div>
+      </mat-card>
+      <mat-card class="education card">
+        <div class="title">
+          <h2>Eğitim</h2>
+          <div>
+            <div>
+              <button mat-button color="primary">
+                <mat-icon>add</mat-icon> Ekle
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>edit</mat-icon> Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="education-area">
+          <div class="education-content" *ngFor="let education of user.education">
+            <div class="top">
+              <img class="school-image" [src]="education.image" alt="" />
+              <div>
+                <h3 class="education-title">{{ education.schoolName }}</h3>
+                <p class="name">
+                  {{ education.schoolName }} • {{ education.educationInfo.type }}
+                </p>
+                <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
+              </div>
+            </div>
+            <div class="mid">
+              <p class="description">{{ education.description }}</p>
+            </div>
+            <div class="communities">
+              <div class="communities-header">
+                <h4>Topluluklar ve Faaliyetler</h4>
+                <button mat-button color="primary">Hepsini Gör</button>
+              </div>
+              <div class="row">
+                <div
+                  class="col-sm-4"
+                  *ngFor="let community of education.communities"
+                >
+                  <div class="community">
+                    <img class="community-image" [src]="community.image" alt="" />
+                    <div class="community-info">
+                      <h5 class="community-name">{{ community.name }}</h5>
+                      <p class="community-role">{{ community.role }}</p>
+                      <p class="community-date">Mayıs 2022 - Günümüz</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="education-info">
+              <h4>Eğitim Bilgileri</h4>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h5 class="info-title">Ortalama</h5>
+                  <p class="gpa">{{ education.educationInfo.gpa }}</p>
+                  <p class="info">Program başlangıcından beri</p>
+                </div>
+                <div class="col-sm-3">
+                  <h5 class="info-title">Seçmeli Program</h5>
+                  <p
+                    class="grade"
+                    *ngFor="let elective of education.educationInfo.elective"
+                  >
+                    {{ elective.name }} • {{ elective.grade }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="talents">
+              <h4 class="talents-header">Yetenekler</h4>
+              <mat-chip-list aria-label="Talents">
+                <mat-chip *ngFor="let talent of education.talents">{{
+                  talent.name
+                }}</mat-chip>
+              </mat-chip-list>
+            </div>
+            <div class="featured">
+              <h4 class="featured-header">Öne Çıkanlar</h4>
+              <div class="row">
+                <div class="col-sm-4" *ngFor="let item of education.featured">
+                  <profile-content [item]="item"></profile-content>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="projects card">
+        <div class="title">
+          <h2>Projeler</h2>
+          <div>
+            <div>
+              <button mat-button color="primary">
+                <mat-icon>add</mat-icon> Ekle
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>edit</mat-icon> Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="projects-area">
+          <div>
+            <h3>Devam Edenler</h3>
+            <div class="row">
+              <div
+                class="col-sm-4"
+                *ngFor="let project of user.projects.inProgress"
+              >
+                <div class="project">
+                  <img
+                    class="project-image"
+                    [src]="project.image"
+                    alt="Project Image"
+                  />
+                  <h4 class="project-title">{{ project.title }}</h4>
+                  <p class="project-info">
+                    20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor
+                  </p>
+                  <div class="project-parent">
+                    <img [src]="project.parent.image" alt="Parent Image" />
+                    <p class="project-parent-name">
+                      <span>{{ project.parent.name }}</span> Topluluğu Kapsamında
+                    </p>
+                  </div>
+                  <p class="project-description">{{ project.content }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>Tamamlananlar</h3>
+            <div class="row">
+              <div
+                class="col-sm-4"
+                *ngFor="let project of user.projects.completed"
+              >
+                <div class="project">
+                  <img
+                    class="project-image"
+                    [src]="project.image"
+                    alt="Project Image"
+                  />
+                  <h4 class="project-title">{{ project.title }}</h4>
+                  <p class="project-info">
+                    20 Ocak 2023 - 30 Mart 2023 (Tahmini) • Devam Ediyor
+                  </p>
+                  <div class="project-parent">
+                    <img [src]="project.parent.image" alt="Parent Image" />
+                    <p class="project-parent-name">
+                      <span>{{ project.parent.name }}</span> Topluluğu Kapsamında
+                    </p>
+                  </div>
+                  <p class="project-description">{{ project.content }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="certificates card">
+        <div class="title">
+          <h2>Sertifikalar</h2>
+          <div>
+            <div>
+              <button mat-button color="primary">
+                <mat-icon>add</mat-icon> Ekle
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>edit</mat-icon> Düzenle
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="certificates-area">
+          <div
+            class="certificate-content"
+            *ngFor="let certificate of user.certificates"
+          >
+            <div class="top">
+              <img class="certificate-image" [src]="certificate.image" alt="" />
+              <div>
+                <h3 class="certificate-title">{{ certificate.name }}</h3>
+                <p class="name">
+                  {{ certificate.platform }}
+                </p>
+                <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
+              </div>
+            </div>
+            <div class="mid">
+              <p class="description">Yeterlilik Kimliği : {{ certificate.id }}</p>
+            </div>
+            <div class="talents">
+              <h4 class="talents-header">Yetenekler</h4>
+              <mat-chip-list aria-label="Talents">
+                <mat-chip *ngFor="let talent of certificate.accomplishments">{{
+                  talent.name
+                }}</mat-chip>
+              </mat-chip-list>
+            </div>
+            <div class="featured">
+              <h4 class="featured-header">Öne Çıkanlar</h4>
+              <div class="row">
+                <div class="col-sm-4" *ngFor="let item of certificate.featured">
+                  <profile-content [item]="item"></profile-content>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </ng-template>
 </main-content>

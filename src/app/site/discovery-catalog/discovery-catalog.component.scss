@@ -84,4 +84,110 @@
             align-items: center;
         }
     }
+    .trends {
+        .row {
+            margin-bottom: 5%;
+        }
+    }
+    .input-container {
+        position: relative;
+        width: 100%;
+    
+        input {
+            width: 100%;
+            padding: 1% 3%;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 3px #c1c1c1;
+            outline: none;
+        }
+    }
+    
+    .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px; 
+    color: #8e8e8e; 
+    
+    }
+
+    .mat-chip {
+    margin: 0 1% 1% 0%;
+    background-color: #fff;
+    box-shadow: 0 0 4px #C1C1BE;
+    cursor: pointer;
+
+    &.active {
+        background-color: #343A40;
+        color: #F1F3F5;
+    }
+
+    &.active-tag {
+        background-color: #444BDA;
+        color: #f1f3f5;
+    }
+
+    &.selected {
+        background-color: #444BDA;
+        color: #F1F3F5;
+
+        .chip-text::after {
+            content: "\f00d";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 600;
+            font-size: 12px;
+            margin-left: 8%;
+            cursor: pointer;
+        }
+    }
+    }
+
+    .selected-tags {
+        opacity: 0;
+        position: fixed;
+        padding: 1%;
+        background-color: #fff;
+        bottom: 5%;
+        box-shadow: 0 0 10px #c1c1c1;
+        border-radius: 5px;
+        left: 20%;
+        width: 75%;
+        z-index: -1;
+        transition: all .5s ease-in-out;
+
+        .content {
+            width: 85%;
+
+            h4 {
+                width: 13%;
+                margin: 0;
+            }
+
+            .tags {
+                width: 85%;
+                overflow-x: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .mat-chip {
+                    margin: 0 5px;
+                }
+            }
+        }
+        
+    }
+
+    .saved {
+        .mat-chip {
+            img {
+                height: 85%;
+                margin-right: 5%;
+            }
+        }
+    }
 }
+

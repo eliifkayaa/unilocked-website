@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 
@@ -37,7 +38,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AccountSettingsComponent,
     SecuritySettingsComponent,
     NotificationSettingsComponent,
-    PrivacySettingsComponent
+    PrivacySettingsComponent,
+    
+    
   ],
   imports: [
     AppCommonModule,
@@ -60,7 +63,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatSelectModule,
     MatTooltipModule,
     MatRadioModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatAutocompleteModule
   ],
   exports: [
     

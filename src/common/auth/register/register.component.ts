@@ -3,7 +3,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@common/auth/auth.service';
+import { GlobalSearchService } from '@common/services/global-search.service';
 import { AppThemeService } from '@common/ui/theming/app-theme.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'register',
@@ -12,7 +14,7 @@ import { AppThemeService } from '@common/ui/theming/app-theme.service';
 })
 export class RegisterComponent implements OnInit {
   @ViewChild('stepper') stepper: MatStepper;
- 
+
   public categories = [
     {
       photos: [
@@ -52,8 +54,8 @@ export class RegisterComponent implements OnInit {
   public firstFormGroup = this._formBuilder.group({});
   public secondFormGroup = this._formBuilder.group({
     email: ['', [Validators.email, Validators.required]],
-    firstname: ['', Validators.required],
-    lastname: ['', Validators.required],
+    first_name: ['', Validators.required],
+    last_name: ['', Validators.required],
     phone: ['', Validators.required],
     password: ['', Validators.required],
     password2: ['', Validators.required],
@@ -73,14 +75,30 @@ export class RegisterComponent implements OnInit {
 
   public needEmailConfirmation: boolean = false;
 
+  public filteredSchools = new BehaviorSubject<string[]>([]);
+  public filteredDepartments = new BehaviorSubject<string[]>([]);
+
+
   constructor(
     public auth: AuthService,
     private _formBuilder: FormBuilder,
     private activeRoute: ActivatedRoute,
-    public theme: AppThemeService
+    public theme: AppThemeService,
+    public searchService: GlobalSearchService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.thirdFormGroup.get('school').valueChanges.subscribe((value) => {
+      this.searchService.searchSchools(value).subscribe((response) => {
+        this.filteredSchools.next(response.data.universities);
+      });
+    });
+    this.thirdFormGroup.get('department').valueChanges.subscribe((value) => {
+      this.searchService.searchDepartments(value).subscribe((response) => {
+        this.filteredDepartments.next(response.data.departments);
+      });
+    });
+  }
 
   submit() {
     if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
@@ -89,23 +107,18 @@ export class RegisterComponent implements OnInit {
         ...this.secondFormGroup.value,
         ...this.thirdFormGroup.value,
         ...this.fourthFormGroup.value,
-
       };
-      this.auth
-        .register(
-        data
-        )
-        .subscribe({
-          next: (response) => {
-            this.needEmailConfirmation = response.needEmailConfirmation;
-          },
-          error: (error) => {
-            this.error = error;
-          },
-          complete: () => {
-            this.stepper.next();
-          },
-        });
+      this.auth.register(data).subscribe({
+        next: (response) => {
+          this.needEmailConfirmation = response.needEmailConfirmation;
+        },
+        error: (error) => {
+          this.error = error;
+        },
+        complete: () => {
+          this.stepper.next();
+        },
+      });
     }
   }
 }
