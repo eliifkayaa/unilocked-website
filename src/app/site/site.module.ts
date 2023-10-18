@@ -88,9 +88,11 @@ import { HomePartnersComponent } from './main-home/guest-home/home-partners/home
 import { DiscoveryHighlightsComponent } from './discovery-catalog/discovery-highlights/discovery-highlights.component';
 import { DiscoveryPopularsComponent } from './discovery-catalog/discovery-populars/discovery-populars.component';
 import { DiscoveryTopnotesComponent } from './discovery-catalog/discovery-topnotes/discovery-topnotes.component';
+import { InternCardComponent } from './discovery-catalog/catalog-cards/intern-card/intern-card.component';
+
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent,HomePartnersComponent, MessagesMainComponent, DiscoveryCatalogComponent, CommunityCardComponent, CompanyCardComponent, PersonCardComponent, ProjectPostCardComponent, EventsCardComponent, JobCardComponent, DiscoveryHighlightsComponent, DiscoveryPopularsComponent, DiscoveryTopnotesComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent,HomePartnersComponent, MessagesMainComponent, DiscoveryCatalogComponent, CommunityCardComponent, CompanyCardComponent, PersonCardComponent, ProjectPostCardComponent, EventsCardComponent, JobCardComponent,InternCardComponent, DiscoveryHighlightsComponent, DiscoveryPopularsComponent, DiscoveryTopnotesComponent],
 
   imports: [
     CommonModule,
@@ -112,7 +114,7 @@ import { DiscoveryTopnotesComponent } from './discovery-catalog/discovery-topnot
     MatSidenavModule,
     MatTabsModule,
     MatChipsModule,
-    UploadModule
+    UploadModule,
     
   ],
   

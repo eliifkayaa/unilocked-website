@@ -61,11 +61,11 @@
           <div class="register-form d-flex justify-content-between">
             <mat-form-field class="example-form-field">
               <mat-label>İsim</mat-label>
-              <input matInput type="text" formControlName="firstname" />
+              <input matInput type="text" formControlName="first_name" />
             </mat-form-field>
             <mat-form-field class="example-form-field">
               <mat-label>Soyisim</mat-label>
-              <input matInput type="text" formControlName="lastname" />
+              <input matInput type="text" formControlName="last_name" />
             </mat-form-field>
             <mat-form-field class="example-form-field">
               <mat-label>Eposta</mat-label>
@@ -140,11 +140,21 @@
           <div class="register-form d-flex justify-content-between">
             <mat-form-field class="example-form-field">
               <mat-label>Okul</mat-label>
-              <input matInput type="text" formControlName="school" />
+              <input matInput type="text" formControlName="school" [matAutocomplete]="auto"/>
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredSchools | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
             </mat-form-field>
             <mat-form-field class="example-form-field">
               <mat-label>Bölüm</mat-label>
-              <input matInput type="text" formControlName="department" />
+              <input matInput type="text" formControlName="department" [matAutocomplete]="auto2"/>
+              <mat-autocomplete #auto2="matAutocomplete">
+                <mat-option *ngFor="let option of filteredDepartments | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
             </mat-form-field>
             <mat-form-field class="example-form-field">
               <mat-label>Başlangıç Tarihi</mat-label>
@@ -197,7 +207,7 @@
             <div
               class="buttons d-flex flex-column align-items-center justify-content-center"
             >
-              <button mat-flat-button color="primary" (click)="stepper.next()">
+              <button mat-flat-button color="primary" (click)="submit()">
                 Kaydı Tamamla
                 <mat-icon> arrow_forward </mat-icon>
               </button>

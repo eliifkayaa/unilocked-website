@@ -52,6 +52,11 @@ const routes: Routes = [
     component: UserProfileComponent,
     canActivate: [LoggedIn],
   },
+  {
+    path: 'user-profile/:username',
+    component: UserProfileComponent,
+    canActivate: [LoggedIn],
+  },
   { path: 'events', component: EventsComponent, canActivate: [LoggedIn] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [LoggedIn] },
 

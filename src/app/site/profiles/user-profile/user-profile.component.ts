@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProfileService } from '@common/services/profile.service';
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'user-profile',
@@ -6,7 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  constructor() {}
+  constructor(
+    public profileService: ProfileService,
+    public activatedRoute: ActivatedRoute
+  ) {}
+
+  public user$ = this.activatedRoute.params.pipe(
+    switchMap((params) =>
+      this.profileService.getUserProfile(params['username']).pipe(
+        map((response) => {
+          const data = response.data;
+          data.job = data.university.name + ' ' + data.department.name + " Bölümü";
+          data.info = "500+ Bağlantı • Ankara, Türkiye"
+          data.projects = {
+            completed: data.projects,
+            inProgress: data.projects,
+          }
+          return data
+        })
+      )
+    )
+  );
 
   ngOnInit(): void {}
 
@@ -15,23 +38,22 @@ export class UserProfileComponent implements OnInit {
     image: 'assets/img/music_project.png',
     title: 'Music Player Concept',
     content: 'Music player application concept. Made with Figma and Photoshop.',
-    parent : {
+    parent: {
       image: 'assets/img/alekted.png',
-      name : 'ALECTED'
+      name: 'ALECTED',
     },
   };
 
-  public project2 =  {
+  public project2 = {
     image: 'assets/img/placeholder.png',
     title: 'AlecTED Otonom Araç Projesi',
-    parent : {
+    parent: {
       image: 'assets/img/alekted.png',
-      name : 'ALECTED'
+      name: 'ALECTED',
     },
-    content : 'ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz'
-  }
-
-  
+    content:
+      'ALECTED topluluğu olarak otonom araç projesi üzerinde çalışıyoruz',
+  };
 
   public post = {
     type: 'Gönderi',
@@ -46,7 +68,7 @@ export class UserProfileComponent implements OnInit {
     job: 'TED Üniversitesi - Yazılım Mühendisliği',
     info: '500+ Bağlantı • Ankara, Türkiye',
     avatar: 'assets/img/profile-avatar.jpeg',
-    backdrop: 'assets/img/profile-background.png',
+    background: 'assets/img/profile-background.png',
     organizations: [
       {
         name: 'TED Üniversitesi',
@@ -134,12 +156,12 @@ export class UserProfileComponent implements OnInit {
     ],
     projects: {
       completed: [this.project],
-      inProgress: [this.project2,this.project],
+      inProgress: [this.project2, this.project],
     },
     certificates: [
       {
         name: 'Complete Web & Mobile Designer in 2022: UI/UX, Figma + more',
-        platform : 'Zero To Mastery Academy',
+        platform: 'Zero To Mastery Academy',
         image: 'assets/img/cert.png',
         date: 'Eylül 2022',
         id: 'UC-b0047967-fe9c-46ac-918b-707070707070',
