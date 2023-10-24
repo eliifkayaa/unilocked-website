@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '@common/auth/auth.service';
 import { ProfileService } from '@common/services/profile.service';
-import { map, switchMap } from 'rxjs';
+import { BehaviorSubject, catchError, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'user-profile',
@@ -11,24 +12,19 @@ import { map, switchMap } from 'rxjs';
 export class UserProfileComponent implements OnInit {
   constructor(
     public profileService: ProfileService,
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    public currentUser: AuthService
   ) {}
 
+  public error$ = new BehaviorSubject<string>(null);
   public user$ = this.activatedRoute.params.pipe(
     switchMap((params) =>
-      this.profileService.getUserProfile(params['username']).pipe(
-        map((response) => {
-          const data = response.data;
-          data.job = data.university.name + ' ' + data.department.name + " Bölümü";
-          data.info = "500+ Bağlantı • Ankara, Türkiye"
-          data.projects = {
-            completed: data.projects,
-            inProgress: data.projects,
-          }
-          return data
-        })
-      )
-    )
+      this.profileService.getUserProfile(params['username'] || this.currentUser.user?.name)
+    ),
+    catchError((err) => {
+      this.error$.next(err.error.message);
+      return [];
+    })
   );
 
   ngOnInit(): void {}

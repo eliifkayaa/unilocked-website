@@ -4,7 +4,7 @@ import Role from "@common/auth/types/role";
 
 export interface User{
     _id: string;
-    username?: string;
+    name?: string;
     first_name?: any;
     last_name?: any;
     avatar_url?: any;
