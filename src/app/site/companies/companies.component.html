@@ -1,16 +1,4 @@
-<ng-container *ngIf="auth.loggedIn">
-  <navbar [drawer]="drawer"></navbar>
-  <mat-drawer-container class="example-container">
-    <mat-drawer
-      class="mainMenu"
-      #drawer
-      style="width: 250px"
-      mode="side"
-      opened
-    >
-      <main-menu></main-menu>
-    </mat-drawer>
-    <mat-drawer-content style="min-height: 100vh">
+<main-content>
       <div class="header">
         <div class="container">
           <h1>Şirketler</h1>
@@ -22,9 +10,8 @@
 
             </div>
             <div class="joined">
-              <slider>
-                <slider-item *ngFor="let company of companies">
-                  <mat-card class="company mat-elevation-z0">
+                <button mat-icon-button class="icon-left"><mat-icon>chevron_left</mat-icon></button>
+                  <mat-card class="company mat-elevation-z0" *ngFor="let company of companies">
                     <div
                       class="backdrop-area"
                       style="position: relative; height: 120px"
@@ -51,8 +38,9 @@
                     <p class="short-desc">{{ company.shortDesc }}</p>
                     <p class="role">Katılımcı üye</p>
                   </mat-card>
-                </slider-item>
-              </slider>
+                  <button mat-icon-button class="icon-right">
+                    <mat-icon>chevron_right</mat-icon>
+                  </button>
             </div>
             <info-card [routerLink]="['/people']" routerLinkActive="router-link-active"
               title="Yeni bağlantılar kurun"
@@ -152,6 +140,4 @@
           </div>
         </div>
       </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
-</ng-container>
+    </main-content>

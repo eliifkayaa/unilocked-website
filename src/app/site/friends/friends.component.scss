@@ -22,7 +22,6 @@
     max-width: 300px;
     width: 100%;
     position: relative;
-
     padding: 0;
     border-radius: 12px;
 
@@ -71,9 +70,11 @@
   .followed {
     justify-content: space-between;
     margin: 0 4% 4% 4%;
+
     .community {
       padding-right: 36px;
       margin-top: 36px;
+
       .avatar {
         width: 48px;
         height: 48px;
@@ -109,23 +110,38 @@
   .joined {
     flex-wrap: wrap;
 
-    .icon-right  {
+    .icon-right {
       right: 16px;
-       }
+    }
 
-      .icon-left {
-        left: 16px;
-      }
+    .icon-left {
+      left: 16px;
+    }
 
+    button {
+      position: absolute;
+      transform: translate(0, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}
 
-      button {
-        position:absolute;
+@media only screen and (max-width: 400px) {
+  .joined {
+    .mat-card {
+      // width: 200px;
+      // height: 250px;
+    }
 
-        transform: translate(0, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-      }
+  .icon-right {
+    right: 5px;
+  }
+
+  .icon-left {
+    left: 5px;
+  }
 }
 }
