@@ -8,14 +8,19 @@
 }
 
 .joined {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: -2%;
 
   .company {
+    margin: 4% 16px 16px 16px;
+    max-width: 300px;
+    width: 100%;
     position: relative;
-    color: var(--text);
     padding: 0;
     border-radius: 12px;
+    color: var(--text);
 
     .backdrop {
       border-radius: 20px;
@@ -93,3 +98,47 @@
     }
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .joined {
+    flex-wrap: wrap;
+
+    .icon-right {
+      right: 16px;
+    }
+
+    .icon-left {
+      left: 16px;
+    }
+
+    button {
+      position: absolute;
+      transform: translate(0, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .joined {
+    .mat-card {
+      // width: 200px;
+      // height: 250px;
+    }
+
+  .icon-right {
+    right: 5px;
+  }
+
+  .icon-left {
+    left: 5px;
+  }
+}
+}
+
+
+
+
