@@ -22,6 +22,7 @@
     .home-panel {
       border-radius: 12px;
       padding: 0;
+      margin: 3% 0;
       .profile-background {
         width: 100%;
         height: 80px;
@@ -162,4 +163,12 @@
 
 mat-drawer-content {
   height: 100vh;
+}
+
+.text-primary {
+  color: #4B53F2!important;
+}
+
+.card-info {
+  font-size: 10px;
 }

@@ -79,7 +79,27 @@ export class UserHomeComponent implements OnInit {
     info: 'Şirket • Savunma ve Bilgi Teknolojileri',
   };
 
+  public card1 = {
+    image : 'assets/img/turkcell.png',
+    name : "Turkcell",
+    description : "Teknik Staj",
+    info : "İstanbul (İş Yerinde) • 2 Ay • Önerilen İlan"
+  }
+  public card2 = {
+    image : 'assets/img/teknokent.png',
+    name : "Antalya Teknokent",
+    description : "Antalya Teknokent Demoday",
+    info : "Antalya • 8 Aralık 2023 • Takip ettiklerinizden yeni etkinlik"
+  }
+  public card3 = {
+    image : 'assets/img/turkcell.png',
+    name : "Turkcell",
+    description : "Teknik Staj",
+    info : "İstanbul (İş Yerinde) • 2 Ay • Önerilen İlan"
+  }
+
   public users = [this.account1, this.account2, this.account3];
+  public cards = [this.card1, this.card2, this.card3]
 
   public post = {
     user: this.account4,
