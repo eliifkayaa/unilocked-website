@@ -139,6 +139,14 @@
   background-color: transparent;
   border: none;
   font-size: 14px;
+
+  &.success {
+    color: #28a745!important;
+  }
+  &.accent {
+    color: #F76707!important;
+  }
+
   mat-icon {
     height: 18px;
     font-size: 18px;
