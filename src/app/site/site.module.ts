@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ExploreComponent } from './explore/explore.component';
 import { AnimatedCounterDirective } from './main-home/guest-home/animated-counter.directive';
@@ -108,6 +109,7 @@ import { ServiceErrorComponent } from './service-error/service-error.component';
     MatListModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
