@@ -8,7 +8,7 @@
           <button mat-button color="primary">Hepsini gör</button>
         </div>
         <div class="joined">
-          <button mat-icon-button><mat-icon>chevron_left</mat-icon></button>
+          <button mat-icon-button class="icon-left"><mat-icon>chevron_left</mat-icon></button>
           <mat-card
             class="person mat-elevation-z0"
             *ngFor="let person of people"
@@ -37,7 +37,7 @@
             <p class="short-desc">{{ person.shortDesc }}</p>
             <p class="role">Katılımcı üye</p>
           </mat-card>
-          <button mat-icon-button>
+          <button mat-icon-button class="icon-right">
             <mat-icon>chevron_right</mat-icon>
           </button>
         </div>
