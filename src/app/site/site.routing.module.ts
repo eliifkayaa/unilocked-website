@@ -28,7 +28,8 @@ import { EventsExtendedComponent } from './events/events-extended/events-extende
 import { UserPostsComponent } from './profiles/user-profile/user-posts/user-posts.component';
 import { UserHighlightsComponent } from './profiles/user-profile/user-highlights/user-highlights.component';
 import { DiscoveryCatalogComponent } from './discovery-catalog/discovery-catalog.component';
-
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServiceErrorComponent } from './service-error/service-error.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,10 @@ const routes: Routes = [
   { path : 'search', component: SearchResultsComponent, canActivate: [LoggedIn]},
 
   { path : 'job-posting', component: JobPostingComponent, canActivate: [LoggedIn]},
+
+  { path : 'error-page', component: ErrorPageComponent, canActivate: [LoggedIn]},
+
+  { path : 'service-error', component: ServiceErrorComponent, canActivate: [LoggedIn]},
 
   { path : 'event-details', component: EventDetailsComponent, canActivate: [LoggedIn]},
 

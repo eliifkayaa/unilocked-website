@@ -13,32 +13,38 @@
                 <mat-form-field appearance="outline">
                   <mat-label>Bu gün aklında neler var?</mat-label>
                   <input formControlName="text" matInput placeholder="Bir şeyler yaz..." />
-                  <mat-icon matSuffix>send</mat-icon>
+                  <mat-icon matSuffix>mood</mat-icon>
                 </mat-form-field>
               </div>
               <div class="row" style="margin: 2px">
                 <div
-                  class="col-sm-9 d-flex"
+                  class="col-sm-7 d-flex"
                   style="align-items: center; justify-content: flex-start"
                 >
                   <input (change)="upload(file.files)" type="file" style="display: none;" #file>
                   <button mat-button color="primary" class="attachment-button">
                     <mat-icon>image</mat-icon> Fotoğraf
                   </button>
-                  <button mat-button color="primary" class="attachment-button" (click)="file.click()">
+                  <button mat-button class="attachment-button accent" (click)="file.click()">
                     <mat-icon>videocam</mat-icon> Video
                   </button>
-                  <button mat-button color="primary" class="attachment-button">
-                    <mat-icon>event</mat-icon> Etkinlik
-                  </button>
-                  <button mat-button color="primary" class="attachment-button">
+                  <button mat-button class="attachment-button success">
                     <mat-icon>poll</mat-icon> Anket
+                  </button>
+                  <button mat-button color="warn" class="attachment-button">
+                    <mat-icon>notes</mat-icon> Blog
                   </button>
                 </div>
                 <div
-                  class="col-sm-3"
-                  style="display: flex; justify-content: flex-end"
+                  class="col-sm-5"
+                  style="display: flex; justify-content: space-between; align-items: center;"
                 >
+                  <span style="font-size: 13px;display: flex;align-items: center;">
+                    Paylaşılacaklar • Herkes
+                    <mat-icon>
+                      arrow_drop_down
+                    </mat-icon>
+                  </span>
                   <button mat-flat-button color="primary">
                     <span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon>
                   </button>
@@ -54,6 +60,22 @@
           </ng-container>
         </div>
         <div class="col-lg-4">
+          <h2><span class="text-primary"> 11 Kasım </span> Özeti</h2>
+          <mat-card *ngFor="let card of cards" class="home-panel mat-elevation-z0">
+            <div class="right-panel">
+              <div class="d-flex" >
+                <img class="profile-image" [src]="card.image" alt="" />
+                <div style="width: 100%">
+                  <div class="top d-flex flex-column align-items-start">
+                    <h4 class="description">{{ card.description }}</h4>
+                    <h5 class="name">{{ card.name }}</h5>
+                  </div>
+                  <p class="card-info">{{ card.info }}</p>
+                </div>
+              </div>
+              
+            </div>
+          </mat-card>
           <mat-card class="home-panel mat-elevation-z0">
             <div class="right-panel">
               <h2>Tanıyor olabilirsin</h2>

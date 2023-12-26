@@ -90,12 +90,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.thirdFormGroup.get('school').valueChanges.subscribe((value) => {
       this.searchService.searchSchools(value).subscribe((response) => {
-        this.filteredSchools.next(response.data.universities);
+        this.filteredSchools.next(response.data.universities.map((x) => x.name));
       });
     });
     this.thirdFormGroup.get('department').valueChanges.subscribe((value) => {
       this.searchService.searchDepartments(value).subscribe((response) => {
-        this.filteredDepartments.next(response.data.departments);
+        this.filteredDepartments.next(response.data.departments.map((x) => x.name));
       });
     });
   }
