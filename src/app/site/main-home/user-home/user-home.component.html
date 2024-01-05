@@ -18,27 +18,42 @@
               </div>
               <div class="row" style="margin: 2px">
                 <div
-                  class="col-sm-9 d-flex"
+                  class="col-sm-6 d-flex"
                   style="align-items: center; justify-content: flex-start"
                 >
                   <input (change)="upload(file.files)" type="file" style="display: none;" #file>
                   <button mat-button color="primary" class="attachment-button">
                     <mat-icon>image</mat-icon> Fotoğraf
                   </button>
-                  <button mat-button color="primary" class="attachment-button" (click)="file.click()">
+                  <button mat-button 
+                  style="color: #F76707;"
+                  class="attachment-button" (click)="file.click()">
                     <mat-icon>videocam</mat-icon> Video
                   </button>
-                  <button mat-button color="primary" class="attachment-button">
-                    <mat-icon>event</mat-icon> Etkinlik
-                  </button>
-                  <button mat-button color="primary" class="attachment-button">
+                  <button mat-button 
+                  style="color: #0CA678;"
+                  class="attachment-button">
                     <mat-icon>poll</mat-icon> Anket
                   </button>
+                  <button mat-button
+                  style="color: #F03E3E"
+                  class="attachment-button">
+                    <mat-icon>event</mat-icon> Blog
+                  </button>          
                 </div>
-                <div
-                  class="col-sm-3"
-                  style="display: flex; justify-content: flex-end"
-                >
+
+                <div class="attachment-text col-sm-6">
+                Paylaşılacaklar • Herkes
+                    
+                  <div class="dropdown">
+                    <mat-icon style="font-size: small; padding-top: 7px;">expand_more</mat-icon>
+                    <div class="dropdown-content">
+                    <a href="#">Herkes</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                  </div>
+
                   <button mat-flat-button color="primary">
                     <span>Gönder</span>&nbsp;&nbsp;&nbsp;<mat-icon>send</mat-icon>
                   </button>

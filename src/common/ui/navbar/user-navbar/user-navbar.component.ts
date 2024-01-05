@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@common/auth/auth.service';
+import { ButtonService } from '@common/services/button.service';
 import { AppThemeService } from '@common/ui/theming/app-theme.service';
 import { Observable, map, mapTo } from 'rxjs';
 
@@ -19,7 +20,8 @@ export class UserNavbarComponent implements OnInit {
     public theme: AppThemeService,
     public formBuilder: FormBuilder,
     public router: Router,
-    private breakPointObserver: BreakpointObserver
+    private breakPointObserver: BreakpointObserver,
+    public buttonService: ButtonService
   ) {}
 
   ngOnInit(): void {}
@@ -31,7 +33,7 @@ export class UserNavbarComponent implements OnInit {
       } else {
         this.theme.changed$.subscribe((darkMode) => {
           observer.next(
-            darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo.png'
+            darkMode ? 'assets/img/logo-white.png' : 'assets/img/logo-mobile.png'
           );
         });
       }
@@ -59,4 +61,5 @@ export class UserNavbarComponent implements OnInit {
       queryParams: { query: this.searchForm.value.query },
     });
   }
+
 }

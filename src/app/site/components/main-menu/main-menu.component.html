@@ -1,39 +1,61 @@
-<img style="width: 100%; border-radius: 7px;" src="assets/img/menu-profile.svg" alt="">
-<mat-action-list role="list">
-  <a routerLink="/my-profile" mat-list-item>
-    <mat-icon mat-list-icon>person</mat-icon>
-    <div mat-line>Profil</div>
+
+<mat-action-list role="list" class="mat-list"  name="button" >
+  <a routerLink="/my-profile"mat-list-item>
+    <mat-icon mat-list-icon style="size: 16px;">explore</mat-icon>
+    <div mat-line>Keşif</div>
   </a>
-  <a routerLink="/friends" mat-list-item>
-    <mat-icon mat-list-icon>people</mat-icon>
-    <div mat-line>Arkadaşlarım</div>
+  <a routerLink="/catalog" mat-list-item>
+    <mat-icon mat-list-icon>auto_stories</mat-icon>
+    <div mat-line>Katalog</div>
   </a>
   <a routerLink="/saved" mat-list-item>
-    <mat-icon mat-list-icon>bookmarks</mat-icon>
-    <div mat-line>Kaydedilenler</div>
-  </a>
-</mat-action-list>
-<hr class="profile-hr" />
-
-<mat-action-list role="list">
-  <a routerLink="/communities" mat-list-item>
-    <mat-icon mat-list-icon>diversity_1</mat-icon>
-    <div mat-line>Topluluklar</div>
-  </a>
-  <a routerLink="/projects" mat-list-item>
-    <mat-icon mat-list-icon>rocket_launch</mat-icon>
-    <div mat-line>Projeler</div>
-  </a>
-  <a routerLink="/people" mat-list-item>
-    <mat-icon mat-list-icon>people</mat-icon>
+    <mat-icon mat-list-icon  class="material-icons-outlined">group</mat-icon>
     <div mat-line>Kişiler</div>
   </a>
-  <a routerLink="/companies" mat-list-item>
-    <mat-icon mat-list-icon>apartment</mat-icon>
+  
+  <a routerLink="/communities" mat-list-item>
+    <mat-icon mat-list-icon  
+    class="mat-icon"
+    fontSet="material-icons-outlined">groups3</mat-icon>
+    <div mat-line class="mat-line">Topluluklar</div>
+  </a>
+
+  <a routerLink="/projects" mat-list-item>
+    <mat-icon mat-list-icon fontSet="material-icons-outlined">factory</mat-icon>
     <div mat-line>Şirketler</div>
+  </a>
+  <a routerLink="/people" mat-list-item>
+    <mat-icon mat-list-icon fontSet="material-icons-outlined" fontIcon="small">school</mat-icon>
+    <div mat-line>Kurumlar</div>
+  </a>
+  <a routerLink="/companies" mat-list-item>
+    <mat-icon mat-list-icon>lightbulb</mat-icon>
+    <div mat-line>Projeler</div>
   </a>
   <a routerLink="/events" mat-list-item>
     <mat-icon mat-list-icon>event</mat-icon>
     <div mat-line>Etkinlikler</div>
   </a>
+</mat-action-list>
+
+<mat-action-list class="mat-list-footer">
+  <a routerLink="/events" mat-list-item>
+    <mat-icon mat-list-icon class="material-symbols-outlined">
+      settings_accessibility
+ </mat-icon>
+    <div mat-line>Erişebilirlik</div>
+  </a>
+
+  <a routerLink="/events" mat-list-item>
+    <mat-icon mat-list-icon class="material-symbols-outlined">support</mat-icon>
+    <div mat-line>Destek</div>
+  </a>
+
+
+  <a routerLink="/events" mat-list-item>
+    <mat-icon mat-list-icon>bolt</mat-icon>
+    <div mat-line>Hızlı Erişim</div>
+  </a>
+
+  <p>Unilocked © 2023</p>
 </mat-action-list>

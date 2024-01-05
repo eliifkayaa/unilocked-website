@@ -1,38 +1,40 @@
-<mat-toolbar color="primary">
-  <a class="logo-container" [routerLink]="['/home']"
-    ><img [src]="logo | async" class="logo" alt="UniLocked"
-  /></a>
-  <button class="menu-button" mat-icon-button (click)="drawer.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
+<mat-toolbar class="mat-toolbar" color="primary">
+  <div class="logo">
+    <a class="logo-container" [routerLink]="['/home']"><img [src]="logo | async" class="logo" alt="UniLocked" /></a>
+  </div>
 
-  <span class="spacer"></span>
-  <a routerLink="/discovery-catalog" matTooltip="Keşfet" class="icon-button">
-    <mat-icon>explore</mat-icon><br />
-  </a>
-  <a routerLink="/job-posting" matTooltip="İlanlar" class="icon-button">
-    <mat-icon>newspaper</mat-icon><br />
-  </a>
-  <a matTooltip="Programlar" class="icon-button">
-    <mat-icon>rocket</mat-icon><br />
-  </a>
   <form [formGroup]="searchForm" (ngSubmit)="search()">
-    <div class="navbar-search">
-      <input
-        formControlName="query"
-        placeholder="Ara..."
-        class="navbar-input"
-        type="text"
-      />
-      <mat-icon class="navbar-icon">search</mat-icon>
+    <div class="buttonService">
+      <!-- {{ buttonService.getButtonName() }} -->
+      <p>Keşif</p>
     </div>
+
+    <div class="container">
+      <div class="navbar-search">
+        <mat-icon class="navbar-icon">search</mat-icon>
+        <input
+          formControlName="query"
+          placeholder="Aklınızda neler var?"
+          class="navbar-input"
+          type="text"
+        />
+      </div>
+
+        <button  
+      class="createPost">
+      <mat-icon>add</mat-icon>
+        Gönderi Oluştur
+      </button>
+      </div>
   </form>
-  <button
+
+  <div class="navbar-out">
+    <button
     mat-icon-button
-    class="messages-icon"
+    class="icons"
     aria-label="Example icon-button with heart icon"
   >
-    <mat-icon matBadge="1" matBadgeColor="primary">messages</mat-icon>
+    <mat-icon class="icons" matBadgeColor="primary" >messages</mat-icon>
   </button>
   <button
     mat-icon-button
@@ -40,8 +42,17 @@
     aria-label="Example icon-button with share icon"
     routerLink="/notifications"
   >
-    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon  matBadgeColor="warn" class="icons">notifications</mat-icon>
   </button>
+    <button
+    mat-icon-button
+    aria-label="Example icon-button with share icon"
+    routerLink="/notifications"
+  >
+    <mat-icon>apps</mat-icon>
+  </button>
+
+  <!-- Profil image -->
   <div class="user-area">
     <img
       class="profile-image"
@@ -74,5 +85,6 @@
         <span>{{ theme.darkMode ? "Açık Tema" : "Koyu Tema" }}</span>
       </button>
     </mat-menu>
+  </div>
   </div>
 </mat-toolbar>
