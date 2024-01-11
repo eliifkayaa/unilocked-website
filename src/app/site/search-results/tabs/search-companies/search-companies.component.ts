@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '@common/auth/auth.service';
+import { FollowersService } from '@common/services/followers.service';
 
 @Component({
   selector: 'search-companies',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCompaniesComponent implements OnInit {
 
-  constructor() { }
+  @Input('items') items : any[]
+
+  constructor(public followers:FollowersService,public currentUser:AuthService) { }
 
   ngOnInit(): void {
   }

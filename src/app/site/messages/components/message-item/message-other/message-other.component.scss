@@ -1,0 +1,20 @@
+.message-other {
+  padding: 12px;
+  background: var(--surface-2);
+  border-radius: 7px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+  display: inline-flex;
+
+  margin-left: 4px;
+  margin-top: 4px;
+
+  .message-text {
+    color: var(--text);
+    font-family: Indivisible;
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+}

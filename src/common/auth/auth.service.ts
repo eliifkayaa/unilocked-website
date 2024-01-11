@@ -14,6 +14,13 @@ export class AuthService {
   public loadingStatus$ = new BehaviorSubject(false);
   public redirect: string | null = '/home';
   public user?: User;
+  public currentProfile?: {
+    _id: string;
+    username: string;
+    avatar: string;
+    modelType: string;
+  };
+
   public error?: string;
 
   constructor(
@@ -76,6 +83,7 @@ export class AuthService {
     this.http.post('auth/logout', {}).subscribe(() => {
       this.loggedIn = false;
       this.user = null;
+      this.currentProfile = null;
       this.redirect = null;
       this.error = null;
       this.loading$.next(false);
@@ -85,6 +93,8 @@ export class AuthService {
   private handleLogin(response: UserResponse, redirect: boolean = true) {
     if (response.success) {
       this.user = response.user;
+      this.currentProfile = response.user as any;
+      this.currentProfile.modelType = 'User';
       this.loggedIn = true;
     } else {
       this.error = response.error;

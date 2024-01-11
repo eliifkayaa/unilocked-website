@@ -1,49 +1,45 @@
 <!--       COMPANIES        -->
-<div class="container">
+<div class="container" *ngIf="items && items.length > 0">
   <div class="content">
     <div class="highlights">
       <div class="text-container">
         <p>
           Şirketler
-          <a [routerLink]="['/companies-extended']" routerLinkActive="router-link-active"  class="button-filter">Hepsini Gör</a>
+          <a
+            [routerLink]="['/companies-extended']"
+            routerLinkActive="router-link-active"
+            class="button-filter"
+            >Hepsini Gör</a
+          >
         </p>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-4" *ngFor="let item of items">
         <mat-card class="mat-elevation-z4">
-          <img mat-card-image src="./assets/img/ps3-back.png" />
+          <img mat-card-image [src]="item.background" />
           <mat-card-content>
             <mat-card-header>
-              <mat-card-title>Playstation Türkiye</mat-card-title>
+              <mat-card-title>{{ item.name }}</mat-card-title>
             </mat-card-header>
-            <p>35.701 Takipçi • Eğlence Sektörü Şirketi</p>
+            <p>
+              {{ item.followersCount || "0" }} Takipçi • Eğlence Sektörü Şirketi
+            </p>
           </mat-card-content>
           <mat-card-actions>
             <button
               mat-button
               style="background-color: #c9cbfb; color: #4b53f2"
+              (click)="
+                followers.toggle(
+                  item.id,
+                  'Company',
+                  currentUser.currentProfile._id,
+                  currentUser.currentProfile.modelType
+                )
+              "
             >
-              Takibi Bırak
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-      <div class="col-sm-4">
-        <mat-card class="mat-elevation-z4">
-          <img mat-card-image src="./assets/img/ps3-back.png" />
-          <mat-card-content>
-            <mat-card-header>
-              <mat-card-title>Playstation Global</mat-card-title>
-            </mat-card-header>
-            <p>35.701 Takipçi • Eğlence Sektörü Şirketi</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button
-              mat-button
-              style="background-color: #4b53f2; color: #f1f3f5"
-            >
-              Takip Et
+              {{ item.currentUserFollowed ? "Takibi Bırak" : "Takip Et" }}
             </button>
           </mat-card-actions>
         </mat-card>

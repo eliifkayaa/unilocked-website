@@ -1,0 +1,10 @@
+<div class="main-container">
+  <mat-drawer-container class="example-container">
+    <mat-drawer class="drawer" mode="side" [opened]="!(isMobile | async)">
+      <messages-menu></messages-menu>
+    </mat-drawer>
+    <mat-drawer-content class="content">
+      <messages-box></messages-box>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

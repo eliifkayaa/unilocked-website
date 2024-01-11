@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@common/auth/auth.service';
+import { SettingsService } from '@common/core/settings/settings.service';
 import { GlobalSearchService } from '@common/services/global-search.service';
 import { AppThemeService } from '@common/ui/theming/app-theme.service';
 import { BehaviorSubject } from 'rxjs';
@@ -84,8 +85,13 @@ export class RegisterComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private activeRoute: ActivatedRoute,
     public theme: AppThemeService,
-    public searchService: GlobalSearchService
+    public searchService: GlobalSearchService,
+    public settings:SettingsService
   ) {}
+
+  public get registerAvaible() {
+    return this.settings.get('register.enabled');
+  }
 
   ngOnInit(): void {
     this.thirdFormGroup.get('school').valueChanges.subscribe((value) => {

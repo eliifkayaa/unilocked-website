@@ -1,7 +1,11 @@
 {
-  "/api":
-  {
-      "target": "http://209.38.245.86:3000",
-      "secure": false
+  "/api": {
+    "target": "http://209.38.245.86:3000",
+    "secure": false
+  },
+  "/socket.io/*": {
+    "target": "http://209.38.245.86:3000/socket.io",
+    "secure": false,
+    "ws": true
   }
 }

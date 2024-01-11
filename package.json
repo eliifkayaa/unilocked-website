@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && ng build --source-map=true --configuration production --common-chunk=false",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^15.2.8",
     "@angular/router": "^15.2.8",
     "chart.js": "^4.3.0",
+    "ngx-socket-io": "^4.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "tus-js-client": "^3.1.0",

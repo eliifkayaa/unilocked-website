@@ -1,75 +1,38 @@
 <!--      PEOPLE      -->
 <div class="container">
-    <div class="highlights">
-      <div class="text-container">
-        <p>
-          Kişiler
-          <a [routerLink]="['/people-extended']" routerLinkActive="router-link-active"  href="#filter" class="button-filter">Hepsini Gör</a>
-        </p>
-      </div>
+  <div class="highlights">
+    <div class="text-container">
+      <p>
+        Kişiler
+        <a
+          [routerLink]="['/people-extended']"
+          routerLinkActive="router-link-active"
+          href="#filter"
+          class="button-filter"
+          >Hepsini Gör</a
+        >
+      </p>
     </div>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <img
-          mat-card-md-image
-          src="./assets/img/avatar1.png"
-          alt="Image of a Shiba Inu"
-          class="container-card-img"
-        />
-        <mat-card-title-group>
-          <mat-card-title>Halil Nuroğlu</mat-card-title>
-          <mat-card-subtitle>
-            <mat-card-content>
-              <span
-                ><b><i>PlayStation </i></b></span
-              >{{ longText }}
-            </mat-card-content>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-    </mat-card>
-    <br />
-    <mat-card class="example-card">
-      <mat-card-header>
-        <img
-          mat-card-md-image
-          src="./assets/img/avatar2.png"
-          alt="Image of a Shiba Inu"
-          class="container-card-img"
-        />
-        <mat-card-title-group>
-          <mat-card-title>Abdullah Ustaömeroğlu</mat-card-title>
-          <mat-card-subtitle>
-            <mat-card-content>
-              <span
-                ><b><i>PlayStation </i></b></span
-              >{{ longText }}
-            </mat-card-content>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-    </mat-card>
-    <br />
-    <mat-card class="example-card">
-      <mat-card-header>
-        <img
-          mat-card-md-image
-          src="./assets/img/avatar3.png"
-          alt="Image of a Shiba Inu"
-          class="container-card-img"
-        />
-        <mat-card-title-group>
-          <mat-card-title>Felya Varol</mat-card-title>
-          <mat-card-subtitle>
-            <mat-card-content>
-              <span
-                ><b><i>PlayStation </i></b></span
-              >{{ longText }}
-            </mat-card-content>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-    </mat-card>
-    <br />
   </div>
-  
+  <ng-container *ngIf="items">
+    <mat-card class="user-card" *ngFor="let item of items" [routerLink]="['../user-profile',item.name]">
+      <mat-card-header>
+        <img
+          mat-card-md-image
+          [src]="item.avatar"
+          alt="Image of a Shiba Inu"
+          class="container-card-img"
+        />
+        <mat-card-title-group>
+          <mat-card-title>{{item.first_name}} {{item.last_name}}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-card-content>
+             {{item.description}}
+            </mat-card-content>
+          </mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+    </mat-card>
+    <br>
+  </ng-container>
+</div>

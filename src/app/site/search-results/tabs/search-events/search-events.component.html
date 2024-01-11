@@ -1,5 +1,5 @@
 <!--     EVENTS      -->
-<div class="container">
+<div class="container" *ngIf="items && items.length > 0">
   <div class="content">
     <div class="highlights">
       <div class="text-container">
@@ -10,15 +10,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4">
-        <event-card color="blue" title="Antalya Teknokent Demoday"></event-card>
-      </div>
-      <div class="col-sm-4">
-        <event-card color="purple" title="Antalya Teknokent Demoday"></event-card>
-      </div>
-      <br />
-      <div class="col-sm-4">
-        <event-card color="orange" title="Antalya Teknokent Demoday"></event-card>
+      <div class="col-sm-4" *ngFor="let item of items">
+        <event-card [title]="item.title"  color="blue" title="Antalya Teknokent Demoday"></event-card>
       </div>
     </div>
   </div>

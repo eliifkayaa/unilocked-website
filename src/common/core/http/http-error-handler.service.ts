@@ -30,7 +30,7 @@ public handle(response: HttpErrorResponse, uri?: string, options: {[key: string]
     });
 
 
-    return throwError(errResponse);
+    return throwError(() => errResponse);
 }
 
 /**

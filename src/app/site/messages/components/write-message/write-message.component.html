@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Bir mesaj yaz</mat-label>
+    <input matInput placeholder="Mesaj" formControlName="message" />
+    <mat-icon matSuffix>send</mat-icon>
+  </mat-form-field>
+</form>

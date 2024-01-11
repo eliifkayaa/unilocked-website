@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@common/auth/auth.service';
+import { FollowersService } from '@common/services/followers.service';
 import { ProfileService } from '@common/services/profile.service';
 import { BehaviorSubject, catchError, map, switchMap } from 'rxjs';
 
@@ -13,19 +14,49 @@ export class UserProfileComponent implements OnInit {
   constructor(
     public profileService: ProfileService,
     public activatedRoute: ActivatedRoute,
-    public currentUser: AuthService
+    public currentUser: AuthService,
+    public followerService: FollowersService
   ) {}
 
   public error$ = new BehaviorSubject<string>(null);
   public user$ = this.activatedRoute.params.pipe(
     switchMap((params) =>
-      this.profileService.getUserProfile(params['username'] || this.currentUser.user?.name)
+      this.profileService.getUserProfile(
+        params['username'] || this.currentUser.user?.name
+      )
     ),
     catchError((err) => {
       this.error$.next(err.error.message);
       return [];
     })
   );
+
+  public isMe(user) {
+    return user._id == this.currentUser.user._id;
+  }
+
+  public get loggedIn() {
+    return this.currentUser.loggedIn;
+  }
+
+  public follow(user) {
+    if (this.currentUser.loggedIn && !this.isMe(user)) {
+      this.followerService
+        .toggle(
+          user._id,
+          'User',
+          this.currentUser.currentProfile._id,
+          this.currentUser.currentProfile.modelType
+        )
+        .subscribe((res: any) => {
+
+          user.currentUserFollowed = res.data.followed;
+
+
+          console.log(user);
+        });
+    }
+  }
 
   ngOnInit(): void {}
 

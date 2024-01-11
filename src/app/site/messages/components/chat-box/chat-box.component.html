@@ -1,0 +1,17 @@
+<div class="chat-item" (click)="messaging.currentRoom$.next(contact)">
+  <div class="item-content">
+    <div class="pfp-container">
+      <img class="pfp-image" [src]="contact.image" />
+    </div>
+    <div class="details-container">
+      <div class="name-date">
+        <div class="name">{{ contact.name }}</div>
+        <div class="date-container">
+          <div class="date">Salı</div>
+        </div>
+      </div>
+      <div class="sender-bio">{{ type }} • {{ count }} Katılımcı</div>
+      <div class="last-message"></div>
+    </div>
+  </div>
+</div>

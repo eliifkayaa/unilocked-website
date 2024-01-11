@@ -1,0 +1,21 @@
+.other-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  message-other {
+    max-width: 50%;
+  }
+}
+
+.user-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  message-user {
+    
+  }
+  
+}
