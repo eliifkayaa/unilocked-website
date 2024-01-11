@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Yeni Oda Oluştur</h1>
+<div mat-dialog-content>
+  <div class="search-area">
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Ara</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <div
+    class="contacts-container"
+    *ngIf="avaibleContacts$ | async as avaibleContacts"
+  >
+    <div class="contact" *ngFor="let contact of avaibleContacts">
+      <mat-action-list>
+        <button *ngFor="let contact of avaibleContacts" class="contact-item" [mat-dialog-close]="contact" mat-list-item >
+          <img class="contact-image" [src]="contact.avatar" [alt]="contact.name">
+          <span>{{contact.name}}</span>
+        </button>
+      </mat-action-list>
+      
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="">İptal</button>
+  </div>
+</div>

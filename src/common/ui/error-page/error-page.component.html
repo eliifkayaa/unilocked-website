@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1 class="header-404" trans>{{ error.status }}</h1>
+      <p class="title">Beklemediğimiz bir hata ile karşılaştık</p>
+      <p class="subtitle" tr>{{ error.title }}</p>
+      <div class="subtext">
+        <p class="subtext-inline">
+          {{ errorMessage(error.status) }}
+        </p>
+      </div>
+      <div class="bottom-container">
+        <div class="searchbar-container" *ngIf="error.status === 404">
+          <p>
+            <mat-form-field appearance="outline" style="width: 29.5rem">
+              <mat-icon matPrefix style="padding-right: 20px">search</mat-icon>
+              <mat-label style="margin-left: 10px">Arama</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </p>
+          <button mat-raised-button color="primary" class="button">Ara</button>
+        </div>
+        <button mat-raised-button color="primary" class="big-button">
+          Veya - Önceki Sayfaya Dönün
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

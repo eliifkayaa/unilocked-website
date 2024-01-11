@@ -143,11 +143,13 @@
   background-color: transparent;
   border: none;
   font-size: 14px;
+
   text-align: center;
   font-family: Indivisible;
   font-style: normal;
   font-weight: 600;
   line-height: 16px;
+
 
   mat-icon {
     height: 18px;
@@ -213,4 +215,6 @@
 
 mat-drawer-content {
   height: 100vh;
+
+
 }

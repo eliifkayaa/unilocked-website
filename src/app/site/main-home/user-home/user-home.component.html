@@ -13,18 +13,20 @@
                 <mat-form-field appearance="outline">
                   <mat-label>Bu gün aklında neler var?</mat-label>
                   <input formControlName="text" matInput placeholder="Bir şeyler yaz..." />
-                  <mat-icon matSuffix>send</mat-icon>
+                  <mat-icon matSuffix>mood</mat-icon>
                 </mat-form-field>
               </div>
               <div class="row" style="margin: 2px">
                 <div
-                  class="col-sm-6 d-flex"
+
+                  class="col-sm-7 d-flex"
                   style="align-items: center; justify-content: flex-start"
                 >
                   <input (change)="upload(file.files)" type="file" style="display: none;" #file>
                   <button mat-button color="primary" class="attachment-button">
                     <mat-icon>image</mat-icon> Fotoğraf
                   </button>
+
                   <button mat-button 
                   style="color: #F76707;"
                   class="attachment-button" (click)="file.click()">
@@ -69,6 +71,22 @@
           </ng-container>
         </div>
         <div class="col-lg-4">
+          <h2><span class="text-primary"> 11 Kasım </span> Özeti</h2>
+          <mat-card *ngFor="let card of cards" class="home-panel mat-elevation-z0">
+            <div class="right-panel">
+              <div class="d-flex" >
+                <img class="profile-image" [src]="card.image" alt="" />
+                <div style="width: 100%">
+                  <div class="top d-flex flex-column align-items-start">
+                    <h4 class="description">{{ card.description }}</h4>
+                    <h5 class="name">{{ card.name }}</h5>
+                  </div>
+                  <p class="card-info">{{ card.info }}</p>
+                </div>
+              </div>
+              
+            </div>
+          </mat-card>
           <mat-card class="home-panel mat-elevation-z0">
             <div class="right-panel">
               <h2>Tanıyor olabilirsin</h2>

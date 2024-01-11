@@ -12,6 +12,7 @@ export class ProfileContentComponent implements OnInit {
   @Input('item') item : any
 
   ngOnInit(): void {
+    console.log(this.item);
   }
 
 }

@@ -5,7 +5,11 @@
     ><img src="assets/img/logo.png" alt="Unilocked Logo" />
   </a>
 
-  <mat-stepper [linear]="true" #stepper>
+  <mat-stepper
+    *ngIf="registerAvaible; else noRegister"
+    [linear]="true"
+    #stepper
+  >
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup" (ngSubmit)="stepper.next()">
         <div class="form d-flex flex-column align-items-center">
@@ -86,14 +90,15 @@
 
             <div class="check">
               <input
-
                 type="checkbox"
                 class="checkbox"
                 checked
                 id="receiveNotifications"
                 formControlName="receiveNotifications"
               />
-              <label for="receiveNotifications">Unilocked haberleri hakkında eposta almak istiyorum</label>
+              <label for="receiveNotifications"
+                >Unilocked haberleri hakkında eposta almak istiyorum</label
+              >
             </div>
             <div class="check">
               <input
@@ -140,19 +145,35 @@
           <div class="register-form d-flex justify-content-between">
             <mat-form-field class="example-form-field">
               <mat-label>Okul</mat-label>
-              <input matInput type="text" formControlName="school" [matAutocomplete]="auto"/>
+              <input
+                matInput
+                type="text"
+                formControlName="school"
+                [matAutocomplete]="auto"
+              />
               <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of filteredSchools | async" [value]="option">
-                  {{option}}
+                <mat-option
+                  *ngFor="let option of filteredSchools | async"
+                  [value]="option"
+                >
+                  {{ option }}
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>
             <mat-form-field class="example-form-field">
               <mat-label>Bölüm</mat-label>
-              <input matInput type="text" formControlName="department" [matAutocomplete]="auto2"/>
+              <input
+                matInput
+                type="text"
+                formControlName="department"
+                [matAutocomplete]="auto2"
+              />
               <mat-autocomplete #auto2="matAutocomplete">
-                <mat-option *ngFor="let option of filteredDepartments | async" [value]="option">
-                  {{option}}
+                <mat-option
+                  *ngFor="let option of filteredDepartments | async"
+                  [value]="option"
+                >
+                  {{ option }}
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>
@@ -247,13 +268,25 @@
       </div>
     </mat-step>
   </mat-stepper>
+  <ng-template #noRegister>
+    <div class="form d-flex flex-column align-items-center">
+      <div class="title">
+        <h1>Çok Yakında Seninle</h1>
+        <p>Unilocked yakın zamanda beta testlerine başlayacak. Hazır ol!</p>
+      </div>
+    </div>
+  </ng-template>
 </div>
 
 <div
   class="right-side d-flex flex-column justify-content-around align-items-center"
 >
   <div
-    *ngIf="stepper.selectedIndex == 0 || stepper.selectedIndex == 1"
+    *ngIf="
+      stepper?.selectedIndex == 0 ||
+      stepper?.selectedIndex == 1 ||
+      !registerAvaible
+    "
     class="content1"
   >
     <div class="title">
@@ -266,7 +299,7 @@
     <img src="../../../assets/img/login1.png" />
   </div>
 
-  <div *ngIf="stepper.selectedIndex == 2" class="content2">
+  <div *ngIf="stepper?.selectedIndex == 2" class="content2">
     <div class="title">
       <span> Kendi <i>İnsanlarını</i> Bul 👋 </span>
       <p>
@@ -278,7 +311,7 @@
     <img class="center" src="../../../assets/img/login2.png" alt="" />
   </div>
 
-  <div *ngIf="stepper.selectedIndex == 3" class="content3">
+  <div *ngIf="stepper?.selectedIndex == 3" class="content3">
     <div class="title">
       <span> Kendizi 🌍 <i>Dünyaya</i> Tanıtın </span>
       <p>
@@ -291,7 +324,7 @@
   </div>
 
   <div
-    *ngIf="stepper.selectedIndex == 4"
+    *ngIf="stepper?.selectedIndex == 4"
     class="content4 d-flex justify-content-center"
   >
     <h1

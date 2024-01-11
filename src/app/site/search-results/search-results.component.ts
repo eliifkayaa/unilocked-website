@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs';
+import { SearchService } from '@common/services/search.service';
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'search-results',
@@ -9,12 +10,13 @@ import { map } from 'rxjs';
 })
 export class SearchResultsComponent implements OnInit {
 
-  constructor(public activatedRoute:ActivatedRoute) { }
+  constructor(public activatedRoute:ActivatedRoute,public serach:SearchService) { }
 
   ngOnInit(): void {
   }
 
   public query = this.activatedRoute.queryParams.pipe(map(params => params['query']))
+  public searchResults$ =  this.activatedRoute.queryParams.pipe(switchMap(params => this.serach.global(params['query']))).pipe(map(res => res.data))
 
   public community = {
     name:"AlecTED",

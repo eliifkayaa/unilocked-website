@@ -3,17 +3,17 @@
     <div class="search-result">
       <p>{{ query | async }} ile ilgili arama sonuçları</p>
     </div>
-    <mat-tab-group>
+    <mat-tab-group *ngIf="searchResults$ | async as results">
       <mat-tab label="Hepsi">
         <search-highlights></search-highlights>
-        <search-people></search-people>
+        <search-people [items]="results.users"></search-people>
         <search-projects></search-projects>
         <search-companies></search-companies>
         <search-events></search-events>
       </mat-tab>
       <mat-tab label="Gönderiler"> <search-posts></search-posts> </mat-tab>
       <mat-tab label="Kişiler">
-        <search-people></search-people>
+        <search-people [items]="results.users"></search-people>
       </mat-tab>
       <mat-tab label="Topluluklar">
         <search-communities></search-communities>

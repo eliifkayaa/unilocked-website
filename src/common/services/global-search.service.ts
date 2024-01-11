@@ -10,7 +10,7 @@ export class GlobalSearchService {
   public searchSchools(query: string) {
     return this.http.get<{
       data: {
-        universities: string[];
+        universities: any[];
       };
     }>('search/university', { q: query });
   }
@@ -18,7 +18,7 @@ export class GlobalSearchService {
   public searchDepartments(query: string) {
     return this.http.get<{
       data: {
-        departments: string[];
+        departments: any[];
       };
     }>('search/department', { q: query });
   }

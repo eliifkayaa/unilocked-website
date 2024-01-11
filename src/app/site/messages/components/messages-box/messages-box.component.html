@@ -1,0 +1,53 @@
+<ng-container
+  *ngIf="messaging.currentRoom$ | async as currentRoom; else noRoom"
+>
+  <div class="chat-info">
+    <div class="info-main">
+      <div class="left-panel">
+        <div class="sender-image-container">
+          <img class="sender-image" [src]="currentRoom.image" />
+          <div class="pin-container">
+            <mat-icon class="pin-icon">push_pin</mat-icon>
+          </div>
+        </div>
+        <div class="sender-name-container">
+          <div class="sender-name">{{ currentRoom.name }}</div>
+          <div class="sent-hour">1 saat önce çevrimiçiydi</div>
+        </div>
+      </div>
+      <div class="chat-actions">
+        <button mat-icon-button><mat-icon>search</mat-icon></button>
+        <button mat-icon-button><mat-icon>more_horiz</mat-icon></button>
+      </div>
+    </div>
+  </div>
+  <div class="messages" *ngIf="messages$ | async as messages" #messagesDiv>
+    <message-item
+      *ngFor="let message of messages; let i = index"
+      [message]="message"
+    ></message-item>
+  </div>
+  <div class="write-message-container">
+    <write-message></write-message>
+  </div>
+</ng-container>
+<ng-template #noRoom>
+  <div class="no-room">
+    <div>
+      <div class="text-container">
+        <div class="no-room-icon">
+          <mat-icon>chat</mat-icon>
+        </div>
+        <div class="no-room-text">
+          Mesajlaşmaya başlamak için bir sohbet seçin
+        </div>
+      </div>
+      <div class="button-container">
+        <button mat-button (click)="messaging.openNewChatDialog()">
+          <mat-icon>add</mat-icon>
+          <span class="new-message-button">Yeni Görüşme</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

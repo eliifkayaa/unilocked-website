@@ -1,0 +1,10 @@
+<div *ngIf="message.senderId == userId else otherbox">
+  <div class="user-box">
+    <message-user [message]="message"></message-user>
+  </div>
+</div>
+<ng-template #otherbox>
+  <div class="other-box">
+    <message-other [message]="message"></message-other>
+  </div>
+</ng-template>

@@ -13,7 +13,9 @@ body {
   justify-content: space-between;
 }
 
-
+.container {
+  min-height: 90vh;
+}
 
 .cursors {
   cursor: default;
