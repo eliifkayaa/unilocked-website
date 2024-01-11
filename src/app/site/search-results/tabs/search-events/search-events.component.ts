@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'search-events',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-events.component.scss']
 })
 export class SearchEventsComponent implements OnInit {
+
+  @Input('items') items : any[]
 
   constructor() { }
 

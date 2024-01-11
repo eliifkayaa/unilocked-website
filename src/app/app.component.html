@@ -1,3 +1,15 @@
-<div class="bg">
-  <router-outlet></router-outlet>
-</div>
+<ng-container *ngIf="bootstrapError$ | async as bootstrapError; else noError">
+  <error-page [error]="bootstrapError"></error-page>
+</ng-container>
+<ng-template #noError>
+  <ng-container *ngIf="loadingBootstrap$ | async as loading; else viewPage">
+    <div class="loading-container">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+  <ng-template #viewPage>
+    <div class="bg">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-template>
+</ng-template>

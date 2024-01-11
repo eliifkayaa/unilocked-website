@@ -1,24 +1,25 @@
 @mixin colors() {
-    --toolbar-color : rgba(29,29,29,1);
-    --icon-color: #fafafa;
-    --surface-1 : rgba(18,18,18,1);
-   
-    --surface-2 : rgba(29,29,29,1);
-    --accent-1 : #006fde;
+  --toolbar-color: rgba(29, 29, 29, 1);
+  --icon-color: #fafafa;
+  --surface-1: rgba(18, 18, 18, 1);
 
-    // Texts
+  --surface-2: rgba(29, 29, 29, 1);
+  --surface-3: rgba(18, 18, 18, 1);
 
-    --text : #fafafa;
-    --sub-text : #dddddd;
-    --info-text : #d2d7dc;
+  --accent-1: #006fde;
 
-    // Menu
-    --menu-hover : rgba(18,18,18,1);
+  // Texts
 
-    // Stroke
-    --stroke : rgba(29, 29, 29, 1);
+  --text: #fafafa;
+  --sub-text: #dddddd;
+  --info-text: #d2d7dc;
 
-    //border-color
-    --border-color: rgba(29, 29, 29, 1);
-    
+  // Menu
+  --menu-hover: rgba(18, 18, 18, 1);
+
+  // Stroke
+  --stroke: rgba(29, 29, 29, 1);
+
+  //border-color
+  --border-color: rgba(29, 29, 29, 1);
 }

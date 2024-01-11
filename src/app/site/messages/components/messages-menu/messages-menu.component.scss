@@ -1,0 +1,49 @@
+.messages-menu {
+  width: 100%;
+  padding: 16px 0 16px 16px;
+  background: var(--surface-3);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border: 1px var(--stroke) solid;
+  justify-content: space-between;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header {
+  color: var(--accent-1);
+  font-size: 20px;
+  font-family: Indivisible;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  word-wrap: break-word;
+}
+
+.new-message-button {
+  text-align: right;
+  color: var(--text);
+  font-size: 14px;
+  font-family: Indivisible;
+  font-weight: 600;
+  line-height: 14px;
+  word-wrap: break-word;
+}
+
+.search-box {
+  padding: 12px 12px 0 12px;
+  .search-form-field {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+  }
+}
+
+.message-tabs {
+  .tab-group {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+

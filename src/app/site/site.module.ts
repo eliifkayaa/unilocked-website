@@ -76,7 +76,6 @@ import { PlanetLeftComponent } from './main-home/guest-home/planet-left/planet-l
 import { PlanetRightComponent } from './main-home/guest-home/planet-right/planet-right.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { MessagesMainComponent } from './messages/tabs/messages-main/messages-main.component';
 import { DiscoveryCatalogComponent } from './discovery-catalog/discovery-catalog.component';
 import { CommunityCardComponent } from './discovery-catalog/catalog-cards/community-card/community-card.component';
 import { CompanyCardComponent } from './discovery-catalog/catalog-cards/company-card/company-card.component';
@@ -90,12 +89,21 @@ import { DiscoveryHighlightsComponent } from './discovery-catalog/discovery-high
 import { DiscoveryPopularsComponent } from './discovery-catalog/discovery-populars/discovery-populars.component';
 import { DiscoveryTopnotesComponent } from './discovery-catalog/discovery-topnotes/discovery-topnotes.component';
 import { InternCardComponent } from './discovery-catalog/catalog-cards/intern-card/intern-card.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServiceErrorComponent } from './service-error/service-error.component';
+import { MessagesMainComponent } from './messages/components/messages-main/messages-main.component';
+import { MessagesBoxComponent } from './messages/components/messages-box/messages-box.component';
+import { MessagesMenuComponent } from './messages/components/messages-menu/messages-menu.component';
+import { ChatBoxComponent } from './messages/components/chat-box/chat-box.component';
+import { MessageItemComponent } from './messages/components/message-item/message-item.component';
+import { MessageUserComponent } from './messages/components/message-item/message-user/message-user.component';
+import { MessageOtherComponent } from './messages/components/message-item/message-other/message-other.component';
+import { NewChatComponent } from './messages/components/new-chat/new-chat.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { WriteMessageComponent } from './messages/components/write-message/write-message.component';
 
 
 @NgModule({
-  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent,HomePartnersComponent, MessagesMainComponent, DiscoveryCatalogComponent, CommunityCardComponent, CompanyCardComponent, PersonCardComponent, ProjectPostCardComponent, EventsCardComponent, JobCardComponent,InternCardComponent, DiscoveryHighlightsComponent, DiscoveryPopularsComponent, DiscoveryTopnotesComponent, ErrorPageComponent, ServiceErrorComponent],
+  declarations: [MainHomeComponent, GuestHomeComponent, UserHomeComponent, ExploreComponent, AnimatedCounterDirective, MainMenuComponent, ProjectsComponent, ProjectsHomeComponent, CommunitiesComponent, ProjectCardComponent,ProjectsFromCommunitiesComponent, ProjectsFromFriendsComponent, MyProjectsComponent, CompaniesComponent, PeopleComponent, PeopleHomeComponent, PeopleStudentsComponent, PeopleProfessionalsComponent, FriendsComponent, SavedComponent, SavedPostsComponent, PostComponent, NotificationsComponent, UserProfileComponent, EventsComponent, ProfileContentComponent, CommunityProfileComponent, CompanyComponent, SchoolComponent, SearchResultsComponent, SearchPostsComponent, SearchPeopleComponent, SearchProjectsComponent, SearchCompaniesComponent, SearchEventsComponent, SearchCommunitiesComponent, SearchHighlightsComponent,MainContentComponent, PostContentComponent,JobPostingComponent, EventDetailsComponent,PlanetLeftComponent, PlanetRightComponent, MessagesComponent, CompaniesExtendedComponent, PeopleExtendedComponent, ProjectsExtendedComponent, CommunitiesExtendedComponent, EventsExtendedComponent, UserPostsComponent, UserHighlightsComponent,HomePartnersComponent, DiscoveryCatalogComponent, CommunityCardComponent, CompanyCardComponent, PersonCardComponent, ProjectPostCardComponent, EventsCardComponent, JobCardComponent,InternCardComponent, DiscoveryHighlightsComponent, DiscoveryPopularsComponent, DiscoveryTopnotesComponent, ServiceErrorComponent, MessagesMainComponent, MessagesBoxComponent, MessagesMenuComponent, ChatBoxComponent, MessageItemComponent, MessageUserComponent, MessageOtherComponent, NewChatComponent, WriteMessageComponent],
 
   imports: [
     CommonModule,
@@ -118,6 +126,7 @@ import { ServiceErrorComponent } from './service-error/service-error.component';
     MatSidenavModule,
     MatTabsModule,
     MatChipsModule,
+    MatDialogModule,
     UploadModule,
     
   ],

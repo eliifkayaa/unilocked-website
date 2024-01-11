@@ -1,11 +1,11 @@
 <main-content>
-  <ng-container *ngIf="user$ | async as user else loading">
+  <ng-container *ngIf="user$ | async as user; else loading">
     <div class="profile-host container">
       <mat-card class="profile-top">
         <div class="row">
           <div class="images col-lg-3">
             <div class="backdrop-area">
-              <img class="backdrop" [src]="user.background" alt="" />
+              <img class="backdrop" [src]="user.background || 'assets/img/person1-back.png'" alt="" />
             </div>
             <div class="avatar-area">
               <img class="avatar" [src]="user.avatar" alt="" />
@@ -13,7 +13,7 @@
           </div>
           <div class="col-lg info-area">
             <div class="info-child">
-              <h2 class="user-name">{{ user.name }}</h2>
+              <h2 class="user-name">{{ user.first_name }} {{ user.last_name }}</h2>
               <p class="user-job">{{ user.job }}</p>
               <p class="user-info">{{ user.info }}</p>
               <div
@@ -37,14 +37,31 @@
                 İletişim Bilgileri
               </button>
               <br />
-              <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-stroked-button color="primary" class="message">
+              <button
+                *ngIf="isMe(user); else followButton"
+                [routerLink]="['/settings']"
+                routerLinkActive="router-link-active"
+                mat-stroked-button
+                color="primary"
+                class="message"
+              >
                 Profili Düzenle
               </button>
+              <ng-template #followButton>
+                <button
+                  mat-stroked-button
+                  color="primary"
+                  class="message"
+                  (click)="follow(user)"
+                >
+                  {{ user.currentUserFollowed ? "Takibi Bırak" : "Takip Et" }}
+                </button>
+              </ng-template>
             </div>
           </div>
         </div>
       </mat-card>
-      <mat-card class="private-profile-warning">
+      <mat-card class="private-profile-warning" *ngIf="isMe(user)">
         <div class="row">
           <div class="col-sm-3 left">
             <div>
@@ -70,12 +87,21 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-3 d-flex justify-content-center align-items-center">
-            <button [routerLink]="['/settings']" routerLinkActive="router-link-active"  mat-button class="accent-button">Gizlilik Ayarları</button>
+          <div
+            class="col-sm-3 d-flex justify-content-center align-items-center"
+          >
+            <button
+              [routerLink]="['/settings']"
+              routerLinkActive="router-link-active"
+              mat-button
+              class="accent-button"
+            >
+              Gizlilik Ayarları
+            </button>
           </div>
         </div>
       </mat-card>
-      <mat-card class="analyzes">
+      <mat-card class="analyzes" *ngIf="isMe(user)">
         <h2>Analiz ve Öneriler</h2>
         <p class="special">
           <mat-icon>visibility</mat-icon>&nbsp;&nbsp;Size Özel
@@ -113,7 +139,7 @@
       <mat-card class="about card">
         <div class="title">
           <h2>Hakkında</h2>
-          <button mat-button color="primary">
+          <button mat-button color="primary" *ngIf="isMe(user)">
             <mat-icon>edit</mat-icon> Düzenle
           </button>
         </div>
@@ -126,31 +152,37 @@
         <div class="title">
           <h2>İletişim</h2>
           <div>
-            <button mat-button color="primary">
+            <button mat-button color="primary" *ngIf="isMe(user)">
               <mat-icon>edit</mat-icon> Düzenle
             </button>
-            <button mat-button color="primary">
+            <button mat-button color="primary" *ngIf="isMe(user)">
               <mat-icon>add</mat-icon> Ekle
             </button>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6" *ngFor="let contact of user.contactList">
-            <p class="name">{{contact.name}}</p>
+            <p class="name">{{ contact.name }}</p>
             <p>{{ contact.data }}</p>
           </div>
         </div>
       </mat-card>
-      <mat-card class="posts card">
+      <mat-card class="posts card" *ngIf="user.posts && user.posts.length > 0">
         <div class="title">
           <h2>Gönderiler</h2>
           <div>
             <div>
-              <a [routerLink]="['/user-posts']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
-              <button mat-button color="primary">
+              <a
+                [routerLink]="['/user-posts']"
+                routerLinkActive="router-link-active"
+                mat-button
+                color="primary"
+                >Hepsini Gör</a
+              >
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>add</mat-icon> Ekle
               </button>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>edit</mat-icon> Düzenle
               </button>
             </div>
@@ -162,16 +194,25 @@
           </div>
         </div>
       </mat-card>
-      <mat-card class="featured-content card">
+      <mat-card
+        class="featured-content card"
+        *ngIf="user.featuredContent && user.featuredContent.length > 0"
+      >
         <div class="title">
           <h2>Öne Çıkan İçerikler</h2>
           <div>
             <div>
-              <a [routerLink]="['/user-highlights']" routerLinkActive="router-link-active"  mat-button color="primary">Hepsini Gör</a>
-              <button mat-button color="primary">
+              <a
+                [routerLink]="['/user-highlights']"
+                routerLinkActive="router-link-active"
+                mat-button
+                color="primary"
+                >Hepsini Gör</a
+              >
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>add</mat-icon> Ekle
               </button>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>edit</mat-icon> Düzenle
               </button>
             </div>
@@ -183,15 +224,18 @@
           </div>
         </div>
       </mat-card>
-      <mat-card class="experience card">
+      <mat-card
+        class="experience card"
+        *ngIf="user.jobs && user.jobs.length > 0"
+      >
         <div class="title">
           <h2>Deneyim</h2>
           <div>
             <div>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>add</mat-icon> Ekle
               </button>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>edit</mat-icon> Düzenle
               </button>
             </div>
@@ -239,23 +283,36 @@
           <h2>Eğitim</h2>
           <div>
             <div>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>add</mat-icon> Ekle
               </button>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>edit</mat-icon> Düzenle
               </button>
             </div>
           </div>
         </div>
         <div class="education-area">
-          <div class="education-content" *ngFor="let education of user.education">
+          <div
+            class="education-content"
+            *ngFor="let education of user.education"
+          >
             <div class="top">
-              <img class="school-image" [src]="education.image" alt="" />
+              <img
+                *ngIf="education.image"
+                class="school-image"
+                [src]="education.image"
+                alt=""
+              />
               <div>
                 <h3 class="education-title">{{ education.schoolName }}</h3>
                 <p class="name">
-                  {{ education.schoolName }} • {{ education.educationInfo.type }}
+                  {{ education.schoolName }} •
+                  {{
+                    education.educationType === "high-school"
+                      ? "Lise"
+                      : "Üniversite"
+                  }}
                 </p>
                 <p class="content">Ekim 2022 - Günümüz • 5 Ay</p>
               </div>
@@ -264,46 +321,49 @@
               <p class="description">{{ education.description }}</p>
             </div>
             <div class="communities">
-              <div class="communities-header">
-                <h4>Topluluklar ve Faaliyetler</h4>
-                <button mat-button color="primary">Hepsini Gör</button>
-              </div>
-              <div class="row">
-                <div
-                  class="col-sm-4"
-                  *ngFor="let community of education.communities"
-                >
-                  <div class="community">
-                    <img class="community-image" [src]="community.image" alt="" />
-                    <div class="community-info">
-                      <h5 class="community-name">{{ community.name }}</h5>
-                      <p class="community-role">{{ community.role }}</p>
-                      <p class="community-date">Mayıs 2022 - Günümüz</p>
+              <ng-container *ngIf="education.communities">
+                <div class="communities-header">
+                  <h4>Topluluklar ve Faaliyetler</h4>
+                  <button mat-button color="primary">Hepsini Gör</button>
+                </div>
+                <div class="row">
+                  <div
+                    class="col-sm-4"
+                    *ngFor="let community of education.communities"
+                  >
+                    <div class="community">
+                      <img
+                        class="community-image"
+                        [src]="community.image"
+                        alt=""
+                      />
+                      <div class="community-info">
+                        <h5 class="community-name">{{ community.name }}</h5>
+                        <p class="community-role">{{ community.role }}</p>
+                        <p class="community-date">Mayıs 2022 - Günümüz</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ng-container>
             </div>
             <div class="education-info">
               <h4>Eğitim Bilgileri</h4>
               <div class="row">
                 <div class="col-sm-3">
                   <h5 class="info-title">Ortalama</h5>
-                  <p class="gpa">{{ education.educationInfo.gpa }}</p>
+                  <p class="gpa">{{ education.gpa }}</p>
                   <p class="info">Program başlangıcından beri</p>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3" *ngIf="education.elevtive && education.elective.length > 0">
                   <h5 class="info-title">Seçmeli Program</h5>
-                  <p
-                    class="grade"
-                    *ngFor="let elective of education.educationInfo.elective"
-                  >
+                  <p class="grade" *ngFor="let elective of education.elective">
                     {{ elective.name }} • {{ elective.grade }}
                   </p>
                 </div>
               </div>
             </div>
-            <div class="talents">
+            <div class="talents" *ngIf="education.talents && education.talents.length > 0">
               <h4 class="talents-header">Yetenekler</h4>
               <mat-chip-list aria-label="Talents">
                 <mat-chip *ngFor="let talent of education.talents">{{
@@ -311,7 +371,7 @@
                 }}</mat-chip>
               </mat-chip-list>
             </div>
-            <div class="featured">
+            <div class="featured" *ngIf="education.featuredContent && education.featuredContent.length > 0">
               <h4 class="featured-header">Öne Çıkanlar</h4>
               <div class="row">
                 <div class="col-sm-4" *ngFor="let item of education.featured">
@@ -322,15 +382,15 @@
           </div>
         </div>
       </mat-card>
-      <mat-card class="projects card">
+      <mat-card class="projects card" *ngIf="user.projects.length > 0">
         <div class="title">
           <h2>Projeler</h2>
           <div>
             <div>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>add</mat-icon> Ekle
               </button>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>edit</mat-icon> Düzenle
               </button>
             </div>
@@ -357,7 +417,8 @@
                   <div class="project-parent">
                     <img [src]="project.parent.image" alt="Parent Image" />
                     <p class="project-parent-name">
-                      <span>{{ project.parent.name }}</span> Topluluğu Kapsamında
+                      <span>{{ project.parent.name }}</span> Topluluğu
+                      Kapsamında
                     </p>
                   </div>
                   <p class="project-description">{{ project.content }}</p>
@@ -385,7 +446,8 @@
                   <div class="project-parent">
                     <img [src]="project.parent.image" alt="Parent Image" />
                     <p class="project-parent-name">
-                      <span>{{ project.parent.name }}</span> Topluluğu Kapsamında
+                      <span>{{ project.parent.name }}</span> Topluluğu
+                      Kapsamında
                     </p>
                   </div>
                   <p class="project-description">{{ project.content }}</p>
@@ -395,15 +457,18 @@
           </div>
         </div>
       </mat-card>
-      <mat-card class="certificates card">
+      <mat-card
+        class="certificates card"
+        *ngIf="user.certificates && user.certificates.length > 0"
+      >
         <div class="title">
           <h2>Sertifikalar</h2>
           <div>
             <div>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>add</mat-icon> Ekle
               </button>
-              <button mat-button color="primary">
+              <button mat-button color="primary" *ngIf="isMe(user)">
                 <mat-icon>edit</mat-icon> Düzenle
               </button>
             </div>
@@ -425,7 +490,9 @@
               </div>
             </div>
             <div class="mid">
-              <p class="description">Yeterlilik Kimliği : {{ certificate.id }}</p>
+              <p class="description">
+                Yeterlilik Kimliği : {{ certificate.id }}
+              </p>
             </div>
             <div class="talents">
               <h4 class="talents-header">Yetenekler</h4>
