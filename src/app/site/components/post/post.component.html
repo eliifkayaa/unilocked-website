@@ -26,27 +26,27 @@
         </div>
       </div>
       <div class="buttons-container">
-        <div class="d-flex buttons">
+        <div class="buttons">
           <button (click)="addReaction('like')" mat-button class="attachment-button">
-            <mat-icon>thumb_up</mat-icon> {{ post.reactionsCounts?.like || 0 }}
-          </button>
-          <button (click)="addReaction('dislike')" mat-button class="attachment-button">
-            <mat-icon>thumb_down</mat-icon> {{ post.reactionsCounts?.dislike || 0 }}
+            <mat-icon>thumb_up</mat-icon> Beğen {{ post.reactionsCounts?.like || 0 }} 
           </button>
           <button mat-button class="attachment-button">
-            <mat-icon>comment</mat-icon> {{ post.commentCount || 0 }}
+             <mat-icon>comment</mat-icon> Yorum Yap {{ post.commentCount || 0 }}
           </button>
           <button mat-icon-button class="icon-button">
-            <mat-icon>share</mat-icon>
+            <mat-icon>ios_share</mat-icon> Paylaş
           </button>
-          <button mat-button color="primary" class="attachment-button" (click)="unsavePost()" *ngIf="isSaved else save">
-            <mat-icon>bookmark</mat-icon> Kaydedildi
-          </button>
-          <ng-template #save>
-            <button mat-button  (click)="savePost()" class="attachment-button">
-              <mat-icon>bookmark</mat-icon> Kaydet
-            </button>
-          </ng-template>
+          <div class="saved" style="padding-left: 30px;">
+            <button mat-button color="primary" class="attachment-button" (click)="unsavePost()" *ngIf="isSaved else save">
+              <mat-icon>bookmark</mat-icon> Kaydedildi
+           </button>
+           <ng-template #save >
+             <button mat-button class="buttons-mat" (click)="savePost()" class="attachment-button">
+               <mat-icon>bookmark</mat-icon> Kaydet
+             </button>
+           </ng-template>
+          </div>
+
         </div>
         
       </div>

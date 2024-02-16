@@ -80,20 +80,20 @@
       margin: 10px 2px 2px 2px;
 
     }
+  }
 
-    .buttons {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-left: -5%;
-      margin-right: 5%;
-      
-    }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -5%;
+    margin-right: 5%;
   }
 
   .attachment-button {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: transparent;
     border: none;

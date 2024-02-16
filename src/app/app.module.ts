@@ -17,6 +17,12 @@ import { ErrorPageModule } from '@common/ui/error-page/error-page.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeTr from '@angular/common/locales/tr';
+
+registerLocaleData(localeTr);
+
 const config: SocketIoConfig = { url: '/', options: {
   transports: ['websocket'],
 } };
@@ -39,7 +45,9 @@ const config: SocketIoConfig = { url: '/', options: {
     ErrorPageModule,
     SocketIoModule.forRoot(config)
   ],
-  providers: [LoggedIn,NotLoggedIn, ButtonService],
+  providers: [LoggedIn,NotLoggedIn, ButtonService, 
+    { provide: LOCALE_ID, useValue: 'tr' } 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

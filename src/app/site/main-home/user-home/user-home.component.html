@@ -6,22 +6,18 @@
           <mat-card class="home-panel mat-elevation-z0">
             <form 
             (ngSubmit)="submitPost()"
-            class="center"
+
             [formGroup]="postForm">
               <div class="post-container">
                 <img class="profile-image" [src]="auth.user.avatar" alt="" />
                 <mat-form-field appearance="outline">
-                  <mat-label>Bu gün aklında neler var?</mat-label>
+                  <mat-label>Bugün aklında neler var?</mat-label>
                   <input formControlName="text" matInput placeholder="Bir şeyler yaz..." />
                   <mat-icon matSuffix>mood</mat-icon>
                 </mat-form-field>
               </div>
-              <div class="row" style="margin: 2px">
-                <div
-
-                  class="col-sm-7 d-flex"
-                  style="align-items: center; justify-content: flex-start"
-                >
+              <div class="row" style="margin: 2px "> 
+                <div class="col-sm-7 d-flex">
                   <input (change)="upload(file.files)" type="file" style="display: none;" #file>
                   <button mat-button color="primary" class="attachment-button">
                     <mat-icon>image</mat-icon> Fotoğraf
@@ -44,8 +40,8 @@
                   </button>          
                 </div>
 
-                <div class="attachment-text col-sm-6">
-                Paylaşılacaklar • Herkes
+                <div class="attachment-text col-sm-5">
+                Paylaşılacaklar
                     
                   <div class="dropdown">
                     <mat-icon style="font-size: small; padding-top: 7px;">expand_more</mat-icon>
@@ -70,45 +66,43 @@
             <post *ngFor="let post of posts.data;" [post]="post"></post>
           </ng-container>
         </div>
-        <div class="col-lg-4">
-          <h2><span class="text-primary"> 11 Kasım </span> Özeti</h2>
-          <mat-card *ngFor="let card of cards" class="home-panel mat-elevation-z0">
-            <div class="right-panel">
-              <div class="d-flex" >
-                <img class="profile-image" [src]="card.image" alt="" />
-                <div style="width: 100%">
-                  <div class="top d-flex flex-column align-items-start">
-                    <h4 class="description">{{ card.description }}</h4>
-                    <h5 class="name">{{ card.name }}</h5>
-                  </div>
-                  <p class="card-info">{{ card.info }}</p>
+        <div class="col-md-4">
+          <h2><span class="text-primary"> {{ today | date: 'dd MMMM' }} </span> Özeti</h2>
+          <div class="mat-card-style">
+            <mat-card *ngFor="let card of cards" class="home-panel mat-elevation-z0">
+              <div class="right-panel">
+                <div class="d-flex" >
+                  <img class="profile-image" [src]="card.image" alt="" />
+                  <div style="width: 100%">
+                    <div class="top d-flex flex-column align-items-start">
+                      <h4 class="description">{{ card.description }}</h4>
+                      <h5 class="name">{{ card.name }}  <img class="verified" style="width: 15px;" [src]="card.verified" alt="" /> </h5>
+                     
+                    </div>
+                    <p class="card-info">{{ card.info }}</p>
+                  </div>              
                 </div>
               </div>
-              
-            </div>
-          </mat-card>
-          <mat-card class="home-panel mat-elevation-z0">
-            <div class="right-panel">
-              <h2>Tanıyor olabilirsin</h2>
-              <div class="d-flex" *ngFor="let user of users">
-                <img class="profile-image" [src]="user.image" alt="" />
-                <div style="width: 100%">
-                  <div class="top">
-                    <h4 class="name">{{ user.name }}</h4>
-                    <button mat-button color="primary" class="follow">
-                      Takip Et <mat-icon>add</mat-icon>
-                    </button>
+            </mat-card>
+
+
+            <mat-card class="home-panel mat-elevation-z0">
+              <div class="right-panel">
+                <h2 style="padding-left: 3px; font-size: medium;">Tanıyor Olabilecekleriniz</h2>
+                <div class="d-flex" *ngFor="let user of users">
+                  <img class="profile-image" [src]="user.image" alt="" />
+                  <div style="width: 100%">
+                    <div class="top">
+                      <h4 class="name">{{ user.name}}</h4>
+                    </div>
+                    <p class="info">{{ user.info }}</p>
+                    <button mat-button class="follow">Bağlantı Kurun</button>
                   </div>
-                  <p class="info">{{ user.info }}</p>
                 </div>
               </div>
-              <div class="see-more">
-                <a [routerLink]="['/people']" routerLinkActive="router-link-active"  mat-button>
-                  Daha fazlasını gör <mat-icon>chevron_right</mat-icon>
-                </a>
-              </div>
-            </div>
-          </mat-card>
+            </mat-card>
+          </div>
+       
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ import { UploadService } from '@common/core/upload/upload.service';
 })
 export class UserHomeComponent implements OnInit {
   public posts$: Observable<Pagination<Post>>;
-
+  today: Date = new Date();
 
   constructor(
     public auth: AuthService,
@@ -56,46 +56,53 @@ export class UserHomeComponent implements OnInit {
     .pipe(map((result) => result.matches));
 
   public account1 = {
-    image: 'assets/img/acc1.jpeg',
-    name: 'Ayşe K.',
-    info: 'Teacher',
+    image: 'assets/img/avatar4.png',
+    verified: 'assets/img/icons8.png',
+    name: 'Alev Akyıldız',
+    info: 'TED Üniversitesi',
   };
 
   public account2 = {
-    image: 'assets/img/acc2.jpeg',
-    name: 'Roketsan',
-    info: 'Şirket • Savunma Sanayi ve Uzay',
+    image: 'assets/img/avatar3.png',
+    verified: 'assets/img/icons8.png',
+    name: 'Felya Varol',
+    info: 'Human Resourses • Savunma Sanayi ve Uzay',
   };
 
   public account3 = {
-    image: 'assets/img/acc3.jpeg',
-    name: 'Havelsan',
-    info: 'Şirket • Savunma ve Bilgi Teknolojileri',
+    image: 'assets/img/avatar1.png',
+    verified: 'assets/img/icons8.png',
+    name: 'Halil Nuroğlu',
+    info: 'Freelance Frontend Developer',
   };
 
   public account4 = {
     image: 'assets/img/acc4.jpeg',
+    verified: 'assets/img/icons8.png',
     name: 'Havelsan',
     info: 'Şirket • Savunma ve Bilgi Teknolojileri',
   };
 
   public card1 = {
     image : 'assets/img/turkcell.png',
+    verified: 'assets/img/icons8.png',
     name : "Turkcell",
     description : "Teknik Staj",
     info : "İstanbul (İş Yerinde) • 2 Ay • Önerilen İlan"
   }
   public card2 = {
     image : 'assets/img/teknokent.png',
+    verified: 'assets/img/icons8.png',
     name : "Antalya Teknokent",
     description : "Antalya Teknokent Demoday",
     info : "Antalya • 8 Aralık 2023 • Takip ettiklerinizden yeni etkinlik"
   }
   public card3 = {
-    image : 'assets/img/turkcell.png',
-    name : "Turkcell",
-    description : "Teknik Staj",
-    info : "İstanbul (İş Yerinde) • 2 Ay • Önerilen İlan"
+    image : 'assets/img/avatar4.png',
+    verified: 'assets/img/icons8.png',
+    name : "yeni bir işe başladı şimdi tebrik edin! 👏🏻",
+    description : "Elif Kemertaş",
+    info : "Bağlantınız olduğu için"
   }
 
   public users = [this.account1, this.account2, this.account3];
